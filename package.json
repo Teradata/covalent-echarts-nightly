@@ -1,0 +1,44 @@
+{
+  "name": "@covalent/echarts",
+  "version": "2.0.0-beta.2",
+  "description": "Teradata Charts built on echarts",
+  "keywords": [
+    "angular",
+    "echarts",
+    "components",
+    "covalent",
+    "reusable"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teradata/covalent-echarts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/teradata/covalent-echarts/issues"
+  },
+  "license": "MIT",
+  "author": "Teradata UX",
+  "contributors": [
+    "Kyle Ledbetter <kyle.ledbetter@teradata.com>",
+    "Richa Vyas <richa.vyas@teradata.com>",
+    "Ed Morales <eduardo.morales@teradata.com>",
+    "Jason Weaver <jason.weaver@teradata.com>",
+    "Jeremy Wilken <jeremy.wilken@teradata.com>",
+    "Jeremy Smartt <jeremy.smartt@teradata.com>",
+    "Steven Ov <steven.ov@teradata.com>"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^6.0.0",
+    "@angular/core": "^6.0.0",
+    "@angular/forms": "^6.0.0",
+    "@angular/cdk": "^6.0.0"
+  },
+  "main": "bundles/covalent-echarts.umd.js",
+  "module": "esm5/covalent-echarts.js",
+  "es2015": "esm2015/covalent-echarts.js",
+  "typings": "covalent-echarts.d.ts",
+  "metadata": "covalent-echarts.metadata.json",
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}
