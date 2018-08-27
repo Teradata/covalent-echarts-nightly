@@ -1,0 +1,14 @@
+{
+  "version": 3,
+  "file": "covalent-echarts-line.js",
+  "sources": [
+    "ng://@covalent/echarts/line/out/line.module.ts",
+    "ng://@covalent/echarts/line/out/line.component.ts"
+  ],
+  "sourcesContent": [
+    "import { NgModule, Type } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { CovalentBaseEchartsModule } from '@covalent/echarts/base';\n\nimport { TdLineChartComponent } from './line.component';\n\nexport const LINE_MODULE_COMPONENTS: Type<any>[] = [\n  TdLineChartComponent,\n];\n\n@NgModule({\n  imports: [\n    CommonModule,\n    CovalentBaseEchartsModule,\n  ],\n  declarations: [\n    LINE_MODULE_COMPONENTS,\n  ],\n  exports: [\n    LINE_MODULE_COMPONENTS,\n  ],\n})\nexport class CovalentLineEchartsModule {\n\n}\n",
+    "import {\n  Component,\n  Input,\n  ChangeDetectionStrategy,\n} from '@angular/core';\n\nimport 'echarts/lib/chart/line';\n\nimport { BASE_CHART_PROVIDER } from '@covalent/echarts/base';\n\n@Component({\n  selector: 'td-chart-line',\n  template: `<td-base-chart [style.height.%]=\"100\"\n                [data]=\"data\">\n  <ng-content></ng-content>\n</td-base-chart>`,\n  styles: [`:host{display:block}`],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  providers: [BASE_CHART_PROVIDER],\n})\nexport class TdLineChartComponent {\n\n  @Input('data') data: any[];\n\n}\n"
+  ],
+  "names": [],
+  "mappings": ";;;;;;;;;ACAA,AAoBA,MAAA,oBAAA,CAAA;;;IAVA,EAAA,IAAA,EAAC,SAAS,EAAV,IAAA,EAAA,CAAW;gBACT,QAAQ,EAAE,eAAe;gBACzB,QAAQ,EAAE,CAAZ;;;gBAGA,CAAiB;gBACf,MAAM,EAAE,CAAC,CAAX,oBAAA,CAAiC,CAAC;gBAChC,eAAe,EAAE,uBAAuB,CAAC,MAAM;gBAC/C,SAAS,EAAE,CAAC,mBAAmB,CAAC;aACjC,EAAD,EAAA;;;;;IAGA,MAAA,EAAA,CAAA,EAAA,IAAA,EAAG,KAAK,EAAR,IAAA,EAAA,CAAS,MAAM,EAAf,EAAA,EAAA;;;;;;;ADtBA,AAOO,MAAM,sBAAsB,GAAgB;IACjD,oBAAoB;CACrB,CAAC;AAcF,AAAA,MAAA,yBAAA,CAAA;;;IAZA,EAAA,IAAA,EAAC,QAAQ,EAAT,IAAA,EAAA,CAAU;gBACR,OAAO,EAAE;oBACP,YAAY;oBACZ,yBAAyB;iBAC1B;gBACD,YAAY,EAAE;oBACZ,sBAAsB;iBACvB;gBACD,OAAO,EAAE;oBACP,sBAAsB;iBACvB;aACF,EAAD,EAAA;;;;;;;;;;;;;;;;;;;;;;;;;"
+}

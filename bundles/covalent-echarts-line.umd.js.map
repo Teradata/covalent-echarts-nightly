@@ -1,0 +1,22 @@
+{
+  "version": 3,
+  "file": "covalent-echarts-line.umd.js",
+  "sources": [
+    "ng://@covalent/echarts/line/out/line.module.ts",
+    "ng://@covalent/echarts/line/out/line.component.ts"
+  ],
+  "sourcesContent": [
+    "import { NgModule, Type } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { CovalentBaseEchartsModule } from '@covalent/echarts/base';\n\nimport { TdLineChartComponent } from './line.component';\n\nexport const LINE_MODULE_COMPONENTS: Type<any>[] = [\n  TdLineChartComponent,\n];\n\n@NgModule({\n  imports: [\n    CommonModule,\n    CovalentBaseEchartsModule,\n  ],\n  declarations: [\n    LINE_MODULE_COMPONENTS,\n  ],\n  exports: [\n    LINE_MODULE_COMPONENTS,\n  ],\n})\nexport class CovalentLineEchartsModule {\n\n}\n",
+    "import {\n  Component,\n  Input,\n  ChangeDetectionStrategy,\n} from '@angular/core';\n\nimport 'echarts/lib/chart/line';\n\nimport { BASE_CHART_PROVIDER } from '@covalent/echarts/base';\n\n@Component({\n  selector: 'td-chart-line',\n  template: `<td-base-chart [style.height.%]=\"100\"\n                [data]=\"data\">\n  <ng-content></ng-content>\n</td-base-chart>`,\n  styles: [`:host{display:block}`],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  providers: [BASE_CHART_PROVIDER],\n})\nexport class TdLineChartComponent {\n\n  @Input('data') data: any[];\n\n}\n"
+  ],
+  "names": [
+    "CovalentBaseEchartsModule",
+    "CommonModule",
+    "NgModule",
+    "Input",
+    "BASE_CHART_PROVIDER",
+    "ChangeDetectionStrategy",
+    "Component"
+  ],
+  "mappings": ";;;;;;ACAA,IAAA,oBAAA,kBAAA,YAAA;IAAA,SAAA,oBAAA,GAAA;;;;;IAUA,EAAA,IAAA,EAACM,cAAS,EAAV,IAAA,EAAA,CAAW;gBACT,QAAQ,EAAE,eAAe;gBACzB,QAAQ,EAAE,0HAGK;gBACf,MAAM,EAAE,CAAC,sBAAsB,CAAC;gBAChC,eAAe,EAAED,4BAAuB,CAAC,MAAM;gBAC/C,SAAS,EAAE,CAACD,wBAAmB,CAAC;aACjC,EAAD,EAAA;;;;IAGA,MAAA,EAAA,CAAA,EAAA,IAAA,EAAGD,UAAK,EAAR,IAAA,EAAA,CAAS,MAAM,EAAf,EAAA,EAAA;;ADtBA,IAOa,sBAAsB,GAAgB;IACjD,oBAAoB;CACrB,CAAC;AAcF,IAAA,yBAAA,kBAAA,YAAA;IAAA,SAAA,yBAAA,GAAA;;;;;IAZA,EAAA,IAAA,EAACD,aAAQ,EAAT,IAAA,EAAA,CAAU;gBACR,OAAO,EAAE;oBACPD,mBAAY;oBACZD,8BAAyB;iBAC1B;gBACD,YAAY,EAAE;oBACZ,sBAAsB;iBACvB;gBACD,OAAO,EAAE;oBACP,sBAAsB;iBACvB;aACF,EAAD,EAAA;;;;;;;;;;;;;;;;"
+}

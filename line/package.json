@@ -1,0 +1,11 @@
+{
+  "main": "../bundles/covalent-echarts-line.umd.js",
+  "module": "../esm5/covalent-echarts-line.js",
+  "es2015": "../esm2015/covalent-echarts-line.js",
+  "typings": "covalent-echarts-line.d.ts",
+  "metadata": "covalent-echarts-line.metadata.json",
+  "dependencies": {
+    "tslib": "^1.9.0"
+  },
+  "name": "@covalent/echarts/line"
+}

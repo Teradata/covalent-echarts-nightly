@@ -1,16 +1,14 @@
-import { EventEmitter, ElementRef, ChangeDetectorRef, AfterViewInit, OnChanges, NgZone, OnDestroy, DoCheck } from '@angular/core';
-import 'echarts/lib/chart/line';
-import 'echarts/lib/chart/bar';
-import 'echarts/lib/component/tooltip';
+import { EventEmitter, ElementRef, ChangeDetectorRef, AfterViewInit, OnChanges, OnDestroy, DoCheck } from '@angular/core';
 import 'echarts/lib/component/title';
 import 'echarts/lib/component/legend';
 import 'echarts/lib/component/legendScroll';
 import 'echarts/lib/component/markArea';
 import 'echarts/lib/component/dataZoom';
-export declare class TdChartComponent implements AfterViewInit, OnChanges, DoCheck, OnDestroy {
+import { TdChartOptionsService } from './base.service';
+export declare class TdBaseChartComponent implements AfterViewInit, OnChanges, DoCheck, OnDestroy {
     private _changeDetectorRef;
     private _elementRef;
-    private _ngZone;
+    private _optionsService;
     private _resizeSubscription;
     private _widthSubject;
     private _heightSubject;
@@ -18,10 +16,11 @@ export declare class TdChartComponent implements AfterViewInit, OnChanges, DoChe
     private _series;
     private _legend;
     private _instance;
+    private _options;
     readonly instance: any;
+    readonly options: any;
     chartTitle: string;
     showLegend: boolean;
-    showTooltip: boolean;
     data: any[];
     max: number;
     chartGroup: string;
@@ -30,14 +29,13 @@ export declare class TdChartComponent implements AfterViewInit, OnChanges, DoChe
     yAxisType: string;
     xAxisType: string;
     dataZoom: boolean;
-    tooltipFormatter: (params: any, ticket?: string, callback?: (ticket: string, html: string) => any) => string;
     xAxis: any[];
     yAxis: any[];
     showXAxis: boolean;
     showYAxis: boolean;
     yAxisSplitNumber: number;
     markAreaClick: EventEmitter<any>;
-    constructor(_changeDetectorRef: ChangeDetectorRef, _elementRef: ElementRef, _ngZone: NgZone);
+    constructor(_changeDetectorRef: ChangeDetectorRef, _elementRef: ElementRef, _optionsService: TdChartOptionsService);
     ngAfterViewInit(): void;
     ngDoCheck(): void;
     ngOnChanges(): void;
