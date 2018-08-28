@@ -12,7 +12,7 @@ var TdBarChartComponent = /** @class */ (function () {
 TdBarChartComponent.decorators = [
     { type: core.Component, args: [{
                 selector: 'td-chart-bar',
-                template: "<td-base-chart [style.height.%]=\"100\"\n                [data]=\"data\"\n                [yAxisType]=\"'value'\"\n                [xAxisType]=\"'category'\"\n                [dataZoom]=\"false\"\n                [dataZoom]=\"false\">\n  <ng-content></ng-content>\n</td-base-chart>",
+                template: "<td-base-chart [style.height.%]=\"100\"\n                [data]=\"data\"\n                [dataZoom]=\"false\">\n  <td-chart-x-axis [show]=\"true\"\n                    [position]=\"'bottom'\"\n                    [type]=\"'category'\"\n                    [boundaryGap]=\"false\"\n                    [axisLine]=\"{show: false}\"\n                    [splitLine]=\"{show: false}\">\n  </td-chart-x-axis>\n  <td-chart-y-axis [show]=\"true\"\n                    [type]=\"'value'\"\n                    [axisLabel]=\"{inside: true}\"\n                    [axisLine]=\"{show: false}\"\n                    [splitLine]=\"{show: false}\">\n  </td-chart-y-axis>\n  <ng-content></ng-content>\n</td-base-chart>",
                 styles: [":host{display:block}"],
                 changeDetection: core.ChangeDetectionStrategy.OnPush,
                 providers: [base.BASE_CHART_PROVIDER],

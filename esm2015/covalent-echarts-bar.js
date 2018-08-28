@@ -14,10 +14,20 @@ TdBarChartComponent.decorators = [
                 selector: 'td-chart-bar',
                 template: `<td-base-chart [style.height.%]="100"
                 [data]="data"
-                [yAxisType]="'value'"
-                [xAxisType]="'category'"
-                [dataZoom]="false"
                 [dataZoom]="false">
+  <td-chart-x-axis [show]="true"
+                    [position]="'bottom'"
+                    [type]="'category'"
+                    [boundaryGap]="false"
+                    [axisLine]="{show: false}"
+                    [splitLine]="{show: false}">
+  </td-chart-x-axis>
+  <td-chart-y-axis [show]="true"
+                    [type]="'value'"
+                    [axisLabel]="{inside: true}"
+                    [axisLine]="{show: false}"
+                    [splitLine]="{show: false}">
+  </td-chart-y-axis>
   <ng-content></ng-content>
 </td-base-chart>`,
                 styles: [`:host{display:block}`],

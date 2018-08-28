@@ -12,7 +12,7 @@ var TdLineChartComponent = /** @class */ (function () {
 TdLineChartComponent.decorators = [
     { type: core.Component, args: [{
                 selector: 'td-chart-line',
-                template: "<td-base-chart [style.height.%]=\"100\"\n                [data]=\"data\">\n  <ng-content></ng-content>\n</td-base-chart>",
+                template: "<td-base-chart [style.height.%]=\"100\"\n                [data]=\"data\">\n  <ng-content></ng-content>\n  <td-chart-x-axis [show]=\"true\"\n                    [position]=\"'bottom'\"\n                    [type]=\"'time'\"\n                    [boundaryGap]=\"false\"\n                    [axisLine]=\"{show: false}\"\n                    [splitLine]=\"{show: false}\">\n  </td-chart-x-axis>\n  <td-chart-y-axis [show]=\"true\"\n                    [type]=\"'value'\"\n                    [axisLabel]=\"{inside: true}\"\n                    [axisLine]=\"{show: false}\"\n                    [splitLine]=\"{show: false}\">\n  </td-chart-y-axis>\n</td-base-chart>",
                 styles: [":host{display:block}"],
                 changeDetection: core.ChangeDetectionStrategy.OnPush,
                 providers: [base.BASE_CHART_PROVIDER],

@@ -27,7 +27,30 @@ class TdChartOptionsService {
         let /** @type {?} */ options = {};
         options[option] = value;
         Object.assign(this._options, options);
-        this._optionsSubject.next(options);
+        this._optionsSubject.next(this._options);
+    }
+    /**
+     * @param {?} option
+     * @param {?} value
+     * @return {?}
+     */
+    setArrayOption(option, value) {
+        let /** @type {?} */ prevValue = this.getOption(option);
+        if (prevValue) {
+            let /** @type {?} */ index = prevValue.indexOf(value);
+            index > -1 ? prevValue[index] = value : prevValue.push(value);
+        }
+        else {
+            prevValue = [value];
+        }
+        this.setOption(option, prevValue);
+    }
+    /**
+     * @param {?} option
+     * @return {?}
+     */
+    getOption(option) {
+        return this._options[option];
     }
     /**
      * @param {?} option
@@ -66,6 +89,38 @@ const BASE_CHART_PROVIDER = {
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
+/**
+ * @param {?} target
+ * @param {...?} sources
+ * @return {?}
+ */
+function assignDefined(target, ...sources) {
+    for (const /** @type {?} */ key of Object.keys(target)) {
+        delete target[key];
+    }
+    for (const /** @type {?} */ source of sources) {
+        for (const /** @type {?} */ key of Object.keys(source)) {
+            const /** @type {?} */ val = source[key];
+            if (val !== undefined) {
+                target[key] = val;
+            }
+            else {
+                delete target[key];
+            }
+        }
+    }
+    return target;
+}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
 class TdBaseChartComponent {
     /**
      * @param {?} _changeDetectorRef
@@ -81,11 +136,7 @@ class TdBaseChartComponent {
         this._resizing = false;
         this._options = {};
         this.showLegend = true;
-        this.yAxisType = 'value';
-        this.xAxisType = 'time';
         this.dataZoom = true;
-        this.showXAxis = true;
-        this.showYAxis = true;
         this.markAreaClick = new EventEmitter();
     }
     /**
@@ -127,7 +178,7 @@ class TdBaseChartComponent {
         });
         this.render();
         this._optionsService.listen().subscribe((options) => {
-            Object.assign(this._options, options);
+            assignDefined(this._options, options);
             this.render();
         });
     }
@@ -162,12 +213,6 @@ class TdBaseChartComponent {
      */
     render() {
         if (this._instance) {
-            let /** @type {?} */ option = {};
-            if (this.chartTitle) {
-                option.title = {
-                    text: this.chartTitle,
-                };
-            }
             if (this.data && this.data instanceof Array) {
                 this._series = this.data.map((d) => {
                     return {
@@ -230,59 +275,10 @@ class TdBaseChartComponent {
                             zoomOnMouseWheel: 'shift',
                         }] : undefined,
                     legend: this._legend,
-                    xAxis: [{
-                            show: this.showXAxis,
-                            // name: 'xAxis',
-                            // nameLocation: 'middle',
-                            // nameGap: 25,
-                            // splitNumber: 5,
-                            // minInterval: 3600 * 1000 * 24,
-                            position: 'bottom',
-                            type: this.xAxisType,
-                            boundaryGap: false,
-                            axisLabel: {
-                                // showMinLabel: false,
-                                formatter: this.xAxisFormatter,
-                                inside: !this.showXAxis,
-                            },
-                            axisLine: {
-                                show: false,
-                                lineStyle: {
-                                    color: '#777777',
-                                },
-                            },
-                            data: this.xAxis,
-                            splitLine: {
-                                show: false,
-                                lineStyle: {
-                                    color: '#ECECEC',
-                                },
-                            },
-                        }],
-                    yAxis: [{
-                            show: this.showYAxis,
-                            // min : 0,
-                            max: this.max,
-                            type: this.yAxisType,
-                            axisLabel: {
-                                inside: true,
-                                showMinLabel: false,
-                                formatter: this.yAxisFormatter,
-                            },
-                            splitNumber: this.yAxisSplitNumber,
-                            axisLine: {
-                                show: false,
-                                lineStyle: {
-                                    color: '#777777',
-                                },
-                            },
-                            data: this.yAxis,
-                            splitLine: {
-                                lineStyle: {
-                                    color: '#ECECEC',
-                                },
-                            },
-                        }],
+                    xAxis: [{}],
+                    // throws error if its empty
+                    yAxis: [{}],
+                    // throws error if its empty
                     series: this._series,
                 }, this._options), true);
             this._changeDetectorRef.markForCheck();
@@ -310,16 +306,7 @@ TdBaseChartComponent.propDecorators = {
     "data": [{ type: Input, args: ['data',] },],
     "max": [{ type: Input, args: ['max',] },],
     "chartGroup": [{ type: Input, args: ['chartGroup',] },],
-    "yAxisFormatter": [{ type: Input, args: ['yAxisFormatter',] },],
-    "xAxisFormatter": [{ type: Input, args: ['xAxisFormatter',] },],
-    "yAxisType": [{ type: Input, args: ['yAxisType',] },],
-    "xAxisType": [{ type: Input, args: ['xAxisType',] },],
     "dataZoom": [{ type: Input, args: ['dataZoom',] },],
-    "xAxis": [{ type: Input, args: ['xAxis',] },],
-    "yAxis": [{ type: Input, args: ['yAxis',] },],
-    "showXAxis": [{ type: Input, args: ['showXAxis',] },],
-    "showYAxis": [{ type: Input, args: ['showYAxis',] },],
-    "yAxisSplitNumber": [{ type: Input, args: ['yAxisSplitNumber',] },],
     "markAreaClick": [{ type: Output, args: ['markAreaClick',] },],
 };
 
@@ -348,6 +335,7 @@ class TdChartTooltipComponent {
         this._changeDetectorRef = _changeDetectorRef;
         this._elementRef = _elementRef;
         this._optionsService = _optionsService;
+        this._state = {};
         this._context = new TdTooltipContext();
         this.config = {};
         this.show = true;
@@ -390,7 +378,7 @@ class TdChartTooltipComponent {
      * @return {?}
      */
     _setOptions() {
-        let /** @type {?} */ config = Object.assign({}, this.config ? this.config : {}, {
+        let /** @type {?} */ config = assignDefined(this._state, this.config ? this.config : {}, {
             show: this.show,
             trigger: this.trigger,
             axisPointer: this.axisPointer,
@@ -478,10 +466,181 @@ TdChartTooltipComponent.propDecorators = {
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
+/**
+ * @abstract
+ */
+class TdChartAxisComponent {
+    /**
+     * @param {?} _axisOption
+     * @param {?} _optionsService
+     */
+    constructor(_axisOption, _optionsService) {
+        this._axisOption = _axisOption;
+        this._optionsService = _optionsService;
+        this._state = {};
+        this.config = {};
+        this.show = true;
+    }
+    /**
+     * @return {?}
+     */
+    ngOnInit() {
+        this._setOptions();
+    }
+    /**
+     * @return {?}
+     */
+    ngOnChanges() {
+        this._setOptions();
+    }
+    /**
+     * @return {?}
+     */
+    ngOnDestroy() {
+        this._removeOption();
+    }
+    /**
+     * @return {?}
+     */
+    _setOptions() {
+        let /** @type {?} */ config = assignDefined(this._state, this.config, {
+            id: this.id,
+            show: this.show,
+            gridIndex: this.gridIndex,
+            position: this.position,
+            offset: this.offset,
+            type: this.type,
+            name: this.name,
+            nameLocation: this.nameLocation,
+            nameTextStyle: this.nameTextStyle,
+            nameGap: this.nameGap,
+            nameRotate: this.nameRotate,
+            inverse: this.inverse,
+            boundaryGap: this.boundaryGap,
+            min: this.min,
+            max: this.max,
+            scale: this.scale,
+            minInterval: this.minInterval,
+            interval: this.interval,
+            logBase: this.logBase,
+            silent: this.silent,
+            triggerEvent: this.triggerEvent,
+            axisLine: this.axisLine,
+            axisTick: this.axisTick,
+            axisLabel: this.axisLabel,
+            splitLine: this.splitLine,
+            splitArea: this.splitArea,
+            data: this.data,
+            axisPointer: this.axisPointer,
+            zlevel: this.zlevel,
+            z: this.z,
+        });
+        this._optionsService.setArrayOption(this._axisOption, config);
+    }
+    /**
+     * @return {?}
+     */
+    _removeOption() {
+        this._optionsService.clearOption(this._axisOption);
+    }
+}
+TdChartAxisComponent.propDecorators = {
+    "config": [{ type: Input, args: ['config',] },],
+    "id": [{ type: Input, args: ['id',] },],
+    "show": [{ type: Input, args: ['show',] },],
+    "gridIndex": [{ type: Input, args: ['gridIndex',] },],
+    "offset": [{ type: Input, args: ['offset',] },],
+    "type": [{ type: Input, args: ['type',] },],
+    "name": [{ type: Input, args: ['name',] },],
+    "nameLocation": [{ type: Input, args: ['nameLocation',] },],
+    "nameTextStyle": [{ type: Input, args: ['nameTextStyle',] },],
+    "nameGap": [{ type: Input, args: ['nameGap',] },],
+    "nameRotate": [{ type: Input, args: ['nameRotate',] },],
+    "inverse": [{ type: Input, args: ['inverse',] },],
+    "boundaryGap": [{ type: Input, args: ['boundaryGap',] },],
+    "min": [{ type: Input, args: ['min',] },],
+    "max": [{ type: Input, args: ['max',] },],
+    "scale": [{ type: Input, args: ['scale',] },],
+    "minInterval": [{ type: Input, args: ['minInterval',] },],
+    "interval": [{ type: Input, args: ['interval',] },],
+    "logBase": [{ type: Input, args: ['logBase',] },],
+    "silent": [{ type: Input, args: ['silent',] },],
+    "triggerEvent": [{ type: Input, args: ['triggerEvent',] },],
+    "axisLine": [{ type: Input, args: ['axisLine',] },],
+    "axisTick": [{ type: Input, args: ['axisTick',] },],
+    "axisLabel": [{ type: Input, args: ['axisLabel',] },],
+    "splitLine": [{ type: Input, args: ['splitLine',] },],
+    "splitArea": [{ type: Input, args: ['splitArea',] },],
+    "data": [{ type: Input, args: ['data',] },],
+    "axisPointer": [{ type: Input, args: ['axisPointer',] },],
+    "zlevel": [{ type: Input, args: ['zlevel',] },],
+    "z": [{ type: Input, args: ['z',] },],
+};
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+class TdChartXAxisComponent extends TdChartAxisComponent {
+    /**
+     * @param {?} _optionsService
+     */
+    constructor(_optionsService) {
+        super('xAxis', _optionsService);
+    }
+}
+TdChartXAxisComponent.decorators = [
+    { type: Component, args: [{
+                selector: 'td-chart-x-axis',
+                template: '',
+                changeDetection: ChangeDetectionStrategy.OnPush,
+            },] },
+];
+/** @nocollapse */
+TdChartXAxisComponent.ctorParameters = () => [
+    { type: TdChartOptionsService, },
+];
+TdChartXAxisComponent.propDecorators = {
+    "position": [{ type: Input, args: ['position',] },],
+};
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+class TdChartYAxisComponent extends TdChartAxisComponent {
+    /**
+     * @param {?} _optionsService
+     */
+    constructor(_optionsService) {
+        super('yAxis', _optionsService);
+    }
+}
+TdChartYAxisComponent.decorators = [
+    { type: Component, args: [{
+                selector: 'td-chart-y-axis',
+                template: '',
+                changeDetection: ChangeDetectionStrategy.OnPush,
+            },] },
+];
+/** @nocollapse */
+TdChartYAxisComponent.ctorParameters = () => [
+    { type: TdChartOptionsService, },
+];
+TdChartYAxisComponent.propDecorators = {
+    "position": [{ type: Input, args: ['position',] },],
+};
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
 const BASE_MODULE_COMPONENTS = [
     TdBaseChartComponent,
     TdChartTooltipComponent,
     TdChartTooltipFormatterDirective,
+    TdChartXAxisComponent,
+    TdChartYAxisComponent,
 ];
 class CovalentBaseEchartsModule {
 }
@@ -519,5 +678,5 @@ CovalentBaseEchartsModule.ctorParameters = () => [];
  * Generated bundle index. Do not edit.
  */
 
-export { TdBaseChartComponent, TdChartOptionsService, BASE_CHART_PROVIDER, BASE_MODULE_COMPONENTS, CovalentBaseEchartsModule, BASE_CHART_PROVIDER_FACTORY as ɵa, TdChartTooltipComponent as ɵc, TdChartTooltipFormatterDirective as ɵb };
+export { TdBaseChartComponent, TdChartOptionsService, BASE_CHART_PROVIDER, BASE_MODULE_COMPONENTS, CovalentBaseEchartsModule, TdChartAxisComponent as ɵe, TdChartXAxisComponent as ɵd, TdChartYAxisComponent as ɵf, BASE_CHART_PROVIDER_FACTORY as ɵa, TdChartTooltipComponent as ɵc, TdChartTooltipFormatterDirective as ɵb };
 //# sourceMappingURL=covalent-echarts-base.js.map

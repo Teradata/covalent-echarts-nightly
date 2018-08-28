@@ -4,6 +4,8 @@ export declare class TdChartOptionsService {
     private _options;
     private _optionsSubject;
     setOption(option: string, value: any): void;
+    setArrayOption(option: string, value: any): any;
+    getOption(option: string): any[];
     clearOption(option: string): void;
     listen(): Observable<any>;
 }

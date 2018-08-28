@@ -24,16 +24,7 @@ export declare class TdBaseChartComponent implements AfterViewInit, OnChanges, D
     data: any[];
     max: number;
     chartGroup: string;
-    yAxisFormatter: (value: any, index?: number) => string;
-    xAxisFormatter: (value: any, index?: number) => string;
-    yAxisType: string;
-    xAxisType: string;
     dataZoom: boolean;
-    xAxis: any[];
-    yAxis: any[];
-    showXAxis: boolean;
-    showYAxis: boolean;
-    yAxisSplitNumber: number;
     markAreaClick: EventEmitter<any>;
     constructor(_changeDetectorRef: ChangeDetectorRef, _elementRef: ElementRef, _optionsService: TdChartOptionsService);
     ngAfterViewInit(): void;

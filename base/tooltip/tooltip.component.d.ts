@@ -10,6 +10,7 @@ export declare class TdChartTooltipComponent implements OnChanges, OnInit, OnDes
     private _changeDetectorRef;
     private _elementRef;
     private _optionsService;
+    private _state;
     _context: TdTooltipContext;
     config: any;
     show: boolean;
