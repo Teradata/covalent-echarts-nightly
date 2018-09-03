@@ -439,6 +439,31 @@ TdChartTooltipComponent.propDecorators = {
     "formatterTemplate": [{ type: core.ContentChild, args: [TdChartTooltipFormatterDirective, { read: core.TemplateRef },] },],
     "fullTemplate": [{ type: core.ViewChild, args: ['tooltipContent',] },],
 };
+var TdNameLocation = {
+    Start: 'start',
+    Middle: 'middle',
+    Center: 'center',
+    End: 'end',
+};
+var TdAxisType = {
+    Value: 'value',
+    Category: 'category',
+    Time: 'time',
+    Log: 'log',
+};
+var TdYAxisPosition = {
+    Left: 'left',
+    Right: 'right',
+};
+var TdXAxisPosition = {
+    Top: 'top',
+    Bottom: 'bottom',
+};
+var TdAxisLineType = {
+    Solid: 'solid',
+    Dashed: 'dashed',
+    Dotted: 'dotted',
+};
 var TdChartAxisComponent = /** @class */ (function () {
     function TdChartAxisComponent(_axisOption, _optionsService) {
         this._axisOption = _axisOption;
@@ -598,6 +623,11 @@ CovalentBaseEchartsModule.ctorParameters = function () { return []; };
 exports.TdBaseChartComponent = TdBaseChartComponent;
 exports.TdChartOptionsService = TdChartOptionsService;
 exports.BASE_CHART_PROVIDER = BASE_CHART_PROVIDER;
+exports.TdXAxisPosition = TdXAxisPosition;
+exports.TdYAxisPosition = TdYAxisPosition;
+exports.TdAxisLineType = TdAxisLineType;
+exports.TdNameLocation = TdNameLocation;
+exports.TdAxisType = TdAxisType;
 exports.BASE_MODULE_COMPONENTS = BASE_MODULE_COMPONENTS;
 exports.CovalentBaseEchartsModule = CovalentBaseEchartsModule;
 exports.ɵe = TdChartAxisComponent;

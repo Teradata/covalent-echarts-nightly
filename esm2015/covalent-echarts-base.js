@@ -467,6 +467,44 @@ TdChartTooltipComponent.propDecorators = {
  * @suppress {checkTypes} checked by tsc
  */
 /**
+ * @record
+ */
+/** @enum {string} */
+const TdNameLocation = {
+    Start: 'start',
+    Middle: 'middle',
+    Center: 'center',
+    End: 'end',
+};
+/** @enum {string} */
+const TdAxisType = {
+    Value: 'value',
+    Category: 'category',
+    Time: 'time',
+    Log: 'log',
+};
+/** @enum {string} */
+const TdYAxisPosition = {
+    Left: 'left',
+    Right: 'right',
+};
+/** @enum {string} */
+const TdXAxisPosition = {
+    Top: 'top',
+    Bottom: 'bottom',
+};
+/** @enum {string} */
+const TdAxisLineType = {
+    Solid: 'solid',
+    Dashed: 'dashed',
+    Dotted: 'dotted',
+};
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+/**
  * @abstract
  */
 class TdChartAxisComponent {
@@ -678,5 +716,5 @@ CovalentBaseEchartsModule.ctorParameters = () => [];
  * Generated bundle index. Do not edit.
  */
 
-export { TdBaseChartComponent, TdChartOptionsService, BASE_CHART_PROVIDER, BASE_MODULE_COMPONENTS, CovalentBaseEchartsModule, TdChartAxisComponent as ɵe, TdChartXAxisComponent as ɵd, TdChartYAxisComponent as ɵf, BASE_CHART_PROVIDER_FACTORY as ɵa, TdChartTooltipComponent as ɵc, TdChartTooltipFormatterDirective as ɵb };
+export { TdBaseChartComponent, TdChartOptionsService, BASE_CHART_PROVIDER, TdXAxisPosition, TdYAxisPosition, TdAxisLineType, TdNameLocation, TdAxisType, BASE_MODULE_COMPONENTS, CovalentBaseEchartsModule, TdChartAxisComponent as ɵe, TdChartXAxisComponent as ɵd, TdChartYAxisComponent as ɵf, BASE_CHART_PROVIDER_FACTORY as ɵa, TdChartTooltipComponent as ɵc, TdChartTooltipFormatterDirective as ɵb };
 //# sourceMappingURL=covalent-echarts-base.js.map

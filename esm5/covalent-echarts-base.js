@@ -402,6 +402,31 @@ TdChartTooltipComponent.propDecorators = {
     "formatterTemplate": [{ type: ContentChild, args: [TdChartTooltipFormatterDirective, { read: TemplateRef },] },],
     "fullTemplate": [{ type: ViewChild, args: ['tooltipContent',] },],
 };
+var TdNameLocation = {
+    Start: 'start',
+    Middle: 'middle',
+    Center: 'center',
+    End: 'end',
+};
+var TdAxisType = {
+    Value: 'value',
+    Category: 'category',
+    Time: 'time',
+    Log: 'log',
+};
+var TdYAxisPosition = {
+    Left: 'left',
+    Right: 'right',
+};
+var TdXAxisPosition = {
+    Top: 'top',
+    Bottom: 'bottom',
+};
+var TdAxisLineType = {
+    Solid: 'solid',
+    Dashed: 'dashed',
+    Dotted: 'dotted',
+};
 var TdChartAxisComponent = /** @class */ (function () {
     function TdChartAxisComponent(_axisOption, _optionsService) {
         this._axisOption = _axisOption;
@@ -558,5 +583,5 @@ CovalentBaseEchartsModule.decorators = [
 ];
 CovalentBaseEchartsModule.ctorParameters = function () { return []; };
 
-export { TdBaseChartComponent, TdChartOptionsService, BASE_CHART_PROVIDER, BASE_MODULE_COMPONENTS, CovalentBaseEchartsModule, TdChartAxisComponent as ɵe, TdChartXAxisComponent as ɵd, TdChartYAxisComponent as ɵf, BASE_CHART_PROVIDER_FACTORY as ɵa, TdChartTooltipComponent as ɵc, TdChartTooltipFormatterDirective as ɵb };
+export { TdBaseChartComponent, TdChartOptionsService, BASE_CHART_PROVIDER, TdXAxisPosition, TdYAxisPosition, TdAxisLineType, TdNameLocation, TdAxisType, BASE_MODULE_COMPONENTS, CovalentBaseEchartsModule, TdChartAxisComponent as ɵe, TdChartXAxisComponent as ɵd, TdChartYAxisComponent as ɵf, BASE_CHART_PROVIDER_FACTORY as ɵa, TdChartTooltipComponent as ɵc, TdChartTooltipFormatterDirective as ɵb };
 //# sourceMappingURL=covalent-echarts-base.js.map

@@ -1,5 +1,6 @@
 import { OnChanges, OnInit, OnDestroy } from '@angular/core';
 import { TdChartOptionsService } from '../base.service';
+import { IAxisLine, IAxisLabel, IAxisTick, ISplitLine, ISplitArea, IAxisPointer, TdAxisType, TdNameLocation, TdXAxisPosition, TdYAxisPosition } from './axis.interface';
 export declare abstract class TdChartAxisComponent implements OnChanges, OnInit, OnDestroy {
     private _axisOption;
     private _optionsService;
@@ -9,10 +10,10 @@ export declare abstract class TdChartAxisComponent implements OnChanges, OnInit,
     show: boolean;
     gridIndex: number;
     offset: number;
-    abstract position: any;
-    type: 'category' | 'value' | 'time' | 'logs';
+    abstract position: TdXAxisPosition | TdYAxisPosition;
+    type: TdAxisType;
     name: string;
-    nameLocation: 'start' | 'middle' | 'center' | 'end';
+    nameLocation: TdNameLocation;
     nameTextStyle: any;
     nameGap: number;
     nameRotate: number;
@@ -26,13 +27,13 @@ export declare abstract class TdChartAxisComponent implements OnChanges, OnInit,
     logBase: number;
     silent: boolean;
     triggerEvent: boolean;
-    axisLine: any;
-    axisTick: any;
-    axisLabel: any;
-    splitLine: any;
-    splitArea: any;
+    axisLine: IAxisLine;
+    axisTick: IAxisTick;
+    axisLabel: IAxisLabel;
+    splitLine: ISplitLine;
+    splitArea: ISplitArea;
     data: any;
-    axisPointer: any;
+    axisPointer: IAxisPointer;
     zlevel: number;
     z: number;
     constructor(_axisOption: string, _optionsService: TdChartOptionsService);
