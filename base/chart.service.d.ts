@@ -9,5 +9,5 @@ export declare class TdChartOptionsService {
     clearOption(option: string): void;
     listen(): Observable<any>;
 }
-export declare function BASE_CHART_PROVIDER_FACTORY(parent: TdChartOptionsService): TdChartOptionsService;
-export declare const BASE_CHART_PROVIDER: Provider;
+export declare function CHART_PROVIDER_FACTORY(parent: TdChartOptionsService): TdChartOptionsService;
+export declare const CHART_PROVIDER: Provider;

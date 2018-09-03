@@ -47,18 +47,18 @@ function __values(o) {
     };
 }
 
-var TdChartOptionsService = /** @class */ (function () {
-    function TdChartOptionsService() {
+var TdChartOptionsService$1 = /** @class */ (function () {
+    function TdChartOptionsService$1() {
         this._options = {};
         this._optionsSubject = new rxjs.BehaviorSubject(this._options);
     }
-    TdChartOptionsService.prototype.setOption = function (option, value) {
+    TdChartOptionsService$1.prototype.setOption = function (option, value) {
         var options = {};
         options[option] = value;
         Object.assign(this._options, options);
         this._optionsSubject.next(this._options);
     };
-    TdChartOptionsService.prototype.setArrayOption = function (option, value) {
+    TdChartOptionsService$1.prototype.setArrayOption = function (option, value) {
         var prevValue = this.getOption(option);
         if (prevValue) {
             var index = prevValue.indexOf(value);
@@ -69,30 +69,30 @@ var TdChartOptionsService = /** @class */ (function () {
         }
         this.setOption(option, prevValue);
     };
-    TdChartOptionsService.prototype.getOption = function (option) {
+    TdChartOptionsService$1.prototype.getOption = function (option) {
         return this._options[option];
     };
-    TdChartOptionsService.prototype.clearOption = function (option) {
+    TdChartOptionsService$1.prototype.clearOption = function (option) {
         this.setOption(option, undefined);
     };
-    TdChartOptionsService.prototype.listen = function () {
+    TdChartOptionsService$1.prototype.listen = function () {
         return this._optionsSubject.asObservable();
     };
-    return TdChartOptionsService;
+    return TdChartOptionsService$1;
 }());
-TdChartOptionsService.decorators = [
+TdChartOptionsService$1.decorators = [
     { type: core.Injectable },
 ];
-TdChartOptionsService.ctorParameters = function () { return []; };
-function BASE_CHART_PROVIDER_FACTORY(parent) {
-    return parent || new TdChartOptionsService();
+TdChartOptionsService$1.ctorParameters = function () { return []; };
+function CHART_PROVIDER_FACTORY(parent) {
+    return parent || new TdChartOptionsService$1();
 }
-var BASE_CHART_PROVIDER$1 = {
-    provide: TdChartOptionsService,
-    deps: [[new core.Optional(), new core.SkipSelf(), TdChartOptionsService]],
-    useFactory: BASE_CHART_PROVIDER_FACTORY,
+var CHART_PROVIDER = {
+    provide: TdChartOptionsService$1,
+    deps: [[new core.Optional(), new core.SkipSelf(), TdChartOptionsService$1]],
+    useFactory: CHART_PROVIDER_FACTORY,
 };
-function assignDefined(target) {
+function assignDefined$1(target) {
     var sources = [];
     for (var _i = 1; _i < arguments.length; _i++) {
         sources[_i - 1] = arguments[_i];
@@ -144,34 +144,29 @@ function assignDefined(target) {
     return target;
     var e_1, _c, e_3, _g, e_2, _f;
 }
-var TdBaseChartComponent = /** @class */ (function () {
-    function TdBaseChartComponent(_changeDetectorRef, _elementRef, _optionsService) {
+var TdChartComponent = /** @class */ (function () {
+    function TdChartComponent(_changeDetectorRef, _elementRef, _optionsService) {
         this._changeDetectorRef = _changeDetectorRef;
         this._elementRef = _elementRef;
         this._optionsService = _optionsService;
         this._widthSubject = new rxjs.Subject();
         this._heightSubject = new rxjs.Subject();
         this._resizing = false;
+        this._state = {};
         this._options = {};
+        this.config = {};
         this.showLegend = true;
         this.dataZoom = true;
         this.markAreaClick = new core.EventEmitter();
     }
-    Object.defineProperty(TdBaseChartComponent.prototype, "instance", {
+    Object.defineProperty(TdChartComponent.prototype, "instance", {
         get: function () {
             return this._instance;
         },
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(TdBaseChartComponent.prototype, "options", {
-        get: function () {
-            return this._options;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    TdBaseChartComponent.prototype.ngAfterViewInit = function () {
+    TdChartComponent.prototype.ngAfterViewInit = function () {
         var _this = this;
         this._instance = echarts.init(this._elementRef.nativeElement);
         rxjs.fromEvent(this._instance, 'click').subscribe(function (params) {
@@ -196,66 +191,29 @@ var TdBaseChartComponent = /** @class */ (function () {
         });
         this.render();
         this._optionsService.listen().subscribe(function (options) {
-            assignDefined(_this._options, options);
+            assignDefined$1(_this._options, options);
             _this.render();
         });
     };
-    TdBaseChartComponent.prototype.ngDoCheck = function () {
+    TdChartComponent.prototype.ngDoCheck = function () {
         if (this._elementRef && this._elementRef.nativeElement) {
             this._widthSubject.next(((this._elementRef.nativeElement)).getBoundingClientRect().width);
             this._heightSubject.next(((this._elementRef.nativeElement)).getBoundingClientRect().height);
         }
     };
-    TdBaseChartComponent.prototype.ngOnChanges = function () {
+    TdChartComponent.prototype.ngOnChanges = function () {
         if (this._instance) {
             this._instance.clear();
             this.render();
         }
     };
-    TdBaseChartComponent.prototype.ngOnDestroy = function () {
+    TdChartComponent.prototype.ngOnDestroy = function () {
         if (this._resizeSubscription) {
             this._resizeSubscription.unsubscribe();
         }
     };
-    TdBaseChartComponent.prototype.render = function () {
+    TdChartComponent.prototype.render = function () {
         if (this._instance) {
-            if (this.data && this.data instanceof Array) {
-                this._series = this.data.map(function (d) {
-                    return {
-                        name: d.name,
-                        id: d.id,
-                        type: d.type ? d.type : 'line',
-                        stack: d.stack,
-                        data: d.data,
-                        color: d.color,
-                        connectNulls: false,
-                        barWidth: d.barWidth,
-                        barGap: d.barGap,
-                        z: d.z,
-                        lineStyle: {
-                            opacity: d.opacity,
-                            width: d.width,
-                            shadowBlur: d.shadowBlur,
-                            shadowColor: d.shadowColor,
-                            shadowOffsetX: d.shadowOffsetX,
-                            shadowOffsetY: d.shadowOffsetY,
-                        },
-                        itemStyle: {
-                            opacity: d.opacity,
-                        },
-                        showSymbol: false,
-                        areaStyle: d.area ? { opacity: d.opacity } : undefined,
-                        markArea: {
-                            data: d.markArea,
-                            itemStyle: {
-                                borderColor: '#464646',
-                                borderWidth: 1,
-                                opacity: d.markAreaOpacity ? d.markAreaOpacity : 0.1,
-                            },
-                        },
-                    };
-                });
-            }
             this._legend = {
                 show: this.showLegend,
                 type: 'scroll',
@@ -263,8 +221,7 @@ var TdBaseChartComponent = /** @class */ (function () {
                 orient: 'horizontal',
                 right: '5',
                 bottom: '5',
-                data: this.data && this.data instanceof Array ? this.data.map(function (d) { return d.name; }) : [],
-            }, this._instance.setOption(Object.assign({}, {
+            }, this._instance.setOption(assignDefined$1(this._state, {
                 grid: {
                     show: true,
                     left: '20',
@@ -282,32 +239,31 @@ var TdBaseChartComponent = /** @class */ (function () {
                 legend: this._legend,
                 xAxis: [{}],
                 yAxis: [{}],
-                series: this._series,
-            }, this._options), true);
+                series: [],
+            }, this.config ? this.config : {}, this._options), true);
             this._changeDetectorRef.markForCheck();
         }
     };
-    return TdBaseChartComponent;
+    return TdChartComponent;
 }());
-TdBaseChartComponent.decorators = [
+TdChartComponent.decorators = [
     { type: core.Component, args: [{
-                selector: 'td-base-chart',
+                selector: 'td-chart',
                 template: "",
                 styles: [":host{display:block}"],
                 changeDetection: core.ChangeDetectionStrategy.OnPush,
-                providers: [BASE_CHART_PROVIDER$1],
+                providers: [CHART_PROVIDER],
             },] },
 ];
-TdBaseChartComponent.ctorParameters = function () { return [
+TdChartComponent.ctorParameters = function () { return [
     { type: core.ChangeDetectorRef, },
     { type: core.ElementRef, },
-    { type: TdChartOptionsService, },
+    { type: TdChartOptionsService$1, },
 ]; };
-TdBaseChartComponent.propDecorators = {
+TdChartComponent.propDecorators = {
+    "config": [{ type: core.Input, args: ['config',] },],
     "chartTitle": [{ type: core.Input, args: ['chartTitle',] },],
     "showLegend": [{ type: core.Input, args: ['showLegend',] },],
-    "data": [{ type: core.Input, args: ['data',] },],
-    "max": [{ type: core.Input, args: ['max',] },],
     "chartGroup": [{ type: core.Input, args: ['chartGroup',] },],
     "dataZoom": [{ type: core.Input, args: ['dataZoom',] },],
     "markAreaClick": [{ type: core.Output, args: ['markAreaClick',] },],
@@ -365,7 +321,7 @@ var TdChartTooltipComponent = /** @class */ (function () {
     };
     TdChartTooltipComponent.prototype._setOptions = function () {
         var _this = this;
-        var config = assignDefined(this._state, this.config ? this.config : {}, {
+        var config = assignDefined$1(this._state, this.config ? this.config : {}, {
             show: this.show,
             trigger: this.trigger,
             axisPointer: this.axisPointer,
@@ -414,7 +370,7 @@ TdChartTooltipComponent.decorators = [
 TdChartTooltipComponent.ctorParameters = function () { return [
     { type: core.ChangeDetectorRef, },
     { type: core.ElementRef, },
-    { type: TdChartOptionsService, },
+    { type: TdChartOptionsService$1, },
 ]; };
 TdChartTooltipComponent.propDecorators = {
     "config": [{ type: core.Input, args: ['config',] },],
@@ -482,7 +438,7 @@ var TdChartAxisComponent = /** @class */ (function () {
         this._removeOption();
     };
     TdChartAxisComponent.prototype._setOptions = function () {
-        var config = assignDefined(this._state, this.config, {
+        var config = assignDefined$1(this._state, this.config, {
             id: this.id,
             show: this.show,
             gridIndex: this.gridIndex,
@@ -568,7 +524,7 @@ TdChartXAxisComponent.decorators = [
             },] },
 ];
 TdChartXAxisComponent.ctorParameters = function () { return [
-    { type: TdChartOptionsService, },
+    { type: TdChartOptionsService$1, },
 ]; };
 TdChartXAxisComponent.propDecorators = {
     "position": [{ type: core.Input, args: ['position',] },],
@@ -588,24 +544,24 @@ TdChartYAxisComponent.decorators = [
             },] },
 ];
 TdChartYAxisComponent.ctorParameters = function () { return [
-    { type: TdChartOptionsService, },
+    { type: TdChartOptionsService$1, },
 ]; };
 TdChartYAxisComponent.propDecorators = {
     "position": [{ type: core.Input, args: ['position',] },],
 };
 var BASE_MODULE_COMPONENTS = [
-    TdBaseChartComponent,
+    TdChartComponent,
     TdChartTooltipComponent,
     TdChartTooltipFormatterDirective,
     TdChartXAxisComponent,
     TdChartYAxisComponent,
 ];
-var CovalentBaseEchartsModule$1 = /** @class */ (function () {
-    function CovalentBaseEchartsModule$1() {
+var CovalentBaseEchartsModule = /** @class */ (function () {
+    function CovalentBaseEchartsModule() {
     }
-    return CovalentBaseEchartsModule$1;
+    return CovalentBaseEchartsModule;
 }());
-CovalentBaseEchartsModule$1.decorators = [
+CovalentBaseEchartsModule.decorators = [
     { type: core.NgModule, args: [{
                 imports: [
                     common.CommonModule,
@@ -618,27 +574,129 @@ CovalentBaseEchartsModule$1.decorators = [
                 ],
             },] },
 ];
-CovalentBaseEchartsModule$1.ctorParameters = function () { return []; };
-var TdBarChartComponent = /** @class */ (function () {
-    function TdBarChartComponent() {
+CovalentBaseEchartsModule.ctorParameters = function () { return []; };
+var TdChartSeriesBarComponent = /** @class */ (function () {
+    function TdChartSeriesBarComponent(_optionsService) {
+        this._optionsService = _optionsService;
+        this._type = 'bar';
+        this._state = {};
+        this.config = {};
     }
-    return TdBarChartComponent;
+    TdChartSeriesBarComponent.prototype.ngOnInit = function () {
+        this._setOptions();
+    };
+    TdChartSeriesBarComponent.prototype.ngOnChanges = function () {
+        this._setOptions();
+    };
+    TdChartSeriesBarComponent.prototype.ngOnDestroy = function () {
+        this._removeOption();
+    };
+    TdChartSeriesBarComponent.prototype._setOptions = function () {
+        var config = base.assignDefined(this._state, this.config, {
+            id: this.id,
+            type: this._type,
+            name: this.name,
+            coordinateSystem: this.coordinateSystem,
+            xAxisIndex: this.xAxisIndex,
+            yAxisIndex: this.yAxisIndex,
+            legendHoverLink: this.legendHoverLink,
+            stack: this.stack,
+            cursor: this.cursor,
+            label: this.label,
+            itemStyle: this.itemStyle,
+            emphasis: this.emphasis,
+            barWidth: this.barWidth,
+            barMaxWidth: this.barMaxWidth,
+            barMinHeight: this.barMinHeight,
+            barGap: this.barGap,
+            barCategoryGap: this.barCategoryGap,
+            large: this.large,
+            largeThreshold: this.largeThreshold,
+            progressive: this.progressive,
+            progressiveThreshold: this.progressiveThreshold,
+            progressiveChunkMode: this.progressiveChunkMode,
+            dimensions: this.dimensions,
+            encode: this.encode,
+            seriesLayoutBy: this.seriesLayoutBy,
+            datasetIndex: this.datasetIndex,
+            data: this.data,
+            markPoint: this.markPoint,
+            markLine: this.markLine,
+            markArea: this.markArea,
+            zlevel: this.zlevel,
+            z: this.z,
+            animation: this.animation,
+            animationThreshold: this.animationThreshold,
+            animationDuration: this.animationDuration,
+            animationEasing: this.animationEasing,
+            animationDelay: this.animationDelay,
+            animationDurationUpdate: this.animationDurationUpdate,
+            animationEasingUpdate: this.animationEasingUpdate,
+            animationDelayUpdate: this.animationDelayUpdate,
+            tooltip: this.tooltip,
+        });
+        this._optionsService.setArrayOption('series', config);
+    };
+    TdChartSeriesBarComponent.prototype._removeOption = function () {
+        this._optionsService.clearOption('series');
+    };
+    return TdChartSeriesBarComponent;
 }());
-TdBarChartComponent.decorators = [
+TdChartSeriesBarComponent.decorators = [
     { type: core.Component, args: [{
-                selector: 'td-chart-bar',
-                template: "<td-base-chart [style.height.%]=\"100\"\n                [data]=\"data\"\n                [dataZoom]=\"false\">\n  <td-chart-x-axis [show]=\"true\"\n                    [position]=\"'bottom'\"\n                    [type]=\"'category'\"\n                    [boundaryGap]=\"false\"\n                    [axisLine]=\"{show: false}\"\n                    [splitLine]=\"{show: false}\">\n  </td-chart-x-axis>\n  <td-chart-y-axis [show]=\"true\"\n                    [type]=\"'value'\"\n                    [axisLabel]=\"{inside: true}\"\n                    [axisLine]=\"{show: false}\"\n                    [splitLine]=\"{show: false}\">\n  </td-chart-y-axis>\n  <ng-content></ng-content>\n</td-base-chart>",
-                styles: [":host{display:block}"],
+                selector: 'td-chart-series[td-bar]',
+                template: '',
                 changeDetection: core.ChangeDetectionStrategy.OnPush,
-                providers: [base.BASE_CHART_PROVIDER],
             },] },
 ];
-TdBarChartComponent.ctorParameters = function () { return []; };
-TdBarChartComponent.propDecorators = {
+TdChartSeriesBarComponent.ctorParameters = function () { return [
+    { type: base.TdChartOptionsService, },
+]; };
+TdChartSeriesBarComponent.propDecorators = {
+    "config": [{ type: core.Input, args: ['config',] },],
+    "id": [{ type: core.Input, args: ['id',] },],
+    "name": [{ type: core.Input, args: ['name',] },],
+    "coordinateSystem": [{ type: core.Input, args: ['coordinateSystem',] },],
+    "xAxisIndex": [{ type: core.Input, args: ['xAxisIndex',] },],
+    "yAxisIndex": [{ type: core.Input, args: ['yAxisIndex',] },],
+    "legendHoverLink": [{ type: core.Input, args: ['legendHoverLink',] },],
+    "stack": [{ type: core.Input, args: ['stack',] },],
+    "cursor": [{ type: core.Input, args: ['cursor',] },],
+    "label": [{ type: core.Input, args: ['label',] },],
+    "itemStyle": [{ type: core.Input, args: ['itemStyle',] },],
+    "emphasis": [{ type: core.Input, args: ['emphasis',] },],
+    "barWidth": [{ type: core.Input, args: ['barWidth',] },],
+    "barMaxWidth": [{ type: core.Input, args: ['barMaxWidth',] },],
+    "barMinHeight": [{ type: core.Input, args: ['barMinHeight',] },],
+    "barGap": [{ type: core.Input, args: ['barGap',] },],
+    "barCategoryGap": [{ type: core.Input, args: ['barCategoryGap',] },],
+    "large": [{ type: core.Input, args: ['large',] },],
+    "largeThreshold": [{ type: core.Input, args: ['largeThreshold',] },],
+    "progressive": [{ type: core.Input, args: ['progressive',] },],
+    "progressiveThreshold": [{ type: core.Input, args: ['progressiveThreshold',] },],
+    "progressiveChunkMode": [{ type: core.Input, args: ['progressiveChunkMode',] },],
+    "dimensions": [{ type: core.Input, args: ['dimensions',] },],
+    "encode": [{ type: core.Input, args: ['encode',] },],
+    "seriesLayoutBy": [{ type: core.Input, args: ['seriesLayoutBy',] },],
+    "datasetIndex": [{ type: core.Input, args: ['datasetIndex',] },],
     "data": [{ type: core.Input, args: ['data',] },],
+    "markPoint": [{ type: core.Input, args: ['markPoint',] },],
+    "markLine": [{ type: core.Input, args: ['markLine',] },],
+    "markArea": [{ type: core.Input, args: ['markArea',] },],
+    "zlevel": [{ type: core.Input, args: ['zlevel',] },],
+    "z": [{ type: core.Input, args: ['z',] },],
+    "animation": [{ type: core.Input, args: ['animation',] },],
+    "animationThreshold": [{ type: core.Input, args: ['animationThreshold',] },],
+    "animationDuration": [{ type: core.Input, args: ['animationDuration',] },],
+    "animationEasing": [{ type: core.Input, args: ['animationEasing',] },],
+    "animationDelay": [{ type: core.Input, args: ['animationDelay',] },],
+    "animationDurationUpdate": [{ type: core.Input, args: ['animationDurationUpdate',] },],
+    "animationEasingUpdate": [{ type: core.Input, args: ['animationEasingUpdate',] },],
+    "animationDelayUpdate": [{ type: core.Input, args: ['animationDelayUpdate',] },],
+    "tooltip": [{ type: core.Input, args: ['tooltip',] },],
 };
 var BAR_MODULE_COMPONENTS = [
-    TdBarChartComponent,
+    TdChartSeriesBarComponent,
 ];
 var CovalentBarEchartsModule = /** @class */ (function () {
     function CovalentBarEchartsModule() {
@@ -649,7 +707,6 @@ CovalentBarEchartsModule.decorators = [
     { type: core.NgModule, args: [{
                 imports: [
                     common.CommonModule,
-                    base.CovalentBaseEchartsModule,
                 ],
                 declarations: [
                     BAR_MODULE_COMPONENTS,
@@ -660,26 +717,145 @@ CovalentBarEchartsModule.decorators = [
             },] },
 ];
 CovalentBarEchartsModule.ctorParameters = function () { return []; };
-var TdLineChartComponent = /** @class */ (function () {
-    function TdLineChartComponent() {
+var TdChartSeriesLineComponent = /** @class */ (function () {
+    function TdChartSeriesLineComponent(_optionsService) {
+        this._optionsService = _optionsService;
+        this._type = 'line';
+        this._state = {};
+        this.config = {};
     }
-    return TdLineChartComponent;
+    TdChartSeriesLineComponent.prototype.ngOnInit = function () {
+        this._setOptions();
+    };
+    TdChartSeriesLineComponent.prototype.ngOnChanges = function () {
+        this._setOptions();
+    };
+    TdChartSeriesLineComponent.prototype.ngOnDestroy = function () {
+        this._removeOption();
+    };
+    TdChartSeriesLineComponent.prototype._setOptions = function () {
+        var config = base.assignDefined(this._state, this.config, {
+            id: this.id,
+            type: this._type,
+            name: this.name,
+            coordinateSystem: this.coordinateSystem,
+            xAxisIndex: this.xAxisIndex,
+            yAxisIndex: this.yAxisIndex,
+            polarIndex: this.polarIndex,
+            symbol: this.symbol,
+            symbolSize: this.symbolSize,
+            symbolRotate: this.symbolRotate,
+            symbolKeepAspect: this.symbolKeepAspect,
+            symbolOffset: this.symbolOffset,
+            showSymbol: this.showSymbol,
+            showAllSymbol: this.showAllSymbol,
+            hoverAnimation: this.hoverAnimation,
+            legendHoverLink: this.legendHoverLink,
+            stack: this.stack,
+            cursor: this.cursor,
+            connectNulls: this.connectNulls,
+            clipOverflow: this.clipOverflow,
+            step: this.step,
+            label: this.label,
+            itemStyle: this.itemStyle,
+            lineStyle: this.lineStyle,
+            areaStyle: this.areaStyle,
+            emphasis: this.emphasis,
+            smooth: this.smooth,
+            smoothMonotone: this.smoothMonotone,
+            sampling: this.sampling,
+            dimensions: this.dimensions,
+            encode: this.encode,
+            seriesLayoutBy: this.seriesLayoutBy,
+            datasetIndex: this.datasetIndex,
+            data: this.data,
+            markPoint: this.markPoint,
+            markLine: this.markLine,
+            markArea: this.markArea,
+            zlevel: this.zlevel,
+            z: this.z,
+            silent: this.silent,
+            animation: this.animation,
+            animationThreshold: this.animationThreshold,
+            animationDuration: this.animationDuration,
+            animationEasing: this.animationEasing,
+            animationDelay: this.animationDelay,
+            animationDurationUpdate: this.animationDurationUpdate,
+            animationEasingUpdate: this.animationEasingUpdate,
+            animationDelayUpdate: this.animationDelayUpdate,
+            tooltip: this.tooltip,
+        });
+        this._optionsService.setArrayOption('series', config);
+    };
+    TdChartSeriesLineComponent.prototype._removeOption = function () {
+        this._optionsService.clearOption('series');
+    };
+    return TdChartSeriesLineComponent;
 }());
-TdLineChartComponent.decorators = [
+TdChartSeriesLineComponent.decorators = [
     { type: core.Component, args: [{
-                selector: 'td-chart-line',
-                template: "<td-base-chart [style.height.%]=\"100\"\n                [data]=\"data\">\n  <ng-content></ng-content>\n  <td-chart-x-axis [show]=\"true\"\n                    [position]=\"'bottom'\"\n                    [type]=\"'time'\"\n                    [boundaryGap]=\"false\"\n                    [axisLine]=\"{show: false}\"\n                    [splitLine]=\"{show: false}\">\n  </td-chart-x-axis>\n  <td-chart-y-axis [show]=\"true\"\n                    [type]=\"'value'\"\n                    [axisLabel]=\"{inside: true}\"\n                    [axisLine]=\"{show: false}\"\n                    [splitLine]=\"{show: false}\">\n  </td-chart-y-axis>\n</td-base-chart>",
-                styles: [":host{display:block}"],
+                selector: 'td-chart-series[td-line]',
+                template: '',
                 changeDetection: core.ChangeDetectionStrategy.OnPush,
-                providers: [base.BASE_CHART_PROVIDER],
             },] },
 ];
-TdLineChartComponent.ctorParameters = function () { return []; };
-TdLineChartComponent.propDecorators = {
+TdChartSeriesLineComponent.ctorParameters = function () { return [
+    { type: base.TdChartOptionsService, },
+]; };
+TdChartSeriesLineComponent.propDecorators = {
+    "config": [{ type: core.Input, args: ['config',] },],
+    "id": [{ type: core.Input, args: ['id',] },],
+    "type": [{ type: core.Input, args: ['type',] },],
+    "name": [{ type: core.Input, args: ['name',] },],
+    "coordinateSystem": [{ type: core.Input, args: ['coordinateSystem',] },],
+    "xAxisIndex": [{ type: core.Input, args: ['xAxisIndex',] },],
+    "yAxisIndex": [{ type: core.Input, args: ['yAxisIndex',] },],
+    "polarIndex": [{ type: core.Input, args: ['polarIndex',] },],
+    "symbol": [{ type: core.Input, args: ['symbol',] },],
+    "symbolSize": [{ type: core.Input, args: ['symbolSize',] },],
+    "symbolRotate": [{ type: core.Input, args: ['symbolRotate',] },],
+    "symbolKeepAspect": [{ type: core.Input, args: ['symbolKeepAspect',] },],
+    "symbolOffset": [{ type: core.Input, args: ['symbolOffset',] },],
+    "showSymbol": [{ type: core.Input, args: ['showSymbol',] },],
+    "showAllSymbol": [{ type: core.Input, args: ['showAllSymbol',] },],
+    "hoverAnimation": [{ type: core.Input, args: ['hoverAnimation',] },],
+    "legendHoverLink": [{ type: core.Input, args: ['legendHoverLink',] },],
+    "stack": [{ type: core.Input, args: ['stack',] },],
+    "cursor": [{ type: core.Input, args: ['cursor',] },],
+    "connectNulls": [{ type: core.Input, args: ['connectNulls',] },],
+    "clipOverflow": [{ type: core.Input, args: ['clipOverflow',] },],
+    "step": [{ type: core.Input, args: ['step',] },],
+    "label": [{ type: core.Input, args: ['label',] },],
+    "itemStyle": [{ type: core.Input, args: ['itemStyle',] },],
+    "lineStyle": [{ type: core.Input, args: ['lineStyle',] },],
+    "areaStyle": [{ type: core.Input, args: ['areaStyle',] },],
+    "emphasis": [{ type: core.Input, args: ['emphasis',] },],
+    "smooth": [{ type: core.Input, args: ['smooth',] },],
+    "smoothMonotone": [{ type: core.Input, args: ['smoothMonotone',] },],
+    "sampling": [{ type: core.Input, args: ['sampling',] },],
+    "dimensions": [{ type: core.Input, args: ['dimensions',] },],
+    "encode": [{ type: core.Input, args: ['encode',] },],
+    "seriesLayoutBy": [{ type: core.Input, args: ['seriesLayoutBy',] },],
+    "datasetIndex": [{ type: core.Input, args: ['datasetIndex',] },],
     "data": [{ type: core.Input, args: ['data',] },],
+    "markPoint": [{ type: core.Input, args: ['markPoint',] },],
+    "markLine": [{ type: core.Input, args: ['markLine',] },],
+    "markArea": [{ type: core.Input, args: ['markArea',] },],
+    "zlevel": [{ type: core.Input, args: ['zlevel',] },],
+    "z": [{ type: core.Input, args: ['z',] },],
+    "silent": [{ type: core.Input, args: ['silent',] },],
+    "animation": [{ type: core.Input, args: ['animation',] },],
+    "animationThreshold": [{ type: core.Input, args: ['animationThreshold',] },],
+    "animationDuration": [{ type: core.Input, args: ['animationDuration',] },],
+    "animationEasing": [{ type: core.Input, args: ['animationEasing',] },],
+    "animationDelay": [{ type: core.Input, args: ['animationDelay',] },],
+    "animationDurationUpdate": [{ type: core.Input, args: ['animationDurationUpdate',] },],
+    "animationEasingUpdate": [{ type: core.Input, args: ['animationEasingUpdate',] },],
+    "animationDelayUpdate": [{ type: core.Input, args: ['animationDelayUpdate',] },],
+    "tooltip": [{ type: core.Input, args: ['tooltip',] },],
 };
 var LINE_MODULE_COMPONENTS = [
-    TdLineChartComponent,
+    TdChartSeriesLineComponent,
 ];
 var CovalentLineEchartsModule = /** @class */ (function () {
     function CovalentLineEchartsModule() {
@@ -690,7 +866,6 @@ CovalentLineEchartsModule.decorators = [
     { type: core.NgModule, args: [{
                 imports: [
                     common.CommonModule,
-                    base.CovalentBaseEchartsModule,
                 ],
                 declarations: [
                     LINE_MODULE_COMPONENTS,
@@ -702,28 +877,29 @@ CovalentLineEchartsModule.decorators = [
 ];
 CovalentLineEchartsModule.ctorParameters = function () { return []; };
 
-exports.TdBaseChartComponent = TdBaseChartComponent;
-exports.TdChartOptionsService = TdChartOptionsService;
-exports.BASE_CHART_PROVIDER = BASE_CHART_PROVIDER$1;
+exports.TdChartComponent = TdChartComponent;
+exports.TdChartOptionsService = TdChartOptionsService$1;
+exports.CHART_PROVIDER = CHART_PROVIDER;
 exports.TdXAxisPosition = TdXAxisPosition;
 exports.TdYAxisPosition = TdYAxisPosition;
 exports.TdAxisLineType = TdAxisLineType;
 exports.TdNameLocation = TdNameLocation;
 exports.TdAxisType = TdAxisType;
 exports.BASE_MODULE_COMPONENTS = BASE_MODULE_COMPONENTS;
-exports.CovalentBaseEchartsModule = CovalentBaseEchartsModule$1;
-exports.TdBarChartComponent = TdBarChartComponent;
+exports.CovalentBaseEchartsModule = CovalentBaseEchartsModule;
+exports.assignDefined = assignDefined$1;
 exports.BAR_MODULE_COMPONENTS = BAR_MODULE_COMPONENTS;
 exports.CovalentBarEchartsModule = CovalentBarEchartsModule;
-exports.TdLineChartComponent = TdLineChartComponent;
 exports.LINE_MODULE_COMPONENTS = LINE_MODULE_COMPONENTS;
 exports.CovalentLineEchartsModule = CovalentLineEchartsModule;
+exports.ɵg = TdChartSeriesBarComponent;
 exports.ɵe = TdChartAxisComponent;
 exports.ɵd = TdChartXAxisComponent;
 exports.ɵf = TdChartYAxisComponent;
-exports.ɵa = BASE_CHART_PROVIDER_FACTORY;
+exports.ɵa = CHART_PROVIDER_FACTORY;
 exports.ɵc = TdChartTooltipComponent;
 exports.ɵb = TdChartTooltipFormatterDirective;
+exports.ɵh = TdChartSeriesLineComponent;
 
 Object.defineProperty(exports, '__esModule', { value: true });
 

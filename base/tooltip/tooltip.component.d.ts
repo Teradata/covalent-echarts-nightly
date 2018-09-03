@@ -1,5 +1,5 @@
 import { TemplateRef, ElementRef, ChangeDetectorRef, OnChanges, OnInit, OnDestroy } from '@angular/core';
-import { TdChartOptionsService } from '../base.service';
+import { TdChartOptionsService } from '../chart.service';
 export declare class TdTooltipContext {
     $implicit: any;
     ticket: string;

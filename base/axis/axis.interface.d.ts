@@ -1,4 +1,4 @@
-import { TdAlign, TdfontStyle, TdFontWeight, TdVerticalAlign, TdFontFamily, TdPointerType, TdStatus } from '../base.types';
+import { TdAlign, TdFontStyle, TdFontWeight, TdVerticalAlign, TdFontFamily, TdPointerType, TdStatus } from '../base.types';
 interface IAxisLine {
     show: boolean;
     onZero?: boolean;
@@ -18,7 +18,7 @@ interface IAxisLabel {
     showMinLabel?: boolean;
     showMaxLabel?: boolean;
     color?: any;
-    fontStyle?: TdfontStyle;
+    fontStyle?: TdFontStyle;
     fontWeight?: TdFontWeight;
     fontFamily?: TdFontFamily;
     fontSize?: number;
@@ -97,7 +97,7 @@ interface IAxisPointerLabel {
     formatter: any;
     margin: number;
     color: string;
-    fontStyle: TdfontStyle;
+    fontStyle: TdFontStyle;
     fontWeight: TdFontWeight;
     fontFamily: TdFontFamily;
     fontSize: number;
@@ -121,7 +121,7 @@ interface IAxisPointerLabel {
 }
 interface INameAxisTextStyle {
     color?: string | object;
-    fontStyle?: TdfontStyle;
+    fontStyle?: TdFontStyle;
     fontWeight?: TdFontWeight;
     fontFamily?: TdFontFamily;
     fontSize?: number;

@@ -24,7 +24,7 @@ declare enum TdFontFamily {
     Serif = "serif",
     Mono = "monospace",
 }
-declare enum TdfontStyle {
+declare enum TdFontStyle {
     Normal = "normal",
     Italic = "italic",
     Oblique = "oblique",
@@ -33,4 +33,4 @@ declare enum TdStatus {
     Show = "show",
     Hide = "hide",
 }
-export { TdAlign, TdfontStyle, TdFontWeight, TdVerticalAlign, TdFontFamily, TdPointerType, TdStatus };
+export { TdAlign, TdFontStyle, TdFontWeight, TdVerticalAlign, TdFontFamily, TdPointerType, TdStatus };

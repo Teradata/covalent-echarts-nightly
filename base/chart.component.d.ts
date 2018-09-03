@@ -4,8 +4,8 @@ import 'echarts/lib/component/legend';
 import 'echarts/lib/component/legendScroll';
 import 'echarts/lib/component/markArea';
 import 'echarts/lib/component/dataZoom';
-import { TdChartOptionsService } from './base.service';
-export declare class TdBaseChartComponent implements AfterViewInit, OnChanges, DoCheck, OnDestroy {
+import { TdChartOptionsService } from './chart.service';
+export declare class TdChartComponent implements AfterViewInit, OnChanges, DoCheck, OnDestroy {
     private _changeDetectorRef;
     private _elementRef;
     private _optionsService;
@@ -13,16 +13,14 @@ export declare class TdBaseChartComponent implements AfterViewInit, OnChanges, D
     private _widthSubject;
     private _heightSubject;
     private _resizing;
-    private _series;
     private _legend;
     private _instance;
-    private _options;
     readonly instance: any;
-    readonly options: any;
+    private _state;
+    private _options;
+    config: any;
     chartTitle: string;
     showLegend: boolean;
-    data: any[];
-    max: number;
     chartGroup: string;
     dataZoom: boolean;
     markAreaClick: EventEmitter<any>;

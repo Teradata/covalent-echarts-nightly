@@ -75,14 +75,14 @@ TdChartOptionsService.ctorParameters = () => [];
  * @param {?} parent
  * @return {?}
  */
-function BASE_CHART_PROVIDER_FACTORY(parent) {
+function CHART_PROVIDER_FACTORY(parent) {
     return parent || new TdChartOptionsService();
 }
-const BASE_CHART_PROVIDER = {
+const CHART_PROVIDER = {
     // If there is already a service available, use that. Otherwise, provide a new one.
     provide: TdChartOptionsService,
     deps: [[new Optional(), new SkipSelf(), TdChartOptionsService]],
-    useFactory: BASE_CHART_PROVIDER_FACTORY,
+    useFactory: CHART_PROVIDER_FACTORY,
 };
 
 /**
@@ -121,7 +121,7 @@ function assignDefined(target, ...sources) {
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
-class TdBaseChartComponent {
+class TdChartComponent {
     /**
      * @param {?} _changeDetectorRef
      * @param {?} _elementRef
@@ -134,7 +134,9 @@ class TdBaseChartComponent {
         this._widthSubject = new Subject();
         this._heightSubject = new Subject();
         this._resizing = false;
+        this._state = {};
         this._options = {};
+        this.config = {};
         this.showLegend = true;
         this.dataZoom = true;
         this.markAreaClick = new EventEmitter();
@@ -144,12 +146,6 @@ class TdBaseChartComponent {
      */
     get instance() {
         return this._instance;
-    }
-    /**
-     * @return {?}
-     */
-    get options() {
-        return this._options;
     }
     /**
      * @return {?}
@@ -213,43 +209,6 @@ class TdBaseChartComponent {
      */
     render() {
         if (this._instance) {
-            if (this.data && this.data instanceof Array) {
-                this._series = this.data.map((d) => {
-                    return {
-                        name: d.name,
-                        id: d.id,
-                        type: d.type ? d.type : 'line',
-                        stack: d.stack,
-                        data: d.data,
-                        color: d.color,
-                        connectNulls: false,
-                        barWidth: d.barWidth,
-                        barGap: d.barGap,
-                        z: d.z,
-                        lineStyle: {
-                            opacity: d.opacity,
-                            width: d.width,
-                            shadowBlur: d.shadowBlur,
-                            shadowColor: d.shadowColor,
-                            shadowOffsetX: d.shadowOffsetX,
-                            shadowOffsetY: d.shadowOffsetY,
-                        },
-                        itemStyle: {
-                            opacity: d.opacity,
-                        },
-                        showSymbol: false,
-                        areaStyle: d.area ? { opacity: d.opacity } : undefined,
-                        markArea: {
-                            data: d.markArea,
-                            itemStyle: {
-                                borderColor: '#464646',
-                                borderWidth: 1,
-                                opacity: d.markAreaOpacity ? d.markAreaOpacity : 0.1,
-                            },
-                        },
-                    };
-                });
-            }
             this._legend = {
                 show: this.showLegend,
                 type: 'scroll',
@@ -258,8 +217,7 @@ class TdBaseChartComponent {
                 // 'vertical'
                 right: '5',
                 bottom: '5',
-                data: this.data && this.data instanceof Array ? this.data.map((d) => d.name) : [],
-            }, this._instance.setOption(Object.assign({}, {
+            }, this._instance.setOption(assignDefined(this._state, {
                     grid: {
                         show: true,
                         left: '20',
@@ -279,32 +237,31 @@ class TdBaseChartComponent {
                     // throws error if its empty
                     yAxis: [{}],
                     // throws error if its empty
-                    series: this._series,
-                }, this._options), true);
+                    series: [],
+                }, this.config ? this.config : {}, this._options), true);
             this._changeDetectorRef.markForCheck();
         }
     }
 }
-TdBaseChartComponent.decorators = [
+TdChartComponent.decorators = [
     { type: Component, args: [{
-                selector: 'td-base-chart',
+                selector: 'td-chart',
                 template: ``,
                 styles: [`:host{display:block}`],
                 changeDetection: ChangeDetectionStrategy.OnPush,
-                providers: [BASE_CHART_PROVIDER],
+                providers: [CHART_PROVIDER],
             },] },
 ];
 /** @nocollapse */
-TdBaseChartComponent.ctorParameters = () => [
+TdChartComponent.ctorParameters = () => [
     { type: ChangeDetectorRef, },
     { type: ElementRef, },
     { type: TdChartOptionsService, },
 ];
-TdBaseChartComponent.propDecorators = {
+TdChartComponent.propDecorators = {
+    "config": [{ type: Input, args: ['config',] },],
     "chartTitle": [{ type: Input, args: ['chartTitle',] },],
     "showLegend": [{ type: Input, args: ['showLegend',] },],
-    "data": [{ type: Input, args: ['data',] },],
-    "max": [{ type: Input, args: ['max',] },],
     "chartGroup": [{ type: Input, args: ['chartGroup',] },],
     "dataZoom": [{ type: Input, args: ['dataZoom',] },],
     "markAreaClick": [{ type: Output, args: ['markAreaClick',] },],
@@ -674,7 +631,7 @@ TdChartYAxisComponent.propDecorators = {
  * @suppress {checkTypes} checked by tsc
  */
 const BASE_MODULE_COMPONENTS = [
-    TdBaseChartComponent,
+    TdChartComponent,
     TdChartTooltipComponent,
     TdChartTooltipFormatterDirective,
     TdChartXAxisComponent,
@@ -716,5 +673,5 @@ CovalentBaseEchartsModule.ctorParameters = () => [];
  * Generated bundle index. Do not edit.
  */
 
-export { TdBaseChartComponent, TdChartOptionsService, BASE_CHART_PROVIDER, TdXAxisPosition, TdYAxisPosition, TdAxisLineType, TdNameLocation, TdAxisType, BASE_MODULE_COMPONENTS, CovalentBaseEchartsModule, TdChartAxisComponent as ɵe, TdChartXAxisComponent as ɵd, TdChartYAxisComponent as ɵf, BASE_CHART_PROVIDER_FACTORY as ɵa, TdChartTooltipComponent as ɵc, TdChartTooltipFormatterDirective as ɵb };
+export { TdChartComponent, TdChartOptionsService, CHART_PROVIDER, TdXAxisPosition, TdYAxisPosition, TdAxisLineType, TdNameLocation, TdAxisType, BASE_MODULE_COMPONENTS, CovalentBaseEchartsModule, assignDefined, TdChartAxisComponent as ɵe, TdChartXAxisComponent as ɵd, TdChartYAxisComponent as ɵf, CHART_PROVIDER_FACTORY as ɵa, TdChartTooltipComponent as ɵc, TdChartTooltipFormatterDirective as ɵb };
 //# sourceMappingURL=covalent-echarts-base.js.map

@@ -1,5 +1,5 @@
 import { OnChanges, OnInit, OnDestroy } from '@angular/core';
-import { TdChartOptionsService } from '../base.service';
+import { TdChartOptionsService } from '../chart.service';
 import { IAxisLine, IAxisLabel, IAxisTick, ISplitLine, ISplitArea, IAxisPointer, TdAxisType, TdNameLocation, TdXAxisPosition, TdYAxisPosition } from './axis.interface';
 export declare abstract class TdChartAxisComponent implements OnChanges, OnInit, OnDestroy {
     private _axisOption;
