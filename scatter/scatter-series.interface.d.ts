@@ -3,6 +3,7 @@ interface ITdScatterSeries {
     type?: TdSeriesType;
     id?: string;
     name?: string;
+    color?: string;
     coordinateSystem?: TdCoordinateSystem;
     xAxisIndex?: number;
     yAxisIndex?: number;

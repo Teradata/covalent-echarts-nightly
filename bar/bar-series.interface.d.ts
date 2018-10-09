@@ -3,6 +3,7 @@ interface ITdBarSeries {
     type?: TdSeriesType;
     id?: string;
     name?: string;
+    color?: string;
     legendHoverLink?: boolean;
     coordinateSystem?: TdCoordinateSystem;
     xAxisIndex?: number;
