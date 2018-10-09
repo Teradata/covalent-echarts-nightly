@@ -1,6 +1,6 @@
 import { Component, Input, ChangeDetectionStrategy, NgModule } from '@angular/core';
 import 'echarts/lib/chart/line';
-import { TdChartOptionsService, assignDefined } from '@covalent/echarts/base';
+import { TdChartOptionsService, assignDefined, TdSeriesType } from '@covalent/echarts/base';
 import { CommonModule } from '@angular/common';
 
 /**
@@ -13,7 +13,7 @@ class TdChartSeriesLineComponent {
      */
     constructor(_optionsService) {
         this._optionsService = _optionsService;
-        this._type = 'line';
+        this._type = TdSeriesType.Line;
         this._state = {};
         this.config = {};
     }
@@ -113,7 +113,6 @@ TdChartSeriesLineComponent.ctorParameters = () => [
 TdChartSeriesLineComponent.propDecorators = {
     "config": [{ type: Input, args: ['config',] },],
     "id": [{ type: Input, args: ['id',] },],
-    "type": [{ type: Input, args: ['type',] },],
     "name": [{ type: Input, args: ['name',] },],
     "coordinateSystem": [{ type: Input, args: ['coordinateSystem',] },],
     "xAxisIndex": [{ type: Input, args: ['xAxisIndex',] },],
@@ -192,6 +191,18 @@ CovalentLineEchartsModule.ctorParameters = () => [];
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
+/** @enum {string} */
+const TdSampling = {
+    Average: 'average',
+    Max: 'max',
+    Min: 'min',
+    Sum: 'sum',
+};
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
 
 /**
  * @fileoverview added by tsickle
@@ -206,5 +217,5 @@ CovalentLineEchartsModule.ctorParameters = () => [];
  * Generated bundle index. Do not edit.
  */
 
-export { LINE_MODULE_COMPONENTS, CovalentLineEchartsModule, TdChartSeriesLineComponent as ɵa };
+export { LINE_MODULE_COMPONENTS, CovalentLineEchartsModule, TdSampling, TdChartSeriesLineComponent as ɵa };
 //# sourceMappingURL=covalent-echarts-line.js.map

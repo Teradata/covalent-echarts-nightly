@@ -1,6 +1,6 @@
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('rxjs'), require('rxjs/operators'), require('echarts/lib/echarts'), require('echarts/lib/component/title'), require('echarts/lib/component/legend'), require('echarts/lib/component/legendScroll'), require('echarts/lib/component/markArea'), require('echarts/lib/component/dataZoom'), require('@angular/common'), require('echarts/lib/chart/bar'), require('@covalent/echarts/base'), require('echarts/lib/chart/line')) :
-	typeof define === 'function' && define.amd ? define('@covalent/echarts', ['exports', '@angular/core', 'rxjs', 'rxjs/operators', 'echarts/lib/echarts', 'echarts/lib/component/title', 'echarts/lib/component/legend', 'echarts/lib/component/legendScroll', 'echarts/lib/component/markArea', 'echarts/lib/component/dataZoom', '@angular/common', 'echarts/lib/chart/bar', '@covalent/echarts/base', 'echarts/lib/chart/line'], factory) :
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('rxjs'), require('rxjs/operators'), require('echarts/lib/echarts'), require('echarts/lib/component/title'), require('echarts/lib/component/legend'), require('echarts/lib/component/legendScroll'), require('echarts/lib/component/markArea'), require('echarts/lib/component/dataZoom'), require('@angular/common'), require('echarts/lib/chart/bar'), require('@covalent/echarts/base'), require('echarts/lib/chart/line'), require('echarts/lib/chart/scatter')) :
+	typeof define === 'function' && define.amd ? define('@covalent/echarts', ['exports', '@angular/core', 'rxjs', 'rxjs/operators', 'echarts/lib/echarts', 'echarts/lib/component/title', 'echarts/lib/component/legend', 'echarts/lib/component/legendScroll', 'echarts/lib/component/markArea', 'echarts/lib/component/dataZoom', '@angular/common', 'echarts/lib/chart/bar', '@covalent/echarts/base', 'echarts/lib/chart/line', 'echarts/lib/chart/scatter'], factory) :
 	(factory((global.covalent = global.covalent || {}, global.covalent.echarts = {}),global.ng.core,global.rxjs,global.Rx.Observable.prototype,global.echarts,null,null,null,null,null,global.ng.common,null,global.covalent.echarts.base));
 }(this, (function (exports,core,rxjs,operators,echarts,title,legend,legendScroll,markArea,dataZoom,common,bar,base) { 'use strict';
 
@@ -415,11 +415,6 @@ var TdXAxisPosition = {
     Top: 'top',
     Bottom: 'bottom',
 };
-var TdAxisLineType = {
-    Solid: 'solid',
-    Dashed: 'dashed',
-    Dotted: 'dotted',
-};
 var TdChartAxisComponent = /** @class */ (function () {
     function TdChartAxisComponent(_axisOption, _optionsService) {
         this._axisOption = _axisOption;
@@ -575,6 +570,177 @@ CovalentBaseEchartsModule.decorators = [
             },] },
 ];
 CovalentBaseEchartsModule.ctorParameters = function () { return []; };
+var TdAxisPointerAxis = {
+    X: 'x',
+    Y: 'y',
+    Radius: 'radius',
+    Angle: 'angle',
+};
+var TdToolTipTrigger = {
+    Item: 'item',
+    Axis: 'axis',
+    None: 'none',
+};
+var TdTriggerOn = {
+    Mousemove: 'mousemove',
+    Click: 'click',
+    None: 'none',
+};
+var TdToolPointerType = {
+    Line: 'line',
+    Shadow: 'shadow',
+    Cross: 'cross',
+};
+var TdLabelPosition = {
+    Top: 'top',
+    Left: 'left',
+    Right: 'right',
+    Bottom: 'bottom',
+    Inside: 'inside',
+    InsideLeft: 'insideLeft',
+    InsideRight: 'insideRight',
+    InsideTop: 'insideTop',
+    InsideBottom: 'insideBottom',
+    InsideTopLeft: 'insideTopLeft',
+    InsideBottomLeft: 'insideBottomLeft',
+    InsideTopRight: 'insideTopRight',
+    InsideBottomRight: 'insideBottomRight',
+};
+var TdAlign = {
+    Left: 'left',
+    Center: 'center',
+    Right: 'right',
+};
+var TdLineType = {
+    Solid: 'solid',
+    Dashed: 'dashed',
+    Dotted: 'dotted',
+};
+var TdAreaOrigin = {
+    Auto: 'auto',
+    Start: 'start',
+    End: 'end',
+};
+var TdLineLabelPosition = {
+    Middle: 'middle',
+    Start: 'start',
+    End: 'end',
+};
+var TdTooltipPosition = {
+    Inside: 'inside',
+    Top: 'top',
+    Left: 'left',
+    Right: 'right',
+    Bottom: 'bottom',
+};
+var TdFontWeight = {
+    Normal: 'normal',
+    Bold: 'bold',
+    Bolder: 'bolder',
+    Lighter: 'lighter',
+};
+var TdVerticalAlign = {
+    Top: 'top',
+    Middle: 'middle',
+    Bottom: 'bottom',
+    Center: 'center',
+};
+var TdPointerType = {
+    Line: 'line',
+    Shadow: 'shadow',
+};
+var TdFontFamily = {
+    Sans: 'sans-serif',
+    Serif: 'serif',
+    Mono: 'monospace',
+};
+var TdFontStyle = {
+    Normal: 'normal',
+    Italic: 'italic',
+    Oblique: 'oblique',
+};
+var TdStatus = {
+    Show: 'show',
+    Hide: 'hide',
+};
+var TdMarkPointSymbol = {
+    Circle: 'circle',
+    Rect: 'rect',
+    RoundRect: 'roundRect',
+    Triangle: 'triangle',
+    Diamond: 'diamond',
+    Pin: 'pin',
+    Arrow: 'arrow',
+    None: 'none',
+};
+var TdAnimationEasing = {
+    Linear: 'linear',
+    QuadraticIn: 'quadraticIn',
+    QuadraticOut: 'quadraticOut',
+    QuadraticInOut: 'quadraticInOut',
+    CubicIn: 'cubicIn',
+    CubicOut: 'cubicOut',
+    CubicInOut: 'cubicInOut',
+    QuarticIn: 'quarticIn',
+    QuarticOut: 'quarticOut',
+    QuarticInOut: 'quarticInOut',
+    QuinticIn: 'quinticIn',
+    QuinticOut: 'quinticOut',
+    QuinticInOut: 'quinticInOut',
+    SinusoidalIn: 'sinusoidalIn',
+    SinusoidalOut: 'sinusoidalOut',
+    SinusoidalInOut: 'sinusoidalInOut',
+    ExponentialIn: 'exponentialIn',
+    ExponentialOut: 'exponentialOut',
+    ExponentialInOut: 'exponentialInOut',
+    CircularIn: 'circularIn',
+    CircularOut: 'circularOut',
+    CircularInOut: 'circularInOut',
+    ElasticIn: 'elasticIn',
+    ElasticOut: 'elasticOut',
+    ElasticInOut: 'elasticInOut',
+    BackIn: 'backIn',
+    BackOut: 'backOut',
+    BackInOut: 'backInOut',
+    BounceOut: 'bounceOut',
+    BounceInOut: 'bounceInOut',
+};
+var TdCoordinateSystem = {
+    Cartesian2d: 'cartesian2d',
+    Polar: 'polar',
+};
+var TdSeriesLayoutBy = {
+    Column: 'column',
+    Row: 'row',
+};
+var TdProgressiveChunkMode = {
+    sequential: 'sequential',
+    Mod: 'mod',
+};
+var TdSeriesType$1 = {
+    Line: 'line',
+    Bar: 'bar',
+    Pie: 'pie',
+    Scatter: 'scatter',
+    EffectScatter: 'effectScatter',
+    Radar: 'radar',
+    Tree: 'tree',
+    Treemap: 'treemap',
+    Sunburst: 'sunburst',
+    Boxplot: 'boxplot',
+    Candlestick: 'candlestick',
+    Heatmap: 'heatmap',
+    Map: 'map',
+    Parallel: 'parallel',
+    Lines: 'lines',
+    Graph: 'graph',
+    Sankey: 'sankey',
+    Funnel: 'funnel',
+    Gauge: 'gauge',
+    PictorialBar: 'pictorialBar',
+    ThemeRiver: 'themeRiver',
+    Custom: 'custom',
+};
 var TdChartSeriesBarComponent = /** @class */ (function () {
     function TdChartSeriesBarComponent(_optionsService) {
         this._optionsService = _optionsService;
@@ -720,7 +886,7 @@ CovalentBarEchartsModule.ctorParameters = function () { return []; };
 var TdChartSeriesLineComponent = /** @class */ (function () {
     function TdChartSeriesLineComponent(_optionsService) {
         this._optionsService = _optionsService;
-        this._type = 'line';
+        this._type = base.TdSeriesType.Line;
         this._state = {};
         this.config = {};
     }
@@ -805,7 +971,6 @@ TdChartSeriesLineComponent.ctorParameters = function () { return [
 TdChartSeriesLineComponent.propDecorators = {
     "config": [{ type: core.Input, args: ['config',] },],
     "id": [{ type: core.Input, args: ['id',] },],
-    "type": [{ type: core.Input, args: ['type',] },],
     "name": [{ type: core.Input, args: ['name',] },],
     "coordinateSystem": [{ type: core.Input, args: ['coordinateSystem',] },],
     "xAxisIndex": [{ type: core.Input, args: ['xAxisIndex',] },],
@@ -876,15 +1041,194 @@ CovalentLineEchartsModule.decorators = [
             },] },
 ];
 CovalentLineEchartsModule.ctorParameters = function () { return []; };
+var TdSampling = {
+    Average: 'average',
+    Max: 'max',
+    Min: 'min',
+    Sum: 'sum',
+};
+var TdChartSeriesScatterComponent = /** @class */ (function () {
+    function TdChartSeriesScatterComponent(_optionsService) {
+        this._optionsService = _optionsService;
+        this._type = base.TdSeriesType.Scatter;
+        this._state = {};
+        this.config = {};
+    }
+    TdChartSeriesScatterComponent.prototype.ngOnInit = function () {
+        this._setOptions();
+    };
+    TdChartSeriesScatterComponent.prototype.ngOnChanges = function () {
+        this._setOptions();
+    };
+    TdChartSeriesScatterComponent.prototype.ngOnDestroy = function () {
+        this._removeOption();
+    };
+    TdChartSeriesScatterComponent.prototype._setOptions = function () {
+        var config = base.assignDefined(this._state, this.config, {
+            id: this.id,
+            name: this.name,
+            type: this._type,
+            coordinateSystem: this.coordinateSystem,
+            xAxisIndex: this.xAxisIndex,
+            yAxisIndex: this.yAxisIndex,
+            polarIndex: this.polarIndex,
+            geoIndex: this.geoIndex,
+            calendarIndex: this.calendarIndex,
+            hoverAnimation: this.hoverAnimation,
+            legendHoverLink: this.legendHoverLink,
+            symbol: this.symbol,
+            symbolSize: this.symbolSize,
+            symbolRotate: this.symbolRotate,
+            symbolKeepAspect: this.symbolKeepAspect,
+            symbolOffset: this.symbolOffset,
+            large: this.large,
+            largeThreshold: this.largeThreshold,
+            cursor: this.cursor,
+            label: this.label,
+            itemStyle: this.itemStyle,
+            emphasis: this.emphasis,
+            progressive: this.progressive,
+            progressiveThreshold: this.progressiveThreshold,
+            dimensions: this.dimensions,
+            encode: this.encode,
+            seriesLayoutBy: this.seriesLayoutBy,
+            datasetIndex: this.datasetIndex,
+            data: this.data,
+            markPoint: this.markPoint,
+            markLine: this.markLine,
+            markArea: this.markArea,
+            zlevel: this.zlevel,
+            z: this.z,
+            silent: this.silent,
+            animation: this.animation,
+            animationThreshold: this.animationThreshold,
+            animationDuration: this.animationDuration,
+            animationEasing: this.animationEasing,
+            animationDelay: this.animationDelay,
+            animationDurationUpdate: this.animationDurationUpdate,
+            animationEasingUpdate: this.animationEasingUpdate,
+            animationDelayUpdate: this.animationDelayUpdate,
+            tooltip: this.tooltip,
+        });
+        this._optionsService.setArrayOption('series', config);
+    };
+    TdChartSeriesScatterComponent.prototype._removeOption = function () {
+        this._optionsService.clearOption('series');
+    };
+    return TdChartSeriesScatterComponent;
+}());
+TdChartSeriesScatterComponent.decorators = [
+    { type: core.Component, args: [{
+                selector: 'td-chart-series[td-scatter]',
+                template: '',
+                changeDetection: core.ChangeDetectionStrategy.OnPush,
+            },] },
+];
+TdChartSeriesScatterComponent.ctorParameters = function () { return [
+    { type: base.TdChartOptionsService, },
+]; };
+TdChartSeriesScatterComponent.propDecorators = {
+    "config": [{ type: core.Input, args: ['config',] },],
+    "id": [{ type: core.Input, args: ['id',] },],
+    "name": [{ type: core.Input, args: ['name',] },],
+    "coordinateSystem": [{ type: core.Input, args: ['coordinateSystem',] },],
+    "xAxisIndex": [{ type: core.Input, args: ['xAxisIndex',] },],
+    "yAxisIndex": [{ type: core.Input, args: ['yAxisIndex',] },],
+    "polarIndex": [{ type: core.Input, args: ['polarIndex',] },],
+    "geoIndex": [{ type: core.Input, args: ['geoIndex',] },],
+    "calendarIndex": [{ type: core.Input, args: ['calendarIndex',] },],
+    "hoverAnimation": [{ type: core.Input, args: ['hoverAnimation',] },],
+    "legendHoverLink": [{ type: core.Input, args: ['legendHoverLink',] },],
+    "symbol": [{ type: core.Input, args: ['symbol',] },],
+    "symbolSize": [{ type: core.Input, args: ['symbolSize',] },],
+    "symbolRotate": [{ type: core.Input, args: ['symbolRotate',] },],
+    "symbolKeepAspect": [{ type: core.Input, args: ['symbolKeepAspect',] },],
+    "symbolOffset": [{ type: core.Input, args: ['symbolOffset',] },],
+    "large": [{ type: core.Input, args: ['large',] },],
+    "largeThreshold": [{ type: core.Input, args: ['largeThreshold',] },],
+    "cursor": [{ type: core.Input, args: ['cursor',] },],
+    "label": [{ type: core.Input, args: ['label',] },],
+    "itemStyle": [{ type: core.Input, args: ['itemStyle',] },],
+    "emphasis": [{ type: core.Input, args: ['emphasis',] },],
+    "progressive": [{ type: core.Input, args: ['progressive',] },],
+    "progressiveThreshold": [{ type: core.Input, args: ['progressiveThreshold',] },],
+    "dimensions": [{ type: core.Input, args: ['dimensions',] },],
+    "encode": [{ type: core.Input, args: ['encode',] },],
+    "seriesLayoutBy": [{ type: core.Input, args: ['seriesLayoutBy',] },],
+    "datasetIndex": [{ type: core.Input, args: ['datasetIndex',] },],
+    "data": [{ type: core.Input, args: ['data',] },],
+    "markPoint": [{ type: core.Input, args: ['markPoint',] },],
+    "markLine": [{ type: core.Input, args: ['markLine',] },],
+    "markArea": [{ type: core.Input, args: ['markArea',] },],
+    "zlevel": [{ type: core.Input, args: ['zlevel',] },],
+    "z": [{ type: core.Input, args: ['z',] },],
+    "silent": [{ type: core.Input, args: ['silent',] },],
+    "animation": [{ type: core.Input, args: ['animation',] },],
+    "animationThreshold": [{ type: core.Input, args: ['animationThreshold',] },],
+    "animationDuration": [{ type: core.Input, args: ['animationDuration',] },],
+    "animationEasing": [{ type: core.Input, args: ['animationEasing',] },],
+    "animationDelay": [{ type: core.Input, args: ['animationDelay',] },],
+    "animationDurationUpdate": [{ type: core.Input, args: ['animationDurationUpdate',] },],
+    "animationEasingUpdate": [{ type: core.Input, args: ['animationEasingUpdate',] },],
+    "animationDelayUpdate": [{ type: core.Input, args: ['animationDelayUpdate',] },],
+    "tooltip": [{ type: core.Input, args: ['tooltip',] },],
+};
+var SCATTER_MODULE_COMPONENTS = [
+    TdChartSeriesScatterComponent,
+];
+var CovalentScatterEchartsModule = /** @class */ (function () {
+    function CovalentScatterEchartsModule() {
+    }
+    return CovalentScatterEchartsModule;
+}());
+CovalentScatterEchartsModule.decorators = [
+    { type: core.NgModule, args: [{
+                imports: [
+                    common.CommonModule,
+                ],
+                declarations: [
+                    SCATTER_MODULE_COMPONENTS,
+                ],
+                exports: [
+                    SCATTER_MODULE_COMPONENTS,
+                ],
+            },] },
+];
+CovalentScatterEchartsModule.ctorParameters = function () { return []; };
 
 exports.TdChartComponent = TdChartComponent;
+exports.TdChartAxisComponent = TdChartAxisComponent;
+exports.TdChartYAxisComponent = TdChartYAxisComponent;
+exports.TdChartXAxisComponent = TdChartXAxisComponent;
+exports.TdChartTooltipComponent = TdChartTooltipComponent;
 exports.TdChartOptionsService = TdChartOptionsService$1;
 exports.CHART_PROVIDER = CHART_PROVIDER;
-exports.TdXAxisPosition = TdXAxisPosition;
 exports.TdYAxisPosition = TdYAxisPosition;
-exports.TdAxisLineType = TdAxisLineType;
+exports.TdXAxisPosition = TdXAxisPosition;
 exports.TdNameLocation = TdNameLocation;
 exports.TdAxisType = TdAxisType;
+exports.TdAlign = TdAlign;
+exports.TdFontStyle = TdFontStyle;
+exports.TdFontWeight = TdFontWeight;
+exports.TdVerticalAlign = TdVerticalAlign;
+exports.TdFontFamily = TdFontFamily;
+exports.TdPointerType = TdPointerType;
+exports.TdStatus = TdStatus;
+exports.TdLineType = TdLineType;
+exports.TdToolTipTrigger = TdToolTipTrigger;
+exports.TdLabelPosition = TdLabelPosition;
+exports.TdToolPointerType = TdToolPointerType;
+exports.TdTriggerOn = TdTriggerOn;
+exports.TdAreaOrigin = TdAreaOrigin;
+exports.TdMarkPointSymbol = TdMarkPointSymbol;
+exports.TdAnimationEasing = TdAnimationEasing;
+exports.TdTooltipPosition = TdTooltipPosition;
+exports.TdLineLabelPosition = TdLineLabelPosition;
+exports.TdAxisPointerAxis = TdAxisPointerAxis;
+exports.TdSeriesType = TdSeriesType$1;
+exports.TdCoordinateSystem = TdCoordinateSystem;
+exports.TdSeriesLayoutBy = TdSeriesLayoutBy;
+exports.TdProgressiveChunkMode = TdProgressiveChunkMode;
 exports.BASE_MODULE_COMPONENTS = BASE_MODULE_COMPONENTS;
 exports.CovalentBaseEchartsModule = CovalentBaseEchartsModule;
 exports.assignDefined = assignDefined$1;
@@ -892,14 +1236,14 @@ exports.BAR_MODULE_COMPONENTS = BAR_MODULE_COMPONENTS;
 exports.CovalentBarEchartsModule = CovalentBarEchartsModule;
 exports.LINE_MODULE_COMPONENTS = LINE_MODULE_COMPONENTS;
 exports.CovalentLineEchartsModule = CovalentLineEchartsModule;
-exports.ɵg = TdChartSeriesBarComponent;
-exports.ɵe = TdChartAxisComponent;
-exports.ɵd = TdChartXAxisComponent;
-exports.ɵf = TdChartYAxisComponent;
-exports.ɵa = CHART_PROVIDER_FACTORY;
-exports.ɵc = TdChartTooltipComponent;
-exports.ɵb = TdChartTooltipFormatterDirective;
-exports.ɵh = TdChartSeriesLineComponent;
+exports.TdSampling = TdSampling;
+exports.SCATTER_MODULE_COMPONENTS = SCATTER_MODULE_COMPONENTS;
+exports.CovalentScatterEchartsModule = CovalentScatterEchartsModule;
+exports.ɵc = TdChartSeriesBarComponent;
+exports.ɵb = CHART_PROVIDER_FACTORY;
+exports.ɵa = TdChartTooltipFormatterDirective;
+exports.ɵd = TdChartSeriesLineComponent;
+exports.ɵe = TdChartSeriesScatterComponent;
 
 Object.defineProperty(exports, '__esModule', { value: true });
 

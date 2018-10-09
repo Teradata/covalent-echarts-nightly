@@ -378,11 +378,6 @@ var TdXAxisPosition = {
     Top: 'top',
     Bottom: 'bottom',
 };
-var TdAxisLineType = {
-    Solid: 'solid',
-    Dashed: 'dashed',
-    Dotted: 'dotted',
-};
 var TdChartAxisComponent = /** @class */ (function () {
     function TdChartAxisComponent(_axisOption, _optionsService) {
         this._axisOption = _axisOption;
@@ -538,6 +533,177 @@ CovalentBaseEchartsModule.decorators = [
             },] },
 ];
 CovalentBaseEchartsModule.ctorParameters = function () { return []; };
+var TdAxisPointerAxis = {
+    X: 'x',
+    Y: 'y',
+    Radius: 'radius',
+    Angle: 'angle',
+};
+var TdToolTipTrigger = {
+    Item: 'item',
+    Axis: 'axis',
+    None: 'none',
+};
+var TdTriggerOn = {
+    Mousemove: 'mousemove',
+    Click: 'click',
+    None: 'none',
+};
+var TdToolPointerType = {
+    Line: 'line',
+    Shadow: 'shadow',
+    Cross: 'cross',
+};
+var TdLabelPosition = {
+    Top: 'top',
+    Left: 'left',
+    Right: 'right',
+    Bottom: 'bottom',
+    Inside: 'inside',
+    InsideLeft: 'insideLeft',
+    InsideRight: 'insideRight',
+    InsideTop: 'insideTop',
+    InsideBottom: 'insideBottom',
+    InsideTopLeft: 'insideTopLeft',
+    InsideBottomLeft: 'insideBottomLeft',
+    InsideTopRight: 'insideTopRight',
+    InsideBottomRight: 'insideBottomRight',
+};
+var TdAlign = {
+    Left: 'left',
+    Center: 'center',
+    Right: 'right',
+};
+var TdLineType = {
+    Solid: 'solid',
+    Dashed: 'dashed',
+    Dotted: 'dotted',
+};
+var TdAreaOrigin = {
+    Auto: 'auto',
+    Start: 'start',
+    End: 'end',
+};
+var TdLineLabelPosition = {
+    Middle: 'middle',
+    Start: 'start',
+    End: 'end',
+};
+var TdTooltipPosition = {
+    Inside: 'inside',
+    Top: 'top',
+    Left: 'left',
+    Right: 'right',
+    Bottom: 'bottom',
+};
+var TdFontWeight = {
+    Normal: 'normal',
+    Bold: 'bold',
+    Bolder: 'bolder',
+    Lighter: 'lighter',
+};
+var TdVerticalAlign = {
+    Top: 'top',
+    Middle: 'middle',
+    Bottom: 'bottom',
+    Center: 'center',
+};
+var TdPointerType = {
+    Line: 'line',
+    Shadow: 'shadow',
+};
+var TdFontFamily = {
+    Sans: 'sans-serif',
+    Serif: 'serif',
+    Mono: 'monospace',
+};
+var TdFontStyle = {
+    Normal: 'normal',
+    Italic: 'italic',
+    Oblique: 'oblique',
+};
+var TdStatus = {
+    Show: 'show',
+    Hide: 'hide',
+};
+var TdMarkPointSymbol = {
+    Circle: 'circle',
+    Rect: 'rect',
+    RoundRect: 'roundRect',
+    Triangle: 'triangle',
+    Diamond: 'diamond',
+    Pin: 'pin',
+    Arrow: 'arrow',
+    None: 'none',
+};
+var TdAnimationEasing = {
+    Linear: 'linear',
+    QuadraticIn: 'quadraticIn',
+    QuadraticOut: 'quadraticOut',
+    QuadraticInOut: 'quadraticInOut',
+    CubicIn: 'cubicIn',
+    CubicOut: 'cubicOut',
+    CubicInOut: 'cubicInOut',
+    QuarticIn: 'quarticIn',
+    QuarticOut: 'quarticOut',
+    QuarticInOut: 'quarticInOut',
+    QuinticIn: 'quinticIn',
+    QuinticOut: 'quinticOut',
+    QuinticInOut: 'quinticInOut',
+    SinusoidalIn: 'sinusoidalIn',
+    SinusoidalOut: 'sinusoidalOut',
+    SinusoidalInOut: 'sinusoidalInOut',
+    ExponentialIn: 'exponentialIn',
+    ExponentialOut: 'exponentialOut',
+    ExponentialInOut: 'exponentialInOut',
+    CircularIn: 'circularIn',
+    CircularOut: 'circularOut',
+    CircularInOut: 'circularInOut',
+    ElasticIn: 'elasticIn',
+    ElasticOut: 'elasticOut',
+    ElasticInOut: 'elasticInOut',
+    BackIn: 'backIn',
+    BackOut: 'backOut',
+    BackInOut: 'backInOut',
+    BounceOut: 'bounceOut',
+    BounceInOut: 'bounceInOut',
+};
+var TdCoordinateSystem = {
+    Cartesian2d: 'cartesian2d',
+    Polar: 'polar',
+};
+var TdSeriesLayoutBy = {
+    Column: 'column',
+    Row: 'row',
+};
+var TdProgressiveChunkMode = {
+    sequential: 'sequential',
+    Mod: 'mod',
+};
+var TdSeriesType = {
+    Line: 'line',
+    Bar: 'bar',
+    Pie: 'pie',
+    Scatter: 'scatter',
+    EffectScatter: 'effectScatter',
+    Radar: 'radar',
+    Tree: 'tree',
+    Treemap: 'treemap',
+    Sunburst: 'sunburst',
+    Boxplot: 'boxplot',
+    Candlestick: 'candlestick',
+    Heatmap: 'heatmap',
+    Map: 'map',
+    Parallel: 'parallel',
+    Lines: 'lines',
+    Graph: 'graph',
+    Sankey: 'sankey',
+    Funnel: 'funnel',
+    Gauge: 'gauge',
+    PictorialBar: 'pictorialBar',
+    ThemeRiver: 'themeRiver',
+    Custom: 'custom',
+};
 
-export { TdChartComponent, TdChartOptionsService, CHART_PROVIDER, TdXAxisPosition, TdYAxisPosition, TdAxisLineType, TdNameLocation, TdAxisType, BASE_MODULE_COMPONENTS, CovalentBaseEchartsModule, assignDefined, TdChartAxisComponent as ɵe, TdChartXAxisComponent as ɵd, TdChartYAxisComponent as ɵf, CHART_PROVIDER_FACTORY as ɵa, TdChartTooltipComponent as ɵc, TdChartTooltipFormatterDirective as ɵb };
+export { TdChartComponent, TdChartAxisComponent, TdChartYAxisComponent, TdChartXAxisComponent, TdChartTooltipComponent, TdChartOptionsService, CHART_PROVIDER, TdYAxisPosition, TdXAxisPosition, TdNameLocation, TdAxisType, TdAlign, TdFontStyle, TdFontWeight, TdVerticalAlign, TdFontFamily, TdPointerType, TdStatus, TdLineType, TdToolTipTrigger, TdLabelPosition, TdToolPointerType, TdTriggerOn, TdAreaOrigin, TdMarkPointSymbol, TdAnimationEasing, TdTooltipPosition, TdLineLabelPosition, TdAxisPointerAxis, TdSeriesType, TdCoordinateSystem, TdSeriesLayoutBy, TdProgressiveChunkMode, BASE_MODULE_COMPONENTS, CovalentBaseEchartsModule, assignDefined, CHART_PROVIDER_FACTORY as ɵb, TdChartTooltipFormatterDirective as ɵa };
 //# sourceMappingURL=covalent-echarts-base.js.map

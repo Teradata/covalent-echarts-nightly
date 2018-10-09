@@ -1,6 +1,6 @@
 import { OnChanges, OnInit, OnDestroy } from '@angular/core';
 import 'echarts/lib/chart/bar';
-import { TdChartOptionsService } from '@covalent/echarts/base';
+import { TdChartOptionsService, TdCoordinateSystem, ITdItemStyle, ITdEmphasis, TdSeriesLayoutBy, ITdMarkPoint, ITdMarkLine, ITdMarkArea, ITdSeriesTooltip } from '@covalent/echarts/base';
 export declare class TdChartSeriesBarComponent implements OnChanges, OnInit, OnDestroy {
     private _optionsService;
     private _type;
@@ -8,15 +8,15 @@ export declare class TdChartSeriesBarComponent implements OnChanges, OnInit, OnD
     config: any;
     id: string;
     name: string;
-    coordinateSystem: string;
+    coordinateSystem: TdCoordinateSystem;
     xAxisIndex: number;
     yAxisIndex: number;
     legendHoverLink: boolean;
     stack: string;
     cursor: string;
     label: any;
-    itemStyle: any;
-    emphasis: any;
+    itemStyle: ITdItemStyle;
+    emphasis: ITdEmphasis;
     barWidth: number;
     barMaxWidth: number;
     barMinHeight: number;
@@ -29,12 +29,12 @@ export declare class TdChartSeriesBarComponent implements OnChanges, OnInit, OnD
     progressiveChunkMode: string;
     dimensions: any[];
     encode: any;
-    seriesLayoutBy: string;
+    seriesLayoutBy: TdSeriesLayoutBy;
     datasetIndex: number;
     data: any[];
-    markPoint: any;
-    markLine: any;
-    markArea: any;
+    markPoint: ITdMarkPoint;
+    markLine: ITdMarkLine;
+    markArea: ITdMarkArea;
     zlevel: number;
     z: number;
     animation: boolean;
@@ -45,7 +45,7 @@ export declare class TdChartSeriesBarComponent implements OnChanges, OnInit, OnD
     animationDurationUpdate: number | Function;
     animationEasingUpdate: string;
     animationDelayUpdate: number | Function;
-    tooltip: any;
+    tooltip: ITdSeriesTooltip;
     constructor(_optionsService: TdChartOptionsService);
     ngOnInit(): void;
     ngOnChanges(): void;

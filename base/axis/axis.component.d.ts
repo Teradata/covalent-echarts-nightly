@@ -1,6 +1,6 @@
 import { OnChanges, OnInit, OnDestroy } from '@angular/core';
 import { TdChartOptionsService } from '../chart.service';
-import { IAxisLine, IAxisLabel, IAxisTick, ISplitLine, ISplitArea, IAxisPointer, TdAxisType, TdNameLocation, TdXAxisPosition, TdYAxisPosition } from './axis.interface';
+import { ITdAxisLine, ITdAxisLabel, ITdAxisTick, ITdSplitLine, ITdSplitArea, ITdAxisPointer, TdAxisType, TdNameLocation, TdXAxisPosition, TdYAxisPosition } from './axis.interface';
 export declare abstract class TdChartAxisComponent implements OnChanges, OnInit, OnDestroy {
     private _axisOption;
     private _optionsService;
@@ -27,13 +27,13 @@ export declare abstract class TdChartAxisComponent implements OnChanges, OnInit,
     logBase: number;
     silent: boolean;
     triggerEvent: boolean;
-    axisLine: IAxisLine;
-    axisTick: IAxisTick;
-    axisLabel: IAxisLabel;
-    splitLine: ISplitLine;
-    splitArea: ISplitArea;
+    axisLine: ITdAxisLine;
+    axisTick: ITdAxisTick;
+    axisLabel: ITdAxisLabel;
+    splitLine: ITdSplitLine;
+    splitArea: ITdSplitArea;
     data: any;
-    axisPointer: IAxisPointer;
+    axisPointer: ITdAxisPointer;
     zlevel: number;
     z: number;
     constructor(_axisOption: string, _optionsService: TdChartOptionsService);

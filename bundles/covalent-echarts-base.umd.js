@@ -415,11 +415,6 @@ var TdXAxisPosition = {
     Top: 'top',
     Bottom: 'bottom',
 };
-var TdAxisLineType = {
-    Solid: 'solid',
-    Dashed: 'dashed',
-    Dotted: 'dotted',
-};
 var TdChartAxisComponent = /** @class */ (function () {
     function TdChartAxisComponent(_axisOption, _optionsService) {
         this._axisOption = _axisOption;
@@ -575,24 +570,216 @@ CovalentBaseEchartsModule.decorators = [
             },] },
 ];
 CovalentBaseEchartsModule.ctorParameters = function () { return []; };
+var TdAxisPointerAxis = {
+    X: 'x',
+    Y: 'y',
+    Radius: 'radius',
+    Angle: 'angle',
+};
+var TdToolTipTrigger = {
+    Item: 'item',
+    Axis: 'axis',
+    None: 'none',
+};
+var TdTriggerOn = {
+    Mousemove: 'mousemove',
+    Click: 'click',
+    None: 'none',
+};
+var TdToolPointerType = {
+    Line: 'line',
+    Shadow: 'shadow',
+    Cross: 'cross',
+};
+var TdLabelPosition = {
+    Top: 'top',
+    Left: 'left',
+    Right: 'right',
+    Bottom: 'bottom',
+    Inside: 'inside',
+    InsideLeft: 'insideLeft',
+    InsideRight: 'insideRight',
+    InsideTop: 'insideTop',
+    InsideBottom: 'insideBottom',
+    InsideTopLeft: 'insideTopLeft',
+    InsideBottomLeft: 'insideBottomLeft',
+    InsideTopRight: 'insideTopRight',
+    InsideBottomRight: 'insideBottomRight',
+};
+var TdAlign = {
+    Left: 'left',
+    Center: 'center',
+    Right: 'right',
+};
+var TdLineType = {
+    Solid: 'solid',
+    Dashed: 'dashed',
+    Dotted: 'dotted',
+};
+var TdAreaOrigin = {
+    Auto: 'auto',
+    Start: 'start',
+    End: 'end',
+};
+var TdLineLabelPosition = {
+    Middle: 'middle',
+    Start: 'start',
+    End: 'end',
+};
+var TdTooltipPosition = {
+    Inside: 'inside',
+    Top: 'top',
+    Left: 'left',
+    Right: 'right',
+    Bottom: 'bottom',
+};
+var TdFontWeight = {
+    Normal: 'normal',
+    Bold: 'bold',
+    Bolder: 'bolder',
+    Lighter: 'lighter',
+};
+var TdVerticalAlign = {
+    Top: 'top',
+    Middle: 'middle',
+    Bottom: 'bottom',
+    Center: 'center',
+};
+var TdPointerType = {
+    Line: 'line',
+    Shadow: 'shadow',
+};
+var TdFontFamily = {
+    Sans: 'sans-serif',
+    Serif: 'serif',
+    Mono: 'monospace',
+};
+var TdFontStyle = {
+    Normal: 'normal',
+    Italic: 'italic',
+    Oblique: 'oblique',
+};
+var TdStatus = {
+    Show: 'show',
+    Hide: 'hide',
+};
+var TdMarkPointSymbol = {
+    Circle: 'circle',
+    Rect: 'rect',
+    RoundRect: 'roundRect',
+    Triangle: 'triangle',
+    Diamond: 'diamond',
+    Pin: 'pin',
+    Arrow: 'arrow',
+    None: 'none',
+};
+var TdAnimationEasing = {
+    Linear: 'linear',
+    QuadraticIn: 'quadraticIn',
+    QuadraticOut: 'quadraticOut',
+    QuadraticInOut: 'quadraticInOut',
+    CubicIn: 'cubicIn',
+    CubicOut: 'cubicOut',
+    CubicInOut: 'cubicInOut',
+    QuarticIn: 'quarticIn',
+    QuarticOut: 'quarticOut',
+    QuarticInOut: 'quarticInOut',
+    QuinticIn: 'quinticIn',
+    QuinticOut: 'quinticOut',
+    QuinticInOut: 'quinticInOut',
+    SinusoidalIn: 'sinusoidalIn',
+    SinusoidalOut: 'sinusoidalOut',
+    SinusoidalInOut: 'sinusoidalInOut',
+    ExponentialIn: 'exponentialIn',
+    ExponentialOut: 'exponentialOut',
+    ExponentialInOut: 'exponentialInOut',
+    CircularIn: 'circularIn',
+    CircularOut: 'circularOut',
+    CircularInOut: 'circularInOut',
+    ElasticIn: 'elasticIn',
+    ElasticOut: 'elasticOut',
+    ElasticInOut: 'elasticInOut',
+    BackIn: 'backIn',
+    BackOut: 'backOut',
+    BackInOut: 'backInOut',
+    BounceOut: 'bounceOut',
+    BounceInOut: 'bounceInOut',
+};
+var TdCoordinateSystem = {
+    Cartesian2d: 'cartesian2d',
+    Polar: 'polar',
+};
+var TdSeriesLayoutBy = {
+    Column: 'column',
+    Row: 'row',
+};
+var TdProgressiveChunkMode = {
+    sequential: 'sequential',
+    Mod: 'mod',
+};
+var TdSeriesType = {
+    Line: 'line',
+    Bar: 'bar',
+    Pie: 'pie',
+    Scatter: 'scatter',
+    EffectScatter: 'effectScatter',
+    Radar: 'radar',
+    Tree: 'tree',
+    Treemap: 'treemap',
+    Sunburst: 'sunburst',
+    Boxplot: 'boxplot',
+    Candlestick: 'candlestick',
+    Heatmap: 'heatmap',
+    Map: 'map',
+    Parallel: 'parallel',
+    Lines: 'lines',
+    Graph: 'graph',
+    Sankey: 'sankey',
+    Funnel: 'funnel',
+    Gauge: 'gauge',
+    PictorialBar: 'pictorialBar',
+    ThemeRiver: 'themeRiver',
+    Custom: 'custom',
+};
 
 exports.TdChartComponent = TdChartComponent;
+exports.TdChartAxisComponent = TdChartAxisComponent;
+exports.TdChartYAxisComponent = TdChartYAxisComponent;
+exports.TdChartXAxisComponent = TdChartXAxisComponent;
+exports.TdChartTooltipComponent = TdChartTooltipComponent;
 exports.TdChartOptionsService = TdChartOptionsService;
 exports.CHART_PROVIDER = CHART_PROVIDER;
-exports.TdXAxisPosition = TdXAxisPosition;
 exports.TdYAxisPosition = TdYAxisPosition;
-exports.TdAxisLineType = TdAxisLineType;
+exports.TdXAxisPosition = TdXAxisPosition;
 exports.TdNameLocation = TdNameLocation;
 exports.TdAxisType = TdAxisType;
+exports.TdAlign = TdAlign;
+exports.TdFontStyle = TdFontStyle;
+exports.TdFontWeight = TdFontWeight;
+exports.TdVerticalAlign = TdVerticalAlign;
+exports.TdFontFamily = TdFontFamily;
+exports.TdPointerType = TdPointerType;
+exports.TdStatus = TdStatus;
+exports.TdLineType = TdLineType;
+exports.TdToolTipTrigger = TdToolTipTrigger;
+exports.TdLabelPosition = TdLabelPosition;
+exports.TdToolPointerType = TdToolPointerType;
+exports.TdTriggerOn = TdTriggerOn;
+exports.TdAreaOrigin = TdAreaOrigin;
+exports.TdMarkPointSymbol = TdMarkPointSymbol;
+exports.TdAnimationEasing = TdAnimationEasing;
+exports.TdTooltipPosition = TdTooltipPosition;
+exports.TdLineLabelPosition = TdLineLabelPosition;
+exports.TdAxisPointerAxis = TdAxisPointerAxis;
+exports.TdSeriesType = TdSeriesType;
+exports.TdCoordinateSystem = TdCoordinateSystem;
+exports.TdSeriesLayoutBy = TdSeriesLayoutBy;
+exports.TdProgressiveChunkMode = TdProgressiveChunkMode;
 exports.BASE_MODULE_COMPONENTS = BASE_MODULE_COMPONENTS;
 exports.CovalentBaseEchartsModule = CovalentBaseEchartsModule;
 exports.assignDefined = assignDefined;
-exports.ɵe = TdChartAxisComponent;
-exports.ɵd = TdChartXAxisComponent;
-exports.ɵf = TdChartYAxisComponent;
-exports.ɵa = CHART_PROVIDER_FACTORY;
-exports.ɵc = TdChartTooltipComponent;
-exports.ɵb = TdChartTooltipFormatterDirective;
+exports.ɵb = CHART_PROVIDER_FACTORY;
+exports.ɵa = TdChartTooltipFormatterDirective;
 
 Object.defineProperty(exports, '__esModule', { value: true });
 

@@ -1,12 +1,12 @@
 import { Component, Input, ChangeDetectionStrategy, NgModule } from '@angular/core';
 import 'echarts/lib/chart/line';
-import { TdChartOptionsService, assignDefined } from '@covalent/echarts/base';
+import { TdChartOptionsService, assignDefined, TdSeriesType } from '@covalent/echarts/base';
 import { CommonModule } from '@angular/common';
 
 var TdChartSeriesLineComponent = /** @class */ (function () {
     function TdChartSeriesLineComponent(_optionsService) {
         this._optionsService = _optionsService;
-        this._type = 'line';
+        this._type = TdSeriesType.Line;
         this._state = {};
         this.config = {};
     }
@@ -91,7 +91,6 @@ TdChartSeriesLineComponent.ctorParameters = function () { return [
 TdChartSeriesLineComponent.propDecorators = {
     "config": [{ type: Input, args: ['config',] },],
     "id": [{ type: Input, args: ['id',] },],
-    "type": [{ type: Input, args: ['type',] },],
     "name": [{ type: Input, args: ['name',] },],
     "coordinateSystem": [{ type: Input, args: ['coordinateSystem',] },],
     "xAxisIndex": [{ type: Input, args: ['xAxisIndex',] },],
@@ -162,6 +161,12 @@ CovalentLineEchartsModule.decorators = [
             },] },
 ];
 CovalentLineEchartsModule.ctorParameters = function () { return []; };
+var TdSampling = {
+    Average: 'average',
+    Max: 'max',
+    Min: 'min',
+    Sum: 'sum',
+};
 
-export { LINE_MODULE_COMPONENTS, CovalentLineEchartsModule, TdChartSeriesLineComponent as ɵa };
+export { LINE_MODULE_COMPONENTS, CovalentLineEchartsModule, TdSampling, TdChartSeriesLineComponent as ɵa };
 //# sourceMappingURL=covalent-echarts-line.js.map
