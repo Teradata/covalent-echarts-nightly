@@ -9,6 +9,7 @@ export declare class TdChartSeriesLineComponent implements OnChanges, OnInit, On
     config: ITdLineConfig;
     id: string;
     name: string;
+    color: string;
     coordinateSystem: TdCoordinateSystem;
     xAxisIndex: number;
     yAxisIndex: number;

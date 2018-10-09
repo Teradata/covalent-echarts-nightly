@@ -23,8 +23,9 @@ var TdChartSeriesScatterComponent = /** @class */ (function () {
     TdChartSeriesScatterComponent.prototype._setOptions = function () {
         var config = base.assignDefined(this._state, this.config, {
             id: this.id,
-            name: this.name,
             type: this._type,
+            name: this.name,
+            color: this.color,
             coordinateSystem: this.coordinateSystem,
             xAxisIndex: this.xAxisIndex,
             yAxisIndex: this.yAxisIndex,
@@ -88,6 +89,7 @@ TdChartSeriesScatterComponent.propDecorators = {
     "config": [{ type: core.Input, args: ['config',] },],
     "id": [{ type: core.Input, args: ['id',] },],
     "name": [{ type: core.Input, args: ['name',] },],
+    "color": [{ type: core.Input, args: ['color',] },],
     "coordinateSystem": [{ type: core.Input, args: ['coordinateSystem',] },],
     "xAxisIndex": [{ type: core.Input, args: ['xAxisIndex',] },],
     "yAxisIndex": [{ type: core.Input, args: ['yAxisIndex',] },],

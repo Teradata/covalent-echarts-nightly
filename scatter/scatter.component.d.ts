@@ -9,6 +9,7 @@ export declare class TdChartSeriesScatterComponent implements OnChanges, OnInit,
     config: ITdScatterConfig;
     id: string;
     name: string;
+    color: string;
     coordinateSystem: TdCoordinateSystem;
     xAxisIndex: number;
     yAxisIndex: number;

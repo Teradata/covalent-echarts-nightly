@@ -8,6 +8,7 @@ export declare class TdChartSeriesBarComponent implements OnChanges, OnInit, OnD
     config: any;
     id: string;
     name: string;
+    color: string;
     coordinateSystem: TdCoordinateSystem;
     xAxisIndex: number;
     yAxisIndex: number;
