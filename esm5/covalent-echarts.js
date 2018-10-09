@@ -39,6 +39,28 @@ var TdChartOptionsService$1 = /** @class */ (function () {
     TdChartOptionsService$1.prototype.getOption = function (option) {
         return this._options[option];
     };
+    TdChartOptionsService$1.prototype.setSeriesOption = function (option, value, index) {
+        var _this = this;
+        var seriesOption = (_a = {}, _a[option] = value, _a);
+        setTimeout(function () {
+            var prevSeriesValue = _this.getOption('series');
+            if (prevSeriesValue[index]) {
+                prevSeriesValue[index] = Object.assign({}, prevSeriesValue[index], seriesOption);
+                _this.setOption('series', prevSeriesValue);
+            }
+            else {
+                _this.setOption('series', seriesOption);
+            }
+        });
+        var _a;
+    };
+    TdChartOptionsService$1.prototype.clearSeriesOption = function (option) {
+        var _this = this;
+        var prevSeriesValue = this.getOption('series');
+        prevSeriesValue.forEach(function (val, i) {
+            _this.setSeriesOption(option, undefined, i);
+        });
+    };
     TdChartOptionsService$1.prototype.clearOption = function (option) {
         this.setOption(option, undefined);
     };
@@ -362,6 +384,132 @@ TdChartTooltipComponent.propDecorators = {
     "formatterTemplate": [{ type: ContentChild, args: [TdChartTooltipFormatterDirective, { read: TemplateRef },] },],
     "fullTemplate": [{ type: ViewChild, args: ['tooltipContent',] },],
 };
+var TdTooltipContext$1 = /** @class */ (function () {
+    function TdTooltipContext$1() {
+    }
+    return TdTooltipContext$1;
+}());
+var TdChartSeriesTooltipFormatterDirective = /** @class */ (function () {
+    function TdChartSeriesTooltipFormatterDirective() {
+    }
+    return TdChartSeriesTooltipFormatterDirective;
+}());
+TdChartSeriesTooltipFormatterDirective.decorators = [
+    { type: Directive, args: [{
+                selector: 'ng-template[tdSeriesTooltipFormatter]',
+            },] },
+];
+TdChartSeriesTooltipFormatterDirective.ctorParameters = function () { return []; };
+var TdSeriesTooltipComponent = /** @class */ (function () {
+    function TdSeriesTooltipComponent(_changeDetectorRef, _elementRef, _optionsService) {
+        this._changeDetectorRef = _changeDetectorRef;
+        this._elementRef = _elementRef;
+        this._optionsService = _optionsService;
+        this._state = {};
+        this._context = new TdTooltipContext$1();
+        this.index = 0;
+        this.backgroundColor = 'rgba(50,50,50,0.7)';
+        this.borderColor = '#333';
+        this.borderWidth = 0;
+        this.padding = 5;
+        this.textStyle = {
+            color: '#FFF',
+        };
+    }
+    TdSeriesTooltipComponent.prototype.ngOnInit = function () {
+        this._setOptions();
+    };
+    TdSeriesTooltipComponent.prototype.ngOnChanges = function () {
+        this._setOptions();
+    };
+    TdSeriesTooltipComponent.prototype.ngOnDestroy = function () {
+        this._removeOption();
+    };
+    TdSeriesTooltipComponent.prototype._setOptions = function () {
+        if (!this.configArray) {
+            var config = assignDefined$1(this._state, this.config ? this.config : {}, {
+                position: this.position,
+                backgroundColor: this.backgroundColor,
+                borderColor: this.borderColor,
+                borderWidth: this.borderWidth,
+                padding: this.padding,
+                textStyle: this.textStyle,
+                extraCssText: this.extraCssText,
+                formatter: this.formatter ? this.formatter : this._formatter(),
+            });
+            this._optionsService.setSeriesOption('tooltip', config, this.index);
+        }
+        else {
+            this._setConfig();
+        }
+    };
+    TdSeriesTooltipComponent.prototype._setConfig = function () {
+        var config = assignDefined$1(this._state, this.configArray);
+        try {
+            for (var _a = __values(Object.keys(config)), _b = _a.next(); !_b.done; _b = _a.next()) {
+                var key = _b.value;
+                if (!config[key].formatter) {
+                    config[key].formatter = this._formatter();
+                }
+                this._optionsService.setSeriesOption('tooltip', config[key], parseInt(key, 0));
+            }
+        }
+        catch (e_4_1) { e_4 = { error: e_4_1 }; }
+        finally {
+            try {
+                if (_b && !_b.done && (_c = _a.return)) _c.call(_a);
+            }
+            finally { if (e_4) throw e_4.error; }
+        }
+        var e_4, _c;
+    };
+    TdSeriesTooltipComponent.prototype._formatter = function () {
+        var _this = this;
+        return function (params, ticket, callback) {
+            _this._context = {
+                $implicit: params,
+                ticket: ticket,
+            };
+            setTimeout(function () {
+                callback(ticket, ((_this._elementRef.nativeElement)).innerHTML);
+            });
+            _this._changeDetectorRef.markForCheck();
+            return ((_this._elementRef.nativeElement)).innerHTML;
+        };
+    };
+    TdSeriesTooltipComponent.prototype._removeOption = function () {
+        this._optionsService.clearSeriesOption('tooltip');
+    };
+    return TdSeriesTooltipComponent;
+}());
+TdSeriesTooltipComponent.decorators = [
+    { type: Component, args: [{
+                selector: 'td-chart-series-tooltip',
+                template: "<ng-template #tooltipContent\n            [ngTemplateOutlet]=\"formatterTemplate\"\n            [ngTemplateOutletContext]=\"_context\">\n</ng-template>\n",
+                styles: [""],
+                changeDetection: ChangeDetectionStrategy.OnPush,
+            },] },
+];
+TdSeriesTooltipComponent.ctorParameters = function () { return [
+    { type: ChangeDetectorRef, },
+    { type: ElementRef, },
+    { type: TdChartOptionsService$1, },
+]; };
+TdSeriesTooltipComponent.propDecorators = {
+    "config": [{ type: Input, args: ['config',] },],
+    "configArray": [{ type: Input, args: ['configArray',] },],
+    "index": [{ type: Input, args: ['index',] },],
+    "formatter": [{ type: Input, args: ['formatter',] },],
+    "position": [{ type: Input, args: ['position',] },],
+    "backgroundColor": [{ type: Input, args: ['backgroundColor',] },],
+    "borderColor": [{ type: Input, args: ['borderColor',] },],
+    "borderWidth": [{ type: Input, args: ['borderWidth',] },],
+    "padding": [{ type: Input, args: ['padding',] },],
+    "textStyle": [{ type: Input, args: ['textStyle',] },],
+    "extraCssText": [{ type: Input, args: ['extraCssText',] },],
+    "formatterTemplate": [{ type: ContentChild, args: [TdChartSeriesTooltipFormatterDirective, { read: TemplateRef },] },],
+    "fullTemplate": [{ type: ViewChild, args: ['tooltipContent',] },],
+};
 var TdNameLocation = {
     Start: 'start',
     Middle: 'middle',
@@ -517,6 +665,8 @@ var BASE_MODULE_COMPONENTS = [
     TdChartTooltipFormatterDirective,
     TdChartXAxisComponent,
     TdChartYAxisComponent,
+    TdSeriesTooltipComponent,
+    TdChartSeriesTooltipFormatterDirective,
 ];
 var CovalentBaseEchartsModule = /** @class */ (function () {
     function CovalentBaseEchartsModule() {
@@ -1169,5 +1319,5 @@ CovalentScatterEchartsModule.decorators = [
 ];
 CovalentScatterEchartsModule.ctorParameters = function () { return []; };
 
-export { TdChartComponent, TdChartAxisComponent, TdChartYAxisComponent, TdChartXAxisComponent, TdChartTooltipComponent, TdChartOptionsService$1 as TdChartOptionsService, CHART_PROVIDER, TdYAxisPosition, TdXAxisPosition, TdNameLocation, TdAxisType, TdAlign, TdFontStyle, TdFontWeight, TdVerticalAlign, TdFontFamily, TdPointerType, TdStatus, TdLineType, TdToolTipTrigger, TdLabelPosition, TdToolPointerType, TdTriggerOn, TdAreaOrigin, TdMarkPointSymbol, TdAnimationEasing, TdTooltipPosition, TdLineLabelPosition, TdAxisPointerAxis, TdSeriesType$1 as TdSeriesType, TdCoordinateSystem, TdSeriesLayoutBy, TdProgressiveChunkMode, BASE_MODULE_COMPONENTS, CovalentBaseEchartsModule, assignDefined$1 as assignDefined, BAR_MODULE_COMPONENTS, CovalentBarEchartsModule, LINE_MODULE_COMPONENTS, CovalentLineEchartsModule, TdSampling, SCATTER_MODULE_COMPONENTS, CovalentScatterEchartsModule, TdChartSeriesBarComponent as ɵc, CHART_PROVIDER_FACTORY as ɵb, TdChartTooltipFormatterDirective as ɵa, TdChartSeriesLineComponent as ɵd, TdChartSeriesScatterComponent as ɵe };
+export { TdChartComponent, TdChartAxisComponent, TdChartYAxisComponent, TdChartXAxisComponent, TdChartTooltipComponent, TdChartOptionsService$1 as TdChartOptionsService, CHART_PROVIDER, TdYAxisPosition, TdXAxisPosition, TdNameLocation, TdAxisType, TdAlign, TdFontStyle, TdFontWeight, TdVerticalAlign, TdFontFamily, TdPointerType, TdStatus, TdLineType, TdToolTipTrigger, TdLabelPosition, TdToolPointerType, TdTriggerOn, TdAreaOrigin, TdMarkPointSymbol, TdAnimationEasing, TdTooltipPosition, TdLineLabelPosition, TdAxisPointerAxis, TdSeriesType$1 as TdSeriesType, TdCoordinateSystem, TdSeriesLayoutBy, TdProgressiveChunkMode, BASE_MODULE_COMPONENTS, CovalentBaseEchartsModule, assignDefined$1 as assignDefined, BAR_MODULE_COMPONENTS, CovalentBarEchartsModule, LINE_MODULE_COMPONENTS, CovalentLineEchartsModule, TdSampling, SCATTER_MODULE_COMPONENTS, CovalentScatterEchartsModule, TdChartSeriesBarComponent as ɵe, CHART_PROVIDER_FACTORY as ɵb, TdChartSeriesTooltipFormatterDirective as ɵc, TdSeriesTooltipComponent as ɵd, TdChartTooltipFormatterDirective as ɵa, TdChartSeriesLineComponent as ɵf, TdChartSeriesScatterComponent as ɵg };
 //# sourceMappingURL=covalent-echarts.js.map
