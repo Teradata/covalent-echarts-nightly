@@ -1,12 +1,11 @@
 import { OnChanges, OnInit, OnDestroy } from '@angular/core';
 import 'echarts/lib/chart/line';
 import { TdChartOptionsService, TdCoordinateSystem, TdMarkPointSymbol, ITdLabel, ITdItemStyle, ITdLineStyle, ITdAreaStyle, TdSeriesLayoutBy, ITdMarkPoint, ITdMarkLine, ITdMarkArea, ITdSeriesTooltip, ITdEmphasis } from '@covalent/echarts/base';
-import { ITdLineConfig } from './line-config.interface';
 export declare class TdChartSeriesLineComponent implements OnChanges, OnInit, OnDestroy {
     private _optionsService;
     private _type;
     private _state;
-    config: ITdLineConfig;
+    config: any;
     id: string;
     name: string;
     color: string;

@@ -1,11 +1,6 @@
-import { ITdLabel, TdAnimationEasing, ITdLineStyle, TdMarkPointSymbol, TdCoordinateSystem, ITdItemStyle, ITdEmphasis, TdSeriesLayoutBy, ITdMarkPoint, ITdMarkLine, ITdMarkArea, ITdSeriesTooltip, ITdAreaStyle, TdSeriesType } from '@covalent/echarts/base';
-declare enum TdSampling {
-    Average = "average",
-    Max = "max",
-    Min = "min",
-    Sum = "sum",
-}
-interface ITdLineSeries {
+import { ITdLabel, ITdLineStyle, TdMarkPointSymbol, TdCoordinateSystem, ITdItemStyle, ITdEmphasis, TdSeriesLayoutBy, ITdMarkPoint, ITdMarkLine, ITdMarkArea, ITdSeriesTooltip, ITdAreaStyle, TdSeriesType, ITdAnimation, ITdShadow } from '@covalent/echarts/base';
+export declare type TdSampling = 'average' | 'max' | 'min' | 'sum';
+export interface ITdLineSeries extends ITdAnimation, ITdShadow {
     type?: TdSeriesType;
     id?: string;
     name?: string;
@@ -32,10 +27,6 @@ interface ITdLineSeries {
     itemStyle?: ITdItemStyle;
     lineStyle?: ITdLineStyle;
     width?: number;
-    shadowBlur?: number;
-    shadowColor?: number;
-    shadowOffsetX?: number;
-    shadowOffsetY?: number;
     opacity?: number;
     areaStyle?: ITdAreaStyle;
     emphasis?: ITdEmphasis;
@@ -53,14 +44,5 @@ interface ITdLineSeries {
     zlevel?: number;
     z?: number;
     silent?: boolean;
-    Animation?: boolean;
-    animationThreshold?: number;
-    animationDuration?: number;
-    animationEasing?: TdAnimationEasing;
-    animationDelay?: 0;
-    animationDurationUpdate?: number;
-    animationEasingUpdate?: TdAnimationEasing;
-    animationDelayUpdate?: number;
     tooltip?: ITdSeriesTooltip;
 }
-export { ITdLineSeries, TdSampling };

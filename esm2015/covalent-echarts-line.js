@@ -193,18 +193,6 @@ CovalentLineEchartsModule.ctorParameters = () => [];
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
-/** @enum {string} */
-const TdSampling = {
-    Average: 'average',
-    Max: 'max',
-    Min: 'min',
-    Sum: 'sum',
-};
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
 
 /**
  * @fileoverview added by tsickle
@@ -219,5 +207,5 @@ const TdSampling = {
  * Generated bundle index. Do not edit.
  */
 
-export { LINE_MODULE_COMPONENTS, CovalentLineEchartsModule, TdSampling, TdChartSeriesLineComponent as ɵa };
+export { LINE_MODULE_COMPONENTS, CovalentLineEchartsModule, TdChartSeriesLineComponent as ɵa };
 //# sourceMappingURL=covalent-echarts-line.js.map

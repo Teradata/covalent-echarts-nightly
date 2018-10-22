@@ -164,16 +164,9 @@ CovalentLineEchartsModule.decorators = [
             },] },
 ];
 CovalentLineEchartsModule.ctorParameters = function () { return []; };
-var TdSampling = {
-    Average: 'average',
-    Max: 'max',
-    Min: 'min',
-    Sum: 'sum',
-};
 
 exports.LINE_MODULE_COMPONENTS = LINE_MODULE_COMPONENTS;
 exports.CovalentLineEchartsModule = CovalentLineEchartsModule;
-exports.TdSampling = TdSampling;
 exports.ɵa = TdChartSeriesLineComponent;
 
 Object.defineProperty(exports, '__esModule', { value: true });

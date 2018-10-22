@@ -1,6 +1,6 @@
-import { ITdTooltip, ITdXAxisConfig, ITdYAxisConfig } from '@covalent/echarts/base';
+import { ITdTooltip, ITdXAxisConfig, ITdYAxisConfig, ITdAnimation } from '@covalent/echarts/base';
 import { ITdBarSeries } from './bar-series.interface';
-interface ITdBarConfig {
+export interface ITdBarConfig extends ITdAnimation {
     title?: any;
     toolbox?: any;
     xAxis?: ITdXAxisConfig[];
@@ -12,7 +12,6 @@ interface ITdBarConfig {
     color?: any;
     renderAsImage?: boolean;
     calculable?: boolean;
-    animation?: boolean;
     timeline?: any;
     dataRange?: any;
     dataZoom?: any;
@@ -33,16 +32,7 @@ interface ITdBarConfig {
     dataset?: any;
     aria?: any;
     textStyle?: any;
-    Animation?: any;
-    animationThreshold?: any;
-    animationDuration?: any;
-    animationEasing?: any;
-    animationDelay?: any;
-    animationDurationUpdate?: any;
-    animationEasingUpdate?: any;
-    animationDelayUpdate?: any;
     blendMode?: any;
     hoverLayerThreshold?: any;
     useUTC?: any;
 }
-export { ITdBarConfig };

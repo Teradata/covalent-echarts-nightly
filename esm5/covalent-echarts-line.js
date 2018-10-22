@@ -163,12 +163,6 @@ CovalentLineEchartsModule.decorators = [
             },] },
 ];
 CovalentLineEchartsModule.ctorParameters = function () { return []; };
-var TdSampling = {
-    Average: 'average',
-    Max: 'max',
-    Min: 'min',
-    Sum: 'sum',
-};
 
-export { LINE_MODULE_COMPONENTS, CovalentLineEchartsModule, TdSampling, TdChartSeriesLineComponent as ɵa };
+export { LINE_MODULE_COMPONENTS, CovalentLineEchartsModule, TdChartSeriesLineComponent as ɵa };
 //# sourceMappingURL=covalent-echarts-line.js.map

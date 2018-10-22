@@ -283,7 +283,7 @@ class TdChartComponent {
 TdChartComponent.decorators = [
     { type: Component, args: [{
                 selector: 'td-chart',
-                template: ``,
+                template: '',
                 styles: [`:host{display:block}`],
                 changeDetection: ChangeDetectionStrategy.OnPush,
                 providers: [CHART_PROVIDER],
@@ -613,38 +613,6 @@ TdSeriesTooltipComponent.propDecorators = {
  * @suppress {checkTypes} checked by tsc
  */
 /**
- * @record
- */
-/** @enum {string} */
-const TdNameLocation = {
-    Start: 'start',
-    Middle: 'middle',
-    Center: 'center',
-    End: 'end',
-};
-/** @enum {string} */
-const TdAxisType = {
-    Value: 'value',
-    Category: 'category',
-    Time: 'time',
-    Log: 'log',
-};
-/** @enum {string} */
-const TdYAxisPosition = {
-    Left: 'left',
-    Right: 'right',
-};
-/** @enum {string} */
-const TdXAxisPosition = {
-    Top: 'top',
-    Bottom: 'bottom',
-};
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-/**
  * @abstract
  */
 class TdChartAxisComponent {
@@ -839,167 +807,6 @@ CovalentBaseEchartsModule.decorators = [
 ];
 /** @nocollapse */
 CovalentBaseEchartsModule.ctorParameters = () => [];
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-/**
- * @record
- */
-/** @enum {string} */
-const TdAxisPointerAxis = {
-    X: 'x',
-    Y: 'y',
-    Radius: 'radius',
-    Angle: 'angle',
-};
-/** @enum {string} */
-const TdToolTipTrigger = {
-    Item: 'item',
-    Axis: 'axis',
-    None: 'none',
-};
-/** @enum {string} */
-const TdTriggerOn = {
-    Mousemove: 'mousemove',
-    Click: 'click',
-    None: 'none',
-};
-/** @enum {string} */
-const TdToolPointerType = {
-    Line: 'line',
-    Shadow: 'shadow',
-    Cross: 'cross',
-};
-/** @enum {string} */
-const TdLabelPosition = {
-    Top: 'top',
-    Left: 'left',
-    Right: 'right',
-    Bottom: 'bottom',
-    Inside: 'inside',
-    InsideLeft: 'insideLeft',
-    InsideRight: 'insideRight',
-    InsideTop: 'insideTop',
-    InsideBottom: 'insideBottom',
-    InsideTopLeft: 'insideTopLeft',
-    InsideBottomLeft: 'insideBottomLeft',
-    InsideTopRight: 'insideTopRight',
-    InsideBottomRight: 'insideBottomRight',
-};
-/** @enum {string} */
-const TdAlign = {
-    Left: 'left',
-    Center: 'center',
-    Right: 'right',
-};
-/** @enum {string} */
-const TdLineType = {
-    Solid: 'solid',
-    Dashed: 'dashed',
-    Dotted: 'dotted',
-};
-/** @enum {string} */
-const TdAreaOrigin = {
-    Auto: 'auto',
-    Start: 'start',
-    End: 'end',
-};
-/** @enum {string} */
-const TdLineLabelPosition = {
-    Middle: 'middle',
-    Start: 'start',
-    End: 'end',
-};
-/** @enum {string} */
-const TdTooltipPosition = {
-    Inside: 'inside',
-    Top: 'top',
-    Left: 'left',
-    Right: 'right',
-    Bottom: 'bottom',
-};
-/** @enum {string} */
-const TdFontWeight = {
-    Normal: 'normal',
-    Bold: 'bold',
-    Bolder: 'bolder',
-    Lighter: 'lighter',
-};
-/** @enum {string} */
-const TdVerticalAlign = {
-    Top: 'top',
-    Middle: 'middle',
-    Bottom: 'bottom',
-    Center: 'center',
-};
-/** @enum {string} */
-const TdPointerType = {
-    Line: 'line',
-    Shadow: 'shadow',
-};
-/** @enum {string} */
-const TdFontFamily = {
-    Sans: 'sans-serif',
-    Serif: 'serif',
-    Mono: 'monospace',
-};
-/** @enum {string} */
-const TdFontStyle = {
-    Normal: 'normal',
-    Italic: 'italic',
-    Oblique: 'oblique',
-};
-/** @enum {string} */
-const TdStatus = {
-    Show: 'show',
-    Hide: 'hide',
-};
-/** @enum {string} */
-const TdMarkPointSymbol = {
-    Circle: 'circle',
-    Rect: 'rect',
-    RoundRect: 'roundRect',
-    Triangle: 'triangle',
-    Diamond: 'diamond',
-    Pin: 'pin',
-    Arrow: 'arrow',
-    None: 'none',
-};
-/** @enum {string} */
-const TdAnimationEasing = {
-    Linear: 'linear',
-    QuadraticIn: 'quadraticIn',
-    QuadraticOut: 'quadraticOut',
-    QuadraticInOut: 'quadraticInOut',
-    CubicIn: 'cubicIn',
-    CubicOut: 'cubicOut',
-    CubicInOut: 'cubicInOut',
-    QuarticIn: 'quarticIn',
-    QuarticOut: 'quarticOut',
-    QuarticInOut: 'quarticInOut',
-    QuinticIn: 'quinticIn',
-    QuinticOut: 'quinticOut',
-    QuinticInOut: 'quinticInOut',
-    SinusoidalIn: 'sinusoidalIn',
-    SinusoidalOut: 'sinusoidalOut',
-    SinusoidalInOut: 'sinusoidalInOut',
-    ExponentialIn: 'exponentialIn',
-    ExponentialOut: 'exponentialOut',
-    ExponentialInOut: 'exponentialInOut',
-    CircularIn: 'circularIn',
-    CircularOut: 'circularOut',
-    CircularInOut: 'circularInOut',
-    ElasticIn: 'elasticIn',
-    ElasticOut: 'elasticOut',
-    ElasticInOut: 'elasticInOut',
-    BackIn: 'backIn',
-    BackOut: 'backOut',
-    BackInOut: 'backInOut',
-    BounceOut: 'bounceOut',
-    BounceInOut: 'bounceInOut',
-};
 
 /**
  * @fileoverview added by tsickle
@@ -1429,18 +1236,6 @@ CovalentLineEchartsModule.ctorParameters = () => [];
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
-/** @enum {string} */
-const TdSampling = {
-    Average: 'average',
-    Max: 'max',
-    Min: 'min',
-    Sum: 'sum',
-};
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
 
 /**
  * @fileoverview added by tsickle
@@ -1651,5 +1446,5 @@ CovalentScatterEchartsModule.ctorParameters = () => [];
  * Generated bundle index. Do not edit.
  */
 
-export { TdChartComponent, TdChartAxisComponent, TdChartYAxisComponent, TdChartXAxisComponent, TdChartTooltipComponent, TdChartOptionsService$1 as TdChartOptionsService, CHART_PROVIDER, TdYAxisPosition, TdXAxisPosition, TdNameLocation, TdAxisType, TdAlign, TdFontStyle, TdFontWeight, TdVerticalAlign, TdFontFamily, TdPointerType, TdStatus, TdLineType, TdToolTipTrigger, TdLabelPosition, TdToolPointerType, TdTriggerOn, TdAreaOrigin, TdMarkPointSymbol, TdAnimationEasing, TdTooltipPosition, TdLineLabelPosition, TdAxisPointerAxis, TdSeriesType$1 as TdSeriesType, TdCoordinateSystem, TdSeriesLayoutBy, TdProgressiveChunkMode, BASE_MODULE_COMPONENTS, CovalentBaseEchartsModule, assignDefined$1 as assignDefined, BAR_MODULE_COMPONENTS, CovalentBarEchartsModule, LINE_MODULE_COMPONENTS, CovalentLineEchartsModule, TdSampling, SCATTER_MODULE_COMPONENTS, CovalentScatterEchartsModule, TdChartSeriesBarComponent as ɵe, CHART_PROVIDER_FACTORY as ɵb, TdChartSeriesTooltipFormatterDirective as ɵc, TdSeriesTooltipComponent as ɵd, TdChartTooltipFormatterDirective as ɵa, TdChartSeriesLineComponent as ɵf, TdChartSeriesScatterComponent as ɵg };
+export { TdChartComponent, TdChartAxisComponent, TdChartYAxisComponent, TdChartXAxisComponent, TdChartTooltipComponent, TdChartOptionsService$1 as TdChartOptionsService, CHART_PROVIDER, TdSeriesType$1 as TdSeriesType, TdCoordinateSystem, TdSeriesLayoutBy, TdProgressiveChunkMode, BASE_MODULE_COMPONENTS, CovalentBaseEchartsModule, assignDefined$1 as assignDefined, BAR_MODULE_COMPONENTS, CovalentBarEchartsModule, LINE_MODULE_COMPONENTS, CovalentLineEchartsModule, SCATTER_MODULE_COMPONENTS, CovalentScatterEchartsModule, TdChartSeriesBarComponent as ɵe, CHART_PROVIDER_FACTORY as ɵb, TdChartSeriesTooltipFormatterDirective as ɵc, TdSeriesTooltipComponent as ɵd, TdChartTooltipFormatterDirective as ɵa, TdChartSeriesLineComponent as ɵf, TdChartSeriesScatterComponent as ɵg };
 //# sourceMappingURL=covalent-echarts.js.map

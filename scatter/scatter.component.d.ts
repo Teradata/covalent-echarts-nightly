@@ -1,12 +1,11 @@
 import { OnChanges, OnInit, OnDestroy } from '@angular/core';
 import 'echarts/lib/chart/scatter';
 import { TdChartOptionsService, TdCoordinateSystem, TdMarkPointSymbol, ITdMarkPoint, ITdItemStyle, ITdLabel, ITdEmphasis, TdSeriesLayoutBy, ITdMarkLine, ITdMarkArea, ITdSeriesTooltip } from '@covalent/echarts/base';
-import { ITdScatterConfig } from './scatter-config.interface';
 export declare class TdChartSeriesScatterComponent implements OnChanges, OnInit, OnDestroy {
     private _optionsService;
     private _type;
     private _state;
-    config: ITdScatterConfig;
+    config: any;
     id: string;
     name: string;
     color: string;

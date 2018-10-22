@@ -1,5 +1,5 @@
-import { ITdLabel, TdAnimationEasing, TdCoordinateSystem, ITdItemStyle, ITdEmphasis, TdProgressiveChunkMode, TdSeriesLayoutBy, ITdMarkPoint, ITdMarkLine, ITdMarkArea, ITdSeriesTooltip, TdSeriesType } from '@covalent/echarts/base';
-interface ITdBarSeries {
+import { ITdLabel, TdCoordinateSystem, ITdItemStyle, ITdEmphasis, TdProgressiveChunkMode, TdSeriesLayoutBy, ITdMarkPoint, ITdMarkLine, ITdMarkArea, ITdSeriesTooltip, TdSeriesType, ITdAnimation } from '@covalent/echarts/base';
+export interface ITdBarSeries extends ITdAnimation {
     type?: TdSeriesType;
     id?: string;
     name?: string;
@@ -34,14 +34,5 @@ interface ITdBarSeries {
     Zlevel?: 0;
     z?: number;
     silent?: boolean;
-    animation?: boolean;
-    animationThreshold?: number;
-    animationDuration?: number;
-    animationEasing?: TdAnimationEasing;
-    animationDelay?: number;
-    animationDurationUpdate?: number;
-    animationEasingUpdate?: TdAnimationEasing;
-    animationDelayUpdate?: number;
     tooltip?: ITdSeriesTooltip;
 }
-export { ITdBarSeries };
