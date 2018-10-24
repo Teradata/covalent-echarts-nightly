@@ -1,10 +1,5 @@
 import { EventEmitter, ElementRef, ChangeDetectorRef, AfterViewInit, OnChanges, OnDestroy, DoCheck } from '@angular/core';
-import 'echarts/lib/component/title';
-import 'echarts/lib/component/legend';
-import 'echarts/lib/component/legendScroll';
-import 'echarts/lib/component/markArea';
-import 'echarts/lib/component/dataZoom';
-import { TdChartOptionsService } from './chart.service';
+import { TdChartOptionsService } from './chart-options.service';
 export declare class TdChartComponent implements AfterViewInit, OnChanges, DoCheck, OnDestroy {
     private _changeDetectorRef;
     private _elementRef;

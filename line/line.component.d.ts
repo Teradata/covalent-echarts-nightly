@@ -1,14 +1,47 @@
-import { OnChanges, OnInit, OnDestroy } from '@angular/core';
-import 'echarts/lib/chart/line';
-import { TdChartOptionsService, TdCoordinateSystem, TdMarkPointSymbol, ITdLabel, ITdItemStyle, ITdLineStyle, ITdAreaStyle, TdSeriesLayoutBy, ITdMarkPoint, ITdMarkLine, ITdMarkArea, ITdSeriesTooltip, ITdEmphasis } from '@covalent/echarts/base';
-export declare class TdChartSeriesLineComponent implements OnChanges, OnInit, OnDestroy {
-    private _optionsService;
-    private _type;
-    private _state;
-    config: any;
-    id: string;
-    name: string;
-    color: string;
+import { TdChartOptionsService, TdCoordinateSystem, TdMarkPointSymbol, ITdLabel, ITdItemStyle, ITdLineStyle, ITdAreaStyle, TdSeriesLayoutBy, ITdMarkPoint, ITdMarkLine, ITdMarkArea, ITdEmphasis, ITdSeries, ITdShadow, TdSeriesComponent } from '@covalent/echarts/base';
+export declare type TdSampling = 'average' | 'max' | 'min' | 'sum';
+export interface ITdLineSeries extends ITdSeries<'line'>, ITdShadow {
+    coordinateSystem?: TdCoordinateSystem;
+    xAxisIndex?: number;
+    yAxisIndex?: number;
+    polarIndex?: number;
+    symbol?: TdMarkPointSymbol | string;
+    symbolSize?: number | any[] | Function;
+    symbolRotate?: number;
+    symbolKeepAspect?: boolean;
+    symbolOffset?: any[];
+    showSymbol?: boolean;
+    showAllSymbol?: boolean | 'auto';
+    hoverAnimation?: boolean;
+    legendHoverLink?: boolean;
+    stack?: string;
+    cursor?: string;
+    connectNulls?: boolean;
+    clipOverflow?: boolean;
+    step?: string | boolean;
+    label?: ITdLabel;
+    itemStyle?: ITdItemStyle;
+    lineStyle?: ITdLineStyle;
+    width?: number;
+    opacity?: number;
+    areaStyle?: ITdAreaStyle;
+    emphasis?: ITdEmphasis;
+    smooth?: boolean | number;
+    smoothMonotone?: string;
+    sampling?: TdSampling;
+    dimensions?: any[];
+    encode?: any;
+    seriesLayoutBy?: TdSeriesLayoutBy;
+    datasetIndex?: number;
+    data?: any[];
+    markPoint?: ITdMarkPoint;
+    markLine?: ITdMarkLine;
+    markArea?: ITdMarkArea;
+    zlevel?: number;
+    z?: number;
+    silent?: boolean;
+}
+export declare class TdChartSeriesLineComponent extends TdSeriesComponent<'line'> implements ITdLineSeries {
     coordinateSystem: TdCoordinateSystem;
     xAxisIndex: number;
     yAxisIndex: number;
@@ -34,7 +67,7 @@ export declare class TdChartSeriesLineComponent implements OnChanges, OnInit, On
     emphasis: ITdEmphasis;
     smooth: boolean | number;
     smoothMonotone: string;
-    sampling: string;
+    sampling: TdSampling;
     dimensions: any[];
     encode: any;
     seriesLayoutBy: TdSeriesLayoutBy;
@@ -46,19 +79,6 @@ export declare class TdChartSeriesLineComponent implements OnChanges, OnInit, On
     zlevel: number;
     z: number;
     silent: boolean;
-    animation: boolean;
-    animationThreshold: number;
-    animationDuration: number | Function;
-    animationEasing: string;
-    animationDelay: number | Function;
-    animationDurationUpdate: number | Function;
-    animationEasingUpdate: string;
-    animationDelayUpdate: number | Function;
-    tooltip: ITdSeriesTooltip;
     constructor(_optionsService: TdChartOptionsService);
-    ngOnInit(): void;
-    ngOnChanges(): void;
-    ngOnDestroy(): void;
-    private _setOptions();
-    private _removeOption();
+    getConfig(): any;
 }

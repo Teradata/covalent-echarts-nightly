@@ -1,17 +1,13 @@
-import { Injectable, Optional, SkipSelf, Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ElementRef, ChangeDetectorRef, Directive, TemplateRef, ContentChild, ViewChild, NgModule } from '@angular/core';
+import { Injectable, Optional, SkipSelf, Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ElementRef, ChangeDetectorRef, NgModule, forwardRef, Directive, TemplateRef, ContentChild, ViewChild } from '@angular/core';
 import { BehaviorSubject, Subject, fromEvent, merge } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { init, connect } from 'echarts/lib/echarts';
-import 'echarts/lib/component/title';
-import 'echarts/lib/component/legend';
-import 'echarts/lib/component/legendScroll';
-import 'echarts/lib/component/markArea';
-import 'echarts/lib/component/dataZoom';
 import { CommonModule } from '@angular/common';
+import { TdChartOptionsService, TdSeriesComponent, assignDefined } from '@covalent/echarts/base';
 import 'echarts/lib/chart/bar';
-import { TdChartOptionsService, assignDefined, TdSeriesType } from '@covalent/echarts/base';
 import 'echarts/lib/chart/line';
 import 'echarts/lib/chart/scatter';
+import 'echarts/lib/component/tooltip';
 
 /**
  * @fileoverview added by tsickle
@@ -51,43 +47,28 @@ class TdChartOptionsService$1 {
     }
     /**
      * @param {?} option
+     * @param {?} value
+     * @return {?}
+     */
+    removeArrayOption(option, value) {
+        let /** @type {?} */ prevValue = this.getOption(option);
+        if (prevValue) {
+            let /** @type {?} */ index = prevValue.indexOf(value);
+            if (index > -1) {
+                prevValue[index] = undefined;
+            }
+            else {
+                prevValue = [];
+            }
+        }
+        this.setOption(option, prevValue);
+    }
+    /**
+     * @param {?} option
      * @return {?}
      */
     getOption(option) {
         return this._options[option];
-    }
-    /**
-     * Sets Series option using an index, normally used with an ngFor in the template or with setSeriesOptionArray method
-     *
-     * @param {?} option Series option (e.i. tooltip)
-     * @param {?} value series option value(s)
-     * @param {?} index Series Index used to specify where the value param to be added
-     * @return {?}
-     */
-    setSeriesOption(option, value, index) {
-        const /** @type {?} */ seriesOption = { [option]: value };
-        setTimeout(() => {
-            const /** @type {?} */ prevSeriesValue = this.getOption('series');
-            if (prevSeriesValue[index]) {
-                prevSeriesValue[index] = Object.assign({}, prevSeriesValue[index], seriesOption);
-                this.setOption('series', prevSeriesValue);
-            }
-            else {
-                this.setOption('series', seriesOption);
-            }
-        });
-    }
-    /**
-     * Sets Series option using an index, normally used with an ngFor in the template
-     *
-     * @param {?} option Series option (e.i. tooltip)
-     * @return {?}
-     */
-    clearSeriesOption(option) {
-        const /** @type {?} */ prevSeriesValue = this.getOption('series');
-        prevSeriesValue.forEach((val, i) => {
-            this.setSeriesOption(option, undefined, i);
-        });
     }
     /**
      * @param {?} option
@@ -308,310 +289,6 @@ TdChartComponent.propDecorators = {
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
-class TdTooltipContext {
-}
-class TdChartTooltipFormatterDirective {
-}
-TdChartTooltipFormatterDirective.decorators = [
-    { type: Directive, args: [{
-                selector: 'ng-template[tdTooltipFormatter]',
-            },] },
-];
-/** @nocollapse */
-TdChartTooltipFormatterDirective.ctorParameters = () => [];
-class TdChartTooltipComponent {
-    /**
-     * @param {?} _changeDetectorRef
-     * @param {?} _elementRef
-     * @param {?} _optionsService
-     */
-    constructor(_changeDetectorRef, _elementRef, _optionsService) {
-        this._changeDetectorRef = _changeDetectorRef;
-        this._elementRef = _elementRef;
-        this._optionsService = _optionsService;
-        this._state = {};
-        this._context = new TdTooltipContext();
-        this.config = {};
-        this.show = true;
-        this.trigger = 'axis';
-        this.showContent = true;
-        this.alwaysShowContent = false;
-        this.triggerOn = 'mousemove|click';
-        this.showDelay = 0;
-        this.hideDelay = 0;
-        this.enterable = false;
-        this.confine = false;
-        this.transitionDuration = 0.5;
-        this.backgroundColor = 'rgba(50,50,50,0.7)';
-        this.borderColor = '#333';
-        this.borderWidth = 0;
-        this.padding = 5;
-        this.textStyle = {
-            color: '#FFF',
-        };
-    }
-    /**
-     * @return {?}
-     */
-    ngOnInit() {
-        this._setOptions();
-    }
-    /**
-     * @return {?}
-     */
-    ngOnChanges() {
-        this._setOptions();
-    }
-    /**
-     * @return {?}
-     */
-    ngOnDestroy() {
-        this._removeOption();
-    }
-    /**
-     * @return {?}
-     */
-    _setOptions() {
-        let /** @type {?} */ config = assignDefined$1(this._state, this.config ? this.config : {}, {
-            show: this.show,
-            trigger: this.trigger,
-            axisPointer: this.axisPointer,
-            showContent: this.showContent,
-            alwaysShowContent: this.alwaysShowContent,
-            triggerOn: this.triggerOn,
-            showDelay: this.showDelay,
-            hideDelay: this.hideDelay,
-            enterable: this.enterable,
-            confine: this.confine,
-            transitionDuration: this.transitionDuration,
-            position: this.position,
-            formatter: (params, ticket, callback) => {
-                this._context = {
-                    $implicit: params,
-                    ticket: ticket,
-                };
-                // timeout set since we need to set the HTML at the end of the angular lifecycle when
-                // the tooltip delay is more than 0
-                setTimeout(() => {
-                    callback(ticket, (/** @type {?} */ (this._elementRef.nativeElement)).innerHTML);
-                });
-                this._changeDetectorRef.markForCheck();
-                return (/** @type {?} */ (this._elementRef.nativeElement)).innerHTML;
-            },
-            backgroundColor: this.backgroundColor,
-            borderColor: this.borderColor,
-            borderWidth: this.borderWidth,
-            padding: this.padding,
-            textStyle: this.textStyle,
-            extraCssText: this.extraCssText,
-        });
-        // set tooltip configuration in parent chart and render new configurations
-        this._optionsService.setOption('tooltip', config);
-    }
-    /**
-     * @return {?}
-     */
-    _removeOption() {
-        this._optionsService.clearOption('tooltip');
-    }
-}
-TdChartTooltipComponent.decorators = [
-    { type: Component, args: [{
-                selector: 'td-chart-tooltip',
-                template: `<ng-template #tooltipContent
-            [ngTemplateOutlet]="formatterTemplate"
-            [ngTemplateOutletContext]="_context">
-</ng-template>`,
-                styles: [``],
-                changeDetection: ChangeDetectionStrategy.OnPush,
-            },] },
-];
-/** @nocollapse */
-TdChartTooltipComponent.ctorParameters = () => [
-    { type: ChangeDetectorRef, },
-    { type: ElementRef, },
-    { type: TdChartOptionsService$1, },
-];
-TdChartTooltipComponent.propDecorators = {
-    "config": [{ type: Input, args: ['config',] },],
-    "show": [{ type: Input, args: ['show',] },],
-    "trigger": [{ type: Input, args: ['trigger',] },],
-    "axisPointer": [{ type: Input, args: ['axisPointer',] },],
-    "showContent": [{ type: Input, args: ['showContent',] },],
-    "alwaysShowContent": [{ type: Input, args: ['alwaysShowContent',] },],
-    "triggerOn": [{ type: Input, args: ['triggerOn',] },],
-    "showDelay": [{ type: Input, args: ['showDelay',] },],
-    "hideDelay": [{ type: Input, args: ['hideDelay',] },],
-    "enterable": [{ type: Input, args: ['enterable',] },],
-    "confine": [{ type: Input, args: ['confine',] },],
-    "transitionDuration": [{ type: Input, args: ['transitionDuration',] },],
-    "position": [{ type: Input, args: ['position',] },],
-    "backgroundColor": [{ type: Input, args: ['backgroundColor',] },],
-    "borderColor": [{ type: Input, args: ['borderColor',] },],
-    "borderWidth": [{ type: Input, args: ['borderWidth',] },],
-    "padding": [{ type: Input, args: ['padding',] },],
-    "textStyle": [{ type: Input, args: ['textStyle',] },],
-    "extraCssText": [{ type: Input, args: ['extraCssText',] },],
-    "formatterTemplate": [{ type: ContentChild, args: [TdChartTooltipFormatterDirective, { read: TemplateRef },] },],
-    "fullTemplate": [{ type: ViewChild, args: ['tooltipContent',] },],
-};
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-class TdTooltipContext$1 {
-}
-class TdChartSeriesTooltipFormatterDirective {
-}
-TdChartSeriesTooltipFormatterDirective.decorators = [
-    { type: Directive, args: [{
-                selector: 'ng-template[tdSeriesTooltipFormatter]',
-            },] },
-];
-/** @nocollapse */
-TdChartSeriesTooltipFormatterDirective.ctorParameters = () => [];
-class TdSeriesTooltipComponent {
-    /**
-     * @param {?} _changeDetectorRef
-     * @param {?} _elementRef
-     * @param {?} _optionsService
-     */
-    constructor(_changeDetectorRef, _elementRef, _optionsService) {
-        this._changeDetectorRef = _changeDetectorRef;
-        this._elementRef = _elementRef;
-        this._optionsService = _optionsService;
-        this._state = {};
-        this._context = new TdTooltipContext$1();
-        this.index = 0;
-        this.backgroundColor = 'rgba(50,50,50,0.7)';
-        this.borderColor = '#333';
-        this.borderWidth = 0;
-        this.padding = 5;
-        this.textStyle = {
-            color: '#FFF',
-        };
-    }
-    /**
-     * @return {?}
-     */
-    ngOnInit() {
-        this._setOptions();
-    }
-    /**
-     * @return {?}
-     */
-    ngOnChanges() {
-        this._setOptions();
-    }
-    /**
-     * @return {?}
-     */
-    ngOnDestroy() {
-        this._removeOption();
-    }
-    /**
-     * @return {?}
-     */
-    _setOptions() {
-        // const checkKeys: boolean = Object.keys(this.config).length === 0;
-        if (!this.configArray) {
-            let /** @type {?} */ config = assignDefined$1(this._state, this.config ? this.config : {}, {
-                position: this.position,
-                backgroundColor: this.backgroundColor,
-                borderColor: this.borderColor,
-                borderWidth: this.borderWidth,
-                padding: this.padding,
-                textStyle: this.textStyle,
-                extraCssText: this.extraCssText,
-                formatter: this.formatter ? this.formatter : this._formatter(),
-            });
-            // set series tooltip configuration in parent chart and render new configurations
-            this._optionsService.setSeriesOption('tooltip', config, this.index);
-        }
-        else {
-            this._setConfig();
-        }
-    }
-    /**
-     * processes configArray and updates
-     *
-     * @return {?}
-     */
-    _setConfig() {
-        let /** @type {?} */ config = assignDefined$1(this._state, this.configArray);
-        for (const /** @type {?} */ key of Object.keys(config)) {
-            if (!config[key].formatter) {
-                config[key].formatter = this._formatter();
-            }
-            this._optionsService.setSeriesOption('tooltip', config[key], parseInt(key, 0));
-        }
-    }
-    /**
-     * Formatter for tooltip
-     *
-     * @return {?}
-     */
-    _formatter() {
-        return (params, ticket, callback) => {
-            this._context = {
-                $implicit: params,
-                ticket: ticket,
-            };
-            // timeout set since we need to set the HTML at the end of the angular lifecycle when
-            // the tooltip delay is more than 0
-            setTimeout(() => {
-                callback(ticket, (/** @type {?} */ (this._elementRef.nativeElement)).innerHTML);
-            });
-            this._changeDetectorRef.markForCheck();
-            return (/** @type {?} */ (this._elementRef.nativeElement)).innerHTML;
-        };
-    }
-    /**
-     * @return {?}
-     */
-    _removeOption() {
-        this._optionsService.clearSeriesOption('tooltip');
-    }
-}
-TdSeriesTooltipComponent.decorators = [
-    { type: Component, args: [{
-                selector: 'td-chart-series-tooltip',
-                template: `<ng-template #tooltipContent
-            [ngTemplateOutlet]="formatterTemplate"
-            [ngTemplateOutletContext]="_context">
-</ng-template>
-`,
-                styles: [``],
-                changeDetection: ChangeDetectionStrategy.OnPush,
-            },] },
-];
-/** @nocollapse */
-TdSeriesTooltipComponent.ctorParameters = () => [
-    { type: ChangeDetectorRef, },
-    { type: ElementRef, },
-    { type: TdChartOptionsService$1, },
-];
-TdSeriesTooltipComponent.propDecorators = {
-    "config": [{ type: Input, args: ['config',] },],
-    "configArray": [{ type: Input, args: ['configArray',] },],
-    "index": [{ type: Input, args: ['index',] },],
-    "formatter": [{ type: Input, args: ['formatter',] },],
-    "position": [{ type: Input, args: ['position',] },],
-    "backgroundColor": [{ type: Input, args: ['backgroundColor',] },],
-    "borderColor": [{ type: Input, args: ['borderColor',] },],
-    "borderWidth": [{ type: Input, args: ['borderWidth',] },],
-    "padding": [{ type: Input, args: ['padding',] },],
-    "textStyle": [{ type: Input, args: ['textStyle',] },],
-    "extraCssText": [{ type: Input, args: ['extraCssText',] },],
-    "formatterTemplate": [{ type: ContentChild, args: [TdChartSeriesTooltipFormatterDirective, { read: TemplateRef },] },],
-    "fullTemplate": [{ type: ViewChild, args: ['tooltipContent',] },],
-};
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
 /**
  * @abstract
  */
@@ -649,7 +326,7 @@ class TdChartAxisComponent {
      * @return {?}
      */
     _setOptions() {
-        let /** @type {?} */ config = assignDefined$1(this._state, this.config, {
+        let /** @type {?} */ config = assignDefined$1(this._state, this.config ? this.config : {}, {
             id: this.id,
             show: this.show,
             gridIndex: this.gridIndex,
@@ -783,12 +460,8 @@ TdChartYAxisComponent.propDecorators = {
  */
 const BASE_MODULE_COMPONENTS = [
     TdChartComponent,
-    TdChartTooltipComponent,
-    TdChartTooltipFormatterDirective,
     TdChartXAxisComponent,
     TdChartYAxisComponent,
-    TdSeriesTooltipComponent,
-    TdChartSeriesTooltipFormatterDirective,
 ];
 class CovalentBaseEchartsModule {
 }
@@ -815,70 +488,27 @@ CovalentBaseEchartsModule.ctorParameters = () => [];
 /**
  * @record
  */
-/** @enum {string} */
-const TdCoordinateSystem = {
-    Cartesian2d: 'cartesian2d',
-    Polar: 'polar',
-};
-/** @enum {string} */
-const TdSeriesLayoutBy = {
-    Column: 'column',
-    Row: 'row',
-};
-/** @enum {string} */
-const TdProgressiveChunkMode = {
-    sequential: 'sequential',
-    Mod: 'mod',
-};
-/** @enum {string} */
-const TdSeriesType$1 = {
-    Line: 'line',
-    Bar: 'bar',
-    Pie: 'pie',
-    Scatter: 'scatter',
-    EffectScatter: 'effectScatter',
-    Radar: 'radar',
-    Tree: 'tree',
-    Treemap: 'treemap',
-    Sunburst: 'sunburst',
-    Boxplot: 'boxplot',
-    Candlestick: 'candlestick',
-    Heatmap: 'heatmap',
-    Map: 'map',
-    Parallel: 'parallel',
-    Lines: 'lines',
-    Graph: 'graph',
-    Sankey: 'sankey',
-    Funnel: 'funnel',
-    Gauge: 'gauge',
-    PictorialBar: 'pictorialBar',
-    ThemeRiver: 'themeRiver',
-    Custom: 'custom',
-};
 
 /**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
+ * @abstract
  */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-class TdChartSeriesBarComponent {
+class TdSeriesComponent$1 {
     /**
-     * @param {?} _optionsService
+     * @param {?} type
+     * @param {?} optionsService
      */
-    constructor(_optionsService) {
-        this._optionsService = _optionsService;
-        this._type = 'bar';
+    constructor(type, optionsService) {
+        this.optionsService = optionsService;
         this._state = {};
+        this._options = {};
         this.config = {};
+        this._type = type;
+    }
+    /**
+     * @return {?}
+     */
+    get type() {
+        return this._type;
     }
     /**
      * @return {?}
@@ -899,12 +529,85 @@ class TdChartSeriesBarComponent {
         this._removeOption();
     }
     /**
+     * @param {?} option
+     * @param {?} value
+     * @return {?}
+     */
+    setStateOption(option, value) {
+        this._options[option] = value;
+        this._setOptions();
+    }
+    /**
+     * @param {?} option
+     * @return {?}
+     */
+    removeStateOption(option) {
+        this._options[option] = undefined;
+        this._setOptions();
+    }
+    /**
      * @return {?}
      */
     _setOptions() {
-        let /** @type {?} */ config = assignDefined(this._state, this.config, {
+        let /** @type {?} */ config = assignDefined$1(this._state, this.config ? this.config : {}, this.getConfig(), this._options);
+        this.optionsService.setArrayOption('series', config);
+    }
+    /**
+     * @return {?}
+     */
+    _removeOption() {
+        let /** @type {?} */ config = this.getConfig();
+        this.optionsService.removeArrayOption('series', config);
+    }
+}
+TdSeriesComponent$1.propDecorators = {
+    "config": [{ type: Input, args: ['config',] },],
+    "id": [{ type: Input, args: ['id',] },],
+    "name": [{ type: Input, args: ['name',] },],
+    "color": [{ type: Input, args: ['color',] },],
+    "animation": [{ type: Input, args: ['animation',] },],
+    "animationThreshold": [{ type: Input, args: ['animationThreshold',] },],
+    "animationDuration": [{ type: Input, args: ['animationDuration',] },],
+    "animationEasing": [{ type: Input, args: ['animationEasing',] },],
+    "animationDelay": [{ type: Input, args: ['animationDelay',] },],
+    "animationDurationUpdate": [{ type: Input, args: ['animationDurationUpdate',] },],
+    "animationEasingUpdate": [{ type: Input, args: ['animationEasingUpdate',] },],
+    "animationDelayUpdate": [{ type: Input, args: ['animationDelayUpdate',] },],
+    "tooltip": [{ type: Input, args: ['tooltip',] },],
+};
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+/**
+ * @record
+ */
+
+class TdChartSeriesBarComponent extends TdSeriesComponent {
+    /**
+     * @param {?} _optionsService
+     */
+    constructor(_optionsService) {
+        super('bar', _optionsService);
+    }
+    /**
+     * @return {?}
+     */
+    getConfig() {
+        return {
             id: this.id,
-            type: this._type,
+            type: this.type,
             name: this.name,
             color: this.color,
             coordinateSystem: this.coordinateSystem,
@@ -945,14 +648,7 @@ class TdChartSeriesBarComponent {
             animationEasingUpdate: this.animationEasingUpdate,
             animationDelayUpdate: this.animationDelayUpdate,
             tooltip: this.tooltip,
-        });
-        this._optionsService.setArrayOption('series', config);
-    }
-    /**
-     * @return {?}
-     */
-    _removeOption() {
-        this._optionsService.clearOption('series');
+        };
     }
 }
 TdChartSeriesBarComponent.decorators = [
@@ -960,6 +656,9 @@ TdChartSeriesBarComponent.decorators = [
                 selector: 'td-chart-series[td-bar]',
                 template: '',
                 changeDetection: ChangeDetectionStrategy.OnPush,
+                providers: [{
+                        provide: TdSeriesComponent, useExisting: forwardRef(() => TdChartSeriesBarComponent),
+                    }],
             },] },
 ];
 /** @nocollapse */
@@ -967,10 +666,6 @@ TdChartSeriesBarComponent.ctorParameters = () => [
     { type: TdChartOptionsService, },
 ];
 TdChartSeriesBarComponent.propDecorators = {
-    "config": [{ type: Input, args: ['config',] },],
-    "id": [{ type: Input, args: ['id',] },],
-    "name": [{ type: Input, args: ['name',] },],
-    "color": [{ type: Input, args: ['color',] },],
     "coordinateSystem": [{ type: Input, args: ['coordinateSystem',] },],
     "xAxisIndex": [{ type: Input, args: ['xAxisIndex',] },],
     "yAxisIndex": [{ type: Input, args: ['yAxisIndex',] },],
@@ -1000,15 +695,6 @@ TdChartSeriesBarComponent.propDecorators = {
     "markArea": [{ type: Input, args: ['markArea',] },],
     "zlevel": [{ type: Input, args: ['zlevel',] },],
     "z": [{ type: Input, args: ['z',] },],
-    "animation": [{ type: Input, args: ['animation',] },],
-    "animationThreshold": [{ type: Input, args: ['animationThreshold',] },],
-    "animationDuration": [{ type: Input, args: ['animationDuration',] },],
-    "animationEasing": [{ type: Input, args: ['animationEasing',] },],
-    "animationDelay": [{ type: Input, args: ['animationDelay',] },],
-    "animationDurationUpdate": [{ type: Input, args: ['animationDurationUpdate',] },],
-    "animationEasingUpdate": [{ type: Input, args: ['animationEasingUpdate',] },],
-    "animationDelayUpdate": [{ type: Input, args: ['animationDelayUpdate',] },],
-    "tooltip": [{ type: Input, args: ['tooltip',] },],
 };
 
 /**
@@ -1050,41 +736,24 @@ CovalentBarEchartsModule.ctorParameters = () => [];
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
-class TdChartSeriesLineComponent {
+/**
+ * @record
+ */
+
+class TdChartSeriesLineComponent extends TdSeriesComponent {
     /**
      * @param {?} _optionsService
      */
     constructor(_optionsService) {
-        this._optionsService = _optionsService;
-        this._type = TdSeriesType.Line;
-        this._state = {};
-        this.config = {};
+        super('line', _optionsService);
     }
     /**
      * @return {?}
      */
-    ngOnInit() {
-        this._setOptions();
-    }
-    /**
-     * @return {?}
-     */
-    ngOnChanges() {
-        this._setOptions();
-    }
-    /**
-     * @return {?}
-     */
-    ngOnDestroy() {
-        this._removeOption();
-    }
-    /**
-     * @return {?}
-     */
-    _setOptions() {
-        let /** @type {?} */ config = assignDefined(this._state, this.config, {
+    getConfig() {
+        return {
             id: this.id,
-            type: this._type,
+            type: this.type,
             name: this.name,
             color: this.color,
             coordinateSystem: this.coordinateSystem,
@@ -1133,14 +802,7 @@ class TdChartSeriesLineComponent {
             animationEasingUpdate: this.animationEasingUpdate,
             animationDelayUpdate: this.animationDelayUpdate,
             tooltip: this.tooltip,
-        });
-        this._optionsService.setArrayOption('series', config);
-    }
-    /**
-     * @return {?}
-     */
-    _removeOption() {
-        this._optionsService.clearOption('series');
+        };
     }
 }
 TdChartSeriesLineComponent.decorators = [
@@ -1148,6 +810,9 @@ TdChartSeriesLineComponent.decorators = [
                 selector: 'td-chart-series[td-line]',
                 template: '',
                 changeDetection: ChangeDetectionStrategy.OnPush,
+                providers: [{
+                        provide: TdSeriesComponent, useExisting: forwardRef(() => TdChartSeriesLineComponent),
+                    }],
             },] },
 ];
 /** @nocollapse */
@@ -1155,10 +820,6 @@ TdChartSeriesLineComponent.ctorParameters = () => [
     { type: TdChartOptionsService, },
 ];
 TdChartSeriesLineComponent.propDecorators = {
-    "config": [{ type: Input, args: ['config',] },],
-    "id": [{ type: Input, args: ['id',] },],
-    "name": [{ type: Input, args: ['name',] },],
-    "color": [{ type: Input, args: ['color',] },],
     "coordinateSystem": [{ type: Input, args: ['coordinateSystem',] },],
     "xAxisIndex": [{ type: Input, args: ['xAxisIndex',] },],
     "yAxisIndex": [{ type: Input, args: ['yAxisIndex',] },],
@@ -1196,15 +857,6 @@ TdChartSeriesLineComponent.propDecorators = {
     "zlevel": [{ type: Input, args: ['zlevel',] },],
     "z": [{ type: Input, args: ['z',] },],
     "silent": [{ type: Input, args: ['silent',] },],
-    "animation": [{ type: Input, args: ['animation',] },],
-    "animationThreshold": [{ type: Input, args: ['animationThreshold',] },],
-    "animationDuration": [{ type: Input, args: ['animationDuration',] },],
-    "animationEasing": [{ type: Input, args: ['animationEasing',] },],
-    "animationDelay": [{ type: Input, args: ['animationDelay',] },],
-    "animationDurationUpdate": [{ type: Input, args: ['animationDurationUpdate',] },],
-    "animationEasingUpdate": [{ type: Input, args: ['animationEasingUpdate',] },],
-    "animationDelayUpdate": [{ type: Input, args: ['animationDelayUpdate',] },],
-    "tooltip": [{ type: Input, args: ['tooltip',] },],
 };
 
 /**
@@ -1246,41 +898,24 @@ CovalentLineEchartsModule.ctorParameters = () => [];
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
-class TdChartSeriesScatterComponent {
+/**
+ * @record
+ */
+
+class TdChartSeriesScatterComponent extends TdSeriesComponent {
     /**
      * @param {?} _optionsService
      */
     constructor(_optionsService) {
-        this._optionsService = _optionsService;
-        this._type = TdSeriesType.Scatter;
-        this._state = {};
-        this.config = {};
+        super('scatter', _optionsService);
     }
     /**
      * @return {?}
      */
-    ngOnInit() {
-        this._setOptions();
-    }
-    /**
-     * @return {?}
-     */
-    ngOnChanges() {
-        this._setOptions();
-    }
-    /**
-     * @return {?}
-     */
-    ngOnDestroy() {
-        this._removeOption();
-    }
-    /**
-     * @return {?}
-     */
-    _setOptions() {
-        let /** @type {?} */ config = assignDefined(this._state, this.config, {
+    getConfig() {
+        return {
             id: this.id,
-            type: this._type,
+            type: this.type,
             name: this.name,
             color: this.color,
             coordinateSystem: this.coordinateSystem,
@@ -1324,14 +959,7 @@ class TdChartSeriesScatterComponent {
             animationEasingUpdate: this.animationEasingUpdate,
             animationDelayUpdate: this.animationDelayUpdate,
             tooltip: this.tooltip,
-        });
-        this._optionsService.setArrayOption('series', config);
-    }
-    /**
-     * @return {?}
-     */
-    _removeOption() {
-        this._optionsService.clearOption('series');
+        };
     }
 }
 TdChartSeriesScatterComponent.decorators = [
@@ -1339,6 +967,9 @@ TdChartSeriesScatterComponent.decorators = [
                 selector: 'td-chart-series[td-scatter]',
                 template: '',
                 changeDetection: ChangeDetectionStrategy.OnPush,
+                providers: [{
+                        provide: TdSeriesComponent, useExisting: forwardRef(() => TdChartSeriesScatterComponent),
+                    }],
             },] },
 ];
 /** @nocollapse */
@@ -1346,10 +977,6 @@ TdChartSeriesScatterComponent.ctorParameters = () => [
     { type: TdChartOptionsService, },
 ];
 TdChartSeriesScatterComponent.propDecorators = {
-    "config": [{ type: Input, args: ['config',] },],
-    "id": [{ type: Input, args: ['id',] },],
-    "name": [{ type: Input, args: ['name',] },],
-    "color": [{ type: Input, args: ['color',] },],
     "coordinateSystem": [{ type: Input, args: ['coordinateSystem',] },],
     "xAxisIndex": [{ type: Input, args: ['xAxisIndex',] },],
     "yAxisIndex": [{ type: Input, args: ['yAxisIndex',] },],
@@ -1382,15 +1009,6 @@ TdChartSeriesScatterComponent.propDecorators = {
     "zlevel": [{ type: Input, args: ['zlevel',] },],
     "z": [{ type: Input, args: ['z',] },],
     "silent": [{ type: Input, args: ['silent',] },],
-    "animation": [{ type: Input, args: ['animation',] },],
-    "animationThreshold": [{ type: Input, args: ['animationThreshold',] },],
-    "animationDuration": [{ type: Input, args: ['animationDuration',] },],
-    "animationEasing": [{ type: Input, args: ['animationEasing',] },],
-    "animationDelay": [{ type: Input, args: ['animationDelay',] },],
-    "animationDurationUpdate": [{ type: Input, args: ['animationDurationUpdate',] },],
-    "animationEasingUpdate": [{ type: Input, args: ['animationEasingUpdate',] },],
-    "animationDelayUpdate": [{ type: Input, args: ['animationDelayUpdate',] },],
-    "tooltip": [{ type: Input, args: ['tooltip',] },],
 };
 
 /**
@@ -1432,6 +1050,319 @@ CovalentScatterEchartsModule.ctorParameters = () => [];
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
+class TdTooltipContext {
+}
+class TdChartTooltipFormatterDirective {
+}
+TdChartTooltipFormatterDirective.decorators = [
+    { type: Directive, args: [{
+                selector: 'ng-template[tdTooltipFormatter]',
+            },] },
+];
+/** @nocollapse */
+TdChartTooltipFormatterDirective.ctorParameters = () => [];
+class TdChartTooltipComponent {
+    /**
+     * @param {?} _changeDetectorRef
+     * @param {?} _elementRef
+     * @param {?} _optionsService
+     */
+    constructor(_changeDetectorRef, _elementRef, _optionsService) {
+        this._changeDetectorRef = _changeDetectorRef;
+        this._elementRef = _elementRef;
+        this._optionsService = _optionsService;
+        this._state = {};
+        this._context = new TdTooltipContext();
+        this.config = {};
+        this.show = true;
+        this.trigger = 'axis';
+        this.showContent = true;
+        this.alwaysShowContent = false;
+        this.triggerOn = 'mousemove|click';
+        this.showDelay = 0;
+        this.hideDelay = 0;
+        this.enterable = false;
+        this.confine = false;
+        this.transitionDuration = 0.5;
+        this.backgroundColor = 'rgba(50,50,50,0.7)';
+        this.borderColor = '#333';
+        this.borderWidth = 0;
+        this.padding = 5;
+        this.textStyle = {
+            // series
+            color: '#FFF',
+        };
+    }
+    /**
+     * @return {?}
+     */
+    ngOnInit() {
+        this._setOptions();
+    }
+    /**
+     * @return {?}
+     */
+    ngOnChanges() {
+        this._setOptions();
+    }
+    /**
+     * @return {?}
+     */
+    ngOnDestroy() {
+        this._removeOption();
+    }
+    /**
+     * @return {?}
+     */
+    _setOptions() {
+        let /** @type {?} */ config = assignDefined(this._state, this.config ? this.config : {}, {
+            show: this.show,
+            trigger: this.trigger,
+            axisPointer: this.axisPointer,
+            showContent: this.showContent,
+            alwaysShowContent: this.alwaysShowContent,
+            triggerOn: this.triggerOn,
+            showDelay: this.showDelay,
+            hideDelay: this.hideDelay,
+            enterable: this.enterable,
+            confine: this.confine,
+            transitionDuration: this.transitionDuration,
+            position: this.position,
+            formatter: this.formatter ? this.formatter : this._formatter(),
+            backgroundColor: this.backgroundColor,
+            borderColor: this.borderColor,
+            borderWidth: this.borderWidth,
+            padding: this.padding,
+            textStyle: this.textStyle,
+            extraCssText: this.extraCssText,
+        });
+        // set tooltip configuration in parent chart and render new configurations
+        this._optionsService.setOption('tooltip', config);
+    }
+    /**
+     * @return {?}
+     */
+    _removeOption() {
+        this._optionsService.clearOption('tooltip');
+    }
+    /**
+     * @return {?}
+     */
+    _formatter() {
+        return (params, ticket, callback) => {
+            this._context = {
+                $implicit: params,
+                ticket: ticket,
+            };
+            // timeout set since we need to set the HTML at the end of the angular lifecycle when
+            // the tooltip delay is more than 0
+            setTimeout(() => {
+                callback(ticket, (/** @type {?} */ (this._elementRef.nativeElement)).innerHTML);
+            });
+            this._changeDetectorRef.markForCheck();
+            return (/** @type {?} */ (this._elementRef.nativeElement)).innerHTML;
+        };
+    }
+}
+TdChartTooltipComponent.decorators = [
+    { type: Component, args: [{
+                selector: 'td-chart-tooltip',
+                template: `<ng-template #tooltipContent
+            [ngTemplateOutlet]="formatterTemplate"
+            [ngTemplateOutletContext]="_context">
+</ng-template>`,
+                changeDetection: ChangeDetectionStrategy.OnPush,
+            },] },
+];
+/** @nocollapse */
+TdChartTooltipComponent.ctorParameters = () => [
+    { type: ChangeDetectorRef, },
+    { type: ElementRef, },
+    { type: TdChartOptionsService, },
+];
+TdChartTooltipComponent.propDecorators = {
+    "config": [{ type: Input, args: ['config',] },],
+    "show": [{ type: Input, args: ['show',] },],
+    "trigger": [{ type: Input, args: ['trigger',] },],
+    "axisPointer": [{ type: Input, args: ['axisPointer',] },],
+    "showContent": [{ type: Input, args: ['showContent',] },],
+    "alwaysShowContent": [{ type: Input, args: ['alwaysShowContent',] },],
+    "triggerOn": [{ type: Input, args: ['triggerOn',] },],
+    "showDelay": [{ type: Input, args: ['showDelay',] },],
+    "hideDelay": [{ type: Input, args: ['hideDelay',] },],
+    "enterable": [{ type: Input, args: ['enterable',] },],
+    "renderMode": [{ type: Input, args: ['renderMode',] },],
+    "confine": [{ type: Input, args: ['confine',] },],
+    "transitionDuration": [{ type: Input, args: ['transitionDuration',] },],
+    "position": [{ type: Input, args: ['position',] },],
+    "formatter": [{ type: Input, args: ['formatter',] },],
+    "backgroundColor": [{ type: Input, args: ['backgroundColor',] },],
+    "borderColor": [{ type: Input, args: ['borderColor',] },],
+    "borderWidth": [{ type: Input, args: ['borderWidth',] },],
+    "padding": [{ type: Input, args: ['padding',] },],
+    "textStyle": [{ type: Input, args: ['textStyle',] },],
+    "extraCssText": [{ type: Input, args: ['extraCssText',] },],
+    "formatterTemplate": [{ type: ContentChild, args: [TdChartTooltipFormatterDirective, { read: TemplateRef },] },],
+    "fullTemplate": [{ type: ViewChild, args: ['tooltipContent',] },],
+};
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+class TdSeriesTooltipComponent {
+    /**
+     * @param {?} _changeDetectorRef
+     * @param {?} _elementRef
+     * @param {?} _seriesComponent
+     */
+    constructor(_changeDetectorRef, _elementRef, _seriesComponent) {
+        this._changeDetectorRef = _changeDetectorRef;
+        this._elementRef = _elementRef;
+        this._seriesComponent = _seriesComponent;
+        this._state = {};
+        this._context = new TdTooltipContext();
+        this.backgroundColor = 'rgba(50,50,50,0.7)';
+        this.borderColor = '#333';
+        this.borderWidth = 0;
+        this.padding = 5;
+        this.textStyle = {
+            color: '#FFF',
+        };
+    }
+    /**
+     * @return {?}
+     */
+    ngOnInit() {
+        this._setOptions();
+    }
+    /**
+     * @return {?}
+     */
+    ngOnChanges() {
+        this._setOptions();
+    }
+    /**
+     * @return {?}
+     */
+    ngOnDestroy() {
+        this._removeOption();
+    }
+    /**
+     * @return {?}
+     */
+    _setOptions() {
+        let /** @type {?} */ config = assignDefined(this._state, this.config ? this.config : {}, {
+            position: this.position,
+            backgroundColor: this.backgroundColor,
+            borderColor: this.borderColor,
+            borderWidth: this.borderWidth,
+            padding: this.padding,
+            textStyle: this.textStyle,
+            extraCssText: this.extraCssText,
+            formatter: this.formatter ? this.formatter : this._formatter(),
+        });
+        // set series tooltip configuration in parent chart and render new configurations
+        this._seriesComponent.setStateOption('tooltip', config);
+    }
+    /**
+     * Formatter for tooltip
+     *
+     * @return {?}
+     */
+    _formatter() {
+        return (params, ticket, callback) => {
+            this._context = {
+                $implicit: params,
+                ticket: ticket,
+            };
+            // timeout set since we need to set the HTML at the end of the angular lifecycle when
+            // the tooltip delay is more than 0
+            setTimeout(() => {
+                callback(ticket, (/** @type {?} */ (this._elementRef.nativeElement)).innerHTML);
+            });
+            this._changeDetectorRef.markForCheck();
+            return (/** @type {?} */ (this._elementRef.nativeElement)).innerHTML;
+        };
+    }
+    /**
+     * @return {?}
+     */
+    _removeOption() {
+        this._seriesComponent.removeStateOption('tooltip');
+    }
+}
+TdSeriesTooltipComponent.decorators = [
+    { type: Component, args: [{
+                selector: 'td-chart-series-tooltip',
+                template: `<ng-template #tooltipContent
+            [ngTemplateOutlet]="formatterTemplate"
+            [ngTemplateOutletContext]="_context">
+</ng-template>`,
+                changeDetection: ChangeDetectionStrategy.OnPush,
+            },] },
+];
+/** @nocollapse */
+TdSeriesTooltipComponent.ctorParameters = () => [
+    { type: ChangeDetectorRef, },
+    { type: ElementRef, },
+    { type: TdSeriesComponent, },
+];
+TdSeriesTooltipComponent.propDecorators = {
+    "config": [{ type: Input, args: ['config',] },],
+    "formatter": [{ type: Input, args: ['formatter',] },],
+    "position": [{ type: Input, args: ['position',] },],
+    "backgroundColor": [{ type: Input, args: ['backgroundColor',] },],
+    "borderColor": [{ type: Input, args: ['borderColor',] },],
+    "borderWidth": [{ type: Input, args: ['borderWidth',] },],
+    "padding": [{ type: Input, args: ['padding',] },],
+    "textStyle": [{ type: Input, args: ['textStyle',] },],
+    "extraCssText": [{ type: Input, args: ['extraCssText',] },],
+    "formatterTemplate": [{ type: ContentChild, args: [TdChartTooltipFormatterDirective, { read: TemplateRef },] },],
+    "fullTemplate": [{ type: ViewChild, args: ['tooltipContent',] },],
+};
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+const TOOLTIP_MODULE_COMPONENTS = [
+    TdChartTooltipComponent,
+    TdChartTooltipFormatterDirective,
+    TdSeriesTooltipComponent,
+];
+class CovalentTooltipEchartsModule {
+}
+CovalentTooltipEchartsModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    CommonModule,
+                ],
+                declarations: [
+                    TOOLTIP_MODULE_COMPONENTS,
+                ],
+                exports: [
+                    TOOLTIP_MODULE_COMPONENTS,
+                ],
+            },] },
+];
+/** @nocollapse */
+CovalentTooltipEchartsModule.ctorParameters = () => [];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
 
 /**
  * @fileoverview added by tsickle
@@ -1446,5 +1377,5 @@ CovalentScatterEchartsModule.ctorParameters = () => [];
  * Generated bundle index. Do not edit.
  */
 
-export { TdChartComponent, TdChartAxisComponent, TdChartYAxisComponent, TdChartXAxisComponent, TdChartTooltipComponent, TdChartOptionsService$1 as TdChartOptionsService, CHART_PROVIDER, TdSeriesType$1 as TdSeriesType, TdCoordinateSystem, TdSeriesLayoutBy, TdProgressiveChunkMode, BASE_MODULE_COMPONENTS, CovalentBaseEchartsModule, assignDefined$1 as assignDefined, BAR_MODULE_COMPONENTS, CovalentBarEchartsModule, LINE_MODULE_COMPONENTS, CovalentLineEchartsModule, SCATTER_MODULE_COMPONENTS, CovalentScatterEchartsModule, TdChartSeriesBarComponent as ɵe, CHART_PROVIDER_FACTORY as ɵb, TdChartSeriesTooltipFormatterDirective as ɵc, TdSeriesTooltipComponent as ɵd, TdChartTooltipFormatterDirective as ɵa, TdChartSeriesLineComponent as ɵf, TdChartSeriesScatterComponent as ɵg };
+export { TdChartComponent, TdChartAxisComponent, TdChartYAxisComponent, TdChartXAxisComponent, TdChartOptionsService$1 as TdChartOptionsService, CHART_PROVIDER, BASE_MODULE_COMPONENTS, CovalentBaseEchartsModule, assignDefined$1 as assignDefined, TdSeriesComponent$1 as TdSeriesComponent, BAR_MODULE_COMPONENTS, CovalentBarEchartsModule, TdChartSeriesBarComponent, LINE_MODULE_COMPONENTS, CovalentLineEchartsModule, TdChartSeriesLineComponent, SCATTER_MODULE_COMPONENTS, CovalentScatterEchartsModule, TdChartSeriesScatterComponent, TOOLTIP_MODULE_COMPONENTS, CovalentTooltipEchartsModule, TdTooltipContext, TdChartTooltipFormatterDirective, TdChartTooltipComponent, TdSeriesTooltipComponent, CHART_PROVIDER_FACTORY as ɵa };
 //# sourceMappingURL=covalent-echarts.js.map

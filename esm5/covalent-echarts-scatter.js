@@ -1,28 +1,18 @@
-import { Component, Input, ChangeDetectionStrategy, NgModule } from '@angular/core';
-import 'echarts/lib/chart/scatter';
-import { TdChartOptionsService, assignDefined, TdSeriesType } from '@covalent/echarts/base';
+import { __extends } from 'tslib';
+import { Component, Input, ChangeDetectionStrategy, forwardRef, NgModule } from '@angular/core';
+import { TdChartOptionsService, TdSeriesComponent } from '@covalent/echarts/base';
 import { CommonModule } from '@angular/common';
+import 'echarts/lib/chart/scatter';
 
-var TdChartSeriesScatterComponent = /** @class */ (function () {
+var TdChartSeriesScatterComponent = /** @class */ (function (_super) {
+    __extends(TdChartSeriesScatterComponent, _super);
     function TdChartSeriesScatterComponent(_optionsService) {
-        this._optionsService = _optionsService;
-        this._type = TdSeriesType.Scatter;
-        this._state = {};
-        this.config = {};
+        return _super.call(this, 'scatter', _optionsService) || this;
     }
-    TdChartSeriesScatterComponent.prototype.ngOnInit = function () {
-        this._setOptions();
-    };
-    TdChartSeriesScatterComponent.prototype.ngOnChanges = function () {
-        this._setOptions();
-    };
-    TdChartSeriesScatterComponent.prototype.ngOnDestroy = function () {
-        this._removeOption();
-    };
-    TdChartSeriesScatterComponent.prototype._setOptions = function () {
-        var config = assignDefined(this._state, this.config, {
+    TdChartSeriesScatterComponent.prototype.getConfig = function () {
+        return {
             id: this.id,
-            type: this._type,
+            type: this.type,
             name: this.name,
             color: this.color,
             coordinateSystem: this.coordinateSystem,
@@ -66,29 +56,24 @@ var TdChartSeriesScatterComponent = /** @class */ (function () {
             animationEasingUpdate: this.animationEasingUpdate,
             animationDelayUpdate: this.animationDelayUpdate,
             tooltip: this.tooltip,
-        });
-        this._optionsService.setArrayOption('series', config);
-    };
-    TdChartSeriesScatterComponent.prototype._removeOption = function () {
-        this._optionsService.clearOption('series');
+        };
     };
     return TdChartSeriesScatterComponent;
-}());
+}(TdSeriesComponent));
 TdChartSeriesScatterComponent.decorators = [
     { type: Component, args: [{
                 selector: 'td-chart-series[td-scatter]',
                 template: '',
                 changeDetection: ChangeDetectionStrategy.OnPush,
+                providers: [{
+                        provide: TdSeriesComponent, useExisting: forwardRef(function () { return TdChartSeriesScatterComponent; }),
+                    }],
             },] },
 ];
 TdChartSeriesScatterComponent.ctorParameters = function () { return [
     { type: TdChartOptionsService, },
 ]; };
 TdChartSeriesScatterComponent.propDecorators = {
-    "config": [{ type: Input, args: ['config',] },],
-    "id": [{ type: Input, args: ['id',] },],
-    "name": [{ type: Input, args: ['name',] },],
-    "color": [{ type: Input, args: ['color',] },],
     "coordinateSystem": [{ type: Input, args: ['coordinateSystem',] },],
     "xAxisIndex": [{ type: Input, args: ['xAxisIndex',] },],
     "yAxisIndex": [{ type: Input, args: ['yAxisIndex',] },],
@@ -121,15 +106,6 @@ TdChartSeriesScatterComponent.propDecorators = {
     "zlevel": [{ type: Input, args: ['zlevel',] },],
     "z": [{ type: Input, args: ['z',] },],
     "silent": [{ type: Input, args: ['silent',] },],
-    "animation": [{ type: Input, args: ['animation',] },],
-    "animationThreshold": [{ type: Input, args: ['animationThreshold',] },],
-    "animationDuration": [{ type: Input, args: ['animationDuration',] },],
-    "animationEasing": [{ type: Input, args: ['animationEasing',] },],
-    "animationDelay": [{ type: Input, args: ['animationDelay',] },],
-    "animationDurationUpdate": [{ type: Input, args: ['animationDurationUpdate',] },],
-    "animationEasingUpdate": [{ type: Input, args: ['animationEasingUpdate',] },],
-    "animationDelayUpdate": [{ type: Input, args: ['animationDelayUpdate',] },],
-    "tooltip": [{ type: Input, args: ['tooltip',] },],
 };
 var SCATTER_MODULE_COMPONENTS = [
     TdChartSeriesScatterComponent,
@@ -154,5 +130,5 @@ CovalentScatterEchartsModule.decorators = [
 ];
 CovalentScatterEchartsModule.ctorParameters = function () { return []; };
 
-export { SCATTER_MODULE_COMPONENTS, CovalentScatterEchartsModule, TdChartSeriesScatterComponent as ɵa };
+export { SCATTER_MODULE_COMPONENTS, CovalentScatterEchartsModule, TdChartSeriesScatterComponent };
 //# sourceMappingURL=covalent-echarts-scatter.js.map

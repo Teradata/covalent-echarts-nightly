@@ -1,47 +1,30 @@
-import { Component, Input, ChangeDetectionStrategy, NgModule } from '@angular/core';
-import 'echarts/lib/chart/scatter';
-import { TdChartOptionsService, assignDefined, TdSeriesType } from '@covalent/echarts/base';
+import { Component, Input, ChangeDetectionStrategy, forwardRef, NgModule } from '@angular/core';
+import { TdChartOptionsService, TdSeriesComponent } from '@covalent/echarts/base';
 import { CommonModule } from '@angular/common';
+import 'echarts/lib/chart/scatter';
 
 /**
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
-class TdChartSeriesScatterComponent {
+/**
+ * @record
+ */
+
+class TdChartSeriesScatterComponent extends TdSeriesComponent {
     /**
      * @param {?} _optionsService
      */
     constructor(_optionsService) {
-        this._optionsService = _optionsService;
-        this._type = TdSeriesType.Scatter;
-        this._state = {};
-        this.config = {};
+        super('scatter', _optionsService);
     }
     /**
      * @return {?}
      */
-    ngOnInit() {
-        this._setOptions();
-    }
-    /**
-     * @return {?}
-     */
-    ngOnChanges() {
-        this._setOptions();
-    }
-    /**
-     * @return {?}
-     */
-    ngOnDestroy() {
-        this._removeOption();
-    }
-    /**
-     * @return {?}
-     */
-    _setOptions() {
-        let /** @type {?} */ config = assignDefined(this._state, this.config, {
+    getConfig() {
+        return {
             id: this.id,
-            type: this._type,
+            type: this.type,
             name: this.name,
             color: this.color,
             coordinateSystem: this.coordinateSystem,
@@ -85,14 +68,7 @@ class TdChartSeriesScatterComponent {
             animationEasingUpdate: this.animationEasingUpdate,
             animationDelayUpdate: this.animationDelayUpdate,
             tooltip: this.tooltip,
-        });
-        this._optionsService.setArrayOption('series', config);
-    }
-    /**
-     * @return {?}
-     */
-    _removeOption() {
-        this._optionsService.clearOption('series');
+        };
     }
 }
 TdChartSeriesScatterComponent.decorators = [
@@ -100,6 +76,9 @@ TdChartSeriesScatterComponent.decorators = [
                 selector: 'td-chart-series[td-scatter]',
                 template: '',
                 changeDetection: ChangeDetectionStrategy.OnPush,
+                providers: [{
+                        provide: TdSeriesComponent, useExisting: forwardRef(() => TdChartSeriesScatterComponent),
+                    }],
             },] },
 ];
 /** @nocollapse */
@@ -107,10 +86,6 @@ TdChartSeriesScatterComponent.ctorParameters = () => [
     { type: TdChartOptionsService, },
 ];
 TdChartSeriesScatterComponent.propDecorators = {
-    "config": [{ type: Input, args: ['config',] },],
-    "id": [{ type: Input, args: ['id',] },],
-    "name": [{ type: Input, args: ['name',] },],
-    "color": [{ type: Input, args: ['color',] },],
     "coordinateSystem": [{ type: Input, args: ['coordinateSystem',] },],
     "xAxisIndex": [{ type: Input, args: ['xAxisIndex',] },],
     "yAxisIndex": [{ type: Input, args: ['yAxisIndex',] },],
@@ -143,15 +118,6 @@ TdChartSeriesScatterComponent.propDecorators = {
     "zlevel": [{ type: Input, args: ['zlevel',] },],
     "z": [{ type: Input, args: ['z',] },],
     "silent": [{ type: Input, args: ['silent',] },],
-    "animation": [{ type: Input, args: ['animation',] },],
-    "animationThreshold": [{ type: Input, args: ['animationThreshold',] },],
-    "animationDuration": [{ type: Input, args: ['animationDuration',] },],
-    "animationEasing": [{ type: Input, args: ['animationEasing',] },],
-    "animationDelay": [{ type: Input, args: ['animationDelay',] },],
-    "animationDurationUpdate": [{ type: Input, args: ['animationDurationUpdate',] },],
-    "animationEasingUpdate": [{ type: Input, args: ['animationEasingUpdate',] },],
-    "animationDelayUpdate": [{ type: Input, args: ['animationDelayUpdate',] },],
-    "tooltip": [{ type: Input, args: ['tooltip',] },],
 };
 
 /**
@@ -197,5 +163,5 @@ CovalentScatterEchartsModule.ctorParameters = () => [];
  * Generated bundle index. Do not edit.
  */
 
-export { SCATTER_MODULE_COMPONENTS, CovalentScatterEchartsModule, TdChartSeriesScatterComponent as ɵa };
+export { SCATTER_MODULE_COMPONENTS, CovalentScatterEchartsModule, TdChartSeriesScatterComponent };
 //# sourceMappingURL=covalent-echarts-scatter.js.map

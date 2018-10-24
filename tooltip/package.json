@@ -1,0 +1,11 @@
+{
+  "main": "../bundles/covalent-echarts-tooltip.umd.js",
+  "module": "../esm5/covalent-echarts-tooltip.js",
+  "es2015": "../esm2015/covalent-echarts-tooltip.js",
+  "typings": "covalent-echarts-tooltip.d.ts",
+  "metadata": "covalent-echarts-tooltip.metadata.json",
+  "dependencies": {
+    "tslib": "^1.9.0"
+  },
+  "name": "@covalent/echarts/tooltip"
+}

@@ -38,11 +38,11 @@ export interface ITdFont {
 }
 export interface ITdTooltip {
     show?: boolean;
-    trigger?: TdToolTipTrigger;
+    trigger?: TdTooltipTrigger;
     axisPointer?: ITdTooltipAxisPointer;
     showContent?: boolean;
     alwaysShowContent?: boolean;
-    triggerOn?: TdTooltopTriggerOn;
+    triggerOn?: TdTooltipTriggerOn;
     showDelay?: number;
     hideDelay?: number;
     enterable?: boolean;
@@ -120,15 +120,15 @@ export interface ITdAxisPointerLabel extends ITdShadow, ITdTextShadow, ITdFont {
     borderWidth?: number;
 }
 export declare type TdAxisPointerAxis = 'x' | 'y' | 'radius' | 'angle';
-export declare type TdToolTipTrigger = 'item' | 'axis' | 'none';
-export declare type TdTooltopTriggerOn = 'mousemove' | 'click' | 'none';
+export declare type TdTooltipTrigger = 'item' | 'axis' | 'none';
+export declare type TdTooltipTriggerOn = 'mousemove' | 'click' | 'none' | 'mousemove|click';
 export declare type TdAxisPointerType = 'line' | 'shadow' | 'cross';
 export declare type TdLabelPosition = 'top' | 'left' | 'right' | 'bottom' | 'inside' | 'insideLeft' | 'insideRight' | 'insideTop' | 'insideBottom' | 'insideTopLeft' | 'insideBottomLeft' | 'insideTopRight' | 'insideBottomRight' | string[];
 export declare type TdAlign = 'left' | 'center' | 'right';
 export declare type TdLineType = 'solid' | 'dashed' | 'dotted';
 export declare type TdAreaOrigin = 'auto' | 'start' | 'end';
 export declare type TdLineLabelPosition = 'middle' | 'start' | 'end';
-export declare type TdTooltipPosition = 'inside' | 'top' | 'left' | 'right' | 'bottom';
+export declare type TdTooltipPosition = 'inside' | 'top' | 'left' | 'right' | 'bottom' | string[] | number[] | Function;
 export declare type TdFontWeight = 'normal' | 'bold' | 'bolder' | 'lighter' | number;
 export declare type TdVerticalAlign = 'top' | 'middle' | 'bottom' | 'center';
 export declare type TdPointerType = 'line' | 'shadow';

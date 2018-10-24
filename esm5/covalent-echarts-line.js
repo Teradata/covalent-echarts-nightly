@@ -1,28 +1,18 @@
-import { Component, Input, ChangeDetectionStrategy, NgModule } from '@angular/core';
-import 'echarts/lib/chart/line';
-import { TdChartOptionsService, assignDefined, TdSeriesType } from '@covalent/echarts/base';
+import { __extends } from 'tslib';
+import { Component, Input, ChangeDetectionStrategy, forwardRef, NgModule } from '@angular/core';
+import { TdChartOptionsService, TdSeriesComponent } from '@covalent/echarts/base';
 import { CommonModule } from '@angular/common';
+import 'echarts/lib/chart/line';
 
-var TdChartSeriesLineComponent = /** @class */ (function () {
+var TdChartSeriesLineComponent = /** @class */ (function (_super) {
+    __extends(TdChartSeriesLineComponent, _super);
     function TdChartSeriesLineComponent(_optionsService) {
-        this._optionsService = _optionsService;
-        this._type = TdSeriesType.Line;
-        this._state = {};
-        this.config = {};
+        return _super.call(this, 'line', _optionsService) || this;
     }
-    TdChartSeriesLineComponent.prototype.ngOnInit = function () {
-        this._setOptions();
-    };
-    TdChartSeriesLineComponent.prototype.ngOnChanges = function () {
-        this._setOptions();
-    };
-    TdChartSeriesLineComponent.prototype.ngOnDestroy = function () {
-        this._removeOption();
-    };
-    TdChartSeriesLineComponent.prototype._setOptions = function () {
-        var config = assignDefined(this._state, this.config, {
+    TdChartSeriesLineComponent.prototype.getConfig = function () {
+        return {
             id: this.id,
-            type: this._type,
+            type: this.type,
             name: this.name,
             color: this.color,
             coordinateSystem: this.coordinateSystem,
@@ -71,29 +61,24 @@ var TdChartSeriesLineComponent = /** @class */ (function () {
             animationEasingUpdate: this.animationEasingUpdate,
             animationDelayUpdate: this.animationDelayUpdate,
             tooltip: this.tooltip,
-        });
-        this._optionsService.setArrayOption('series', config);
-    };
-    TdChartSeriesLineComponent.prototype._removeOption = function () {
-        this._optionsService.clearOption('series');
+        };
     };
     return TdChartSeriesLineComponent;
-}());
+}(TdSeriesComponent));
 TdChartSeriesLineComponent.decorators = [
     { type: Component, args: [{
                 selector: 'td-chart-series[td-line]',
                 template: '',
                 changeDetection: ChangeDetectionStrategy.OnPush,
+                providers: [{
+                        provide: TdSeriesComponent, useExisting: forwardRef(function () { return TdChartSeriesLineComponent; }),
+                    }],
             },] },
 ];
 TdChartSeriesLineComponent.ctorParameters = function () { return [
     { type: TdChartOptionsService, },
 ]; };
 TdChartSeriesLineComponent.propDecorators = {
-    "config": [{ type: Input, args: ['config',] },],
-    "id": [{ type: Input, args: ['id',] },],
-    "name": [{ type: Input, args: ['name',] },],
-    "color": [{ type: Input, args: ['color',] },],
     "coordinateSystem": [{ type: Input, args: ['coordinateSystem',] },],
     "xAxisIndex": [{ type: Input, args: ['xAxisIndex',] },],
     "yAxisIndex": [{ type: Input, args: ['yAxisIndex',] },],
@@ -131,15 +116,6 @@ TdChartSeriesLineComponent.propDecorators = {
     "zlevel": [{ type: Input, args: ['zlevel',] },],
     "z": [{ type: Input, args: ['z',] },],
     "silent": [{ type: Input, args: ['silent',] },],
-    "animation": [{ type: Input, args: ['animation',] },],
-    "animationThreshold": [{ type: Input, args: ['animationThreshold',] },],
-    "animationDuration": [{ type: Input, args: ['animationDuration',] },],
-    "animationEasing": [{ type: Input, args: ['animationEasing',] },],
-    "animationDelay": [{ type: Input, args: ['animationDelay',] },],
-    "animationDurationUpdate": [{ type: Input, args: ['animationDurationUpdate',] },],
-    "animationEasingUpdate": [{ type: Input, args: ['animationEasingUpdate',] },],
-    "animationDelayUpdate": [{ type: Input, args: ['animationDelayUpdate',] },],
-    "tooltip": [{ type: Input, args: ['tooltip',] },],
 };
 var LINE_MODULE_COMPONENTS = [
     TdChartSeriesLineComponent,
@@ -164,5 +140,5 @@ CovalentLineEchartsModule.decorators = [
 ];
 CovalentLineEchartsModule.ctorParameters = function () { return []; };
 
-export { LINE_MODULE_COMPONENTS, CovalentLineEchartsModule, TdChartSeriesLineComponent as ɵa };
+export { LINE_MODULE_COMPONENTS, CovalentLineEchartsModule, TdChartSeriesLineComponent };
 //# sourceMappingURL=covalent-echarts-line.js.map

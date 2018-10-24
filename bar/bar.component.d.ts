@@ -1,14 +1,37 @@
-import { OnChanges, OnInit, OnDestroy } from '@angular/core';
-import 'echarts/lib/chart/bar';
-import { TdChartOptionsService, TdCoordinateSystem, ITdItemStyle, ITdEmphasis, TdSeriesLayoutBy, ITdMarkPoint, ITdMarkLine, ITdMarkArea, ITdSeriesTooltip } from '@covalent/echarts/base';
-export declare class TdChartSeriesBarComponent implements OnChanges, OnInit, OnDestroy {
-    private _optionsService;
-    private _type;
-    private _state;
-    config: any;
-    id: string;
-    name: string;
-    color: string;
+import { TdChartOptionsService, TdCoordinateSystem, ITdItemStyle, ITdEmphasis, TdSeriesLayoutBy, ITdMarkPoint, ITdMarkLine, ITdMarkArea, ITdSeries, ITdLabel, TdProgressiveChunkMode, TdSeriesComponent } from '@covalent/echarts/base';
+export interface ITdBarSeries extends ITdSeries<'bar'> {
+    legendHoverLink?: boolean;
+    coordinateSystem?: TdCoordinateSystem;
+    xAxisIndex?: number;
+    yAxisIndex?: number;
+    Label?: ITdLabel;
+    itemStyle?: ITdItemStyle;
+    emphasis?: ITdEmphasis;
+    stack?: string;
+    cursor?: string;
+    barWidth?: number | string;
+    barMaxWidth?: number | string;
+    barMinHeight?: number;
+    barGap?: string;
+    barCategoryGap?: string;
+    large?: boolean;
+    largeThreshold?: number;
+    progressive?: number;
+    progressiveThreshold?: number;
+    progressiveChunkMode?: TdProgressiveChunkMode;
+    dimensions?: any[];
+    encode?: any;
+    seriesLayoutBy?: TdSeriesLayoutBy;
+    datasetIndex?: number;
+    data?: any[];
+    markPoint?: ITdMarkPoint;
+    markLine?: ITdMarkLine;
+    markArea?: ITdMarkArea;
+    Zlevel?: 0;
+    z?: number;
+    silent?: boolean;
+}
+export declare class TdChartSeriesBarComponent extends TdSeriesComponent<'bar'> implements ITdBarSeries {
     coordinateSystem: TdCoordinateSystem;
     xAxisIndex: number;
     yAxisIndex: number;
@@ -27,7 +50,7 @@ export declare class TdChartSeriesBarComponent implements OnChanges, OnInit, OnD
     largeThreshold: number;
     progressive: number;
     progressiveThreshold: number;
-    progressiveChunkMode: string;
+    progressiveChunkMode: TdProgressiveChunkMode;
     dimensions: any[];
     encode: any;
     seriesLayoutBy: TdSeriesLayoutBy;
@@ -38,19 +61,6 @@ export declare class TdChartSeriesBarComponent implements OnChanges, OnInit, OnD
     markArea: ITdMarkArea;
     zlevel: number;
     z: number;
-    animation: boolean;
-    animationThreshold: number;
-    animationDuration: number | Function;
-    animationEasing: string;
-    animationDelay: number | Function;
-    animationDurationUpdate: number | Function;
-    animationEasingUpdate: string;
-    animationDelayUpdate: number | Function;
-    tooltip: ITdSeriesTooltip;
     constructor(_optionsService: TdChartOptionsService);
-    ngOnInit(): void;
-    ngOnChanges(): void;
-    ngOnDestroy(): void;
-    private _setOptions();
-    private _removeOption();
+    getConfig(): any;
 }

@@ -1,5 +1,5 @@
 import { TemplateRef, ElementRef, ChangeDetectorRef, OnChanges, OnInit, OnDestroy } from '@angular/core';
-import { TdChartOptionsService } from '../chart.service';
+import { TdChartOptionsService, TdTooltipTrigger, TdTooltipTriggerOn, TdTooltipPosition } from '@covalent/echarts/base';
 export declare class TdTooltipContext {
     $implicit: any;
     ticket: string;
@@ -14,17 +14,19 @@ export declare class TdChartTooltipComponent implements OnChanges, OnInit, OnDes
     _context: TdTooltipContext;
     config: any;
     show: boolean;
-    trigger: 'axis' | 'item' | 'none';
+    trigger: TdTooltipTrigger;
     axisPointer: any;
     showContent: boolean;
     alwaysShowContent: boolean;
-    triggerOn: 'mousemove' | 'click' | 'mousemove|click' | 'none';
+    triggerOn: TdTooltipTriggerOn;
     showDelay: number;
     hideDelay: number;
     enterable: boolean;
+    renderMode: 'html' | 'richText';
     confine: boolean;
     transitionDuration: number;
-    position: string | string[] | number[];
+    position: TdTooltipPosition;
+    formatter: string | Function;
     backgroundColor: string;
     borderColor: string;
     borderWidth: number;
@@ -39,4 +41,5 @@ export declare class TdChartTooltipComponent implements OnChanges, OnInit, OnDes
     ngOnDestroy(): void;
     private _setOptions();
     private _removeOption();
+    private _formatter();
 }

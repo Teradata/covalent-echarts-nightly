@@ -1,29 +1,43 @@
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('echarts/lib/chart/line'), require('@covalent/echarts/base'), require('@angular/common')) :
-	typeof define === 'function' && define.amd ? define('@covalent/echarts/line', ['exports', '@angular/core', 'echarts/lib/chart/line', '@covalent/echarts/base', '@angular/common'], factory) :
-	(factory((global.covalent = global.covalent || {}, global.covalent.echarts = global.covalent.echarts || {}, global.covalent.echarts.line = {}),global.ng.core,null,global.covalent.echarts.base,global.ng.common));
-}(this, (function (exports,core,line,base,common) { 'use strict';
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@covalent/echarts/base'), require('@angular/common'), require('echarts/lib/chart/line')) :
+	typeof define === 'function' && define.amd ? define('@covalent/echarts/line', ['exports', '@angular/core', '@covalent/echarts/base', '@angular/common', 'echarts/lib/chart/line'], factory) :
+	(factory((global.covalent = global.covalent || {}, global.covalent.echarts = global.covalent.echarts || {}, global.covalent.echarts.line = {}),global.ng.core,global.covalent.echarts.base,global.ng.common));
+}(this, (function (exports,core,base,common) { 'use strict';
 
-var TdChartSeriesLineComponent = /** @class */ (function () {
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+/* global Reflect, Promise */
+var extendStatics = function(d, b) {
+    extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return extendStatics(d, b);
+};
+function __extends(d, b) {
+    extendStatics(d, b);
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+}
+
+var TdChartSeriesLineComponent = /** @class */ (function (_super) {
+    __extends(TdChartSeriesLineComponent, _super);
     function TdChartSeriesLineComponent(_optionsService) {
-        this._optionsService = _optionsService;
-        this._type = base.TdSeriesType.Line;
-        this._state = {};
-        this.config = {};
+        return _super.call(this, 'line', _optionsService) || this;
     }
-    TdChartSeriesLineComponent.prototype.ngOnInit = function () {
-        this._setOptions();
-    };
-    TdChartSeriesLineComponent.prototype.ngOnChanges = function () {
-        this._setOptions();
-    };
-    TdChartSeriesLineComponent.prototype.ngOnDestroy = function () {
-        this._removeOption();
-    };
-    TdChartSeriesLineComponent.prototype._setOptions = function () {
-        var config = base.assignDefined(this._state, this.config, {
+    TdChartSeriesLineComponent.prototype.getConfig = function () {
+        return {
             id: this.id,
-            type: this._type,
+            type: this.type,
             name: this.name,
             color: this.color,
             coordinateSystem: this.coordinateSystem,
@@ -72,29 +86,24 @@ var TdChartSeriesLineComponent = /** @class */ (function () {
             animationEasingUpdate: this.animationEasingUpdate,
             animationDelayUpdate: this.animationDelayUpdate,
             tooltip: this.tooltip,
-        });
-        this._optionsService.setArrayOption('series', config);
-    };
-    TdChartSeriesLineComponent.prototype._removeOption = function () {
-        this._optionsService.clearOption('series');
+        };
     };
     return TdChartSeriesLineComponent;
-}());
+}(base.TdSeriesComponent));
 TdChartSeriesLineComponent.decorators = [
     { type: core.Component, args: [{
                 selector: 'td-chart-series[td-line]',
                 template: '',
                 changeDetection: core.ChangeDetectionStrategy.OnPush,
+                providers: [{
+                        provide: base.TdSeriesComponent, useExisting: core.forwardRef(function () { return TdChartSeriesLineComponent; }),
+                    }],
             },] },
 ];
 TdChartSeriesLineComponent.ctorParameters = function () { return [
     { type: base.TdChartOptionsService, },
 ]; };
 TdChartSeriesLineComponent.propDecorators = {
-    "config": [{ type: core.Input, args: ['config',] },],
-    "id": [{ type: core.Input, args: ['id',] },],
-    "name": [{ type: core.Input, args: ['name',] },],
-    "color": [{ type: core.Input, args: ['color',] },],
     "coordinateSystem": [{ type: core.Input, args: ['coordinateSystem',] },],
     "xAxisIndex": [{ type: core.Input, args: ['xAxisIndex',] },],
     "yAxisIndex": [{ type: core.Input, args: ['yAxisIndex',] },],
@@ -132,15 +141,6 @@ TdChartSeriesLineComponent.propDecorators = {
     "zlevel": [{ type: core.Input, args: ['zlevel',] },],
     "z": [{ type: core.Input, args: ['z',] },],
     "silent": [{ type: core.Input, args: ['silent',] },],
-    "animation": [{ type: core.Input, args: ['animation',] },],
-    "animationThreshold": [{ type: core.Input, args: ['animationThreshold',] },],
-    "animationDuration": [{ type: core.Input, args: ['animationDuration',] },],
-    "animationEasing": [{ type: core.Input, args: ['animationEasing',] },],
-    "animationDelay": [{ type: core.Input, args: ['animationDelay',] },],
-    "animationDurationUpdate": [{ type: core.Input, args: ['animationDurationUpdate',] },],
-    "animationEasingUpdate": [{ type: core.Input, args: ['animationEasingUpdate',] },],
-    "animationDelayUpdate": [{ type: core.Input, args: ['animationDelayUpdate',] },],
-    "tooltip": [{ type: core.Input, args: ['tooltip',] },],
 };
 var LINE_MODULE_COMPONENTS = [
     TdChartSeriesLineComponent,
@@ -167,7 +167,7 @@ CovalentLineEchartsModule.ctorParameters = function () { return []; };
 
 exports.LINE_MODULE_COMPONENTS = LINE_MODULE_COMPONENTS;
 exports.CovalentLineEchartsModule = CovalentLineEchartsModule;
-exports.ɵa = TdChartSeriesLineComponent;
+exports.TdChartSeriesLineComponent = TdChartSeriesLineComponent;
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
