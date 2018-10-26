@@ -22,11 +22,11 @@ export declare class TdSeriesTooltipComponent implements OnChanges, OnInit, OnDe
     ngOnInit(): void;
     ngOnChanges(): void;
     ngOnDestroy(): void;
-    private _setOptions();
+    private _setOptions;
     /**
      * Formatter for tooltip
      *
      */
-    private _formatter();
-    private _removeOption();
+    private _formatter;
+    private _removeOption;
 }

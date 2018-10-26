@@ -35,6 +35,6 @@ export declare abstract class TdSeriesComponent<T = any> implements ITdSeries<T>
     setStateOption(option: string, value: any): void;
     removeStateOption(option: string): void;
     abstract getConfig(): any;
-    private _setOptions();
-    private _removeOption();
+    private _setOptions;
+    private _removeOption;
 }

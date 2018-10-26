@@ -40,6 +40,6 @@ export declare abstract class TdChartAxisComponent implements OnChanges, OnInit,
     ngOnInit(): void;
     ngOnChanges(): void;
     ngOnDestroy(): void;
-    private _setOptions();
-    private _removeOption();
+    private _setOptions;
+    private _removeOption;
 }

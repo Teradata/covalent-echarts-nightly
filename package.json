@@ -34,10 +34,15 @@
     "@angular/cdk": "^6.0.0"
   },
   "main": "bundles/covalent-echarts.umd.js",
-  "module": "esm5/covalent-echarts.js",
-  "es2015": "esm2015/covalent-echarts.js",
+  "module": "fesm5/covalent-echarts.js",
+  "es2015": "fesm2015/covalent-echarts.js",
+  "esm5": "esm5/covalent-echarts.js",
+  "esm2015": "esm2015/covalent-echarts.js",
+  "fesm5": "fesm5/covalent-echarts.js",
+  "fesm2015": "fesm2015/covalent-echarts.js",
   "typings": "covalent-echarts.d.ts",
   "metadata": "covalent-echarts.metadata.json",
+  "sideEffects": false,
   "dependencies": {
     "tslib": "^1.9.0"
   }

@@ -1,11 +1,13 @@
 {
   "main": "../bundles/covalent-echarts-tooltip.umd.js",
-  "module": "../esm5/covalent-echarts-tooltip.js",
-  "es2015": "../esm2015/covalent-echarts-tooltip.js",
+  "module": "../fesm5/covalent-echarts-tooltip.js",
+  "es2015": "../fesm2015/covalent-echarts-tooltip.js",
+  "esm5": "../esm5/tooltip/covalent-echarts-tooltip.js",
+  "esm2015": "../esm2015/tooltip/covalent-echarts-tooltip.js",
+  "fesm5": "../fesm5/covalent-echarts-tooltip.js",
+  "fesm2015": "../fesm2015/covalent-echarts-tooltip.js",
   "typings": "covalent-echarts-tooltip.d.ts",
   "metadata": "covalent-echarts-tooltip.metadata.json",
-  "dependencies": {
-    "tslib": "^1.9.0"
-  },
+  "sideEffects": false,
   "name": "@covalent/echarts/tooltip"
 }

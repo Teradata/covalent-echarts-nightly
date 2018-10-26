@@ -1,0 +1,7 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+export { SCATTER_MODULE_COMPONENTS, CovalentScatterEchartsModule } from './scatter.module';
+export { TdChartSeriesScatterComponent } from './scatter.component';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL0Bjb3ZhbGVudC9lY2hhcnRzL3NjYXR0ZXIvIiwic291cmNlcyI6WyJwdWJsaWMtYXBpLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7QUFBQSx3RUFBYyxrQkFBa0IsQ0FBQztBQUNqQyw4Q0FBYyxxQkFBcUIsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCAqIGZyb20gJy4vc2NhdHRlci5tb2R1bGUnO1xuZXhwb3J0ICogZnJvbSAnLi9zY2F0dGVyLmNvbXBvbmVudCc7XG4iXX0=

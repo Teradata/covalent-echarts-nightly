@@ -39,7 +39,7 @@ export declare class TdChartTooltipComponent implements OnChanges, OnInit, OnDes
     ngOnInit(): void;
     ngOnChanges(): void;
     ngOnDestroy(): void;
-    private _setOptions();
-    private _removeOption();
-    private _formatter();
+    private _setOptions;
+    private _removeOption;
+    private _formatter;
 }

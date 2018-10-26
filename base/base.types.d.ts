@@ -1,3 +1,9 @@
+export interface ITdShadow {
+    shadowBlur?: number;
+    shadowColor?: any;
+    shadowOffsetX?: number;
+    shadowOffsetY?: number;
+}
 export interface ITdLineStyle extends ITdShadow {
     color?: any;
     width?: number;
@@ -17,12 +23,6 @@ export interface ITdAnimation {
     animationDurationUpdate?: number | Function;
     animationEasingUpdate?: string;
     animationDelayUpdate?: number | Function;
-}
-export interface ITdShadow {
-    shadowBlur?: number;
-    shadowColor?: any;
-    shadowOffsetX?: number;
-    shadowOffsetY?: number;
 }
 export interface ITdTextShadow {
     textShadowColor?: string;
@@ -79,7 +79,7 @@ export interface ITdTextStyle extends ITdTextShadow, ITdFont {
     height?: number | string;
     textBorderColor?: string;
     textBorderWidth?: number;
-    rich: object;
+    rich?: object;
 }
 export interface ITdLabel extends ITdShadow, ITdTextShadow, ITdFont {
     show?: boolean;

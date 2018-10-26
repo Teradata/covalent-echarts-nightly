@@ -1,11 +1,13 @@
 {
   "main": "../bundles/covalent-echarts-base.umd.js",
-  "module": "../esm5/covalent-echarts-base.js",
-  "es2015": "../esm2015/covalent-echarts-base.js",
+  "module": "../fesm5/covalent-echarts-base.js",
+  "es2015": "../fesm2015/covalent-echarts-base.js",
+  "esm5": "../esm5/base/covalent-echarts-base.js",
+  "esm2015": "../esm2015/base/covalent-echarts-base.js",
+  "fesm5": "../fesm5/covalent-echarts-base.js",
+  "fesm2015": "../fesm2015/covalent-echarts-base.js",
   "typings": "covalent-echarts-base.d.ts",
   "metadata": "covalent-echarts-base.metadata.json",
-  "dependencies": {
-    "tslib": "^1.9.0"
-  },
+  "sideEffects": false,
   "name": "@covalent/echarts/base"
 }
