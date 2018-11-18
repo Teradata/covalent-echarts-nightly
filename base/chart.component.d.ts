@@ -1,10 +1,10 @@
-import { EventEmitter, ElementRef, ChangeDetectorRef, AfterViewInit, OnChanges, OnDestroy, DoCheck } from '@angular/core';
+import { EventEmitter, ElementRef, ChangeDetectorRef, AfterViewInit, OnChanges, OnDestroy } from '@angular/core';
 import { TdChartOptionsService } from './chart-options.service';
-export declare class TdChartComponent implements AfterViewInit, OnChanges, DoCheck, OnDestroy {
+export declare class TdChartComponent implements AfterViewInit, OnChanges, OnDestroy {
     private _changeDetectorRef;
     private _elementRef;
     private _optionsService;
-    private _subs;
+    private _destroy;
     private _widthSubject;
     private _heightSubject;
     private _instance;
@@ -18,7 +18,6 @@ export declare class TdChartComponent implements AfterViewInit, OnChanges, DoChe
     contextmenu: EventEmitter<any>;
     constructor(_changeDetectorRef: ChangeDetectorRef, _elementRef: ElementRef, _optionsService: TdChartOptionsService);
     ngAfterViewInit(): void;
-    ngDoCheck(): void;
     ngOnChanges(): void;
     ngOnDestroy(): void;
     render(): void;
