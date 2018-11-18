@@ -1,4 +1,4 @@
-import { TemplateRef, ElementRef, ChangeDetectorRef, OnChanges, OnInit, OnDestroy } from '@angular/core';
+import { TemplateRef, ElementRef, ChangeDetectorRef, OnChanges, OnDestroy } from '@angular/core';
 import { TdChartOptionsService, TdTooltipTrigger, TdTooltipTriggerOn, TdTooltipPosition } from '@covalent/echarts/base';
 export declare class TdTooltipContext {
     $implicit: any;
@@ -6,7 +6,7 @@ export declare class TdTooltipContext {
 }
 export declare class TdChartTooltipFormatterDirective {
 }
-export declare class TdChartTooltipComponent implements OnChanges, OnInit, OnDestroy {
+export declare class TdChartTooltipComponent implements OnChanges, OnDestroy {
     private _changeDetectorRef;
     private _elementRef;
     private _optionsService;
@@ -36,7 +36,6 @@ export declare class TdChartTooltipComponent implements OnChanges, OnInit, OnDes
     formatterTemplate: TemplateRef<any>;
     fullTemplate: TemplateRef<any>;
     constructor(_changeDetectorRef: ChangeDetectorRef, _elementRef: ElementRef, _optionsService: TdChartOptionsService);
-    ngOnInit(): void;
     ngOnChanges(): void;
     ngOnDestroy(): void;
     private _setOptions;
