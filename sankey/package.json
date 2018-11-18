@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/covalent-echarts-sankey.umd.js",
+  "module": "../fesm5/covalent-echarts-sankey.js",
+  "es2015": "../fesm2015/covalent-echarts-sankey.js",
+  "esm5": "../esm5/sankey/covalent-echarts-sankey.js",
+  "esm2015": "../esm2015/sankey/covalent-echarts-sankey.js",
+  "fesm5": "../fesm5/covalent-echarts-sankey.js",
+  "fesm2015": "../fesm2015/covalent-echarts-sankey.js",
+  "typings": "covalent-echarts-sankey.d.ts",
+  "metadata": "covalent-echarts-sankey.metadata.json",
+  "sideEffects": false,
+  "name": "@covalent/echarts/sankey"
+}

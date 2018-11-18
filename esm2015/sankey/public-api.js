@@ -1,0 +1,7 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+export { SANKEY_MODULE_COMPONENTS, CovalentSankeyEchartsModule } from './sankey.module';
+export { TdChartSeriesSankeyComponent } from './sankey.component';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL0Bjb3ZhbGVudC9lY2hhcnRzL3NhbmtleS8iLCJzb3VyY2VzIjpbInB1YmxpYy1hcGkudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7OztBQUFBLHNFQUFjLGlCQUFpQixDQUFDO0FBQ2hDLDZDQUFjLG9CQUFvQixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0ICogZnJvbSAnLi9zYW5rZXkubW9kdWxlJztcbmV4cG9ydCAqIGZyb20gJy4vc2Fua2V5LmNvbXBvbmVudCc7XG4iXX0=
