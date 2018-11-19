@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/covalent-echarts-graph.umd.js",
+  "module": "../fesm5/covalent-echarts-graph.js",
+  "es2015": "../fesm2015/covalent-echarts-graph.js",
+  "esm5": "../esm5/graph/covalent-echarts-graph.js",
+  "esm2015": "../esm2015/graph/covalent-echarts-graph.js",
+  "fesm5": "../fesm5/covalent-echarts-graph.js",
+  "fesm2015": "../fesm2015/covalent-echarts-graph.js",
+  "typings": "covalent-echarts-graph.d.ts",
+  "metadata": "covalent-echarts-graph.metadata.json",
+  "sideEffects": false,
+  "name": "@covalent/echarts/graph"
+}

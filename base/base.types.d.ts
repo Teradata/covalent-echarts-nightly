@@ -81,10 +81,9 @@ export interface ITdTextStyle extends ITdTextShadow, ITdFont {
     textBorderWidth?: number;
     rich?: object;
 }
-export interface ITdLabel extends ITdShadow, ITdTextShadow, ITdFont {
+export interface ITdEdgeLabel extends ITdShadow, ITdTextShadow, ITdFont {
     show?: boolean;
     position?: TdLabelPosition;
-    distance?: number;
     rotate?: number;
     offset?: number[];
     formatter?: any | Function;
@@ -102,6 +101,9 @@ export interface ITdLabel extends ITdShadow, ITdTextShadow, ITdFont {
     textBorderColor?: string;
     textBorderWidth?: number;
     rich?: any;
+}
+export interface ITdLabel extends ITdEdgeLabel, ITdShadow, ITdTextShadow, ITdFont {
+    distance?: number;
 }
 export interface ITdAxisPointerLabel extends ITdShadow, ITdTextShadow, ITdFont {
     show?: boolean;
