@@ -19,6 +19,7 @@ export declare abstract class TdSeriesComponent<T = any> implements ITdSeries<T>
     id: string;
     name: string;
     color: string;
+    data: any[];
     animation: boolean;
     animationThreshold: number;
     animationDuration: number | Function;

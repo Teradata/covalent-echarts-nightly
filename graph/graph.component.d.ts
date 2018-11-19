@@ -106,7 +106,6 @@ export declare class TdChartSeriesGraphComponent extends TdSeriesComponent<'grap
     edgeLabel: ITdEdgeLabel;
     emphasis: ITdEmphasis;
     categories: ITdCategories;
-    data: any[];
     nodes: any[];
     links: any[];
     edges: any[];
@@ -122,14 +121,6 @@ export declare class TdChartSeriesGraphComponent extends TdSeriesComponent<'grap
     bottom: string | number;
     width: string | number;
     height: string | number;
-    animation: boolean;
-    animationThreshold: number;
-    animationDuration: number | Function;
-    animationEasing: string;
-    animationDelay: number | Function;
-    animationDurationUpdate: number | Function;
-    animationEasingUpdate: string;
-    animationDelayUpdate: number | Function;
     constructor(_optionsService: TdChartOptionsService);
     getConfig(): any;
 }

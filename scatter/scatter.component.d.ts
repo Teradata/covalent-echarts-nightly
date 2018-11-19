@@ -62,7 +62,6 @@ export declare class TdChartSeriesScatterComponent extends TdSeriesComponent<'sc
     encode: any;
     seriesLayoutBy: TdSeriesLayoutBy;
     datasetIndex: number;
-    data: any[];
     markPoint: ITdMarkPoint;
     markLine: ITdMarkLine;
     markArea: ITdMarkArea;

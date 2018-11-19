@@ -55,7 +55,6 @@ export declare class TdChartSeriesBarComponent extends TdSeriesComponent<'bar'> 
     encode: any;
     seriesLayoutBy: TdSeriesLayoutBy;
     datasetIndex: number;
-    data: any[];
     markPoint: ITdMarkPoint;
     markLine: ITdMarkLine;
     markArea: ITdMarkArea;

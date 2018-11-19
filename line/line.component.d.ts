@@ -72,7 +72,6 @@ export declare class TdChartSeriesLineComponent extends TdSeriesComponent<'line'
     encode: any;
     seriesLayoutBy: TdSeriesLayoutBy;
     datasetIndex: number;
-    data: any[];
     markPoint: ITdMarkPoint;
     markLine: ITdMarkLine;
     markArea: ITdMarkArea;

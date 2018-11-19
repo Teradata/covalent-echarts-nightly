@@ -53,7 +53,6 @@ export declare class TdChartSeriesSankeyComponent extends TdSeriesComponent<'san
     itemStyle: ITdItemStyle;
     lineStyle: ITdLineCurveStyle;
     emphasis: ITdEmphasis;
-    data: any[];
     nodes: any[];
     links: any[];
     edges: any[];
