@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/covalent-echarts-treemap.umd.js",
+  "module": "../fesm5/covalent-echarts-treemap.js",
+  "es2015": "../fesm2015/covalent-echarts-treemap.js",
+  "esm5": "../esm5/treemap/covalent-echarts-treemap.js",
+  "esm2015": "../esm2015/treemap/covalent-echarts-treemap.js",
+  "fesm5": "../fesm5/covalent-echarts-treemap.js",
+  "fesm2015": "../fesm2015/covalent-echarts-treemap.js",
+  "typings": "covalent-echarts-treemap.d.ts",
+  "metadata": "covalent-echarts-treemap.metadata.json",
+  "sideEffects": false,
+  "name": "@covalent/echarts/treemap"
+}
