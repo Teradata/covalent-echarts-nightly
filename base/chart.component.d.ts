@@ -16,9 +16,14 @@ export declare class TdChartComponent implements AfterViewInit, OnChanges, OnDes
     click: EventEmitter<any>;
     dblclick: EventEmitter<any>;
     contextmenu: EventEmitter<any>;
+    magictypechanged: EventEmitter<any>;
+    dataviewchanged: EventEmitter<any>;
+    datazoom: EventEmitter<any>;
+    restore: EventEmitter<any>;
     constructor(_changeDetectorRef: ChangeDetectorRef, _elementRef: ElementRef, _optionsService: TdChartOptionsService);
     ngAfterViewInit(): void;
     ngOnChanges(): void;
     ngOnDestroy(): void;
+    checkToolboxHeight(): string;
     render(): void;
 }

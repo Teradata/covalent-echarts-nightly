@@ -1,0 +1,7 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+export { TOOLBOX_MODULE_COMPONENTS, CovalentToolboxEchartsModule } from './toolbox.module';
+export { TdChartViewDataFormatterDirective, TdChartToolboxComponent } from './toolbox.component';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL0Bjb3ZhbGVudC9lY2hhcnRzL3Rvb2xib3gvIiwic291cmNlcyI6WyJwdWJsaWMtYXBpLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7QUFBQSx3RUFBYyxrQkFBa0IsQ0FBQztBQUNqQywyRUFBYyxxQkFBcUIsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCAqIGZyb20gJy4vdG9vbGJveC5tb2R1bGUnO1xuZXhwb3J0ICogZnJvbSAnLi90b29sYm94LmNvbXBvbmVudCc7XG4iXX0=
