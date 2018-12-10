@@ -13,11 +13,11 @@ export declare class TdChartComponent implements AfterViewInit, OnChanges, OnDes
     private _options;
     config: any;
     group: string;
-    click: EventEmitter<any>;
-    dblclick: EventEmitter<any>;
-    contextmenu: EventEmitter<any>;
-    magictypechanged: EventEmitter<any>;
-    dataviewchanged: EventEmitter<any>;
+    chartClick: EventEmitter<any>;
+    chartDblclick: EventEmitter<any>;
+    chartContextmenu: EventEmitter<any>;
+    magicTypeChanged: EventEmitter<any>;
+    dataViewChanged: EventEmitter<any>;
     datazoom: EventEmitter<any>;
     restore: EventEmitter<any>;
     constructor(_changeDetectorRef: ChangeDetectorRef, _elementRef: ElementRef, _optionsService: TdChartOptionsService);
