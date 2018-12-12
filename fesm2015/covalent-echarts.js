@@ -1,6 +1,7 @@
 import { debounceTime, distinctUntilChanged, takeUntil, tap } from 'rxjs/operators';
 import { init, connect, dispose } from 'echarts/lib/echarts';
 import { BehaviorSubject, Subject, fromEvent, merge, timer } from 'rxjs';
+import 'zrender/lib/svg/svg';
 import 'echarts/lib/chart/bar';
 import 'echarts/lib/chart/line';
 import 'echarts/lib/chart/scatter';
@@ -106,7 +107,20 @@ class TdChartComponent {
         this._heightSubject = new Subject();
         this._state = {};
         this._options = {};
+        /**
+         * config?: any;
+         * Sets the JS config object if you choose to not use the property inputs.
+         * Note: property inputs override JS config conject properties.
+         * https://ecomfe.github.io/echarts-doc/public/en/option.html
+         */
         this.config = {};
+        /**
+         * renderer: 'svg' | 'canvas'
+         * sets the rendering mode for the chart.
+         * defaults to 'canvas'
+         * https://ecomfe.github.io/echarts-doc/public/en/tutorial.html#Render%20by%20Canvas%20or%20SVG
+         */
+        this.renderer = 'canvas';
         this.chartClick = new EventEmitter();
         this.chartDblclick = new EventEmitter();
         this.chartContextmenu = new EventEmitter();
@@ -115,11 +129,53 @@ class TdChartComponent {
         this.datazoom = new EventEmitter();
         this.restore = new EventEmitter();
     }
+    /**
+     * returns the echarts instance
+     */
     get instance() {
         return this._instance;
     }
     ngAfterViewInit() {
-        this._instance = init(this._elementRef.nativeElement);
+        this._initializeChart();
+    }
+    ngOnChanges(changes) {
+        if (this._instance) {
+            // destroy and reinitialize chart only when `renderer`, `themeName` and `group` changes
+            if (changes.renderer || changes.themeName || changes.group) {
+                this._disposeChart();
+                this._initializeChart();
+            }
+            else {
+                this.render();
+            }
+        }
+    }
+    ngOnDestroy() {
+        this._disposeChart();
+        this._destroy.unsubscribe();
+    }
+    render() {
+        if (this._instance) {
+            this._instance.setOption(assignDefined$1(this._state, {
+                grid: {
+                    show: true,
+                    left: '20',
+                    right: '20',
+                    bottom: (this.config.toolbox && typeof this.config.toolbox.bottom === 'number')
+                        || (this.config.toolbox && this.config.toolbox.bottom) ? this._checkToolboxHeight() : '10',
+                    top: (this.config.toolbox && typeof this.config.toolbox.top === 'number')
+                        || (this.config.toolbox && this.config.toolbox.top) ? this._checkToolboxHeight() : '10',
+                    containLabel: true,
+                    borderColor: '#FCFCFC',
+                },
+            }, this.config ? this.config : {}, this._options), true);
+            this._changeDetectorRef.markForCheck();
+        }
+    }
+    _initializeChart() {
+        this._instance = init(this._elementRef.nativeElement, this.themeName, {
+            renderer: this.renderer,
+        });
         fromEvent(this._instance, 'click').pipe(takeUntil(this._destroy)).subscribe((params) => {
             this.chartClick.next(params);
         });
@@ -164,39 +220,15 @@ class TdChartComponent {
             }
         });
     }
-    ngOnChanges() {
-        if (this._instance) {
-            this.render();
-        }
-    }
-    ngOnDestroy() {
+    _disposeChart() {
         if (this._instance) {
             this._instance.clear();
             dispose(this._instance);
         }
         this._destroy.next(true);
-        this._destroy.unsubscribe();
     }
-    checkToolboxHeight() {
+    _checkToolboxHeight() {
         return this.config.toolbox.height ? this.config.toolbox.height : '40';
-    }
-    render() {
-        if (this._instance) {
-            this._instance.setOption(assignDefined$1(this._state, {
-                grid: {
-                    show: true,
-                    left: '20',
-                    right: '20',
-                    bottom: (this.config.toolbox && typeof this.config.toolbox.bottom === 'number')
-                        || (this.config.toolbox && this.config.toolbox.bottom) ? this.checkToolboxHeight() : '10',
-                    top: (this.config.toolbox && typeof this.config.toolbox.top === 'number')
-                        || (this.config.toolbox && this.config.toolbox.top) ? this.checkToolboxHeight() : '10',
-                    containLabel: true,
-                    borderColor: '#FCFCFC',
-                },
-            }, this.config ? this.config : {}, this._options), true);
-            this._changeDetectorRef.markForCheck();
-        }
     }
 }
 TdChartComponent.decorators = [
@@ -217,6 +249,8 @@ TdChartComponent.ctorParameters = () => [
 TdChartComponent.propDecorators = {
     config: [{ type: Input, args: ['config',] }],
     group: [{ type: Input, args: ['group',] }],
+    themeName: [{ type: Input, args: ['themeName',] }],
+    renderer: [{ type: Input, args: ['renderer',] }],
     chartClick: [{ type: Output, args: ['chartClick',] }],
     chartDblclick: [{ type: Output, args: ['chartDblclick',] }],
     chartContextmenu: [{ type: Output, args: ['chartContextmenu',] }],

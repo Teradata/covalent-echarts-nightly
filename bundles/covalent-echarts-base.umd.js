@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/common'), require('rxjs/operators'), require('echarts/lib/echarts'), require('rxjs'), require('@angular/core')) :
-    typeof define === 'function' && define.amd ? define('@covalent/echarts/base', ['exports', '@angular/common', 'rxjs/operators', 'echarts/lib/echarts', 'rxjs', '@angular/core'], factory) :
-    (factory((global.covalent = global.covalent || {}, global.covalent.echarts = global.covalent.echarts || {}, global.covalent.echarts.base = {}),global.ng.common,global.rxjs.operators,global.echarts,global.rxjs,global.ng.core));
-}(this, (function (exports,common,operators,echarts,rxjs,core) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/common'), require('rxjs/operators'), require('echarts/lib/echarts'), require('rxjs'), require('zrender/lib/svg/svg'), require('@angular/core')) :
+    typeof define === 'function' && define.amd ? define('@covalent/echarts/base', ['exports', '@angular/common', 'rxjs/operators', 'echarts/lib/echarts', 'rxjs', 'zrender/lib/svg/svg', '@angular/core'], factory) :
+    (factory((global.covalent = global.covalent || {}, global.covalent.echarts = global.covalent.echarts || {}, global.covalent.echarts.base = {}),global.ng.common,global.rxjs.operators,global.echarts,global.rxjs,null,global.ng.core));
+}(this, (function (exports,common,operators,echarts,rxjs,svg,core) { 'use strict';
 
     var TdChartOptionsService = /** @class */ (function () {
         function TdChartOptionsService() {
@@ -194,7 +194,20 @@
             this._heightSubject = new rxjs.Subject();
             this._state = {};
             this._options = {};
+            /**
+             * config?: any;
+             * Sets the JS config object if you choose to not use the property inputs.
+             * Note: property inputs override JS config conject properties.
+             * https://ecomfe.github.io/echarts-doc/public/en/option.html
+             */
             this.config = {};
+            /**
+             * renderer: 'svg' | 'canvas'
+             * sets the rendering mode for the chart.
+             * defaults to 'canvas'
+             * https://ecomfe.github.io/echarts-doc/public/en/tutorial.html#Render%20by%20Canvas%20or%20SVG
+             */
+            this.renderer = 'canvas';
             this.chartClick = new core.EventEmitter();
             this.chartDblclick = new core.EventEmitter();
             this.chartContextmenu = new core.EventEmitter();
@@ -204,6 +217,9 @@
             this.restore = new core.EventEmitter();
         }
         Object.defineProperty(TdChartComponent.prototype, "instance", {
+            /**
+             * returns the echarts instance
+             */
             get: function () {
                 return this._instance;
             },
@@ -211,8 +227,47 @@
             configurable: true
         });
         TdChartComponent.prototype.ngAfterViewInit = function () {
+            this._initializeChart();
+        };
+        TdChartComponent.prototype.ngOnChanges = function (changes) {
+            if (this._instance) {
+                // destroy and reinitialize chart only when `renderer`, `themeName` and `group` changes
+                if (changes.renderer || changes.themeName || changes.group) {
+                    this._disposeChart();
+                    this._initializeChart();
+                }
+                else {
+                    this.render();
+                }
+            }
+        };
+        TdChartComponent.prototype.ngOnDestroy = function () {
+            this._disposeChart();
+            this._destroy.unsubscribe();
+        };
+        TdChartComponent.prototype.render = function () {
+            if (this._instance) {
+                this._instance.setOption(assignDefined(this._state, {
+                    grid: {
+                        show: true,
+                        left: '20',
+                        right: '20',
+                        bottom: (this.config.toolbox && typeof this.config.toolbox.bottom === 'number')
+                            || (this.config.toolbox && this.config.toolbox.bottom) ? this._checkToolboxHeight() : '10',
+                        top: (this.config.toolbox && typeof this.config.toolbox.top === 'number')
+                            || (this.config.toolbox && this.config.toolbox.top) ? this._checkToolboxHeight() : '10',
+                        containLabel: true,
+                        borderColor: '#FCFCFC',
+                    },
+                }, this.config ? this.config : {}, this._options), true);
+                this._changeDetectorRef.markForCheck();
+            }
+        };
+        TdChartComponent.prototype._initializeChart = function () {
             var _this = this;
-            this._instance = echarts.init(this._elementRef.nativeElement);
+            this._instance = echarts.init(this._elementRef.nativeElement, this.themeName, {
+                renderer: this.renderer,
+            });
             rxjs.fromEvent(this._instance, 'click').pipe(operators.takeUntil(this._destroy)).subscribe(function (params) {
                 _this.chartClick.next(params);
             });
@@ -257,39 +312,15 @@
                 }
             });
         };
-        TdChartComponent.prototype.ngOnChanges = function () {
-            if (this._instance) {
-                this.render();
-            }
-        };
-        TdChartComponent.prototype.ngOnDestroy = function () {
+        TdChartComponent.prototype._disposeChart = function () {
             if (this._instance) {
                 this._instance.clear();
                 echarts.dispose(this._instance);
             }
             this._destroy.next(true);
-            this._destroy.unsubscribe();
         };
-        TdChartComponent.prototype.checkToolboxHeight = function () {
+        TdChartComponent.prototype._checkToolboxHeight = function () {
             return this.config.toolbox.height ? this.config.toolbox.height : '40';
-        };
-        TdChartComponent.prototype.render = function () {
-            if (this._instance) {
-                this._instance.setOption(assignDefined(this._state, {
-                    grid: {
-                        show: true,
-                        left: '20',
-                        right: '20',
-                        bottom: (this.config.toolbox && typeof this.config.toolbox.bottom === 'number')
-                            || (this.config.toolbox && this.config.toolbox.bottom) ? this.checkToolboxHeight() : '10',
-                        top: (this.config.toolbox && typeof this.config.toolbox.top === 'number')
-                            || (this.config.toolbox && this.config.toolbox.top) ? this.checkToolboxHeight() : '10',
-                        containLabel: true,
-                        borderColor: '#FCFCFC',
-                    },
-                }, this.config ? this.config : {}, this._options), true);
-                this._changeDetectorRef.markForCheck();
-            }
         };
         TdChartComponent.decorators = [
             { type: core.Component, args: [{
@@ -311,6 +342,8 @@
         TdChartComponent.propDecorators = {
             config: [{ type: core.Input, args: ['config',] }],
             group: [{ type: core.Input, args: ['group',] }],
+            themeName: [{ type: core.Input, args: ['themeName',] }],
+            renderer: [{ type: core.Input, args: ['renderer',] }],
             chartClick: [{ type: core.Output, args: ['chartClick',] }],
             chartDblclick: [{ type: core.Output, args: ['chartDblclick',] }],
             chartContextmenu: [{ type: core.Output, args: ['chartContextmenu',] }],

@@ -3,6 +3,7 @@ import { debounceTime, distinctUntilChanged, takeUntil, tap } from 'rxjs/operato
 import { init, connect, dispose } from 'echarts/lib/echarts';
 import { BehaviorSubject, Subject, fromEvent, merge, timer } from 'rxjs';
 import { __extends, __values } from 'tslib';
+import 'zrender/lib/svg/svg';
 import { Injectable, Optional, SkipSelf, Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ElementRef, ChangeDetectorRef, NgModule } from '@angular/core';
 
 var TdChartOptionsService = /** @class */ (function () {
@@ -136,7 +137,20 @@ var TdChartComponent = /** @class */ (function () {
         this._heightSubject = new Subject();
         this._state = {};
         this._options = {};
+        /**
+         * config?: any;
+         * Sets the JS config object if you choose to not use the property inputs.
+         * Note: property inputs override JS config conject properties.
+         * https://ecomfe.github.io/echarts-doc/public/en/option.html
+         */
         this.config = {};
+        /**
+         * renderer: 'svg' | 'canvas'
+         * sets the rendering mode for the chart.
+         * defaults to 'canvas'
+         * https://ecomfe.github.io/echarts-doc/public/en/tutorial.html#Render%20by%20Canvas%20or%20SVG
+         */
+        this.renderer = 'canvas';
         this.chartClick = new EventEmitter();
         this.chartDblclick = new EventEmitter();
         this.chartContextmenu = new EventEmitter();
@@ -146,6 +160,9 @@ var TdChartComponent = /** @class */ (function () {
         this.restore = new EventEmitter();
     }
     Object.defineProperty(TdChartComponent.prototype, "instance", {
+        /**
+         * returns the echarts instance
+         */
         get: function () {
             return this._instance;
         },
@@ -153,8 +170,47 @@ var TdChartComponent = /** @class */ (function () {
         configurable: true
     });
     TdChartComponent.prototype.ngAfterViewInit = function () {
+        this._initializeChart();
+    };
+    TdChartComponent.prototype.ngOnChanges = function (changes) {
+        if (this._instance) {
+            // destroy and reinitialize chart only when `renderer`, `themeName` and `group` changes
+            if (changes.renderer || changes.themeName || changes.group) {
+                this._disposeChart();
+                this._initializeChart();
+            }
+            else {
+                this.render();
+            }
+        }
+    };
+    TdChartComponent.prototype.ngOnDestroy = function () {
+        this._disposeChart();
+        this._destroy.unsubscribe();
+    };
+    TdChartComponent.prototype.render = function () {
+        if (this._instance) {
+            this._instance.setOption(assignDefined(this._state, {
+                grid: {
+                    show: true,
+                    left: '20',
+                    right: '20',
+                    bottom: (this.config.toolbox && typeof this.config.toolbox.bottom === 'number')
+                        || (this.config.toolbox && this.config.toolbox.bottom) ? this._checkToolboxHeight() : '10',
+                    top: (this.config.toolbox && typeof this.config.toolbox.top === 'number')
+                        || (this.config.toolbox && this.config.toolbox.top) ? this._checkToolboxHeight() : '10',
+                    containLabel: true,
+                    borderColor: '#FCFCFC',
+                },
+            }, this.config ? this.config : {}, this._options), true);
+            this._changeDetectorRef.markForCheck();
+        }
+    };
+    TdChartComponent.prototype._initializeChart = function () {
         var _this = this;
-        this._instance = init(this._elementRef.nativeElement);
+        this._instance = init(this._elementRef.nativeElement, this.themeName, {
+            renderer: this.renderer,
+        });
         fromEvent(this._instance, 'click').pipe(takeUntil(this._destroy)).subscribe(function (params) {
             _this.chartClick.next(params);
         });
@@ -199,39 +255,15 @@ var TdChartComponent = /** @class */ (function () {
             }
         });
     };
-    TdChartComponent.prototype.ngOnChanges = function () {
-        if (this._instance) {
-            this.render();
-        }
-    };
-    TdChartComponent.prototype.ngOnDestroy = function () {
+    TdChartComponent.prototype._disposeChart = function () {
         if (this._instance) {
             this._instance.clear();
             dispose(this._instance);
         }
         this._destroy.next(true);
-        this._destroy.unsubscribe();
     };
-    TdChartComponent.prototype.checkToolboxHeight = function () {
+    TdChartComponent.prototype._checkToolboxHeight = function () {
         return this.config.toolbox.height ? this.config.toolbox.height : '40';
-    };
-    TdChartComponent.prototype.render = function () {
-        if (this._instance) {
-            this._instance.setOption(assignDefined(this._state, {
-                grid: {
-                    show: true,
-                    left: '20',
-                    right: '20',
-                    bottom: (this.config.toolbox && typeof this.config.toolbox.bottom === 'number')
-                        || (this.config.toolbox && this.config.toolbox.bottom) ? this.checkToolboxHeight() : '10',
-                    top: (this.config.toolbox && typeof this.config.toolbox.top === 'number')
-                        || (this.config.toolbox && this.config.toolbox.top) ? this.checkToolboxHeight() : '10',
-                    containLabel: true,
-                    borderColor: '#FCFCFC',
-                },
-            }, this.config ? this.config : {}, this._options), true);
-            this._changeDetectorRef.markForCheck();
-        }
     };
     TdChartComponent.decorators = [
         { type: Component, args: [{
@@ -251,6 +283,8 @@ var TdChartComponent = /** @class */ (function () {
     TdChartComponent.propDecorators = {
         config: [{ type: Input, args: ['config',] }],
         group: [{ type: Input, args: ['group',] }],
+        themeName: [{ type: Input, args: ['themeName',] }],
+        renderer: [{ type: Input, args: ['renderer',] }],
         chartClick: [{ type: Output, args: ['chartClick',] }],
         chartDblclick: [{ type: Output, args: ['chartDblclick',] }],
         chartContextmenu: [{ type: Output, args: ['chartContextmenu',] }],
