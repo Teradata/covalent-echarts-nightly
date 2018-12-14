@@ -33,46 +33,56 @@
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     }
 
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     */
     var TdChartSeriesScatterComponent = /** @class */ (function (_super) {
         __extends(TdChartSeriesScatterComponent, _super);
         function TdChartSeriesScatterComponent(_optionsService) {
             return _super.call(this, 'scatter', _optionsService) || this;
         }
-        TdChartSeriesScatterComponent.prototype.getConfig = function () {
-            return {
-                coordinateSystem: this.coordinateSystem,
-                xAxisIndex: this.xAxisIndex,
-                yAxisIndex: this.yAxisIndex,
-                polarIndex: this.polarIndex,
-                geoIndex: this.geoIndex,
-                calendarIndex: this.calendarIndex,
-                hoverAnimation: this.hoverAnimation,
-                legendHoverLink: this.legendHoverLink,
-                symbol: this.symbol,
-                symbolSize: this.symbolSize,
-                symbolRotate: this.symbolRotate,
-                symbolKeepAspect: this.symbolKeepAspect,
-                symbolOffset: this.symbolOffset,
-                large: this.large,
-                largeThreshold: this.largeThreshold,
-                cursor: this.cursor,
-                label: this.label,
-                itemStyle: this.itemStyle,
-                emphasis: this.emphasis,
-                progressive: this.progressive,
-                progressiveThreshold: this.progressiveThreshold,
-                dimensions: this.dimensions,
-                encode: this.encode,
-                seriesLayoutBy: this.seriesLayoutBy,
-                datasetIndex: this.datasetIndex,
-                markPoint: this.markPoint,
-                markLine: this.markLine,
-                markArea: this.markArea,
-                zlevel: this.zlevel,
-                z: this.z,
-                silent: this.silent,
+        /**
+         * @return {?}
+         */
+        TdChartSeriesScatterComponent.prototype.getConfig = /**
+         * @return {?}
+         */
+            function () {
+                return {
+                    coordinateSystem: this.coordinateSystem,
+                    xAxisIndex: this.xAxisIndex,
+                    yAxisIndex: this.yAxisIndex,
+                    polarIndex: this.polarIndex,
+                    geoIndex: this.geoIndex,
+                    calendarIndex: this.calendarIndex,
+                    hoverAnimation: this.hoverAnimation,
+                    legendHoverLink: this.legendHoverLink,
+                    symbol: this.symbol,
+                    symbolSize: this.symbolSize,
+                    symbolRotate: this.symbolRotate,
+                    symbolKeepAspect: this.symbolKeepAspect,
+                    symbolOffset: this.symbolOffset,
+                    large: this.large,
+                    largeThreshold: this.largeThreshold,
+                    cursor: this.cursor,
+                    label: this.label,
+                    itemStyle: this.itemStyle,
+                    emphasis: this.emphasis,
+                    progressive: this.progressive,
+                    progressiveThreshold: this.progressiveThreshold,
+                    dimensions: this.dimensions,
+                    encode: this.encode,
+                    seriesLayoutBy: this.seriesLayoutBy,
+                    datasetIndex: this.datasetIndex,
+                    markPoint: this.markPoint,
+                    markLine: this.markLine,
+                    markArea: this.markArea,
+                    zlevel: this.zlevel,
+                    z: this.z,
+                    silent: this.silent,
+                };
             };
-        };
         TdChartSeriesScatterComponent.decorators = [
             { type: core.Component, args: [{
                         selector: 'td-chart-series[td-scatter]',
@@ -125,6 +135,11 @@
         return TdChartSeriesScatterComponent;
     }(base.TdSeriesComponent));
 
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     */
+    /** @type {?} */
     var SCATTER_MODULE_COMPONENTS = [
         TdChartSeriesScatterComponent,
     ];
@@ -148,7 +163,18 @@
     }());
 
     /**
-     * Generated bundle index. Do not edit.
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     */
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     */
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
      */
 
     exports.SCATTER_MODULE_COMPONENTS = SCATTER_MODULE_COMPONENTS;

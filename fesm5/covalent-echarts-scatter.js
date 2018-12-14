@@ -4,12 +4,22 @@ import { __extends } from 'tslib';
 import { Component, Input, ChangeDetectionStrategy, forwardRef, NgModule } from '@angular/core';
 import { TdChartOptionsService, TdSeriesComponent } from '@covalent/echarts/base';
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
 var TdChartSeriesScatterComponent = /** @class */ (function (_super) {
     __extends(TdChartSeriesScatterComponent, _super);
     function TdChartSeriesScatterComponent(_optionsService) {
         return _super.call(this, 'scatter', _optionsService) || this;
     }
-    TdChartSeriesScatterComponent.prototype.getConfig = function () {
+    /**
+     * @return {?}
+     */
+    TdChartSeriesScatterComponent.prototype.getConfig = /**
+     * @return {?}
+     */
+    function () {
         return {
             coordinateSystem: this.coordinateSystem,
             xAxisIndex: this.xAxisIndex,
@@ -94,6 +104,11 @@ var TdChartSeriesScatterComponent = /** @class */ (function (_super) {
     return TdChartSeriesScatterComponent;
 }(TdSeriesComponent));
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+/** @type {?} */
 var SCATTER_MODULE_COMPONENTS = [
     TdChartSeriesScatterComponent,
 ];
@@ -117,7 +132,18 @@ var CovalentScatterEchartsModule = /** @class */ (function () {
 }());
 
 /**
- * Generated bundle index. Do not edit.
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 
 export { SCATTER_MODULE_COMPONENTS, CovalentScatterEchartsModule, TdChartSeriesScatterComponent };

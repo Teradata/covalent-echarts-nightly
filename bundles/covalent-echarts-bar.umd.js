@@ -33,43 +33,53 @@
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     }
 
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     */
     var TdChartSeriesBarComponent = /** @class */ (function (_super) {
         __extends(TdChartSeriesBarComponent, _super);
         function TdChartSeriesBarComponent(_optionsService) {
             return _super.call(this, 'bar', _optionsService) || this;
         }
-        TdChartSeriesBarComponent.prototype.getConfig = function () {
-            return {
-                coordinateSystem: this.coordinateSystem,
-                xAxisIndex: this.xAxisIndex,
-                yAxisIndex: this.yAxisIndex,
-                legendHoverLink: this.legendHoverLink,
-                stack: this.stack,
-                cursor: this.cursor,
-                label: this.label,
-                itemStyle: this.itemStyle,
-                emphasis: this.emphasis,
-                barWidth: this.barWidth,
-                barMaxWidth: this.barMaxWidth,
-                barMinHeight: this.barMinHeight,
-                barGap: this.barGap,
-                barCategoryGap: this.barCategoryGap,
-                large: this.large,
-                largeThreshold: this.largeThreshold,
-                progressive: this.progressive,
-                progressiveThreshold: this.progressiveThreshold,
-                progressiveChunkMode: this.progressiveChunkMode,
-                dimensions: this.dimensions,
-                encode: this.encode,
-                seriesLayoutBy: this.seriesLayoutBy,
-                datasetIndex: this.datasetIndex,
-                markPoint: this.markPoint,
-                markLine: this.markLine,
-                markArea: this.markArea,
-                zlevel: this.zlevel,
-                z: this.z,
+        /**
+         * @return {?}
+         */
+        TdChartSeriesBarComponent.prototype.getConfig = /**
+         * @return {?}
+         */
+            function () {
+                return {
+                    coordinateSystem: this.coordinateSystem,
+                    xAxisIndex: this.xAxisIndex,
+                    yAxisIndex: this.yAxisIndex,
+                    legendHoverLink: this.legendHoverLink,
+                    stack: this.stack,
+                    cursor: this.cursor,
+                    label: this.label,
+                    itemStyle: this.itemStyle,
+                    emphasis: this.emphasis,
+                    barWidth: this.barWidth,
+                    barMaxWidth: this.barMaxWidth,
+                    barMinHeight: this.barMinHeight,
+                    barGap: this.barGap,
+                    barCategoryGap: this.barCategoryGap,
+                    large: this.large,
+                    largeThreshold: this.largeThreshold,
+                    progressive: this.progressive,
+                    progressiveThreshold: this.progressiveThreshold,
+                    progressiveChunkMode: this.progressiveChunkMode,
+                    dimensions: this.dimensions,
+                    encode: this.encode,
+                    seriesLayoutBy: this.seriesLayoutBy,
+                    datasetIndex: this.datasetIndex,
+                    markPoint: this.markPoint,
+                    markLine: this.markLine,
+                    markArea: this.markArea,
+                    zlevel: this.zlevel,
+                    z: this.z,
+                };
             };
-        };
         TdChartSeriesBarComponent.decorators = [
             { type: core.Component, args: [{
                         selector: 'td-chart-series[td-bar]',
@@ -119,6 +129,11 @@
         return TdChartSeriesBarComponent;
     }(base.TdSeriesComponent));
 
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     */
+    /** @type {?} */
     var BAR_MODULE_COMPONENTS = [
         TdChartSeriesBarComponent,
     ];
@@ -142,7 +157,18 @@
     }());
 
     /**
-     * Generated bundle index. Do not edit.
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     */
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     */
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
      */
 
     exports.BAR_MODULE_COMPONENTS = BAR_MODULE_COMPONENTS;

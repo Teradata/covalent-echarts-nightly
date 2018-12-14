@@ -12,20 +12,37 @@ import 'echarts/lib/component/toolbox';
 import { Injectable, Optional, SkipSelf, Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ElementRef, ChangeDetectorRef, NgModule, forwardRef, Directive, TemplateRef, ContentChild, ViewChild } from '@angular/core';
 import { TdChartOptionsService, TdSeriesComponent, assignDefined } from '@covalent/echarts/base';
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
 class TdChartOptionsService$1 {
     constructor() {
         this._options = {};
         this._optionsSubject = new BehaviorSubject(this._options);
     }
+    /**
+     * @param {?} option
+     * @param {?} value
+     * @return {?}
+     */
     setOption(option, value) {
+        /** @type {?} */
         let options = {};
         options[option] = value;
         Object.assign(this._options, options);
         this._optionsSubject.next(this._options);
     }
+    /**
+     * @param {?} option
+     * @param {?} value
+     * @return {?}
+     */
     setArrayOption(option, value) {
+        /** @type {?} */
         let prevValue = this.getOption(option);
         if (prevValue) {
+            /** @type {?} */
             let index = prevValue.indexOf(value);
             index > -1 ? prevValue[index] = value : prevValue.push(value);
         }
@@ -34,9 +51,16 @@ class TdChartOptionsService$1 {
         }
         this.setOption(option, prevValue);
     }
+    /**
+     * @param {?} option
+     * @param {?} value
+     * @return {?}
+     */
     removeArrayOption(option, value) {
+        /** @type {?} */
         let prevValue = this.getOption(option);
         if (prevValue) {
+            /** @type {?} */
             let index = prevValue.indexOf(value);
             if (index > -1) {
                 /* tslint:disable-next-line */
@@ -48,13 +72,24 @@ class TdChartOptionsService$1 {
         }
         this.setOption(option, prevValue);
     }
+    /**
+     * @param {?} option
+     * @return {?}
+     */
     getOption(option) {
         return this._options[option];
     }
+    /**
+     * @param {?} option
+     * @return {?}
+     */
     clearOption(option) {
         /* tslint:disable-next-line */
         this.setOption(option, null);
     }
+    /**
+     * @return {?}
+     */
     listen() {
         return this._optionsSubject.asObservable();
     }
@@ -62,9 +97,14 @@ class TdChartOptionsService$1 {
 TdChartOptionsService$1.decorators = [
     { type: Injectable }
 ];
+/**
+ * @param {?} parent
+ * @return {?}
+ */
 function CHART_PROVIDER_FACTORY(parent) {
     return parent || new TdChartOptionsService$1();
 }
+/** @type {?} */
 const CHART_PROVIDER = {
     // If there is already a service available, use that. Otherwise, provide a new one.
     provide: TdChartOptionsService$1,
@@ -72,11 +112,22 @@ const CHART_PROVIDER = {
     useFactory: CHART_PROVIDER_FACTORY,
 };
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+/**
+ * @param {?} target
+ * @param {...?} sources
+ * @return {?}
+ */
 function assignDefined$1(target, ...sources) {
+    /** @type {?} */
     let keys = new Set();
     for (const source of sources) {
         for (const key of Object.keys(source)) {
             keys.add(key);
+            /** @type {?} */
             const val = source[key];
             /* tslint:disable-next-line */
             if (val !== undefined && val !== null) {
@@ -97,7 +148,21 @@ function assignDefined$1(target, ...sources) {
     return target;
 }
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
 class TdChartComponent {
+    /**
+     * @param {?} _changeDetectorRef
+     * @param {?} _elementRef
+     * @param {?} _optionsService
+     */
     constructor(_changeDetectorRef, _elementRef, _optionsService) {
         this._changeDetectorRef = _changeDetectorRef;
         this._elementRef = _elementRef;
@@ -110,7 +175,7 @@ class TdChartComponent {
         /**
          * config?: any;
          * Sets the JS config object if you choose to not use the property inputs.
-         * Note: property inputs override JS config conject properties.
+         * Note: [config] input properties will override input values
          * https://ecomfe.github.io/echarts-doc/public/en/option.html
          */
         this.config = {};
@@ -131,13 +196,21 @@ class TdChartComponent {
     }
     /**
      * returns the echarts instance
+     * @return {?}
      */
     get instance() {
         return this._instance;
     }
+    /**
+     * @return {?}
+     */
     ngAfterViewInit() {
         this._initializeChart();
     }
+    /**
+     * @param {?} changes
+     * @return {?}
+     */
     ngOnChanges(changes) {
         if (this._instance) {
             // destroy and reinitialize chart only when `renderer`, `themeName` and `group` changes
@@ -150,10 +223,16 @@ class TdChartComponent {
             }
         }
     }
+    /**
+     * @return {?}
+     */
     ngOnDestroy() {
         this._disposeChart();
         this._destroy.unsubscribe();
     }
+    /**
+     * @return {?}
+     */
     render() {
         if (this._instance) {
             this._instance.setOption(assignDefined$1(this._state, {
@@ -161,17 +240,20 @@ class TdChartComponent {
                     show: true,
                     left: '20',
                     right: '20',
-                    bottom: (this.config.toolbox && typeof this.config.toolbox.bottom === 'number')
-                        || (this.config.toolbox && this.config.toolbox.bottom) ? this._checkToolboxHeight() : '10',
-                    top: (this.config.toolbox && typeof this.config.toolbox.top === 'number')
-                        || (this.config.toolbox && this.config.toolbox.top) ? this._checkToolboxHeight() : '10',
+                    bottom: (this.config.toolbox && typeof this.config.toolbox.bottom === 'number') ||
+                        (this._options.toolbox && typeof this._options.toolbox.bottom === 'number') ? '40' : '10',
+                    top: (this.config.toolbox && typeof this.config.toolbox.top === 'number') ||
+                        (this._options.toolbox && typeof this._options.toolbox.top === 'number') ? '40' : '10',
                     containLabel: true,
                     borderColor: '#FCFCFC',
                 },
-            }, this.config ? this.config : {}, this._options), true);
+            }, this._options, this.config ? this.config : {}), true);
             this._changeDetectorRef.markForCheck();
         }
     }
+    /**
+     * @return {?}
+     */
     _initializeChart() {
         this._instance = init(this._elementRef.nativeElement, this.themeName, {
             renderer: this.renderer,
@@ -215,20 +297,20 @@ class TdChartComponent {
         });
         timer(500, 250).pipe(takeUntil(this._destroy)).subscribe(() => {
             if (this._elementRef && this._elementRef.nativeElement) {
-                this._widthSubject.next(this._elementRef.nativeElement.getBoundingClientRect().width);
-                this._heightSubject.next(this._elementRef.nativeElement.getBoundingClientRect().height);
+                this._widthSubject.next(((/** @type {?} */ (this._elementRef.nativeElement))).getBoundingClientRect().width);
+                this._heightSubject.next(((/** @type {?} */ (this._elementRef.nativeElement))).getBoundingClientRect().height);
             }
         });
     }
+    /**
+     * @return {?}
+     */
     _disposeChart() {
         if (this._instance) {
             this._instance.clear();
             dispose(this._instance);
         }
         this._destroy.next(true);
-    }
-    _checkToolboxHeight() {
-        return this.config.toolbox.height ? this.config.toolbox.height : '40';
     }
 }
 TdChartComponent.decorators = [
@@ -260,7 +342,18 @@ TdChartComponent.propDecorators = {
     restore: [{ type: Output, args: ['restore',] }]
 };
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+/**
+ * @abstract
+ */
 class TdChartAxisComponent {
+    /**
+     * @param {?} _axisOption
+     * @param {?} _optionsService
+     */
     constructor(_axisOption, _optionsService) {
         this._axisOption = _axisOption;
         this._optionsService = _optionsService;
@@ -279,17 +372,30 @@ class TdChartAxisComponent {
         this.config = {};
         this.show = true;
     }
+    /**
+     * @return {?}
+     */
     ngOnInit() {
         this._setOptions();
     }
+    /**
+     * @return {?}
+     */
     ngOnChanges() {
         this._setOptions();
     }
+    /**
+     * @return {?}
+     */
     ngOnDestroy() {
         this._removeOption();
     }
+    /**
+     * @return {?}
+     */
     _setOptions() {
-        let config = assignDefined$1(this._state, this.config ? this.config : {}, {
+        /** @type {?} */
+        let config = assignDefined$1(this._state, {
             id: this.id,
             show: this.show,
             gridIndex: this.gridIndex,
@@ -320,9 +426,12 @@ class TdChartAxisComponent {
             axisPointer: this.axisPointer,
             zlevel: this.zlevel,
             z: this.z,
-        });
+        }, this.config ? this.config : {});
         this._optionsService.setArrayOption(this._axisOption, config);
     }
+    /**
+     * @return {?}
+     */
     _removeOption() {
         this._optionsService.clearOption(this._axisOption);
     }
@@ -360,7 +469,14 @@ TdChartAxisComponent.propDecorators = {
     z: [{ type: Input, args: ['z',] }]
 };
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
 class TdChartXAxisComponent extends TdChartAxisComponent {
+    /**
+     * @param {?} _optionsService
+     */
     constructor(_optionsService) {
         super('xAxis', _optionsService);
     }
@@ -380,7 +496,14 @@ TdChartXAxisComponent.propDecorators = {
     position: [{ type: Input, args: ['position',] }]
 };
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
 class TdChartYAxisComponent extends TdChartAxisComponent {
+    /**
+     * @param {?} _optionsService
+     */
     constructor(_optionsService) {
         super('yAxis', _optionsService);
     }
@@ -400,6 +523,11 @@ TdChartYAxisComponent.propDecorators = {
     position: [{ type: Input, args: ['position',] }]
 };
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+/** @type {?} */
 const BASE_MODULE_COMPONENTS = [
     TdChartComponent,
     TdChartXAxisComponent,
@@ -421,7 +549,19 @@ CovalentBaseEchartsModule.decorators = [
             },] }
 ];
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+/**
+ * @abstract
+ * @template T
+ */
 class TdSeriesComponent$1 {
+    /**
+     * @param {?} type
+     * @param {?} optionsService
+     */
     constructor(type, optionsService) {
         this.optionsService = optionsService;
         this._state = {};
@@ -429,29 +569,54 @@ class TdSeriesComponent$1 {
         this.config = {};
         this._type = type;
     }
+    /**
+     * @return {?}
+     */
     get type() {
         return this._type;
     }
+    /**
+     * @return {?}
+     */
     ngOnInit() {
         this._setOptions();
     }
+    /**
+     * @return {?}
+     */
     ngOnChanges() {
         this._setOptions();
     }
+    /**
+     * @return {?}
+     */
     ngOnDestroy() {
         this._removeOption();
     }
+    /**
+     * @param {?} option
+     * @param {?} value
+     * @return {?}
+     */
     setStateOption(option, value) {
         this._options[option] = value;
         this._setOptions();
     }
+    /**
+     * @param {?} option
+     * @return {?}
+     */
     removeStateOption(option) {
         /* tslint:disable-next-line */
         this._options[option] = null;
         this._setOptions();
     }
+    /**
+     * @return {?}
+     */
     _setOptions() {
-        let config = assignDefined$1(this._state, this.config ? this.config : {}, {
+        /** @type {?} */
+        let config = assignDefined$1(this._state, {
             id: this.id,
             type: this.type,
             name: this.name,
@@ -466,9 +631,12 @@ class TdSeriesComponent$1 {
             animationEasingUpdate: this.animationEasingUpdate,
             animationDelayUpdate: this.animationDelayUpdate,
             tooltip: this.tooltip,
-        }, this.getConfig(), this._options);
+        }, this.getConfig(), this._options, this.config ? this.config : {});
         this.optionsService.setArrayOption('series', config);
     }
+    /**
+     * @return {?}
+     */
     _removeOption() {
         this.optionsService.removeArrayOption('series', this._state);
     }
@@ -490,10 +658,30 @@ TdSeriesComponent$1.propDecorators = {
     tooltip: [{ type: Input, args: ['tooltip',] }]
 };
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
 class TdChartSeriesBarComponent extends TdSeriesComponent {
+    /**
+     * @param {?} _optionsService
+     */
     constructor(_optionsService) {
         super('bar', _optionsService);
     }
+    /**
+     * @return {?}
+     */
     getConfig() {
         return {
             coordinateSystem: this.coordinateSystem,
@@ -572,6 +760,11 @@ TdChartSeriesBarComponent.propDecorators = {
     z: [{ type: Input, args: ['z',] }]
 };
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+/** @type {?} */
 const BAR_MODULE_COMPONENTS = [
     TdChartSeriesBarComponent,
 ];
@@ -591,10 +784,30 @@ CovalentBarEchartsModule.decorators = [
             },] }
 ];
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
 class TdChartSeriesLineComponent extends TdSeriesComponent {
+    /**
+     * @param {?} _optionsService
+     */
     constructor(_optionsService) {
         super('line', _optionsService);
     }
+    /**
+     * @return {?}
+     */
     getConfig() {
         return {
             coordinateSystem: this.coordinateSystem,
@@ -689,6 +902,11 @@ TdChartSeriesLineComponent.propDecorators = {
     silent: [{ type: Input, args: ['silent',] }]
 };
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+/** @type {?} */
 const LINE_MODULE_COMPONENTS = [
     TdChartSeriesLineComponent,
 ];
@@ -708,10 +926,30 @@ CovalentLineEchartsModule.decorators = [
             },] }
 ];
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
 class TdChartSeriesScatterComponent extends TdSeriesComponent {
+    /**
+     * @param {?} _optionsService
+     */
     constructor(_optionsService) {
         super('scatter', _optionsService);
     }
+    /**
+     * @return {?}
+     */
     getConfig() {
         return {
             coordinateSystem: this.coordinateSystem,
@@ -796,6 +1034,11 @@ TdChartSeriesScatterComponent.propDecorators = {
     silent: [{ type: Input, args: ['silent',] }]
 };
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+/** @type {?} */
 const SCATTER_MODULE_COMPONENTS = [
     TdChartSeriesScatterComponent,
 ];
@@ -815,10 +1058,30 @@ CovalentScatterEchartsModule.decorators = [
             },] }
 ];
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
 class TdChartSeriesTreeComponent extends TdSeriesComponent {
+    /**
+     * @param {?} _optionsService
+     */
     constructor(_optionsService) {
         super('tree', _optionsService);
     }
+    /**
+     * @return {?}
+     */
     getConfig() {
         return {
             zlevel: this.zlevel,
@@ -885,6 +1148,11 @@ TdChartSeriesTreeComponent.propDecorators = {
     emphasis: [{ type: Input, args: ['emphasis',] }]
 };
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+/** @type {?} */
 const TREE_MODULE_COMPONENTS = [
     TdChartSeriesTreeComponent,
 ];
@@ -904,6 +1172,20 @@ CovalentTreeEchartsModule.decorators = [
             },] }
 ];
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
 class TdTooltipContext {
 }
 class TdChartTooltipFormatterDirective {
@@ -914,6 +1196,11 @@ TdChartTooltipFormatterDirective.decorators = [
             },] }
 ];
 class TdChartTooltipComponent {
+    /**
+     * @param {?} _changeDetectorRef
+     * @param {?} _elementRef
+     * @param {?} _optionsService
+     */
     constructor(_changeDetectorRef, _elementRef, _optionsService) {
         this._changeDetectorRef = _changeDetectorRef;
         this._elementRef = _elementRef;
@@ -931,22 +1218,38 @@ class TdChartTooltipComponent {
         this.enterable = false;
         this.confine = false;
         this.transitionDuration = 0.5;
+        // series
         this.backgroundColor = 'rgba(50,50,50,0.7)'; // series
+        // series
         this.borderColor = '#333'; // series
+        // series
         this.borderWidth = 0; // series
+        // series
         this.padding = 5; // series
+        // series
         this.textStyle = {
+            // series
             color: '#FFF',
         };
     }
+    /**
+     * @return {?}
+     */
     ngOnChanges() {
         this._setOptions();
     }
+    /**
+     * @return {?}
+     */
     ngOnDestroy() {
         this._removeOption();
     }
+    /**
+     * @return {?}
+     */
     _setOptions() {
-        let config = assignDefined(this._state, this.config ? this.config : {}, {
+        /** @type {?} */
+        let config = assignDefined(this._state, {
             show: this.show,
             trigger: this.trigger,
             axisPointer: this.axisPointer,
@@ -966,13 +1269,19 @@ class TdChartTooltipComponent {
             padding: this.padding,
             textStyle: this.textStyle,
             extraCssText: this.extraCssText,
-        });
+        }, this.config ? this.config : {});
         // set tooltip configuration in parent chart and render new configurations
         this._optionsService.setOption('tooltip', config);
     }
+    /**
+     * @return {?}
+     */
     _removeOption() {
         this._optionsService.clearOption('tooltip');
     }
+    /**
+     * @return {?}
+     */
     _formatter() {
         return (params, ticket, callback) => {
             this._context = {
@@ -982,10 +1291,10 @@ class TdChartTooltipComponent {
             // timeout set since we need to set the HTML at the end of the angular lifecycle when
             // the tooltip delay is more than 0
             setTimeout(() => {
-                callback(ticket, this._elementRef.nativeElement.innerHTML);
+                callback(ticket, ((/** @type {?} */ (this._elementRef.nativeElement))).innerHTML);
             });
             this._changeDetectorRef.markForCheck();
-            return this._elementRef.nativeElement.innerHTML;
+            return ((/** @type {?} */ (this._elementRef.nativeElement))).innerHTML;
         };
     }
 }
@@ -1028,7 +1337,16 @@ TdChartTooltipComponent.propDecorators = {
     fullTemplate: [{ type: ViewChild, args: ['tooltipContent',] }]
 };
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
 class TdSeriesTooltipComponent {
+    /**
+     * @param {?} _changeDetectorRef
+     * @param {?} _elementRef
+     * @param {?} _seriesComponent
+     */
     constructor(_changeDetectorRef, _elementRef, _seriesComponent) {
         this._changeDetectorRef = _changeDetectorRef;
         this._elementRef = _elementRef;
@@ -1043,14 +1361,24 @@ class TdSeriesTooltipComponent {
             color: '#FFF',
         };
     }
+    /**
+     * @return {?}
+     */
     ngOnChanges() {
         this._setOptions();
     }
+    /**
+     * @return {?}
+     */
     ngOnDestroy() {
         this._removeOption();
     }
+    /**
+     * @return {?}
+     */
     _setOptions() {
-        let config = assignDefined(this._state, this.config ? this.config : {}, {
+        /** @type {?} */
+        let config = assignDefined(this._state, {
             position: this.position,
             backgroundColor: this.backgroundColor,
             borderColor: this.borderColor,
@@ -1059,13 +1387,14 @@ class TdSeriesTooltipComponent {
             textStyle: this.textStyle,
             extraCssText: this.extraCssText,
             formatter: this.formatter ? this.formatter : (this.formatterTemplate ? this._formatter() : undefined),
-        });
+        }, this.config ? this.config : {});
         // set series tooltip configuration in parent chart and render new configurations
         this._seriesComponent.setStateOption('tooltip', config);
     }
     /**
      * Formatter for tooltip
      *
+     * @return {?}
      */
     _formatter() {
         return (params, ticket, callback) => {
@@ -1076,12 +1405,15 @@ class TdSeriesTooltipComponent {
             // timeout set since we need to set the HTML at the end of the angular lifecycle when
             // the tooltip delay is more than 0
             setTimeout(() => {
-                callback(ticket, this._elementRef.nativeElement.innerHTML);
+                callback(ticket, ((/** @type {?} */ (this._elementRef.nativeElement))).innerHTML);
             });
             this._changeDetectorRef.markForCheck();
-            return this._elementRef.nativeElement.innerHTML;
+            return ((/** @type {?} */ (this._elementRef.nativeElement))).innerHTML;
         };
     }
+    /**
+     * @return {?}
+     */
     _removeOption() {
         this._seriesComponent.removeStateOption('tooltip');
     }
@@ -1113,6 +1445,11 @@ TdSeriesTooltipComponent.propDecorators = {
     fullTemplate: [{ type: ViewChild, args: ['tooltipContent',] }]
 };
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+/** @type {?} */
 const TOOLTIP_MODULE_COMPONENTS = [
     TdChartTooltipComponent,
     TdChartTooltipFormatterDirective,
@@ -1134,6 +1471,20 @@ CovalentTooltipEchartsModule.decorators = [
             },] }
 ];
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
 class TdChartViewDataFormatterDirective {
 }
 TdChartViewDataFormatterDirective.decorators = [
@@ -1142,6 +1493,11 @@ TdChartViewDataFormatterDirective.decorators = [
             },] }
 ];
 class TdChartToolboxComponent {
+    /**
+     * @param {?} _changeDetectorRef
+     * @param {?} _elementRef
+     * @param {?} _optionsService
+     */
     constructor(_changeDetectorRef, _elementRef, _optionsService) {
         this._changeDetectorRef = _changeDetectorRef;
         this._elementRef = _elementRef;
@@ -1158,15 +1514,25 @@ class TdChartToolboxComponent {
         this.width = 'auto';
         this.height = 'auto';
     }
+    /**
+     * @return {?}
+     */
     ngOnChanges() {
         this._setOptions();
     }
+    /**
+     * @return {?}
+     */
     ngOnDestroy() {
         this._removeOption();
     }
+    /**
+     * @return {?}
+     */
     _setOptions() {
         this._checkFormatterTemplate();
-        let config = assignDefined(this._state, this.config ? this.config : {}, {
+        /** @type {?} */
+        let config = assignDefined(this._state, {
             show: this.show,
             name: this.trigger,
             orient: this.orient,
@@ -1185,22 +1551,31 @@ class TdChartToolboxComponent {
             bottom: this.bottom,
             width: this.width,
             height: this.height,
-        });
+        }, this.config ? this.config : {});
         // set toolbox configuration in parent chart and render new configurations
         this._optionsService.setOption('toolbox', config);
     }
+    /**
+     * @return {?}
+     */
     _removeOption() {
         this._optionsService.clearOption('toolbox');
     }
+    /**
+     * @return {?}
+     */
     _checkFormatterTemplate() {
         if (this.formatterTemplate) {
             this.feature = Object.assign({}, this.feature, { dataView: Object.assign({}, this.feature.dataView, { optionToContent: this._optionToContentFormatter() }) });
         }
     }
+    /**
+     * @return {?}
+     */
     _optionToContentFormatter() {
         return () => {
             this._changeDetectorRef.markForCheck();
-            return this._elementRef.nativeElement.innerHTML;
+            return ((/** @type {?} */ (this._elementRef.nativeElement))).innerHTML;
         };
     }
 }
@@ -1241,6 +1616,11 @@ TdChartToolboxComponent.propDecorators = {
     fullTemplate: [{ type: ViewChild, args: ['toolboxContent',] }]
 };
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+/** @type {?} */
 const TOOLBOX_MODULE_COMPONENTS = [
     TdChartToolboxComponent,
     TdChartViewDataFormatterDirective,
@@ -1262,9 +1642,30 @@ CovalentToolboxEchartsModule.decorators = [
 ];
 
 /**
- * Generated bundle index. Do not edit.
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 
-export { CHART_PROVIDER_FACTORY as ɵa, TdChartComponent, TdChartAxisComponent, TdChartYAxisComponent, TdChartXAxisComponent, TdChartOptionsService$1 as TdChartOptionsService, CHART_PROVIDER, BASE_MODULE_COMPONENTS, CovalentBaseEchartsModule, assignDefined$1 as assignDefined, TdSeriesComponent$1 as TdSeriesComponent, BAR_MODULE_COMPONENTS, CovalentBarEchartsModule, TdChartSeriesBarComponent, LINE_MODULE_COMPONENTS, CovalentLineEchartsModule, TdChartSeriesLineComponent, SCATTER_MODULE_COMPONENTS, CovalentScatterEchartsModule, TdChartSeriesScatterComponent, TREE_MODULE_COMPONENTS, CovalentTreeEchartsModule, TdChartSeriesTreeComponent, TOOLTIP_MODULE_COMPONENTS, CovalentTooltipEchartsModule, TdTooltipContext, TdChartTooltipFormatterDirective, TdChartTooltipComponent, TdSeriesTooltipComponent, TOOLBOX_MODULE_COMPONENTS, CovalentToolboxEchartsModule, TdChartViewDataFormatterDirective, TdChartToolboxComponent };
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+export { TdChartComponent, TdChartAxisComponent, TdChartYAxisComponent, TdChartXAxisComponent, TdChartOptionsService$1 as TdChartOptionsService, CHART_PROVIDER, BASE_MODULE_COMPONENTS, CovalentBaseEchartsModule, assignDefined$1 as assignDefined, TdSeriesComponent$1 as TdSeriesComponent, BAR_MODULE_COMPONENTS, CovalentBarEchartsModule, TdChartSeriesBarComponent, LINE_MODULE_COMPONENTS, CovalentLineEchartsModule, TdChartSeriesLineComponent, SCATTER_MODULE_COMPONENTS, CovalentScatterEchartsModule, TdChartSeriesScatterComponent, TREE_MODULE_COMPONENTS, CovalentTreeEchartsModule, TdChartSeriesTreeComponent, TOOLTIP_MODULE_COMPONENTS, CovalentTooltipEchartsModule, TdTooltipContext, TdChartTooltipFormatterDirective, TdChartTooltipComponent, TdSeriesTooltipComponent, TOOLBOX_MODULE_COMPONENTS, CovalentToolboxEchartsModule, TdChartViewDataFormatterDirective, TdChartToolboxComponent, CHART_PROVIDER_FACTORY as ɵa };
 
 //# sourceMappingURL=covalent-echarts.js.map

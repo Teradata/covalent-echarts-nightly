@@ -3,11 +3,21 @@ import 'echarts/lib/chart/treemap';
 import { Component, Input, ChangeDetectionStrategy, forwardRef, NgModule } from '@angular/core';
 import { TdChartOptionsService, TdSeriesComponent } from '@covalent/echarts/base';
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
 class TdChartSeriesTreemapComponent extends TdSeriesComponent {
+    /**
+     * @param {?} _optionsService
+     */
     constructor(_optionsService) {
         super('treemap', _optionsService);
         this.config = {};
     }
+    /**
+     * @return {?}
+     */
     getConfig() {
         return {
             zlevel: this.zlevel,
@@ -93,6 +103,11 @@ TdChartSeriesTreemapComponent.propDecorators = {
     tooltip: [{ type: Input, args: ['tooltip',] }]
 };
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+/** @type {?} */
 const TREEMAP_MODULE_COMPONENTS = [
     TdChartSeriesTreemapComponent,
 ];
@@ -113,7 +128,18 @@ CovalentTreemapEchartsModule.decorators = [
 ];
 
 /**
- * Generated bundle index. Do not edit.
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 
 export { TREEMAP_MODULE_COMPONENTS, CovalentTreemapEchartsModule, TdChartSeriesTreemapComponent };

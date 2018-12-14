@@ -17,7 +17,7 @@ export declare class TdChartComponent implements AfterViewInit, OnChanges, OnDes
     /**
      * config?: any;
      * Sets the JS config object if you choose to not use the property inputs.
-     * Note: property inputs override JS config conject properties.
+     * Note: [config] input properties will override input values
      * https://ecomfe.github.io/echarts-doc/public/en/option.html
      */
     config: any;
@@ -54,5 +54,4 @@ export declare class TdChartComponent implements AfterViewInit, OnChanges, OnDes
     render(): void;
     private _initializeChart;
     private _disposeChart;
-    private _checkToolboxHeight;
 }

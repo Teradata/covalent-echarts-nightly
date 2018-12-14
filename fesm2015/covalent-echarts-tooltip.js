@@ -3,6 +3,10 @@ import 'echarts/lib/component/tooltip';
 import { Component, Input, Directive, TemplateRef, ChangeDetectionStrategy, ElementRef, ChangeDetectorRef, ContentChild, ViewChild, NgModule } from '@angular/core';
 import { TdChartOptionsService, assignDefined, TdSeriesComponent } from '@covalent/echarts/base';
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
 class TdTooltipContext {
 }
 class TdChartTooltipFormatterDirective {
@@ -13,6 +17,11 @@ TdChartTooltipFormatterDirective.decorators = [
             },] }
 ];
 class TdChartTooltipComponent {
+    /**
+     * @param {?} _changeDetectorRef
+     * @param {?} _elementRef
+     * @param {?} _optionsService
+     */
     constructor(_changeDetectorRef, _elementRef, _optionsService) {
         this._changeDetectorRef = _changeDetectorRef;
         this._elementRef = _elementRef;
@@ -30,22 +39,38 @@ class TdChartTooltipComponent {
         this.enterable = false;
         this.confine = false;
         this.transitionDuration = 0.5;
+        // series
         this.backgroundColor = 'rgba(50,50,50,0.7)'; // series
+        // series
         this.borderColor = '#333'; // series
+        // series
         this.borderWidth = 0; // series
+        // series
         this.padding = 5; // series
+        // series
         this.textStyle = {
+            // series
             color: '#FFF',
         };
     }
+    /**
+     * @return {?}
+     */
     ngOnChanges() {
         this._setOptions();
     }
+    /**
+     * @return {?}
+     */
     ngOnDestroy() {
         this._removeOption();
     }
+    /**
+     * @return {?}
+     */
     _setOptions() {
-        let config = assignDefined(this._state, this.config ? this.config : {}, {
+        /** @type {?} */
+        let config = assignDefined(this._state, {
             show: this.show,
             trigger: this.trigger,
             axisPointer: this.axisPointer,
@@ -65,13 +90,19 @@ class TdChartTooltipComponent {
             padding: this.padding,
             textStyle: this.textStyle,
             extraCssText: this.extraCssText,
-        });
+        }, this.config ? this.config : {});
         // set tooltip configuration in parent chart and render new configurations
         this._optionsService.setOption('tooltip', config);
     }
+    /**
+     * @return {?}
+     */
     _removeOption() {
         this._optionsService.clearOption('tooltip');
     }
+    /**
+     * @return {?}
+     */
     _formatter() {
         return (params, ticket, callback) => {
             this._context = {
@@ -81,10 +112,10 @@ class TdChartTooltipComponent {
             // timeout set since we need to set the HTML at the end of the angular lifecycle when
             // the tooltip delay is more than 0
             setTimeout(() => {
-                callback(ticket, this._elementRef.nativeElement.innerHTML);
+                callback(ticket, ((/** @type {?} */ (this._elementRef.nativeElement))).innerHTML);
             });
             this._changeDetectorRef.markForCheck();
-            return this._elementRef.nativeElement.innerHTML;
+            return ((/** @type {?} */ (this._elementRef.nativeElement))).innerHTML;
         };
     }
 }
@@ -127,7 +158,16 @@ TdChartTooltipComponent.propDecorators = {
     fullTemplate: [{ type: ViewChild, args: ['tooltipContent',] }]
 };
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
 class TdSeriesTooltipComponent {
+    /**
+     * @param {?} _changeDetectorRef
+     * @param {?} _elementRef
+     * @param {?} _seriesComponent
+     */
     constructor(_changeDetectorRef, _elementRef, _seriesComponent) {
         this._changeDetectorRef = _changeDetectorRef;
         this._elementRef = _elementRef;
@@ -142,14 +182,24 @@ class TdSeriesTooltipComponent {
             color: '#FFF',
         };
     }
+    /**
+     * @return {?}
+     */
     ngOnChanges() {
         this._setOptions();
     }
+    /**
+     * @return {?}
+     */
     ngOnDestroy() {
         this._removeOption();
     }
+    /**
+     * @return {?}
+     */
     _setOptions() {
-        let config = assignDefined(this._state, this.config ? this.config : {}, {
+        /** @type {?} */
+        let config = assignDefined(this._state, {
             position: this.position,
             backgroundColor: this.backgroundColor,
             borderColor: this.borderColor,
@@ -158,13 +208,14 @@ class TdSeriesTooltipComponent {
             textStyle: this.textStyle,
             extraCssText: this.extraCssText,
             formatter: this.formatter ? this.formatter : (this.formatterTemplate ? this._formatter() : undefined),
-        });
+        }, this.config ? this.config : {});
         // set series tooltip configuration in parent chart and render new configurations
         this._seriesComponent.setStateOption('tooltip', config);
     }
     /**
      * Formatter for tooltip
      *
+     * @return {?}
      */
     _formatter() {
         return (params, ticket, callback) => {
@@ -175,12 +226,15 @@ class TdSeriesTooltipComponent {
             // timeout set since we need to set the HTML at the end of the angular lifecycle when
             // the tooltip delay is more than 0
             setTimeout(() => {
-                callback(ticket, this._elementRef.nativeElement.innerHTML);
+                callback(ticket, ((/** @type {?} */ (this._elementRef.nativeElement))).innerHTML);
             });
             this._changeDetectorRef.markForCheck();
-            return this._elementRef.nativeElement.innerHTML;
+            return ((/** @type {?} */ (this._elementRef.nativeElement))).innerHTML;
         };
     }
+    /**
+     * @return {?}
+     */
     _removeOption() {
         this._seriesComponent.removeStateOption('tooltip');
     }
@@ -212,6 +266,11 @@ TdSeriesTooltipComponent.propDecorators = {
     fullTemplate: [{ type: ViewChild, args: ['tooltipContent',] }]
 };
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+/** @type {?} */
 const TOOLTIP_MODULE_COMPONENTS = [
     TdChartTooltipComponent,
     TdChartTooltipFormatterDirective,
@@ -234,7 +293,18 @@ CovalentTooltipEchartsModule.decorators = [
 ];
 
 /**
- * Generated bundle index. Do not edit.
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 
 export { TOOLTIP_MODULE_COMPONENTS, CovalentTooltipEchartsModule, TdTooltipContext, TdChartTooltipFormatterDirective, TdChartTooltipComponent, TdSeriesTooltipComponent };

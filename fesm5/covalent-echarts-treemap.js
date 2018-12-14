@@ -4,6 +4,10 @@ import { __extends } from 'tslib';
 import { Component, Input, ChangeDetectionStrategy, forwardRef, NgModule } from '@angular/core';
 import { TdChartOptionsService, TdSeriesComponent } from '@covalent/echarts/base';
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
 var TdChartSeriesTreemapComponent = /** @class */ (function (_super) {
     __extends(TdChartSeriesTreemapComponent, _super);
     function TdChartSeriesTreemapComponent(_optionsService) {
@@ -11,7 +15,13 @@ var TdChartSeriesTreemapComponent = /** @class */ (function (_super) {
         _this.config = {};
         return _this;
     }
-    TdChartSeriesTreemapComponent.prototype.getConfig = function () {
+    /**
+     * @return {?}
+     */
+    TdChartSeriesTreemapComponent.prototype.getConfig = /**
+     * @return {?}
+     */
+    function () {
         return {
             zlevel: this.zlevel,
             z: this.z,
@@ -97,6 +107,11 @@ var TdChartSeriesTreemapComponent = /** @class */ (function (_super) {
     return TdChartSeriesTreemapComponent;
 }(TdSeriesComponent));
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+/** @type {?} */
 var TREEMAP_MODULE_COMPONENTS = [
     TdChartSeriesTreemapComponent,
 ];
@@ -120,7 +135,18 @@ var CovalentTreemapEchartsModule = /** @class */ (function () {
 }());
 
 /**
- * Generated bundle index. Do not edit.
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 
 export { TREEMAP_MODULE_COMPONENTS, CovalentTreemapEchartsModule, TdChartSeriesTreemapComponent };

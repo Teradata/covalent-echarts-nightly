@@ -4,12 +4,22 @@ import { __extends } from 'tslib';
 import { Component, Input, ChangeDetectionStrategy, forwardRef, NgModule } from '@angular/core';
 import { TdChartOptionsService, TdSeriesComponent } from '@covalent/echarts/base';
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
 var TdChartSeriesTreeComponent = /** @class */ (function (_super) {
     __extends(TdChartSeriesTreeComponent, _super);
     function TdChartSeriesTreeComponent(_optionsService) {
         return _super.call(this, 'tree', _optionsService) || this;
     }
-    TdChartSeriesTreeComponent.prototype.getConfig = function () {
+    /**
+     * @return {?}
+     */
+    TdChartSeriesTreeComponent.prototype.getConfig = /**
+     * @return {?}
+     */
+    function () {
         return {
             zlevel: this.zlevel,
             z: this.z,
@@ -76,6 +86,11 @@ var TdChartSeriesTreeComponent = /** @class */ (function (_super) {
     return TdChartSeriesTreeComponent;
 }(TdSeriesComponent));
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+/** @type {?} */
 var TREE_MODULE_COMPONENTS = [
     TdChartSeriesTreeComponent,
 ];
@@ -99,7 +114,18 @@ var CovalentTreeEchartsModule = /** @class */ (function () {
 }());
 
 /**
- * Generated bundle index. Do not edit.
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 
 export { TREE_MODULE_COMPONENTS, CovalentTreeEchartsModule, TdChartSeriesTreeComponent };

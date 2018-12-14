@@ -3,10 +3,20 @@ import 'echarts/lib/chart/line';
 import { Component, Input, ChangeDetectionStrategy, forwardRef, NgModule } from '@angular/core';
 import { TdChartOptionsService, TdSeriesComponent } from '@covalent/echarts/base';
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
 class TdChartSeriesLineComponent extends TdSeriesComponent {
+    /**
+     * @param {?} _optionsService
+     */
     constructor(_optionsService) {
         super('line', _optionsService);
     }
+    /**
+     * @return {?}
+     */
     getConfig() {
         return {
             coordinateSystem: this.coordinateSystem,
@@ -101,6 +111,11 @@ TdChartSeriesLineComponent.propDecorators = {
     silent: [{ type: Input, args: ['silent',] }]
 };
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+/** @type {?} */
 const LINE_MODULE_COMPONENTS = [
     TdChartSeriesLineComponent,
 ];
@@ -121,7 +136,18 @@ CovalentLineEchartsModule.decorators = [
 ];
 
 /**
- * Generated bundle index. Do not edit.
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 
 export { LINE_MODULE_COMPONENTS, CovalentLineEchartsModule, TdChartSeriesLineComponent };

@@ -3,10 +3,20 @@ import 'echarts/lib/chart/bar';
 import { Component, Input, ChangeDetectionStrategy, forwardRef, NgModule } from '@angular/core';
 import { TdChartOptionsService, TdSeriesComponent } from '@covalent/echarts/base';
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
 class TdChartSeriesBarComponent extends TdSeriesComponent {
+    /**
+     * @param {?} _optionsService
+     */
     constructor(_optionsService) {
         super('bar', _optionsService);
     }
+    /**
+     * @return {?}
+     */
     getConfig() {
         return {
             coordinateSystem: this.coordinateSystem,
@@ -85,6 +95,11 @@ TdChartSeriesBarComponent.propDecorators = {
     z: [{ type: Input, args: ['z',] }]
 };
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+/** @type {?} */
 const BAR_MODULE_COMPONENTS = [
     TdChartSeriesBarComponent,
 ];
@@ -105,7 +120,18 @@ CovalentBarEchartsModule.decorators = [
 ];
 
 /**
- * Generated bundle index. Do not edit.
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 
 export { BAR_MODULE_COMPONENTS, CovalentBarEchartsModule, TdChartSeriesBarComponent };

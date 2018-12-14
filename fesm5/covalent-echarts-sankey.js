@@ -4,12 +4,22 @@ import { __extends } from 'tslib';
 import { Component, Input, ChangeDetectionStrategy, forwardRef, NgModule } from '@angular/core';
 import { TdChartOptionsService, TdSeriesComponent } from '@covalent/echarts/base';
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
 var TdChartSeriesSankeyComponent = /** @class */ (function (_super) {
     __extends(TdChartSeriesSankeyComponent, _super);
     function TdChartSeriesSankeyComponent(_optionsService) {
         return _super.call(this, 'sankey', _optionsService) || this;
     }
-    TdChartSeriesSankeyComponent.prototype.getConfig = function () {
+    /**
+     * @return {?}
+     */
+    TdChartSeriesSankeyComponent.prototype.getConfig = /**
+     * @return {?}
+     */
+    function () {
         return {
             zlevel: this.zlevel,
             z: this.z,
@@ -76,6 +86,11 @@ var TdChartSeriesSankeyComponent = /** @class */ (function (_super) {
     return TdChartSeriesSankeyComponent;
 }(TdSeriesComponent));
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+/** @type {?} */
 var SANKEY_MODULE_COMPONENTS = [
     TdChartSeriesSankeyComponent,
 ];
@@ -99,7 +114,18 @@ var CovalentSankeyEchartsModule = /** @class */ (function () {
 }());
 
 /**
- * Generated bundle index. Do not edit.
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 
 export { SANKEY_MODULE_COMPONENTS, CovalentSankeyEchartsModule, TdChartSeriesSankeyComponent };

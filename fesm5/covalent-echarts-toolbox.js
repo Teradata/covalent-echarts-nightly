@@ -4,6 +4,10 @@ import { __assign } from 'tslib';
 import { Component, Input, Directive, TemplateRef, ChangeDetectionStrategy, ElementRef, ChangeDetectorRef, ContentChild, ViewChild, NgModule } from '@angular/core';
 import { TdChartOptionsService, assignDefined } from '@covalent/echarts/base';
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
 var TdChartViewDataFormatterDirective = /** @class */ (function () {
     function TdChartViewDataFormatterDirective() {
     }
@@ -31,15 +35,34 @@ var TdChartToolboxComponent = /** @class */ (function () {
         this.width = 'auto';
         this.height = 'auto';
     }
-    TdChartToolboxComponent.prototype.ngOnChanges = function () {
+    /**
+     * @return {?}
+     */
+    TdChartToolboxComponent.prototype.ngOnChanges = /**
+     * @return {?}
+     */
+    function () {
         this._setOptions();
     };
-    TdChartToolboxComponent.prototype.ngOnDestroy = function () {
+    /**
+     * @return {?}
+     */
+    TdChartToolboxComponent.prototype.ngOnDestroy = /**
+     * @return {?}
+     */
+    function () {
         this._removeOption();
     };
-    TdChartToolboxComponent.prototype._setOptions = function () {
+    /**
+     * @return {?}
+     */
+    TdChartToolboxComponent.prototype._setOptions = /**
+     * @return {?}
+     */
+    function () {
         this._checkFormatterTemplate();
-        var config = assignDefined(this._state, this.config ? this.config : {}, {
+        /** @type {?} */
+        var config = assignDefined(this._state, {
             show: this.show,
             name: this.trigger,
             orient: this.orient,
@@ -58,23 +81,41 @@ var TdChartToolboxComponent = /** @class */ (function () {
             bottom: this.bottom,
             width: this.width,
             height: this.height,
-        });
+        }, this.config ? this.config : {});
         // set toolbox configuration in parent chart and render new configurations
         this._optionsService.setOption('toolbox', config);
     };
-    TdChartToolboxComponent.prototype._removeOption = function () {
+    /**
+     * @return {?}
+     */
+    TdChartToolboxComponent.prototype._removeOption = /**
+     * @return {?}
+     */
+    function () {
         this._optionsService.clearOption('toolbox');
     };
-    TdChartToolboxComponent.prototype._checkFormatterTemplate = function () {
+    /**
+     * @return {?}
+     */
+    TdChartToolboxComponent.prototype._checkFormatterTemplate = /**
+     * @return {?}
+     */
+    function () {
         if (this.formatterTemplate) {
             this.feature = __assign({}, this.feature, { dataView: __assign({}, this.feature.dataView, { optionToContent: this._optionToContentFormatter() }) });
         }
     };
-    TdChartToolboxComponent.prototype._optionToContentFormatter = function () {
+    /**
+     * @return {?}
+     */
+    TdChartToolboxComponent.prototype._optionToContentFormatter = /**
+     * @return {?}
+     */
+    function () {
         var _this = this;
         return function () {
             _this._changeDetectorRef.markForCheck();
-            return _this._elementRef.nativeElement.innerHTML;
+            return ((/** @type {?} */ (_this._elementRef.nativeElement))).innerHTML;
         };
     };
     TdChartToolboxComponent.decorators = [
@@ -116,6 +157,11 @@ var TdChartToolboxComponent = /** @class */ (function () {
     return TdChartToolboxComponent;
 }());
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+/** @type {?} */
 var TOOLBOX_MODULE_COMPONENTS = [
     TdChartToolboxComponent,
     TdChartViewDataFormatterDirective,
@@ -140,7 +186,18 @@ var CovalentToolboxEchartsModule = /** @class */ (function () {
 }());
 
 /**
- * Generated bundle index. Do not edit.
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 
 export { TOOLBOX_MODULE_COMPONENTS, CovalentToolboxEchartsModule, TdChartViewDataFormatterDirective, TdChartToolboxComponent };

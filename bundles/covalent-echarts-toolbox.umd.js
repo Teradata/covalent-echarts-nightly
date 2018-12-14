@@ -31,6 +31,10 @@
         return __assign.apply(this, arguments);
     };
 
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     */
     var TdChartViewDataFormatterDirective = /** @class */ (function () {
         function TdChartViewDataFormatterDirective() {
         }
@@ -58,52 +62,89 @@
             this.width = 'auto';
             this.height = 'auto';
         }
-        TdChartToolboxComponent.prototype.ngOnChanges = function () {
-            this._setOptions();
-        };
-        TdChartToolboxComponent.prototype.ngOnDestroy = function () {
-            this._removeOption();
-        };
-        TdChartToolboxComponent.prototype._setOptions = function () {
-            this._checkFormatterTemplate();
-            var config = base.assignDefined(this._state, this.config ? this.config : {}, {
-                show: this.show,
-                name: this.trigger,
-                orient: this.orient,
-                itemSize: this.itemSize,
-                itemGap: this.itemGap,
-                showTitle: this.showTitle,
-                label: this.label,
-                feature: this.feature,
-                iconStyle: this.iconStyle,
-                zlevel: this.zlevel,
-                z: this.z,
-                transitionDuration: this.transitionDuration,
-                left: this.left,
-                top: this.top,
-                right: this.right,
-                bottom: this.bottom,
-                width: this.width,
-                height: this.height,
-            });
-            // set toolbox configuration in parent chart and render new configurations
-            this._optionsService.setOption('toolbox', config);
-        };
-        TdChartToolboxComponent.prototype._removeOption = function () {
-            this._optionsService.clearOption('toolbox');
-        };
-        TdChartToolboxComponent.prototype._checkFormatterTemplate = function () {
-            if (this.formatterTemplate) {
-                this.feature = __assign({}, this.feature, { dataView: __assign({}, this.feature.dataView, { optionToContent: this._optionToContentFormatter() }) });
-            }
-        };
-        TdChartToolboxComponent.prototype._optionToContentFormatter = function () {
-            var _this = this;
-            return function () {
-                _this._changeDetectorRef.markForCheck();
-                return _this._elementRef.nativeElement.innerHTML;
+        /**
+         * @return {?}
+         */
+        TdChartToolboxComponent.prototype.ngOnChanges = /**
+         * @return {?}
+         */
+            function () {
+                this._setOptions();
             };
-        };
+        /**
+         * @return {?}
+         */
+        TdChartToolboxComponent.prototype.ngOnDestroy = /**
+         * @return {?}
+         */
+            function () {
+                this._removeOption();
+            };
+        /**
+         * @return {?}
+         */
+        TdChartToolboxComponent.prototype._setOptions = /**
+         * @return {?}
+         */
+            function () {
+                this._checkFormatterTemplate();
+                /** @type {?} */
+                var config = base.assignDefined(this._state, {
+                    show: this.show,
+                    name: this.trigger,
+                    orient: this.orient,
+                    itemSize: this.itemSize,
+                    itemGap: this.itemGap,
+                    showTitle: this.showTitle,
+                    label: this.label,
+                    feature: this.feature,
+                    iconStyle: this.iconStyle,
+                    zlevel: this.zlevel,
+                    z: this.z,
+                    transitionDuration: this.transitionDuration,
+                    left: this.left,
+                    top: this.top,
+                    right: this.right,
+                    bottom: this.bottom,
+                    width: this.width,
+                    height: this.height,
+                }, this.config ? this.config : {});
+                // set toolbox configuration in parent chart and render new configurations
+                this._optionsService.setOption('toolbox', config);
+            };
+        /**
+         * @return {?}
+         */
+        TdChartToolboxComponent.prototype._removeOption = /**
+         * @return {?}
+         */
+            function () {
+                this._optionsService.clearOption('toolbox');
+            };
+        /**
+         * @return {?}
+         */
+        TdChartToolboxComponent.prototype._checkFormatterTemplate = /**
+         * @return {?}
+         */
+            function () {
+                if (this.formatterTemplate) {
+                    this.feature = __assign({}, this.feature, { dataView: __assign({}, this.feature.dataView, { optionToContent: this._optionToContentFormatter() }) });
+                }
+            };
+        /**
+         * @return {?}
+         */
+        TdChartToolboxComponent.prototype._optionToContentFormatter = /**
+         * @return {?}
+         */
+            function () {
+                var _this = this;
+                return function () {
+                    _this._changeDetectorRef.markForCheck();
+                    return (( /** @type {?} */(_this._elementRef.nativeElement))).innerHTML;
+                };
+            };
         TdChartToolboxComponent.decorators = [
             { type: core.Component, args: [{
                         selector: 'td-chart-toolbox',
@@ -145,6 +186,11 @@
         return TdChartToolboxComponent;
     }());
 
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     */
+    /** @type {?} */
     var TOOLBOX_MODULE_COMPONENTS = [
         TdChartToolboxComponent,
         TdChartViewDataFormatterDirective,
@@ -169,7 +215,18 @@
     }());
 
     /**
-     * Generated bundle index. Do not edit.
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     */
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     */
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
      */
 
     exports.TOOLBOX_MODULE_COMPONENTS = TOOLBOX_MODULE_COMPONENTS;

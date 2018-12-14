@@ -3,10 +3,20 @@ import 'echarts/lib/chart/scatter';
 import { Component, Input, ChangeDetectionStrategy, forwardRef, NgModule } from '@angular/core';
 import { TdChartOptionsService, TdSeriesComponent } from '@covalent/echarts/base';
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
 class TdChartSeriesScatterComponent extends TdSeriesComponent {
+    /**
+     * @param {?} _optionsService
+     */
     constructor(_optionsService) {
         super('scatter', _optionsService);
     }
+    /**
+     * @return {?}
+     */
     getConfig() {
         return {
             coordinateSystem: this.coordinateSystem,
@@ -91,6 +101,11 @@ TdChartSeriesScatterComponent.propDecorators = {
     silent: [{ type: Input, args: ['silent',] }]
 };
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+/** @type {?} */
 const SCATTER_MODULE_COMPONENTS = [
     TdChartSeriesScatterComponent,
 ];
@@ -111,7 +126,18 @@ CovalentScatterEchartsModule.decorators = [
 ];
 
 /**
- * Generated bundle index. Do not edit.
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 
 export { SCATTER_MODULE_COMPONENTS, CovalentScatterEchartsModule, TdChartSeriesScatterComponent };

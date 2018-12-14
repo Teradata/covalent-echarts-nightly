@@ -4,12 +4,22 @@ import { __extends } from 'tslib';
 import { Component, Input, ChangeDetectionStrategy, forwardRef, NgModule } from '@angular/core';
 import { TdChartOptionsService, TdSeriesComponent } from '@covalent/echarts/base';
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
 var TdChartSeriesGraphComponent = /** @class */ (function (_super) {
     __extends(TdChartSeriesGraphComponent, _super);
     function TdChartSeriesGraphComponent(_optionsService) {
         return _super.call(this, 'graph', _optionsService) || this;
     }
-    TdChartSeriesGraphComponent.prototype.getConfig = function () {
+    /**
+     * @return {?}
+     */
+    TdChartSeriesGraphComponent.prototype.getConfig = /**
+     * @return {?}
+     */
+    function () {
         return {
             legendHoverLink: this.legendHoverLink,
             coordinateSystem: this.coordinateSystem,
@@ -121,6 +131,11 @@ var TdChartSeriesGraphComponent = /** @class */ (function (_super) {
     return TdChartSeriesGraphComponent;
 }(TdSeriesComponent));
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+/** @type {?} */
 var GRAPH_MODULE_COMPONENTS = [
     TdChartSeriesGraphComponent,
 ];
@@ -144,7 +159,18 @@ var CovalentGraphEchartsModule = /** @class */ (function () {
 }());
 
 /**
- * Generated bundle index. Do not edit.
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 
 export { GRAPH_MODULE_COMPONENTS, CovalentGraphEchartsModule, TdChartSeriesGraphComponent };

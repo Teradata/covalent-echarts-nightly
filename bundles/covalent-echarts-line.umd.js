@@ -33,51 +33,61 @@
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     }
 
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     */
     var TdChartSeriesLineComponent = /** @class */ (function (_super) {
         __extends(TdChartSeriesLineComponent, _super);
         function TdChartSeriesLineComponent(_optionsService) {
             return _super.call(this, 'line', _optionsService) || this;
         }
-        TdChartSeriesLineComponent.prototype.getConfig = function () {
-            return {
-                coordinateSystem: this.coordinateSystem,
-                xAxisIndex: this.xAxisIndex,
-                yAxisIndex: this.yAxisIndex,
-                polarIndex: this.polarIndex,
-                symbol: this.symbol,
-                symbolSize: this.symbolSize,
-                symbolRotate: this.symbolRotate,
-                symbolKeepAspect: this.symbolKeepAspect,
-                symbolOffset: this.symbolOffset,
-                showSymbol: this.showSymbol,
-                showAllSymbol: this.showAllSymbol,
-                hoverAnimation: this.hoverAnimation,
-                legendHoverLink: this.legendHoverLink,
-                stack: this.stack,
-                cursor: this.cursor,
-                connectNulls: this.connectNulls,
-                clipOverflow: this.clipOverflow,
-                step: this.step,
-                label: this.label,
-                itemStyle: this.itemStyle,
-                lineStyle: this.lineStyle,
-                areaStyle: this.areaStyle,
-                emphasis: this.emphasis,
-                smooth: this.smooth,
-                smoothMonotone: this.smoothMonotone,
-                sampling: this.sampling,
-                dimensions: this.dimensions,
-                encode: this.encode,
-                seriesLayoutBy: this.seriesLayoutBy,
-                datasetIndex: this.datasetIndex,
-                markPoint: this.markPoint,
-                markLine: this.markLine,
-                markArea: this.markArea,
-                zlevel: this.zlevel,
-                z: this.z,
-                silent: this.silent,
+        /**
+         * @return {?}
+         */
+        TdChartSeriesLineComponent.prototype.getConfig = /**
+         * @return {?}
+         */
+            function () {
+                return {
+                    coordinateSystem: this.coordinateSystem,
+                    xAxisIndex: this.xAxisIndex,
+                    yAxisIndex: this.yAxisIndex,
+                    polarIndex: this.polarIndex,
+                    symbol: this.symbol,
+                    symbolSize: this.symbolSize,
+                    symbolRotate: this.symbolRotate,
+                    symbolKeepAspect: this.symbolKeepAspect,
+                    symbolOffset: this.symbolOffset,
+                    showSymbol: this.showSymbol,
+                    showAllSymbol: this.showAllSymbol,
+                    hoverAnimation: this.hoverAnimation,
+                    legendHoverLink: this.legendHoverLink,
+                    stack: this.stack,
+                    cursor: this.cursor,
+                    connectNulls: this.connectNulls,
+                    clipOverflow: this.clipOverflow,
+                    step: this.step,
+                    label: this.label,
+                    itemStyle: this.itemStyle,
+                    lineStyle: this.lineStyle,
+                    areaStyle: this.areaStyle,
+                    emphasis: this.emphasis,
+                    smooth: this.smooth,
+                    smoothMonotone: this.smoothMonotone,
+                    sampling: this.sampling,
+                    dimensions: this.dimensions,
+                    encode: this.encode,
+                    seriesLayoutBy: this.seriesLayoutBy,
+                    datasetIndex: this.datasetIndex,
+                    markPoint: this.markPoint,
+                    markLine: this.markLine,
+                    markArea: this.markArea,
+                    zlevel: this.zlevel,
+                    z: this.z,
+                    silent: this.silent,
+                };
             };
-        };
         TdChartSeriesLineComponent.decorators = [
             { type: core.Component, args: [{
                         selector: 'td-chart-series[td-line]',
@@ -135,6 +145,11 @@
         return TdChartSeriesLineComponent;
     }(base.TdSeriesComponent));
 
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     */
+    /** @type {?} */
     var LINE_MODULE_COMPONENTS = [
         TdChartSeriesLineComponent,
     ];
@@ -158,7 +173,18 @@
     }());
 
     /**
-     * Generated bundle index. Do not edit.
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     */
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     */
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
      */
 
     exports.LINE_MODULE_COMPONENTS = LINE_MODULE_COMPONENTS;

@@ -33,37 +33,47 @@
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     }
 
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     */
     var TdChartSeriesSankeyComponent = /** @class */ (function (_super) {
         __extends(TdChartSeriesSankeyComponent, _super);
         function TdChartSeriesSankeyComponent(_optionsService) {
             return _super.call(this, 'sankey', _optionsService) || this;
         }
-        TdChartSeriesSankeyComponent.prototype.getConfig = function () {
-            return {
-                zlevel: this.zlevel,
-                z: this.z,
-                left: this.left,
-                top: this.top,
-                right: this.right,
-                bottom: this.bottom,
-                width: this.width,
-                height: this.height,
-                nodeWidth: this.nodeWidth,
-                nodeGap: this.nodeGap,
-                layoutIterations: this.layoutIterations,
-                orient: this.orient,
-                draggable: this.draggable,
-                focusNodeAdjacency: this.focusNodeAdjacency,
-                label: this.label,
-                itemStyle: this.itemStyle,
-                lineStyle: this.lineStyle,
-                emphasis: this.emphasis,
-                nodes: this.nodes,
-                links: this.links,
-                edges: this.edges,
-                silent: this.silent,
+        /**
+         * @return {?}
+         */
+        TdChartSeriesSankeyComponent.prototype.getConfig = /**
+         * @return {?}
+         */
+            function () {
+                return {
+                    zlevel: this.zlevel,
+                    z: this.z,
+                    left: this.left,
+                    top: this.top,
+                    right: this.right,
+                    bottom: this.bottom,
+                    width: this.width,
+                    height: this.height,
+                    nodeWidth: this.nodeWidth,
+                    nodeGap: this.nodeGap,
+                    layoutIterations: this.layoutIterations,
+                    orient: this.orient,
+                    draggable: this.draggable,
+                    focusNodeAdjacency: this.focusNodeAdjacency,
+                    label: this.label,
+                    itemStyle: this.itemStyle,
+                    lineStyle: this.lineStyle,
+                    emphasis: this.emphasis,
+                    nodes: this.nodes,
+                    links: this.links,
+                    edges: this.edges,
+                    silent: this.silent,
+                };
             };
-        };
         TdChartSeriesSankeyComponent.decorators = [
             { type: core.Component, args: [{
                         selector: 'td-chart-series[td-sankey]',
@@ -107,6 +117,11 @@
         return TdChartSeriesSankeyComponent;
     }(base.TdSeriesComponent));
 
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     */
+    /** @type {?} */
     var SANKEY_MODULE_COMPONENTS = [
         TdChartSeriesSankeyComponent,
     ];
@@ -130,7 +145,18 @@
     }());
 
     /**
-     * Generated bundle index. Do not edit.
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     */
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     */
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
      */
 
     exports.SANKEY_MODULE_COMPONENTS = SANKEY_MODULE_COMPONENTS;

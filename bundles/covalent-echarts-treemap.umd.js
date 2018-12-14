@@ -33,6 +33,10 @@
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     }
 
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     */
     var TdChartSeriesTreemapComponent = /** @class */ (function (_super) {
         __extends(TdChartSeriesTreemapComponent, _super);
         function TdChartSeriesTreemapComponent(_optionsService) {
@@ -40,39 +44,45 @@
             _this.config = {};
             return _this;
         }
-        TdChartSeriesTreemapComponent.prototype.getConfig = function () {
-            return {
-                zlevel: this.zlevel,
-                z: this.z,
-                left: this.left,
-                top: this.top,
-                right: this.right,
-                bottom: this.bottom,
-                width: this.width,
-                height: this.height,
-                squareRatio: this.squareRatio,
-                leafDepth: this.leafDepth,
-                drillDownIcon: this.drillDownIcon,
-                roam: this.roam,
-                nodeClick: this.nodeClick,
-                zoomToNodeRatio: this.zoomToNodeRatio,
-                levels: this.levels,
-                silent: this.silent,
-                visualDimension: this.visualDimension,
-                visualMin: this.visualMin,
-                visualMax: this.visualMax,
-                colorAlpha: this.colorAlpha,
-                colorSaturation: this.colorSaturation,
-                colorMappingBy: this.colorMappingBy,
-                visibleMin: this.visibleMin,
-                childrenVisibleMin: this.childrenVisibleMin,
-                itemStyle: this.itemStyle,
-                label: this.label,
-                upperLabel: this.upperLabel,
-                breadcrumb: this.breadcrumb,
-                emphasis: this.emphasis,
+        /**
+         * @return {?}
+         */
+        TdChartSeriesTreemapComponent.prototype.getConfig = /**
+         * @return {?}
+         */
+            function () {
+                return {
+                    zlevel: this.zlevel,
+                    z: this.z,
+                    left: this.left,
+                    top: this.top,
+                    right: this.right,
+                    bottom: this.bottom,
+                    width: this.width,
+                    height: this.height,
+                    squareRatio: this.squareRatio,
+                    leafDepth: this.leafDepth,
+                    drillDownIcon: this.drillDownIcon,
+                    roam: this.roam,
+                    nodeClick: this.nodeClick,
+                    zoomToNodeRatio: this.zoomToNodeRatio,
+                    levels: this.levels,
+                    silent: this.silent,
+                    visualDimension: this.visualDimension,
+                    visualMin: this.visualMin,
+                    visualMax: this.visualMax,
+                    colorAlpha: this.colorAlpha,
+                    colorSaturation: this.colorSaturation,
+                    colorMappingBy: this.colorMappingBy,
+                    visibleMin: this.visibleMin,
+                    childrenVisibleMin: this.childrenVisibleMin,
+                    itemStyle: this.itemStyle,
+                    label: this.label,
+                    upperLabel: this.upperLabel,
+                    breadcrumb: this.breadcrumb,
+                    emphasis: this.emphasis,
+                };
             };
-        };
         TdChartSeriesTreemapComponent.decorators = [
             { type: core.Component, args: [{
                         selector: 'td-chart-series[td-treemap]',
@@ -128,6 +138,11 @@
         return TdChartSeriesTreemapComponent;
     }(base.TdSeriesComponent));
 
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     */
+    /** @type {?} */
     var TREEMAP_MODULE_COMPONENTS = [
         TdChartSeriesTreemapComponent,
     ];
@@ -151,7 +166,18 @@
     }());
 
     /**
-     * Generated bundle index. Do not edit.
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     */
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     */
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
      */
 
     exports.TREEMAP_MODULE_COMPONENTS = TREEMAP_MODULE_COMPONENTS;

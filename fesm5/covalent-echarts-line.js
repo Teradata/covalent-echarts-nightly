@@ -4,12 +4,22 @@ import { __extends } from 'tslib';
 import { Component, Input, ChangeDetectionStrategy, forwardRef, NgModule } from '@angular/core';
 import { TdChartOptionsService, TdSeriesComponent } from '@covalent/echarts/base';
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
 var TdChartSeriesLineComponent = /** @class */ (function (_super) {
     __extends(TdChartSeriesLineComponent, _super);
     function TdChartSeriesLineComponent(_optionsService) {
         return _super.call(this, 'line', _optionsService) || this;
     }
-    TdChartSeriesLineComponent.prototype.getConfig = function () {
+    /**
+     * @return {?}
+     */
+    TdChartSeriesLineComponent.prototype.getConfig = /**
+     * @return {?}
+     */
+    function () {
         return {
             coordinateSystem: this.coordinateSystem,
             xAxisIndex: this.xAxisIndex,
@@ -104,6 +114,11 @@ var TdChartSeriesLineComponent = /** @class */ (function (_super) {
     return TdChartSeriesLineComponent;
 }(TdSeriesComponent));
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+/** @type {?} */
 var LINE_MODULE_COMPONENTS = [
     TdChartSeriesLineComponent,
 ];
@@ -127,7 +142,18 @@ var CovalentLineEchartsModule = /** @class */ (function () {
 }());
 
 /**
- * Generated bundle index. Do not edit.
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 
 export { LINE_MODULE_COMPONENTS, CovalentLineEchartsModule, TdChartSeriesLineComponent };

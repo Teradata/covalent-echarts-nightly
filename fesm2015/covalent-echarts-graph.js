@@ -3,10 +3,20 @@ import 'echarts/lib/chart/graph';
 import { Component, Input, ChangeDetectionStrategy, forwardRef, NgModule } from '@angular/core';
 import { TdChartOptionsService, TdSeriesComponent } from '@covalent/echarts/base';
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
 class TdChartSeriesGraphComponent extends TdSeriesComponent {
+    /**
+     * @param {?} _optionsService
+     */
     constructor(_optionsService) {
         super('graph', _optionsService);
     }
+    /**
+     * @return {?}
+     */
     getConfig() {
         return {
             legendHoverLink: this.legendHoverLink,
@@ -118,6 +128,11 @@ TdChartSeriesGraphComponent.propDecorators = {
     height: [{ type: Input, args: ['height',] }]
 };
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+/** @type {?} */
 const GRAPH_MODULE_COMPONENTS = [
     TdChartSeriesGraphComponent,
 ];
@@ -138,7 +153,18 @@ CovalentGraphEchartsModule.decorators = [
 ];
 
 /**
- * Generated bundle index. Do not edit.
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 
 export { GRAPH_MODULE_COMPONENTS, CovalentGraphEchartsModule, TdChartSeriesGraphComponent };

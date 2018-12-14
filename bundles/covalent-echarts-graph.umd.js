@@ -33,59 +33,69 @@
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     }
 
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     */
     var TdChartSeriesGraphComponent = /** @class */ (function (_super) {
         __extends(TdChartSeriesGraphComponent, _super);
         function TdChartSeriesGraphComponent(_optionsService) {
             return _super.call(this, 'graph', _optionsService) || this;
         }
-        TdChartSeriesGraphComponent.prototype.getConfig = function () {
-            return {
-                legendHoverLink: this.legendHoverLink,
-                coordinateSystem: this.coordinateSystem,
-                xAxisIndex: this.xAxisIndex,
-                yAxisIndex: this.yAxisIndex,
-                polarIndex: this.polarIndex,
-                calendarIndex: this.calendarIndex,
-                geoIndex: this.geoIndex,
-                hoverAnimation: this.hoverAnimation,
-                circular: this.circular,
-                force: this.force,
-                layout: this.layout,
-                nodeScaleRatio: this.nodeScaleRatio,
-                draggable: this.draggable,
-                symbol: this.symbol,
-                symbolSize: this.symbolSize,
-                symbolRotate: this.symbolRotate,
-                symbolKeepAspect: this.symbolKeepAspect,
-                symbolOffset: this.symbolOffset,
-                focusNodeAdjacency: this.focusNodeAdjacency,
-                edgeSymbol: this.edgeSymbol,
-                edgeSymbolSize: this.edgeSymbolSize,
-                cursor: this.cursor,
-                roam: this.roam,
-                itemStyle: this.itemStyle,
-                lineStyle: this.lineStyle,
-                label: this.label,
-                edgeLabel: this.edgeLabel,
-                emphasis: this.emphasis,
-                categories: this.categories,
-                nodes: this.nodes,
-                links: this.links,
-                edges: this.edges,
-                markPoint: this.markPoint,
-                markLine: this.markLine,
-                markArea: this.markArea,
-                zlevel: this.zlevel,
-                z: this.z,
-                silent: this.silent,
-                left: this.left,
-                top: this.top,
-                right: this.right,
-                bottom: this.bottom,
-                width: this.width,
-                height: this.height,
+        /**
+         * @return {?}
+         */
+        TdChartSeriesGraphComponent.prototype.getConfig = /**
+         * @return {?}
+         */
+            function () {
+                return {
+                    legendHoverLink: this.legendHoverLink,
+                    coordinateSystem: this.coordinateSystem,
+                    xAxisIndex: this.xAxisIndex,
+                    yAxisIndex: this.yAxisIndex,
+                    polarIndex: this.polarIndex,
+                    calendarIndex: this.calendarIndex,
+                    geoIndex: this.geoIndex,
+                    hoverAnimation: this.hoverAnimation,
+                    circular: this.circular,
+                    force: this.force,
+                    layout: this.layout,
+                    nodeScaleRatio: this.nodeScaleRatio,
+                    draggable: this.draggable,
+                    symbol: this.symbol,
+                    symbolSize: this.symbolSize,
+                    symbolRotate: this.symbolRotate,
+                    symbolKeepAspect: this.symbolKeepAspect,
+                    symbolOffset: this.symbolOffset,
+                    focusNodeAdjacency: this.focusNodeAdjacency,
+                    edgeSymbol: this.edgeSymbol,
+                    edgeSymbolSize: this.edgeSymbolSize,
+                    cursor: this.cursor,
+                    roam: this.roam,
+                    itemStyle: this.itemStyle,
+                    lineStyle: this.lineStyle,
+                    label: this.label,
+                    edgeLabel: this.edgeLabel,
+                    emphasis: this.emphasis,
+                    categories: this.categories,
+                    nodes: this.nodes,
+                    links: this.links,
+                    edges: this.edges,
+                    markPoint: this.markPoint,
+                    markLine: this.markLine,
+                    markArea: this.markArea,
+                    zlevel: this.zlevel,
+                    z: this.z,
+                    silent: this.silent,
+                    left: this.left,
+                    top: this.top,
+                    right: this.right,
+                    bottom: this.bottom,
+                    width: this.width,
+                    height: this.height,
+                };
             };
-        };
         TdChartSeriesGraphComponent.decorators = [
             { type: core.Component, args: [{
                         selector: 'td-chart-series[td-graph]',
@@ -152,6 +162,11 @@
         return TdChartSeriesGraphComponent;
     }(base.TdSeriesComponent));
 
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     */
+    /** @type {?} */
     var GRAPH_MODULE_COMPONENTS = [
         TdChartSeriesGraphComponent,
     ];
@@ -175,7 +190,18 @@
     }());
 
     /**
-     * Generated bundle index. Do not edit.
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     */
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     */
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
      */
 
     exports.GRAPH_MODULE_COMPONENTS = GRAPH_MODULE_COMPONENTS;

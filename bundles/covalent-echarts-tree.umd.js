@@ -33,37 +33,47 @@
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     }
 
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     */
     var TdChartSeriesTreeComponent = /** @class */ (function (_super) {
         __extends(TdChartSeriesTreeComponent, _super);
         function TdChartSeriesTreeComponent(_optionsService) {
             return _super.call(this, 'tree', _optionsService) || this;
         }
-        TdChartSeriesTreeComponent.prototype.getConfig = function () {
-            return {
-                zlevel: this.zlevel,
-                z: this.z,
-                left: this.left,
-                top: this.top,
-                right: this.right,
-                bottom: this.bottom,
-                width: this.width,
-                height: this.height,
-                layout: this.layout,
-                orient: this.orient,
-                symbol: this.symbol,
-                symbolSize: this.symbolSize,
-                symbolRotate: this.symbolRotate,
-                symbolKeepAspect: this.symbolKeepAspect,
-                roam: this.roam,
-                expandAndCollapse: this.expandAndCollapse,
-                initialTreeDepth: this.initialTreeDepth,
-                itemStyle: this.itemStyle,
-                label: this.label,
-                lineStyle: this.lineStyle,
-                leaves: this.leaves,
-                emphasis: this.emphasis,
+        /**
+         * @return {?}
+         */
+        TdChartSeriesTreeComponent.prototype.getConfig = /**
+         * @return {?}
+         */
+            function () {
+                return {
+                    zlevel: this.zlevel,
+                    z: this.z,
+                    left: this.left,
+                    top: this.top,
+                    right: this.right,
+                    bottom: this.bottom,
+                    width: this.width,
+                    height: this.height,
+                    layout: this.layout,
+                    orient: this.orient,
+                    symbol: this.symbol,
+                    symbolSize: this.symbolSize,
+                    symbolRotate: this.symbolRotate,
+                    symbolKeepAspect: this.symbolKeepAspect,
+                    roam: this.roam,
+                    expandAndCollapse: this.expandAndCollapse,
+                    initialTreeDepth: this.initialTreeDepth,
+                    itemStyle: this.itemStyle,
+                    label: this.label,
+                    lineStyle: this.lineStyle,
+                    leaves: this.leaves,
+                    emphasis: this.emphasis,
+                };
             };
-        };
         TdChartSeriesTreeComponent.decorators = [
             { type: core.Component, args: [{
                         selector: 'td-chart-series[td-tree]',
@@ -107,6 +117,11 @@
         return TdChartSeriesTreeComponent;
     }(base.TdSeriesComponent));
 
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     */
+    /** @type {?} */
     var TREE_MODULE_COMPONENTS = [
         TdChartSeriesTreeComponent,
     ];
@@ -130,7 +145,18 @@
     }());
 
     /**
-     * Generated bundle index. Do not edit.
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     */
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     */
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
      */
 
     exports.TREE_MODULE_COMPONENTS = TREE_MODULE_COMPONENTS;
