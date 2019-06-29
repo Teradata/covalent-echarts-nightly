@@ -527,11 +527,77 @@ TdChartYAxisComponent.propDecorators = {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
+class TdDatasetComponent {
+    /**
+     * @param {?} _optionsService
+     */
+    constructor(_optionsService) {
+        this._optionsService = _optionsService;
+        this._state = {};
+        this.config = {};
+    }
+    /**
+     * @return {?}
+     */
+    ngOnChanges() {
+        this._setOptions();
+    }
+    /**
+     * @return {?}
+     */
+    ngOnDestroy() {
+        this._removeOption();
+    }
+    /**
+     * @return {?}
+     */
+    _setOptions() {
+        /** @type {?} */
+        let config = assignDefined$1(this._state, {
+            id: this.id,
+            source: this.source,
+            dimensions: this.dimensions,
+            sourceHeader: this.sourceHeader,
+        }, this.config ? this.config : {});
+        // set dataset configuration in parent chart and render new configurations
+        this._optionsService.setOption('dataset', config);
+    }
+    /**
+     * @return {?}
+     */
+    _removeOption() {
+        this._optionsService.clearOption('dataset');
+    }
+}
+TdDatasetComponent.decorators = [
+    { type: Component, args: [{
+                template: '',
+                selector: 'td-chart-dataset',
+                changeDetection: ChangeDetectionStrategy.OnPush
+            }] }
+];
+/** @nocollapse */
+TdDatasetComponent.ctorParameters = () => [
+    { type: TdChartOptionsService$1 }
+];
+TdDatasetComponent.propDecorators = {
+    id: [{ type: Input, args: ['id',] }],
+    config: [{ type: Input, args: ['config',] }],
+    source: [{ type: Input, args: ['source',] }],
+    dimensions: [{ type: Input, args: ['dimensions',] }],
+    sourceHeader: [{ type: Input, args: ['sourceHeader',] }]
+};
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
 /** @type {?} */
 const BASE_MODULE_COMPONENTS = [
     TdChartComponent,
     TdChartXAxisComponent,
     TdChartYAxisComponent,
+    TdDatasetComponent,
 ];
 class CovalentBaseEchartsModule {
 }
@@ -1666,6 +1732,6 @@ CovalentToolboxEchartsModule.decorators = [
  * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 
-export { TdChartComponent, TdChartAxisComponent, TdChartYAxisComponent, TdChartXAxisComponent, TdChartOptionsService$1 as TdChartOptionsService, CHART_PROVIDER, BASE_MODULE_COMPONENTS, CovalentBaseEchartsModule, assignDefined$1 as assignDefined, TdSeriesComponent$1 as TdSeriesComponent, BAR_MODULE_COMPONENTS, CovalentBarEchartsModule, TdChartSeriesBarComponent, LINE_MODULE_COMPONENTS, CovalentLineEchartsModule, TdChartSeriesLineComponent, SCATTER_MODULE_COMPONENTS, CovalentScatterEchartsModule, TdChartSeriesScatterComponent, TREE_MODULE_COMPONENTS, CovalentTreeEchartsModule, TdChartSeriesTreeComponent, TOOLTIP_MODULE_COMPONENTS, CovalentTooltipEchartsModule, TdTooltipContext, TdChartTooltipFormatterDirective, TdChartTooltipComponent, TdSeriesTooltipComponent, TOOLBOX_MODULE_COMPONENTS, CovalentToolboxEchartsModule, TdChartViewDataFormatterDirective, TdChartToolboxComponent, CHART_PROVIDER_FACTORY as ɵa };
+export { TdChartComponent, TdChartAxisComponent, TdChartYAxisComponent, TdChartXAxisComponent, TdDatasetComponent, TdChartOptionsService$1 as TdChartOptionsService, CHART_PROVIDER, BASE_MODULE_COMPONENTS, CovalentBaseEchartsModule, assignDefined$1 as assignDefined, TdSeriesComponent$1 as TdSeriesComponent, BAR_MODULE_COMPONENTS, CovalentBarEchartsModule, TdChartSeriesBarComponent, LINE_MODULE_COMPONENTS, CovalentLineEchartsModule, TdChartSeriesLineComponent, SCATTER_MODULE_COMPONENTS, CovalentScatterEchartsModule, TdChartSeriesScatterComponent, TREE_MODULE_COMPONENTS, CovalentTreeEchartsModule, TdChartSeriesTreeComponent, TOOLTIP_MODULE_COMPONENTS, CovalentTooltipEchartsModule, TdTooltipContext, TdChartTooltipFormatterDirective, TdChartTooltipComponent, TdSeriesTooltipComponent, TOOLBOX_MODULE_COMPONENTS, CovalentToolboxEchartsModule, TdChartViewDataFormatterDirective, TdChartToolboxComponent, CHART_PROVIDER_FACTORY as ɵa };
 
 //# sourceMappingURL=covalent-echarts.js.map

@@ -520,11 +520,77 @@ TdChartYAxisComponent.propDecorators = {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
+class TdDatasetComponent {
+    /**
+     * @param {?} _optionsService
+     */
+    constructor(_optionsService) {
+        this._optionsService = _optionsService;
+        this._state = {};
+        this.config = {};
+    }
+    /**
+     * @return {?}
+     */
+    ngOnChanges() {
+        this._setOptions();
+    }
+    /**
+     * @return {?}
+     */
+    ngOnDestroy() {
+        this._removeOption();
+    }
+    /**
+     * @return {?}
+     */
+    _setOptions() {
+        /** @type {?} */
+        let config = assignDefined(this._state, {
+            id: this.id,
+            source: this.source,
+            dimensions: this.dimensions,
+            sourceHeader: this.sourceHeader,
+        }, this.config ? this.config : {});
+        // set dataset configuration in parent chart and render new configurations
+        this._optionsService.setOption('dataset', config);
+    }
+    /**
+     * @return {?}
+     */
+    _removeOption() {
+        this._optionsService.clearOption('dataset');
+    }
+}
+TdDatasetComponent.decorators = [
+    { type: Component, args: [{
+                template: '',
+                selector: 'td-chart-dataset',
+                changeDetection: ChangeDetectionStrategy.OnPush
+            }] }
+];
+/** @nocollapse */
+TdDatasetComponent.ctorParameters = () => [
+    { type: TdChartOptionsService }
+];
+TdDatasetComponent.propDecorators = {
+    id: [{ type: Input, args: ['id',] }],
+    config: [{ type: Input, args: ['config',] }],
+    source: [{ type: Input, args: ['source',] }],
+    dimensions: [{ type: Input, args: ['dimensions',] }],
+    sourceHeader: [{ type: Input, args: ['sourceHeader',] }]
+};
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
 /** @type {?} */
 const BASE_MODULE_COMPONENTS = [
     TdChartComponent,
     TdChartXAxisComponent,
     TdChartYAxisComponent,
+    TdDatasetComponent,
 ];
 class CovalentBaseEchartsModule {
 }
@@ -666,6 +732,6 @@ TdSeriesComponent.propDecorators = {
  * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 
-export { TdChartComponent, TdChartAxisComponent, TdChartYAxisComponent, TdChartXAxisComponent, TdChartOptionsService, CHART_PROVIDER, BASE_MODULE_COMPONENTS, CovalentBaseEchartsModule, assignDefined, TdSeriesComponent, CHART_PROVIDER_FACTORY as ɵa };
+export { TdChartComponent, TdChartAxisComponent, TdChartYAxisComponent, TdChartXAxisComponent, TdDatasetComponent, TdChartOptionsService, CHART_PROVIDER, BASE_MODULE_COMPONENTS, CovalentBaseEchartsModule, assignDefined, TdSeriesComponent, CHART_PROVIDER_FACTORY as ɵa };
 
 //# sourceMappingURL=covalent-echarts-base.js.map

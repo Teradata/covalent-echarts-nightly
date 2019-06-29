@@ -678,11 +678,89 @@
      * @fileoverview added by tsickle
      * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
      */
+    var TdDatasetComponent = /** @class */ (function () {
+        function TdDatasetComponent(_optionsService) {
+            this._optionsService = _optionsService;
+            this._state = {};
+            this.config = {};
+        }
+        /**
+         * @return {?}
+         */
+        TdDatasetComponent.prototype.ngOnChanges = /**
+         * @return {?}
+         */
+            function () {
+                this._setOptions();
+            };
+        /**
+         * @return {?}
+         */
+        TdDatasetComponent.prototype.ngOnDestroy = /**
+         * @return {?}
+         */
+            function () {
+                this._removeOption();
+            };
+        /**
+         * @return {?}
+         */
+        TdDatasetComponent.prototype._setOptions = /**
+         * @return {?}
+         */
+            function () {
+                /** @type {?} */
+                var config = assignDefined(this._state, {
+                    id: this.id,
+                    source: this.source,
+                    dimensions: this.dimensions,
+                    sourceHeader: this.sourceHeader,
+                }, this.config ? this.config : {});
+                // set dataset configuration in parent chart and render new configurations
+                this._optionsService.setOption('dataset', config);
+            };
+        /**
+         * @return {?}
+         */
+        TdDatasetComponent.prototype._removeOption = /**
+         * @return {?}
+         */
+            function () {
+                this._optionsService.clearOption('dataset');
+            };
+        TdDatasetComponent.decorators = [
+            { type: core.Component, args: [{
+                        template: '',
+                        selector: 'td-chart-dataset',
+                        changeDetection: core.ChangeDetectionStrategy.OnPush
+                    }] }
+        ];
+        /** @nocollapse */
+        TdDatasetComponent.ctorParameters = function () {
+            return [
+                { type: TdChartOptionsService }
+            ];
+        };
+        TdDatasetComponent.propDecorators = {
+            id: [{ type: core.Input, args: ['id',] }],
+            config: [{ type: core.Input, args: ['config',] }],
+            source: [{ type: core.Input, args: ['source',] }],
+            dimensions: [{ type: core.Input, args: ['dimensions',] }],
+            sourceHeader: [{ type: core.Input, args: ['sourceHeader',] }]
+        };
+        return TdDatasetComponent;
+    }());
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     */
     /** @type {?} */
     var BASE_MODULE_COMPONENTS = [
         TdChartComponent,
         TdChartXAxisComponent,
         TdChartYAxisComponent,
+        TdDatasetComponent,
     ];
     var CovalentBaseEchartsModule = /** @class */ (function () {
         function CovalentBaseEchartsModule() {
@@ -855,6 +933,7 @@
     exports.TdChartAxisComponent = TdChartAxisComponent;
     exports.TdChartYAxisComponent = TdChartYAxisComponent;
     exports.TdChartXAxisComponent = TdChartXAxisComponent;
+    exports.TdDatasetComponent = TdDatasetComponent;
     exports.TdChartOptionsService = TdChartOptionsService;
     exports.CHART_PROVIDER = CHART_PROVIDER;
     exports.BASE_MODULE_COMPONENTS = BASE_MODULE_COMPONENTS;
