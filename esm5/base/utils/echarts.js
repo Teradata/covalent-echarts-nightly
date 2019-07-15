@@ -1,0 +1,59 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ */
+import * as echarts from 'echarts/lib/echarts';
+import aquaSplash from '../themes/aqua-splash';
+import californiaCoast from '../themes/california-coast';
+import hawaiianSunrise from '../themes/hawaiian-sunrise';
+import passionFlower from '../themes/passion-flower';
+import razzleberryPie from '../themes/razzleberry-pie';
+import teradataClassic from '../themes/teradata-classic';
+import teradataDefault from '../themes/teradata-default';
+import urbanSunrise from '../themes/urban-sunrise';
+import volcanicEruption from '../themes/volcanic-eruption';
+/**
+ * Function used to register a theme into echarts
+ * Theme name and theme object needed as stated in
+ * https://ecomfe.github.io/echarts-doc/public/en/api.html#echarts.registerTheme
+ * @param {?} themeName
+ * @param {?} theme
+ * @return {?}
+ */
+export function registerTheme(themeName, theme) {
+    echarts.registerTheme(themeName, theme);
+}
+/**
+ * Function to register all default themes
+ * \@internal
+ * @return {?}
+ */
+export function registerDefaultThemes() {
+    registerTheme('aqua-splash', aquaSplash);
+    registerTheme('california-coast', californiaCoast);
+    registerTheme('hawaiian-sunrise', hawaiianSunrise);
+    registerTheme('passion-flower', passionFlower);
+    registerTheme('razzleberry-pie', razzleberryPie);
+    registerTheme('teradata-classic', teradataClassic);
+    registerTheme('teradata-default', teradataDefault);
+    registerTheme('urban-sunrise', urbanSunrise);
+    registerTheme('volcanic-eruption', volcanicEruption);
+}
+/**
+ * Returns all the theme names bundled with covalent echarts.
+ * @return {?}
+ */
+export function getThemes() {
+    return [
+        'aqua-splash',
+        'california-coast',
+        'hawaiian-sunrise',
+        'passion-flower',
+        'razzleberry-pie',
+        'teradata-classic',
+        'teradata-default',
+        'urban-sunrise',
+        'volcanic-eruption',
+    ];
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZWNoYXJ0cy5qcyIsInNvdXJjZVJvb3QiOiJuZzovL0Bjb3ZhbGVudC9lY2hhcnRzLyIsInNvdXJjZXMiOlsiYmFzZS91dGlscy9lY2hhcnRzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7QUFBQSxPQUFPLEtBQUssT0FBTyxNQUFNLHFCQUFxQixDQUFDO0FBRS9DLE9BQU8sVUFBVSxNQUFNLHVCQUF1QixDQUFDO0FBQy9DLE9BQU8sZUFBZSxNQUFNLDRCQUE0QixDQUFDO0FBQ3pELE9BQU8sZUFBZSxNQUFNLDRCQUE0QixDQUFDO0FBQ3pELE9BQU8sYUFBYSxNQUFNLDBCQUEwQixDQUFDO0FBQ3JELE9BQU8sY0FBYyxNQUFNLDJCQUEyQixDQUFDO0FBQ3ZELE9BQU8sZUFBZSxNQUFNLDRCQUE0QixDQUFDO0FBQ3pELE9BQU8sZUFBZSxNQUFNLDRCQUE0QixDQUFDO0FBQ3pELE9BQU8sWUFBWSxNQUFNLHlCQUF5QixDQUFDO0FBQ25ELE9BQU8sZ0JBQWdCLE1BQU0sNkJBQTZCLENBQUM7Ozs7Ozs7OztBQU8zRCxNQUFNLFVBQVUsYUFBYSxDQUFDLFNBQWlCLEVBQUUsS0FBYTtJQUM1RCxPQUFPLENBQUMsYUFBYSxDQUFDLFNBQVMsRUFBRSxLQUFLLENBQUMsQ0FBQztBQUMxQyxDQUFDOzs7Ozs7QUFNRCxNQUFNLFVBQVUscUJBQXFCO0lBQ25DLGFBQWEsQ0FBQyxhQUFhLEVBQUUsVUFBVSxDQUFDLENBQUM7SUFDekMsYUFBYSxDQUFDLGtCQUFrQixFQUFFLGVBQWUsQ0FBQyxDQUFDO0lBQ25ELGFBQWEsQ0FBQyxrQkFBa0IsRUFBRSxlQUFlLENBQUMsQ0FBQztJQUNuRCxhQUFhLENBQUMsZ0JBQWdCLEVBQUUsYUFBYSxDQUFDLENBQUM7SUFDL0MsYUFBYSxDQUFDLGlCQUFpQixFQUFFLGNBQWMsQ0FBQyxDQUFDO0lBQ2pELGFBQWEsQ0FBQyxrQkFBa0IsRUFBRSxlQUFlLENBQUMsQ0FBQztJQUNuRCxhQUFhLENBQUMsa0JBQWtCLEVBQUUsZUFBZSxDQUFDLENBQUM7SUFDbkQsYUFBYSxDQUFDLGVBQWUsRUFBRSxZQUFZLENBQUMsQ0FBQztJQUM3QyxhQUFhLENBQUMsbUJBQW1CLEVBQUUsZ0JBQWdCLENBQUMsQ0FBQztBQUN2RCxDQUFDOzs7OztBQUtELE1BQU0sVUFBVSxTQUFTO0lBQ3ZCLE9BQU87UUFDTCxhQUFhO1FBQ2Isa0JBQWtCO1FBQ2xCLGtCQUFrQjtRQUNsQixnQkFBZ0I7UUFDaEIsaUJBQWlCO1FBQ2pCLGtCQUFrQjtRQUNsQixrQkFBa0I7UUFDbEIsZUFBZTtRQUNmLG1CQUFtQjtLQUNwQixDQUFDO0FBQ0osQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCAqIGFzIGVjaGFydHMgZnJvbSAnZWNoYXJ0cy9saWIvZWNoYXJ0cyc7XG5cbmltcG9ydCBhcXVhU3BsYXNoIGZyb20gJy4uL3RoZW1lcy9hcXVhLXNwbGFzaCc7XG5pbXBvcnQgY2FsaWZvcm5pYUNvYXN0IGZyb20gJy4uL3RoZW1lcy9jYWxpZm9ybmlhLWNvYXN0JztcbmltcG9ydCBoYXdhaWlhblN1bnJpc2UgZnJvbSAnLi4vdGhlbWVzL2hhd2FpaWFuLXN1bnJpc2UnO1xuaW1wb3J0IHBhc3Npb25GbG93ZXIgZnJvbSAnLi4vdGhlbWVzL3Bhc3Npb24tZmxvd2VyJztcbmltcG9ydCByYXp6bGViZXJyeVBpZSBmcm9tICcuLi90aGVtZXMvcmF6emxlYmVycnktcGllJztcbmltcG9ydCB0ZXJhZGF0YUNsYXNzaWMgZnJvbSAnLi4vdGhlbWVzL3RlcmFkYXRhLWNsYXNzaWMnO1xuaW1wb3J0IHRlcmFkYXRhRGVmYXVsdCBmcm9tICcuLi90aGVtZXMvdGVyYWRhdGEtZGVmYXVsdCc7XG5pbXBvcnQgdXJiYW5TdW5yaXNlIGZyb20gJy4uL3RoZW1lcy91cmJhbi1zdW5yaXNlJztcbmltcG9ydCB2b2xjYW5pY0VydXB0aW9uIGZyb20gJy4uL3RoZW1lcy92b2xjYW5pYy1lcnVwdGlvbic7XG5cbi8qKlxuICogRnVuY3Rpb24gdXNlZCB0byByZWdpc3RlciBhIHRoZW1lIGludG8gZWNoYXJ0c1xuICogVGhlbWUgbmFtZSBhbmQgdGhlbWUgb2JqZWN0IG5lZWRlZCBhcyBzdGF0ZWQgaW5cbiAqIGh0dHBzOi8vZWNvbWZlLmdpdGh1Yi5pby9lY2hhcnRzLWRvYy9wdWJsaWMvZW4vYXBpLmh0bWwjZWNoYXJ0cy5yZWdpc3RlclRoZW1lXG4gKi9cbmV4cG9ydCBmdW5jdGlvbiByZWdpc3RlclRoZW1lKHRoZW1lTmFtZTogc3RyaW5nLCB0aGVtZTogT2JqZWN0KTogdm9pZCB7XG4gIGVjaGFydHMucmVnaXN0ZXJUaGVtZSh0aGVtZU5hbWUsIHRoZW1lKTtcbn1cblxuLyoqXG4gKiBGdW5jdGlvbiB0byByZWdpc3RlciBhbGwgZGVmYXVsdCB0aGVtZXNcbiAqIEBpbnRlcm5hbFxuICovXG5leHBvcnQgZnVuY3Rpb24gcmVnaXN0ZXJEZWZhdWx0VGhlbWVzKCk6IHZvaWQge1xuICByZWdpc3RlclRoZW1lKCdhcXVhLXNwbGFzaCcsIGFxdWFTcGxhc2gpO1xuICByZWdpc3RlclRoZW1lKCdjYWxpZm9ybmlhLWNvYXN0JywgY2FsaWZvcm5pYUNvYXN0KTtcbiAgcmVnaXN0ZXJUaGVtZSgnaGF3YWlpYW4tc3VucmlzZScsIGhhd2FpaWFuU3VucmlzZSk7XG4gIHJlZ2lzdGVyVGhlbWUoJ3Bhc3Npb24tZmxvd2VyJywgcGFzc2lvbkZsb3dlcik7XG4gIHJlZ2lzdGVyVGhlbWUoJ3JhenpsZWJlcnJ5LXBpZScsIHJhenpsZWJlcnJ5UGllKTtcbiAgcmVnaXN0ZXJUaGVtZSgndGVyYWRhdGEtY2xhc3NpYycsIHRlcmFkYXRhQ2xhc3NpYyk7XG4gIHJlZ2lzdGVyVGhlbWUoJ3RlcmFkYXRhLWRlZmF1bHQnLCB0ZXJhZGF0YURlZmF1bHQpO1xuICByZWdpc3RlclRoZW1lKCd1cmJhbi1zdW5yaXNlJywgdXJiYW5TdW5yaXNlKTtcbiAgcmVnaXN0ZXJUaGVtZSgndm9sY2FuaWMtZXJ1cHRpb24nLCB2b2xjYW5pY0VydXB0aW9uKTtcbn1cblxuLyoqXG4gKiBSZXR1cm5zIGFsbCB0aGUgdGhlbWUgbmFtZXMgYnVuZGxlZCB3aXRoIGNvdmFsZW50IGVjaGFydHMuXG4gKi9cbmV4cG9ydCBmdW5jdGlvbiBnZXRUaGVtZXMoKTogc3RyaW5nW10ge1xuICByZXR1cm4gW1xuICAgICdhcXVhLXNwbGFzaCcsXG4gICAgJ2NhbGlmb3JuaWEtY29hc3QnLFxuICAgICdoYXdhaWlhbi1zdW5yaXNlJyxcbiAgICAncGFzc2lvbi1mbG93ZXInLFxuICAgICdyYXp6bGViZXJyeS1waWUnLFxuICAgICd0ZXJhZGF0YS1jbGFzc2ljJyxcbiAgICAndGVyYWRhdGEtZGVmYXVsdCcsXG4gICAgJ3VyYmFuLXN1bnJpc2UnLFxuICAgICd2b2xjYW5pYy1lcnVwdGlvbicsXG4gIF07XG59XG4iXX0=
