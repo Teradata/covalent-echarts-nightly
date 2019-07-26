@@ -49,9 +49,12 @@ TdChartSeriesTreeComponent.decorators = [
                 selector: 'td-chart-series[td-tree]',
                 template: '',
                 changeDetection: ChangeDetectionStrategy.OnPush,
-                providers: [{
-                        provide: TdSeriesComponent, useExisting: forwardRef(() => TdChartSeriesTreeComponent),
-                    }]
+                providers: [
+                    {
+                        provide: TdSeriesComponent,
+                        useExisting: forwardRef(() => TdChartSeriesTreeComponent),
+                    },
+                ]
             }] }
 ];
 /** @nocollapse */
@@ -88,22 +91,14 @@ TdChartSeriesTreeComponent.propDecorators = {
  * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 /** @type {?} */
-const TREE_MODULE_COMPONENTS = [
-    TdChartSeriesTreeComponent,
-];
+const TREE_MODULE_COMPONENTS = [TdChartSeriesTreeComponent];
 class CovalentTreeEchartsModule {
 }
 CovalentTreeEchartsModule.decorators = [
     { type: NgModule, args: [{
-                imports: [
-                    CommonModule,
-                ],
-                declarations: [
-                    TREE_MODULE_COMPONENTS,
-                ],
-                exports: [
-                    TREE_MODULE_COMPONENTS,
-                ],
+                imports: [CommonModule],
+                declarations: [TREE_MODULE_COMPONENTS],
+                exports: [TREE_MODULE_COMPONENTS],
             },] }
 ];
 

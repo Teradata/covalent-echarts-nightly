@@ -64,9 +64,12 @@ var TdChartSeriesLineComponent = /** @class */ (function (_super) {
                     selector: 'td-chart-series[td-line]',
                     template: '',
                     changeDetection: ChangeDetectionStrategy.OnPush,
-                    providers: [{
-                            provide: TdSeriesComponent, useExisting: forwardRef(function () { return TdChartSeriesLineComponent; }),
-                        }]
+                    providers: [
+                        {
+                            provide: TdSeriesComponent,
+                            useExisting: forwardRef(function () { return TdChartSeriesLineComponent; }),
+                        },
+                    ]
                 }] }
     ];
     /** @nocollapse */
@@ -119,23 +122,15 @@ var TdChartSeriesLineComponent = /** @class */ (function (_super) {
  * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 /** @type {?} */
-var LINE_MODULE_COMPONENTS = [
-    TdChartSeriesLineComponent,
-];
+var LINE_MODULE_COMPONENTS = [TdChartSeriesLineComponent];
 var CovalentLineEchartsModule = /** @class */ (function () {
     function CovalentLineEchartsModule() {
     }
     CovalentLineEchartsModule.decorators = [
         { type: NgModule, args: [{
-                    imports: [
-                        CommonModule,
-                    ],
-                    declarations: [
-                        LINE_MODULE_COMPONENTS,
-                    ],
-                    exports: [
-                        LINE_MODULE_COMPONENTS,
-                    ],
+                    imports: [CommonModule],
+                    declarations: [LINE_MODULE_COMPONENTS],
+                    exports: [LINE_MODULE_COMPONENTS],
                 },] }
     ];
     return CovalentLineEchartsModule;

@@ -94,7 +94,7 @@
                     confine: this.confine,
                     transitionDuration: this.transitionDuration,
                     position: this.position,
-                    formatter: this.formatter ? this.formatter : (this.formatterTemplate ? this._formatter() : undefined),
+                    formatter: this.formatter ? this.formatter : this.formatterTemplate ? this._formatter() : undefined,
                     backgroundColor: this.backgroundColor,
                     borderColor: this.borderColor,
                     borderWidth: this.borderWidth,
@@ -139,7 +139,7 @@
         TdChartTooltipComponent.decorators = [
             { type: core.Component, args: [{
                         selector: 'td-chart-tooltip',
-                        template: "<ng-template #tooltipContent\n            [ngTemplateOutlet]=\"formatterTemplate\"\n            [ngTemplateOutletContext]=\"_context\">\n</ng-template>",
+                        template: "<ng-template #tooltipContent [ngTemplateOutlet]=\"formatterTemplate\" [ngTemplateOutletContext]=\"_context\"> </ng-template>\n",
                         changeDetection: core.ChangeDetectionStrategy.OnPush
                     }] }
         ];
@@ -232,7 +232,7 @@
                     padding: this.padding,
                     textStyle: this.textStyle,
                     extraCssText: this.extraCssText,
-                    formatter: this.formatter ? this.formatter : (this.formatterTemplate ? this._formatter() : undefined),
+                    formatter: this.formatter ? this.formatter : this.formatterTemplate ? this._formatter() : undefined,
                 }, this.config ? this.config : {});
                 // set series tooltip configuration in parent chart and render new configurations
                 this._seriesComponent.setStateOption('tooltip', config);
@@ -279,7 +279,7 @@
         TdSeriesTooltipComponent.decorators = [
             { type: core.Component, args: [{
                         selector: 'td-chart-series-tooltip',
-                        template: "<ng-template #tooltipContent\n            [ngTemplateOutlet]=\"formatterTemplate\"\n            [ngTemplateOutletContext]=\"_context\">\n</ng-template>",
+                        template: "<ng-template #tooltipContent [ngTemplateOutlet]=\"formatterTemplate\" [ngTemplateOutletContext]=\"_context\"> </ng-template>\n",
                         changeDetection: core.ChangeDetectionStrategy.OnPush
                     }] }
         ];
@@ -322,15 +322,9 @@
         }
         CovalentTooltipEchartsModule.decorators = [
             { type: core.NgModule, args: [{
-                        imports: [
-                            common.CommonModule,
-                        ],
-                        declarations: [
-                            TOOLTIP_MODULE_COMPONENTS,
-                        ],
-                        exports: [
-                            TOOLTIP_MODULE_COMPONENTS,
-                        ],
+                        imports: [common.CommonModule],
+                        declarations: [TOOLTIP_MODULE_COMPONENTS],
+                        exports: [TOOLTIP_MODULE_COMPONENTS],
                     },] }
         ];
         return CovalentTooltipEchartsModule;

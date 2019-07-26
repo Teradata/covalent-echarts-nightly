@@ -72,9 +72,12 @@ var TdChartSeriesGraphComponent = /** @class */ (function (_super) {
                     selector: 'td-chart-series[td-graph]',
                     template: '',
                     changeDetection: ChangeDetectionStrategy.OnPush,
-                    providers: [{
-                            provide: TdSeriesComponent, useExisting: forwardRef(function () { return TdChartSeriesGraphComponent; }),
-                        }]
+                    providers: [
+                        {
+                            provide: TdSeriesComponent,
+                            useExisting: forwardRef(function () { return TdChartSeriesGraphComponent; }),
+                        },
+                    ]
                 }] }
     ];
     /** @nocollapse */
@@ -136,23 +139,15 @@ var TdChartSeriesGraphComponent = /** @class */ (function (_super) {
  * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 /** @type {?} */
-var GRAPH_MODULE_COMPONENTS = [
-    TdChartSeriesGraphComponent,
-];
+var GRAPH_MODULE_COMPONENTS = [TdChartSeriesGraphComponent];
 var CovalentGraphEchartsModule = /** @class */ (function () {
     function CovalentGraphEchartsModule() {
     }
     CovalentGraphEchartsModule.decorators = [
         { type: NgModule, args: [{
-                    imports: [
-                        CommonModule,
-                    ],
-                    declarations: [
-                        GRAPH_MODULE_COMPONENTS,
-                    ],
-                    exports: [
-                        GRAPH_MODULE_COMPONENTS,
-                    ],
+                    imports: [CommonModule],
+                    declarations: [GRAPH_MODULE_COMPONENTS],
+                    exports: [GRAPH_MODULE_COMPONENTS],
                 },] }
     ];
     return CovalentGraphEchartsModule;

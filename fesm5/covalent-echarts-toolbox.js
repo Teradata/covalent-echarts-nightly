@@ -121,7 +121,7 @@ var TdChartToolboxComponent = /** @class */ (function () {
     TdChartToolboxComponent.decorators = [
         { type: Component, args: [{
                     selector: 'td-chart-toolbox',
-                    template: "<ng-template #toolboxContent\n            [ngTemplateOutlet]=\"formatterTemplate\">\n</ng-template>",
+                    template: "<ng-template #toolboxContent [ngTemplateOutlet]=\"formatterTemplate\"> </ng-template>\n",
                     changeDetection: ChangeDetectionStrategy.OnPush
                 }] }
     ];
@@ -162,24 +162,15 @@ var TdChartToolboxComponent = /** @class */ (function () {
  * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 /** @type {?} */
-var TOOLBOX_MODULE_COMPONENTS = [
-    TdChartToolboxComponent,
-    TdChartViewDataFormatterDirective,
-];
+var TOOLBOX_MODULE_COMPONENTS = [TdChartToolboxComponent, TdChartViewDataFormatterDirective];
 var CovalentToolboxEchartsModule = /** @class */ (function () {
     function CovalentToolboxEchartsModule() {
     }
     CovalentToolboxEchartsModule.decorators = [
         { type: NgModule, args: [{
-                    imports: [
-                        CommonModule,
-                    ],
-                    declarations: [
-                        TOOLBOX_MODULE_COMPONENTS,
-                    ],
-                    exports: [
-                        TOOLBOX_MODULE_COMPONENTS,
-                    ],
+                    imports: [CommonModule],
+                    declarations: [TOOLBOX_MODULE_COMPONENTS],
+                    exports: [TOOLBOX_MODULE_COMPONENTS],
                 },] }
     ];
     return CovalentToolboxEchartsModule;

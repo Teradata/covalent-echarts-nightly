@@ -85,9 +85,12 @@
                         selector: 'td-chart-series[td-bar]',
                         template: '',
                         changeDetection: core.ChangeDetectionStrategy.OnPush,
-                        providers: [{
-                                provide: base.TdSeriesComponent, useExisting: core.forwardRef(function () { return TdChartSeriesBarComponent; }),
-                            }]
+                        providers: [
+                            {
+                                provide: base.TdSeriesComponent,
+                                useExisting: core.forwardRef(function () { return TdChartSeriesBarComponent; }),
+                            },
+                        ]
                     }] }
         ];
         /** @nocollapse */
@@ -134,23 +137,15 @@
      * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
      */
     /** @type {?} */
-    var BAR_MODULE_COMPONENTS = [
-        TdChartSeriesBarComponent,
-    ];
+    var BAR_MODULE_COMPONENTS = [TdChartSeriesBarComponent];
     var CovalentBarEchartsModule = /** @class */ (function () {
         function CovalentBarEchartsModule() {
         }
         CovalentBarEchartsModule.decorators = [
             { type: core.NgModule, args: [{
-                        imports: [
-                            common.CommonModule,
-                        ],
-                        declarations: [
-                            BAR_MODULE_COMPONENTS,
-                        ],
-                        exports: [
-                            BAR_MODULE_COMPONENTS,
-                        ],
+                        imports: [common.CommonModule],
+                        declarations: [BAR_MODULE_COMPONENTS],
+                        exports: [BAR_MODULE_COMPONENTS],
                     },] }
         ];
         return CovalentBarEchartsModule;

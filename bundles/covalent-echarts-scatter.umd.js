@@ -88,9 +88,12 @@
                         selector: 'td-chart-series[td-scatter]',
                         template: '',
                         changeDetection: core.ChangeDetectionStrategy.OnPush,
-                        providers: [{
-                                provide: base.TdSeriesComponent, useExisting: core.forwardRef(function () { return TdChartSeriesScatterComponent; }),
-                            }]
+                        providers: [
+                            {
+                                provide: base.TdSeriesComponent,
+                                useExisting: core.forwardRef(function () { return TdChartSeriesScatterComponent; }),
+                            },
+                        ]
                     }] }
         ];
         /** @nocollapse */
@@ -140,23 +143,15 @@
      * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
      */
     /** @type {?} */
-    var SCATTER_MODULE_COMPONENTS = [
-        TdChartSeriesScatterComponent,
-    ];
+    var SCATTER_MODULE_COMPONENTS = [TdChartSeriesScatterComponent];
     var CovalentScatterEchartsModule = /** @class */ (function () {
         function CovalentScatterEchartsModule() {
         }
         CovalentScatterEchartsModule.decorators = [
             { type: core.NgModule, args: [{
-                        imports: [
-                            common.CommonModule,
-                        ],
-                        declarations: [
-                            SCATTER_MODULE_COMPONENTS,
-                        ],
-                        exports: [
-                            SCATTER_MODULE_COMPONENTS,
-                        ],
+                        imports: [common.CommonModule],
+                        declarations: [SCATTER_MODULE_COMPONENTS],
+                        exports: [SCATTER_MODULE_COMPONENTS],
                     },] }
         ];
         return CovalentScatterEchartsModule;

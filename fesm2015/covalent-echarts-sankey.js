@@ -49,9 +49,12 @@ TdChartSeriesSankeyComponent.decorators = [
                 selector: 'td-chart-series[td-sankey]',
                 template: '',
                 changeDetection: ChangeDetectionStrategy.OnPush,
-                providers: [{
-                        provide: TdSeriesComponent, useExisting: forwardRef(() => TdChartSeriesSankeyComponent),
-                    }]
+                providers: [
+                    {
+                        provide: TdSeriesComponent,
+                        useExisting: forwardRef(() => TdChartSeriesSankeyComponent),
+                    },
+                ]
             }] }
 ];
 /** @nocollapse */
@@ -88,22 +91,14 @@ TdChartSeriesSankeyComponent.propDecorators = {
  * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 /** @type {?} */
-const SANKEY_MODULE_COMPONENTS = [
-    TdChartSeriesSankeyComponent,
-];
+const SANKEY_MODULE_COMPONENTS = [TdChartSeriesSankeyComponent];
 class CovalentSankeyEchartsModule {
 }
 CovalentSankeyEchartsModule.decorators = [
     { type: NgModule, args: [{
-                imports: [
-                    CommonModule,
-                ],
-                declarations: [
-                    SANKEY_MODULE_COMPONENTS,
-                ],
-                exports: [
-                    SANKEY_MODULE_COMPONENTS,
-                ],
+                imports: [CommonModule],
+                declarations: [SANKEY_MODULE_COMPONENTS],
+                exports: [SANKEY_MODULE_COMPONENTS],
             },] }
 ];
 

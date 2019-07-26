@@ -88,9 +88,12 @@
                         selector: 'td-chart-series[td-treemap]',
                         template: '',
                         changeDetection: core.ChangeDetectionStrategy.OnPush,
-                        providers: [{
-                                provide: base.TdSeriesComponent, useExisting: core.forwardRef(function () { return TdChartSeriesTreemapComponent; }),
-                            }]
+                        providers: [
+                            {
+                                provide: base.TdSeriesComponent,
+                                useExisting: core.forwardRef(function () { return TdChartSeriesTreemapComponent; }),
+                            },
+                        ]
                     }] }
         ];
         /** @nocollapse */
@@ -143,23 +146,15 @@
      * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
      */
     /** @type {?} */
-    var TREEMAP_MODULE_COMPONENTS = [
-        TdChartSeriesTreemapComponent,
-    ];
+    var TREEMAP_MODULE_COMPONENTS = [TdChartSeriesTreemapComponent];
     var CovalentTreemapEchartsModule = /** @class */ (function () {
         function CovalentTreemapEchartsModule() {
         }
         CovalentTreemapEchartsModule.decorators = [
             { type: core.NgModule, args: [{
-                        imports: [
-                            common.CommonModule,
-                        ],
-                        declarations: [
-                            TREEMAP_MODULE_COMPONENTS,
-                        ],
-                        exports: [
-                            TREEMAP_MODULE_COMPONENTS,
-                        ],
+                        imports: [common.CommonModule],
+                        declarations: [TREEMAP_MODULE_COMPONENTS],
+                        exports: [TREEMAP_MODULE_COMPONENTS],
                     },] }
         ];
         return CovalentTreemapEchartsModule;

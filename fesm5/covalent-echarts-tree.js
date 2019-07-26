@@ -50,9 +50,12 @@ var TdChartSeriesTreeComponent = /** @class */ (function (_super) {
                     selector: 'td-chart-series[td-tree]',
                     template: '',
                     changeDetection: ChangeDetectionStrategy.OnPush,
-                    providers: [{
-                            provide: TdSeriesComponent, useExisting: forwardRef(function () { return TdChartSeriesTreeComponent; }),
-                        }]
+                    providers: [
+                        {
+                            provide: TdSeriesComponent,
+                            useExisting: forwardRef(function () { return TdChartSeriesTreeComponent; }),
+                        },
+                    ]
                 }] }
     ];
     /** @nocollapse */
@@ -91,23 +94,15 @@ var TdChartSeriesTreeComponent = /** @class */ (function (_super) {
  * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 /** @type {?} */
-var TREE_MODULE_COMPONENTS = [
-    TdChartSeriesTreeComponent,
-];
+var TREE_MODULE_COMPONENTS = [TdChartSeriesTreeComponent];
 var CovalentTreeEchartsModule = /** @class */ (function () {
     function CovalentTreeEchartsModule() {
     }
     CovalentTreeEchartsModule.decorators = [
         { type: NgModule, args: [{
-                    imports: [
-                        CommonModule,
-                    ],
-                    declarations: [
-                        TREE_MODULE_COMPONENTS,
-                    ],
-                    exports: [
-                        TREE_MODULE_COMPONENTS,
-                    ],
+                    imports: [CommonModule],
+                    declarations: [TREE_MODULE_COMPONENTS],
+                    exports: [TREE_MODULE_COMPONENTS],
                 },] }
     ];
     return CovalentTreeEchartsModule;

@@ -58,9 +58,12 @@ TdChartSeriesScatterComponent.decorators = [
                 selector: 'td-chart-series[td-scatter]',
                 template: '',
                 changeDetection: ChangeDetectionStrategy.OnPush,
-                providers: [{
-                        provide: TdSeriesComponent, useExisting: forwardRef(() => TdChartSeriesScatterComponent),
-                    }]
+                providers: [
+                    {
+                        provide: TdSeriesComponent,
+                        useExisting: forwardRef(() => TdChartSeriesScatterComponent),
+                    },
+                ]
             }] }
 ];
 /** @nocollapse */
@@ -106,22 +109,14 @@ TdChartSeriesScatterComponent.propDecorators = {
  * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 /** @type {?} */
-const SCATTER_MODULE_COMPONENTS = [
-    TdChartSeriesScatterComponent,
-];
+const SCATTER_MODULE_COMPONENTS = [TdChartSeriesScatterComponent];
 class CovalentScatterEchartsModule {
 }
 CovalentScatterEchartsModule.decorators = [
     { type: NgModule, args: [{
-                imports: [
-                    CommonModule,
-                ],
-                declarations: [
-                    SCATTER_MODULE_COMPONENTS,
-                ],
-                exports: [
-                    SCATTER_MODULE_COMPONENTS,
-                ],
+                imports: [CommonModule],
+                declarations: [SCATTER_MODULE_COMPONENTS],
+                exports: [SCATTER_MODULE_COMPONENTS],
             },] }
 ];
 

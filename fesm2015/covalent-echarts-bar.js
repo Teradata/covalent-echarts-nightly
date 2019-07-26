@@ -55,9 +55,12 @@ TdChartSeriesBarComponent.decorators = [
                 selector: 'td-chart-series[td-bar]',
                 template: '',
                 changeDetection: ChangeDetectionStrategy.OnPush,
-                providers: [{
-                        provide: TdSeriesComponent, useExisting: forwardRef(() => TdChartSeriesBarComponent),
-                    }]
+                providers: [
+                    {
+                        provide: TdSeriesComponent,
+                        useExisting: forwardRef(() => TdChartSeriesBarComponent),
+                    },
+                ]
             }] }
 ];
 /** @nocollapse */
@@ -100,22 +103,14 @@ TdChartSeriesBarComponent.propDecorators = {
  * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 /** @type {?} */
-const BAR_MODULE_COMPONENTS = [
-    TdChartSeriesBarComponent,
-];
+const BAR_MODULE_COMPONENTS = [TdChartSeriesBarComponent];
 class CovalentBarEchartsModule {
 }
 CovalentBarEchartsModule.decorators = [
     { type: NgModule, args: [{
-                imports: [
-                    CommonModule,
-                ],
-                declarations: [
-                    BAR_MODULE_COMPONENTS,
-                ],
-                exports: [
-                    BAR_MODULE_COMPONENTS,
-                ],
+                imports: [CommonModule],
+                declarations: [BAR_MODULE_COMPONENTS],
+                exports: [BAR_MODULE_COMPONENTS],
             },] }
 ];
 

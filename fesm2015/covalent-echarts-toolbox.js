@@ -104,7 +104,7 @@ class TdChartToolboxComponent {
 TdChartToolboxComponent.decorators = [
     { type: Component, args: [{
                 selector: 'td-chart-toolbox',
-                template: "<ng-template #toolboxContent\n            [ngTemplateOutlet]=\"formatterTemplate\">\n</ng-template>",
+                template: "<ng-template #toolboxContent [ngTemplateOutlet]=\"formatterTemplate\"> </ng-template>\n",
                 changeDetection: ChangeDetectionStrategy.OnPush
             }] }
 ];
@@ -143,23 +143,14 @@ TdChartToolboxComponent.propDecorators = {
  * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 /** @type {?} */
-const TOOLBOX_MODULE_COMPONENTS = [
-    TdChartToolboxComponent,
-    TdChartViewDataFormatterDirective,
-];
+const TOOLBOX_MODULE_COMPONENTS = [TdChartToolboxComponent, TdChartViewDataFormatterDirective];
 class CovalentToolboxEchartsModule {
 }
 CovalentToolboxEchartsModule.decorators = [
     { type: NgModule, args: [{
-                imports: [
-                    CommonModule,
-                ],
-                declarations: [
-                    TOOLBOX_MODULE_COMPONENTS,
-                ],
-                exports: [
-                    TOOLBOX_MODULE_COMPONENTS,
-                ],
+                imports: [CommonModule],
+                declarations: [TOOLBOX_MODULE_COMPONENTS],
+                exports: [TOOLBOX_MODULE_COMPONENTS],
             },] }
 ];
 

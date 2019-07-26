@@ -56,9 +56,12 @@ var TdChartSeriesBarComponent = /** @class */ (function (_super) {
                     selector: 'td-chart-series[td-bar]',
                     template: '',
                     changeDetection: ChangeDetectionStrategy.OnPush,
-                    providers: [{
-                            provide: TdSeriesComponent, useExisting: forwardRef(function () { return TdChartSeriesBarComponent; }),
-                        }]
+                    providers: [
+                        {
+                            provide: TdSeriesComponent,
+                            useExisting: forwardRef(function () { return TdChartSeriesBarComponent; }),
+                        },
+                    ]
                 }] }
     ];
     /** @nocollapse */
@@ -103,23 +106,15 @@ var TdChartSeriesBarComponent = /** @class */ (function (_super) {
  * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
  */
 /** @type {?} */
-var BAR_MODULE_COMPONENTS = [
-    TdChartSeriesBarComponent,
-];
+var BAR_MODULE_COMPONENTS = [TdChartSeriesBarComponent];
 var CovalentBarEchartsModule = /** @class */ (function () {
     function CovalentBarEchartsModule() {
     }
     CovalentBarEchartsModule.decorators = [
         { type: NgModule, args: [{
-                    imports: [
-                        CommonModule,
-                    ],
-                    declarations: [
-                        BAR_MODULE_COMPONENTS,
-                    ],
-                    exports: [
-                        BAR_MODULE_COMPONENTS,
-                    ],
+                    imports: [CommonModule],
+                    declarations: [BAR_MODULE_COMPONENTS],
+                    exports: [BAR_MODULE_COMPONENTS],
                 },] }
     ];
     return CovalentBarEchartsModule;
