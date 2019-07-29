@@ -1,11 +1,11 @@
+import { Component, ChangeDetectionStrategy, ChangeDetectorRef, ElementRef, Input, ContentChild, TemplateRef, ViewChild, Directive, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import 'echarts/lib/component/tooltip';
-import { Component, Input, Directive, TemplateRef, ChangeDetectionStrategy, ElementRef, ChangeDetectorRef, ContentChild, ViewChild, NgModule } from '@angular/core';
-import { TdChartOptionsService, assignDefined, TdSeriesComponent } from '@covalent/echarts/base';
+import { assignDefined, TdChartOptionsService, TdSeriesComponent } from '@covalent/echarts/base';
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var TdTooltipContext = /** @class */ (function () {
     function TdTooltipContext() {
@@ -73,9 +73,11 @@ var TdChartTooltipComponent = /** @class */ (function () {
         this._removeOption();
     };
     /**
+     * @private
      * @return {?}
      */
     TdChartTooltipComponent.prototype._setOptions = /**
+     * @private
      * @return {?}
      */
     function () {
@@ -105,35 +107,48 @@ var TdChartTooltipComponent = /** @class */ (function () {
         this._optionsService.setOption('tooltip', config);
     };
     /**
+     * @private
      * @return {?}
      */
     TdChartTooltipComponent.prototype._removeOption = /**
+     * @private
      * @return {?}
      */
     function () {
         this._optionsService.clearOption('tooltip');
     };
     /**
+     * @private
      * @return {?}
      */
     TdChartTooltipComponent.prototype._formatter = /**
+     * @private
      * @return {?}
      */
     function () {
         var _this = this;
-        return function (params, ticket, callback) {
+        return (/**
+         * @param {?} params
+         * @param {?} ticket
+         * @param {?} callback
+         * @return {?}
+         */
+        function (params, ticket, callback) {
             _this._context = {
                 $implicit: params,
                 ticket: ticket,
             };
             // timeout set since we need to set the HTML at the end of the angular lifecycle when
             // the tooltip delay is more than 0
-            setTimeout(function () {
+            setTimeout((/**
+             * @return {?}
+             */
+            function () {
                 callback(ticket, ((/** @type {?} */ (_this._elementRef.nativeElement))).innerHTML);
-            });
+            }));
             _this._changeDetectorRef.markForCheck();
             return ((/** @type {?} */ (_this._elementRef.nativeElement))).innerHTML;
-        };
+        });
     };
     TdChartTooltipComponent.decorators = [
         { type: Component, args: [{
@@ -170,15 +185,15 @@ var TdChartTooltipComponent = /** @class */ (function () {
         padding: [{ type: Input, args: ['padding',] }],
         textStyle: [{ type: Input, args: ['textStyle',] }],
         extraCssText: [{ type: Input, args: ['extraCssText',] }],
-        formatterTemplate: [{ type: ContentChild, args: [TdChartTooltipFormatterDirective, { read: TemplateRef },] }],
-        fullTemplate: [{ type: ViewChild, args: ['tooltipContent',] }]
+        formatterTemplate: [{ type: ContentChild, args: [TdChartTooltipFormatterDirective, { read: TemplateRef, static: false },] }],
+        fullTemplate: [{ type: ViewChild, args: ['tooltipContent', { static: true },] }]
     };
     return TdChartTooltipComponent;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var TdSeriesTooltipComponent = /** @class */ (function () {
     function TdSeriesTooltipComponent(_changeDetectorRef, _elementRef, _seriesComponent) {
@@ -214,9 +229,11 @@ var TdSeriesTooltipComponent = /** @class */ (function () {
         this._removeOption();
     };
     /**
+     * @private
      * @return {?}
      */
     TdSeriesTooltipComponent.prototype._setOptions = /**
+     * @private
      * @return {?}
      */
     function () {
@@ -241,33 +258,46 @@ var TdSeriesTooltipComponent = /** @class */ (function () {
     /**
      * Formatter for tooltip
      *
+     * @private
      * @return {?}
      */
     TdSeriesTooltipComponent.prototype._formatter = /**
      * Formatter for tooltip
      *
+     * @private
      * @return {?}
      */
     function () {
         var _this = this;
-        return function (params, ticket, callback) {
+        return (/**
+         * @param {?} params
+         * @param {?} ticket
+         * @param {?} callback
+         * @return {?}
+         */
+        function (params, ticket, callback) {
             _this._context = {
                 $implicit: params,
                 ticket: ticket,
             };
             // timeout set since we need to set the HTML at the end of the angular lifecycle when
             // the tooltip delay is more than 0
-            setTimeout(function () {
+            setTimeout((/**
+             * @return {?}
+             */
+            function () {
                 callback(ticket, ((/** @type {?} */ (_this._elementRef.nativeElement))).innerHTML);
-            });
+            }));
             _this._changeDetectorRef.markForCheck();
             return ((/** @type {?} */ (_this._elementRef.nativeElement))).innerHTML;
-        };
+        });
     };
     /**
+     * @private
      * @return {?}
      */
     TdSeriesTooltipComponent.prototype._removeOption = /**
+     * @private
      * @return {?}
      */
     function () {
@@ -296,15 +326,15 @@ var TdSeriesTooltipComponent = /** @class */ (function () {
         padding: [{ type: Input, args: ['padding',] }],
         textStyle: [{ type: Input, args: ['textStyle',] }],
         extraCssText: [{ type: Input, args: ['extraCssText',] }],
-        formatterTemplate: [{ type: ContentChild, args: [TdChartTooltipFormatterDirective, { read: TemplateRef },] }],
-        fullTemplate: [{ type: ViewChild, args: ['tooltipContent',] }]
+        formatterTemplate: [{ type: ContentChild, args: [TdChartTooltipFormatterDirective, { read: TemplateRef, static: false },] }],
+        fullTemplate: [{ type: ViewChild, args: ['tooltipContent', { static: true },] }]
     };
     return TdSeriesTooltipComponent;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 var TOOLTIP_MODULE_COMPONENTS = [
@@ -325,21 +355,5 @@ var CovalentTooltipEchartsModule = /** @class */ (function () {
     return CovalentTooltipEchartsModule;
 }());
 
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-export { TOOLTIP_MODULE_COMPONENTS, CovalentTooltipEchartsModule, TdTooltipContext, TdChartTooltipFormatterDirective, TdChartTooltipComponent, TdSeriesTooltipComponent };
-
+export { CovalentTooltipEchartsModule, TOOLTIP_MODULE_COMPONENTS, TdChartTooltipComponent, TdChartTooltipFormatterDirective, TdSeriesTooltipComponent, TdTooltipContext };
 //# sourceMappingURL=covalent-echarts-tooltip.js.map

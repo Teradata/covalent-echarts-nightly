@@ -1,11 +1,11 @@
+import { Component, ChangeDetectionStrategy, forwardRef, Input, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import 'echarts/lib/chart/treemap';
-import { Component, Input, ChangeDetectionStrategy, forwardRef, NgModule } from '@angular/core';
-import { TdChartOptionsService, TdSeriesComponent } from '@covalent/echarts/base';
+import { TdSeriesComponent, TdChartOptionsService } from '@covalent/echarts/base';
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class TdChartSeriesTreemapComponent extends TdSeriesComponent {
     /**
@@ -60,7 +60,10 @@ TdChartSeriesTreemapComponent.decorators = [
                 providers: [
                     {
                         provide: TdSeriesComponent,
-                        useExisting: forwardRef(() => TdChartSeriesTreemapComponent),
+                        useExisting: forwardRef((/**
+                         * @return {?}
+                         */
+                        () => TdChartSeriesTreemapComponent)),
                     },
                 ]
             }] }
@@ -108,7 +111,7 @@ TdChartSeriesTreemapComponent.propDecorators = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 const TREEMAP_MODULE_COMPONENTS = [TdChartSeriesTreemapComponent];
@@ -122,21 +125,5 @@ CovalentTreemapEchartsModule.decorators = [
             },] }
 ];
 
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-export { TREEMAP_MODULE_COMPONENTS, CovalentTreemapEchartsModule, TdChartSeriesTreemapComponent };
-
+export { CovalentTreemapEchartsModule, TREEMAP_MODULE_COMPONENTS, TdChartSeriesTreemapComponent };
 //# sourceMappingURL=covalent-echarts-treemap.js.map

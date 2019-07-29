@@ -1,6 +1,6 @@
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 export { TOOLTIP_MODULE_COMPONENTS, CovalentTooltipEchartsModule } from './tooltip.module';
 export { TdTooltipContext, TdChartTooltipFormatterDirective, TdChartTooltipComponent } from './tooltip.component';

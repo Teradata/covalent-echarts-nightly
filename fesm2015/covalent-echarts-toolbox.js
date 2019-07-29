@@ -1,11 +1,11 @@
+import { Directive, Component, ChangeDetectionStrategy, ChangeDetectorRef, ElementRef, Input, ContentChild, TemplateRef, ViewChild, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import 'echarts/lib/component/toolbox';
-import { Component, Input, Directive, TemplateRef, ChangeDetectionStrategy, ElementRef, ChangeDetectorRef, ContentChild, ViewChild, NgModule } from '@angular/core';
-import { TdChartOptionsService, assignDefined } from '@covalent/echarts/base';
+import { assignDefined, TdChartOptionsService } from '@covalent/echarts/base';
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class TdChartViewDataFormatterDirective {
 }
@@ -49,6 +49,7 @@ class TdChartToolboxComponent {
         this._removeOption();
     }
     /**
+     * @private
      * @return {?}
      */
     _setOptions() {
@@ -78,12 +79,14 @@ class TdChartToolboxComponent {
         this._optionsService.setOption('toolbox', config);
     }
     /**
+     * @private
      * @return {?}
      */
     _removeOption() {
         this._optionsService.clearOption('toolbox');
     }
     /**
+     * @private
      * @return {?}
      */
     _checkFormatterTemplate() {
@@ -92,13 +95,17 @@ class TdChartToolboxComponent {
         }
     }
     /**
+     * @private
      * @return {?}
      */
     _optionToContentFormatter() {
-        return () => {
+        return (/**
+         * @return {?}
+         */
+        () => {
             this._changeDetectorRef.markForCheck();
             return ((/** @type {?} */ (this._elementRef.nativeElement))).innerHTML;
-        };
+        });
     }
 }
 TdChartToolboxComponent.decorators = [
@@ -134,13 +141,13 @@ TdChartToolboxComponent.propDecorators = {
     bottom: [{ type: Input, args: ['bottom',] }],
     width: [{ type: Input, args: ['width',] }],
     height: [{ type: Input, args: ['height',] }],
-    formatterTemplate: [{ type: ContentChild, args: [TdChartViewDataFormatterDirective, { read: TemplateRef },] }],
-    fullTemplate: [{ type: ViewChild, args: ['toolboxContent',] }]
+    formatterTemplate: [{ type: ContentChild, args: [TdChartViewDataFormatterDirective, { read: TemplateRef, static: false },] }],
+    fullTemplate: [{ type: ViewChild, args: ['toolboxContent', { static: true },] }]
 };
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 const TOOLBOX_MODULE_COMPONENTS = [TdChartToolboxComponent, TdChartViewDataFormatterDirective];
@@ -154,21 +161,5 @@ CovalentToolboxEchartsModule.decorators = [
             },] }
 ];
 
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-export { TOOLBOX_MODULE_COMPONENTS, CovalentToolboxEchartsModule, TdChartViewDataFormatterDirective, TdChartToolboxComponent };
-
+export { CovalentToolboxEchartsModule, TOOLBOX_MODULE_COMPONENTS, TdChartToolboxComponent, TdChartViewDataFormatterDirective };
 //# sourceMappingURL=covalent-echarts-toolbox.js.map

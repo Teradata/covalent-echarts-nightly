@@ -1,12 +1,12 @@
+import { Component, ChangeDetectionStrategy, forwardRef, Input, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import 'echarts/lib/chart/scatter';
 import { __extends } from 'tslib';
-import { Component, Input, ChangeDetectionStrategy, forwardRef, NgModule } from '@angular/core';
-import { TdChartOptionsService, TdSeriesComponent } from '@covalent/echarts/base';
+import { TdSeriesComponent, TdChartOptionsService } from '@covalent/echarts/base';
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var TdChartSeriesScatterComponent = /** @class */ (function (_super) {
     __extends(TdChartSeriesScatterComponent, _super);
@@ -62,7 +62,10 @@ var TdChartSeriesScatterComponent = /** @class */ (function (_super) {
                     providers: [
                         {
                             provide: TdSeriesComponent,
-                            useExisting: forwardRef(function () { return TdChartSeriesScatterComponent; }),
+                            useExisting: forwardRef((/**
+                             * @return {?}
+                             */
+                            function () { return TdChartSeriesScatterComponent; })),
                         },
                     ]
                 }] }
@@ -109,7 +112,7 @@ var TdChartSeriesScatterComponent = /** @class */ (function (_super) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 var SCATTER_MODULE_COMPONENTS = [TdChartSeriesScatterComponent];
@@ -126,21 +129,5 @@ var CovalentScatterEchartsModule = /** @class */ (function () {
     return CovalentScatterEchartsModule;
 }());
 
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-export { SCATTER_MODULE_COMPONENTS, CovalentScatterEchartsModule, TdChartSeriesScatterComponent };
-
+export { CovalentScatterEchartsModule, SCATTER_MODULE_COMPONENTS, TdChartSeriesScatterComponent };
 //# sourceMappingURL=covalent-echarts-scatter.js.map

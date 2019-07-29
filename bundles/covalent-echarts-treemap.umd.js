@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/common'), require('echarts/lib/chart/treemap'), require('@angular/core'), require('@covalent/echarts/base')) :
-    typeof define === 'function' && define.amd ? define('@covalent/echarts/treemap', ['exports', '@angular/common', 'echarts/lib/chart/treemap', '@angular/core', '@covalent/echarts/base'], factory) :
-    (factory((global.covalent = global.covalent || {}, global.covalent.echarts = global.covalent.echarts || {}, global.covalent.echarts.treemap = {}),global.ng.common,null,global.ng.core,global.covalent.echarts.base));
-}(this, (function (exports,common,treemap,core,base) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/common'), require('echarts/lib/chart/treemap'), require('@covalent/echarts/base')) :
+    typeof define === 'function' && define.amd ? define('@covalent/echarts/treemap', ['exports', '@angular/core', '@angular/common', 'echarts/lib/chart/treemap', '@covalent/echarts/base'], factory) :
+    (global = global || self, factory((global.covalent = global.covalent || {}, global.covalent.echarts = global.covalent.echarts || {}, global.covalent.echarts.treemap = {}), global.ng.core, global.ng.common, null, global.covalent.echarts.base));
+}(this, function (exports, core, common, treemap, base) { 'use strict';
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.
@@ -19,14 +19,14 @@
     and limitations under the License.
     ***************************************************************************** */
     /* global Reflect, Promise */
-    var extendStatics = function (d, b) {
+
+    var extendStatics = function(d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b)
-                if (b.hasOwnProperty(p))
-                    d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
+
     function __extends(d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -35,7 +35,7 @@
 
     /**
      * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
     var TdChartSeriesTreemapComponent = /** @class */ (function (_super) {
         __extends(TdChartSeriesTreemapComponent, _super);
@@ -50,39 +50,39 @@
         TdChartSeriesTreemapComponent.prototype.getConfig = /**
          * @return {?}
          */
-            function () {
-                return {
-                    zlevel: this.zlevel,
-                    z: this.z,
-                    left: this.left,
-                    top: this.top,
-                    right: this.right,
-                    bottom: this.bottom,
-                    width: this.width,
-                    height: this.height,
-                    squareRatio: this.squareRatio,
-                    leafDepth: this.leafDepth,
-                    drillDownIcon: this.drillDownIcon,
-                    roam: this.roam,
-                    nodeClick: this.nodeClick,
-                    zoomToNodeRatio: this.zoomToNodeRatio,
-                    levels: this.levels,
-                    silent: this.silent,
-                    visualDimension: this.visualDimension,
-                    visualMin: this.visualMin,
-                    visualMax: this.visualMax,
-                    colorAlpha: this.colorAlpha,
-                    colorSaturation: this.colorSaturation,
-                    colorMappingBy: this.colorMappingBy,
-                    visibleMin: this.visibleMin,
-                    childrenVisibleMin: this.childrenVisibleMin,
-                    itemStyle: this.itemStyle,
-                    label: this.label,
-                    upperLabel: this.upperLabel,
-                    breadcrumb: this.breadcrumb,
-                    emphasis: this.emphasis,
-                };
+        function () {
+            return {
+                zlevel: this.zlevel,
+                z: this.z,
+                left: this.left,
+                top: this.top,
+                right: this.right,
+                bottom: this.bottom,
+                width: this.width,
+                height: this.height,
+                squareRatio: this.squareRatio,
+                leafDepth: this.leafDepth,
+                drillDownIcon: this.drillDownIcon,
+                roam: this.roam,
+                nodeClick: this.nodeClick,
+                zoomToNodeRatio: this.zoomToNodeRatio,
+                levels: this.levels,
+                silent: this.silent,
+                visualDimension: this.visualDimension,
+                visualMin: this.visualMin,
+                visualMax: this.visualMax,
+                colorAlpha: this.colorAlpha,
+                colorSaturation: this.colorSaturation,
+                colorMappingBy: this.colorMappingBy,
+                visibleMin: this.visibleMin,
+                childrenVisibleMin: this.childrenVisibleMin,
+                itemStyle: this.itemStyle,
+                label: this.label,
+                upperLabel: this.upperLabel,
+                breadcrumb: this.breadcrumb,
+                emphasis: this.emphasis,
             };
+        };
         TdChartSeriesTreemapComponent.decorators = [
             { type: core.Component, args: [{
                         selector: 'td-chart-series[td-treemap]',
@@ -91,17 +91,18 @@
                         providers: [
                             {
                                 provide: base.TdSeriesComponent,
-                                useExisting: core.forwardRef(function () { return TdChartSeriesTreemapComponent; }),
+                                useExisting: core.forwardRef((/**
+                                 * @return {?}
+                                 */
+                                function () { return TdChartSeriesTreemapComponent; })),
                             },
                         ]
                     }] }
         ];
         /** @nocollapse */
-        TdChartSeriesTreemapComponent.ctorParameters = function () {
-            return [
-                { type: base.TdChartOptionsService }
-            ];
-        };
+        TdChartSeriesTreemapComponent.ctorParameters = function () { return [
+            { type: base.TdChartOptionsService }
+        ]; };
         TdChartSeriesTreemapComponent.propDecorators = {
             config: [{ type: core.Input, args: ['config',] }],
             id: [{ type: core.Input, args: ['id',] }],
@@ -143,7 +144,7 @@
 
     /**
      * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
     /** @type {?} */
     var TREEMAP_MODULE_COMPONENTS = [TdChartSeriesTreemapComponent];
@@ -160,27 +161,11 @@
         return CovalentTreemapEchartsModule;
     }());
 
-    /**
-     * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
-     */
-
-    /**
-     * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
-     */
-
-    /**
-     * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
-     */
-
-    exports.TREEMAP_MODULE_COMPONENTS = TREEMAP_MODULE_COMPONENTS;
     exports.CovalentTreemapEchartsModule = CovalentTreemapEchartsModule;
+    exports.TREEMAP_MODULE_COMPONENTS = TREEMAP_MODULE_COMPONENTS;
     exports.TdChartSeriesTreemapComponent = TdChartSeriesTreemapComponent;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 
-})));
-
+}));
 //# sourceMappingURL=covalent-echarts-treemap.umd.js.map

@@ -1,12 +1,12 @@
+import { Component, ChangeDetectionStrategy, forwardRef, Input, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import 'echarts/lib/chart/line';
 import { __extends } from 'tslib';
-import { Component, Input, ChangeDetectionStrategy, forwardRef, NgModule } from '@angular/core';
-import { TdChartOptionsService, TdSeriesComponent } from '@covalent/echarts/base';
+import { TdSeriesComponent, TdChartOptionsService } from '@covalent/echarts/base';
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var TdChartSeriesLineComponent = /** @class */ (function (_super) {
     __extends(TdChartSeriesLineComponent, _super);
@@ -67,7 +67,10 @@ var TdChartSeriesLineComponent = /** @class */ (function (_super) {
                     providers: [
                         {
                             provide: TdSeriesComponent,
-                            useExisting: forwardRef(function () { return TdChartSeriesLineComponent; }),
+                            useExisting: forwardRef((/**
+                             * @return {?}
+                             */
+                            function () { return TdChartSeriesLineComponent; })),
                         },
                     ]
                 }] }
@@ -119,7 +122,7 @@ var TdChartSeriesLineComponent = /** @class */ (function (_super) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 var LINE_MODULE_COMPONENTS = [TdChartSeriesLineComponent];
@@ -136,21 +139,5 @@ var CovalentLineEchartsModule = /** @class */ (function () {
     return CovalentLineEchartsModule;
 }());
 
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-export { LINE_MODULE_COMPONENTS, CovalentLineEchartsModule, TdChartSeriesLineComponent };
-
+export { CovalentLineEchartsModule, LINE_MODULE_COMPONENTS, TdChartSeriesLineComponent };
 //# sourceMappingURL=covalent-echarts-line.js.map

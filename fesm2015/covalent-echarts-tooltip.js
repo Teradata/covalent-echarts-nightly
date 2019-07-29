@@ -1,11 +1,11 @@
+import { Directive, Component, ChangeDetectionStrategy, ChangeDetectorRef, ElementRef, Input, ContentChild, TemplateRef, ViewChild, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import 'echarts/lib/component/tooltip';
-import { Component, Input, Directive, TemplateRef, ChangeDetectionStrategy, ElementRef, ChangeDetectorRef, ContentChild, ViewChild, NgModule } from '@angular/core';
-import { TdChartOptionsService, assignDefined, TdSeriesComponent } from '@covalent/echarts/base';
+import { assignDefined, TdChartOptionsService, TdSeriesComponent } from '@covalent/echarts/base';
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class TdTooltipContext {
 }
@@ -66,6 +66,7 @@ class TdChartTooltipComponent {
         this._removeOption();
     }
     /**
+     * @private
      * @return {?}
      */
     _setOptions() {
@@ -95,28 +96,39 @@ class TdChartTooltipComponent {
         this._optionsService.setOption('tooltip', config);
     }
     /**
+     * @private
      * @return {?}
      */
     _removeOption() {
         this._optionsService.clearOption('tooltip');
     }
     /**
+     * @private
      * @return {?}
      */
     _formatter() {
-        return (params, ticket, callback) => {
+        return (/**
+         * @param {?} params
+         * @param {?} ticket
+         * @param {?} callback
+         * @return {?}
+         */
+        (params, ticket, callback) => {
             this._context = {
                 $implicit: params,
                 ticket: ticket,
             };
             // timeout set since we need to set the HTML at the end of the angular lifecycle when
             // the tooltip delay is more than 0
-            setTimeout(() => {
+            setTimeout((/**
+             * @return {?}
+             */
+            () => {
                 callback(ticket, ((/** @type {?} */ (this._elementRef.nativeElement))).innerHTML);
-            });
+            }));
             this._changeDetectorRef.markForCheck();
             return ((/** @type {?} */ (this._elementRef.nativeElement))).innerHTML;
-        };
+        });
     }
 }
 TdChartTooltipComponent.decorators = [
@@ -154,13 +166,13 @@ TdChartTooltipComponent.propDecorators = {
     padding: [{ type: Input, args: ['padding',] }],
     textStyle: [{ type: Input, args: ['textStyle',] }],
     extraCssText: [{ type: Input, args: ['extraCssText',] }],
-    formatterTemplate: [{ type: ContentChild, args: [TdChartTooltipFormatterDirective, { read: TemplateRef },] }],
-    fullTemplate: [{ type: ViewChild, args: ['tooltipContent',] }]
+    formatterTemplate: [{ type: ContentChild, args: [TdChartTooltipFormatterDirective, { read: TemplateRef, static: false },] }],
+    fullTemplate: [{ type: ViewChild, args: ['tooltipContent', { static: true },] }]
 };
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class TdSeriesTooltipComponent {
     /**
@@ -195,6 +207,7 @@ class TdSeriesTooltipComponent {
         this._removeOption();
     }
     /**
+     * @private
      * @return {?}
      */
     _setOptions() {
@@ -215,24 +228,35 @@ class TdSeriesTooltipComponent {
     /**
      * Formatter for tooltip
      *
+     * @private
      * @return {?}
      */
     _formatter() {
-        return (params, ticket, callback) => {
+        return (/**
+         * @param {?} params
+         * @param {?} ticket
+         * @param {?} callback
+         * @return {?}
+         */
+        (params, ticket, callback) => {
             this._context = {
                 $implicit: params,
                 ticket: ticket,
             };
             // timeout set since we need to set the HTML at the end of the angular lifecycle when
             // the tooltip delay is more than 0
-            setTimeout(() => {
+            setTimeout((/**
+             * @return {?}
+             */
+            () => {
                 callback(ticket, ((/** @type {?} */ (this._elementRef.nativeElement))).innerHTML);
-            });
+            }));
             this._changeDetectorRef.markForCheck();
             return ((/** @type {?} */ (this._elementRef.nativeElement))).innerHTML;
-        };
+        });
     }
     /**
+     * @private
      * @return {?}
      */
     _removeOption() {
@@ -262,13 +286,13 @@ TdSeriesTooltipComponent.propDecorators = {
     padding: [{ type: Input, args: ['padding',] }],
     textStyle: [{ type: Input, args: ['textStyle',] }],
     extraCssText: [{ type: Input, args: ['extraCssText',] }],
-    formatterTemplate: [{ type: ContentChild, args: [TdChartTooltipFormatterDirective, { read: TemplateRef },] }],
-    fullTemplate: [{ type: ViewChild, args: ['tooltipContent',] }]
+    formatterTemplate: [{ type: ContentChild, args: [TdChartTooltipFormatterDirective, { read: TemplateRef, static: false },] }],
+    fullTemplate: [{ type: ViewChild, args: ['tooltipContent', { static: true },] }]
 };
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 const TOOLTIP_MODULE_COMPONENTS = [
@@ -286,21 +310,5 @@ CovalentTooltipEchartsModule.decorators = [
             },] }
 ];
 
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-export { TOOLTIP_MODULE_COMPONENTS, CovalentTooltipEchartsModule, TdTooltipContext, TdChartTooltipFormatterDirective, TdChartTooltipComponent, TdSeriesTooltipComponent };
-
+export { CovalentTooltipEchartsModule, TOOLTIP_MODULE_COMPONENTS, TdChartTooltipComponent, TdChartTooltipFormatterDirective, TdSeriesTooltipComponent, TdTooltipContext };
 //# sourceMappingURL=covalent-echarts-tooltip.js.map

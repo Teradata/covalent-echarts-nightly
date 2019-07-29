@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/common'), require('echarts/lib/chart/tree'), require('@angular/core'), require('@covalent/echarts/base')) :
-    typeof define === 'function' && define.amd ? define('@covalent/echarts/tree', ['exports', '@angular/common', 'echarts/lib/chart/tree', '@angular/core', '@covalent/echarts/base'], factory) :
-    (factory((global.covalent = global.covalent || {}, global.covalent.echarts = global.covalent.echarts || {}, global.covalent.echarts.tree = {}),global.ng.common,null,global.ng.core,global.covalent.echarts.base));
-}(this, (function (exports,common,tree,core,base) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/common'), require('echarts/lib/chart/tree'), require('@covalent/echarts/base')) :
+    typeof define === 'function' && define.amd ? define('@covalent/echarts/tree', ['exports', '@angular/core', '@angular/common', 'echarts/lib/chart/tree', '@covalent/echarts/base'], factory) :
+    (global = global || self, factory((global.covalent = global.covalent || {}, global.covalent.echarts = global.covalent.echarts || {}, global.covalent.echarts.tree = {}), global.ng.core, global.ng.common, null, global.covalent.echarts.base));
+}(this, function (exports, core, common, tree, base) { 'use strict';
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.
@@ -19,14 +19,14 @@
     and limitations under the License.
     ***************************************************************************** */
     /* global Reflect, Promise */
-    var extendStatics = function (d, b) {
+
+    var extendStatics = function(d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b)
-                if (b.hasOwnProperty(p))
-                    d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
+
     function __extends(d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -35,7 +35,7 @@
 
     /**
      * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
     var TdChartSeriesTreeComponent = /** @class */ (function (_super) {
         __extends(TdChartSeriesTreeComponent, _super);
@@ -48,32 +48,32 @@
         TdChartSeriesTreeComponent.prototype.getConfig = /**
          * @return {?}
          */
-            function () {
-                return {
-                    zlevel: this.zlevel,
-                    z: this.z,
-                    left: this.left,
-                    top: this.top,
-                    right: this.right,
-                    bottom: this.bottom,
-                    width: this.width,
-                    height: this.height,
-                    layout: this.layout,
-                    orient: this.orient,
-                    symbol: this.symbol,
-                    symbolSize: this.symbolSize,
-                    symbolRotate: this.symbolRotate,
-                    symbolKeepAspect: this.symbolKeepAspect,
-                    roam: this.roam,
-                    expandAndCollapse: this.expandAndCollapse,
-                    initialTreeDepth: this.initialTreeDepth,
-                    itemStyle: this.itemStyle,
-                    label: this.label,
-                    lineStyle: this.lineStyle,
-                    leaves: this.leaves,
-                    emphasis: this.emphasis,
-                };
+        function () {
+            return {
+                zlevel: this.zlevel,
+                z: this.z,
+                left: this.left,
+                top: this.top,
+                right: this.right,
+                bottom: this.bottom,
+                width: this.width,
+                height: this.height,
+                layout: this.layout,
+                orient: this.orient,
+                symbol: this.symbol,
+                symbolSize: this.symbolSize,
+                symbolRotate: this.symbolRotate,
+                symbolKeepAspect: this.symbolKeepAspect,
+                roam: this.roam,
+                expandAndCollapse: this.expandAndCollapse,
+                initialTreeDepth: this.initialTreeDepth,
+                itemStyle: this.itemStyle,
+                label: this.label,
+                lineStyle: this.lineStyle,
+                leaves: this.leaves,
+                emphasis: this.emphasis,
             };
+        };
         TdChartSeriesTreeComponent.decorators = [
             { type: core.Component, args: [{
                         selector: 'td-chart-series[td-tree]',
@@ -82,17 +82,18 @@
                         providers: [
                             {
                                 provide: base.TdSeriesComponent,
-                                useExisting: core.forwardRef(function () { return TdChartSeriesTreeComponent; }),
+                                useExisting: core.forwardRef((/**
+                                 * @return {?}
+                                 */
+                                function () { return TdChartSeriesTreeComponent; })),
                             },
                         ]
                     }] }
         ];
         /** @nocollapse */
-        TdChartSeriesTreeComponent.ctorParameters = function () {
-            return [
-                { type: base.TdChartOptionsService }
-            ];
-        };
+        TdChartSeriesTreeComponent.ctorParameters = function () { return [
+            { type: base.TdChartOptionsService }
+        ]; };
         TdChartSeriesTreeComponent.propDecorators = {
             zlevel: [{ type: core.Input, args: ['zlevel',] }],
             z: [{ type: core.Input, args: ['z',] }],
@@ -122,7 +123,7 @@
 
     /**
      * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
     /** @type {?} */
     var TREE_MODULE_COMPONENTS = [TdChartSeriesTreeComponent];
@@ -139,27 +140,11 @@
         return CovalentTreeEchartsModule;
     }());
 
-    /**
-     * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
-     */
-
-    /**
-     * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
-     */
-
-    /**
-     * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
-     */
-
-    exports.TREE_MODULE_COMPONENTS = TREE_MODULE_COMPONENTS;
     exports.CovalentTreeEchartsModule = CovalentTreeEchartsModule;
+    exports.TREE_MODULE_COMPONENTS = TREE_MODULE_COMPONENTS;
     exports.TdChartSeriesTreeComponent = TdChartSeriesTreeComponent;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 
-})));
-
+}));
 //# sourceMappingURL=covalent-echarts-tree.umd.js.map

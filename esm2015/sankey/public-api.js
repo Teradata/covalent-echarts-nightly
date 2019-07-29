@@ -1,6 +1,6 @@
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 export { SANKEY_MODULE_COMPONENTS, CovalentSankeyEchartsModule } from './sankey.module';
 export { TdChartSeriesSankeyComponent } from './sankey.component';

@@ -1,11 +1,11 @@
+import { Component, ChangeDetectionStrategy, forwardRef, Input, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import 'echarts/lib/chart/tree';
-import { Component, Input, ChangeDetectionStrategy, forwardRef, NgModule } from '@angular/core';
-import { TdChartOptionsService, TdSeriesComponent } from '@covalent/echarts/base';
+import { TdSeriesComponent, TdChartOptionsService } from '@covalent/echarts/base';
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class TdChartSeriesTreeComponent extends TdSeriesComponent {
     /**
@@ -52,7 +52,10 @@ TdChartSeriesTreeComponent.decorators = [
                 providers: [
                     {
                         provide: TdSeriesComponent,
-                        useExisting: forwardRef(() => TdChartSeriesTreeComponent),
+                        useExisting: forwardRef((/**
+                         * @return {?}
+                         */
+                        () => TdChartSeriesTreeComponent)),
                     },
                 ]
             }] }
@@ -88,7 +91,7 @@ TdChartSeriesTreeComponent.propDecorators = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 const TREE_MODULE_COMPONENTS = [TdChartSeriesTreeComponent];
@@ -102,21 +105,5 @@ CovalentTreeEchartsModule.decorators = [
             },] }
 ];
 
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-export { TREE_MODULE_COMPONENTS, CovalentTreeEchartsModule, TdChartSeriesTreeComponent };
-
+export { CovalentTreeEchartsModule, TREE_MODULE_COMPONENTS, TdChartSeriesTreeComponent };
 //# sourceMappingURL=covalent-echarts-tree.js.map

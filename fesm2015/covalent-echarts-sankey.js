@@ -1,11 +1,11 @@
+import { Component, ChangeDetectionStrategy, forwardRef, Input, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import 'echarts/lib/chart/sankey';
-import { Component, Input, ChangeDetectionStrategy, forwardRef, NgModule } from '@angular/core';
-import { TdChartOptionsService, TdSeriesComponent } from '@covalent/echarts/base';
+import { TdSeriesComponent, TdChartOptionsService } from '@covalent/echarts/base';
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class TdChartSeriesSankeyComponent extends TdSeriesComponent {
     /**
@@ -52,7 +52,10 @@ TdChartSeriesSankeyComponent.decorators = [
                 providers: [
                     {
                         provide: TdSeriesComponent,
-                        useExisting: forwardRef(() => TdChartSeriesSankeyComponent),
+                        useExisting: forwardRef((/**
+                         * @return {?}
+                         */
+                        () => TdChartSeriesSankeyComponent)),
                     },
                 ]
             }] }
@@ -88,7 +91,7 @@ TdChartSeriesSankeyComponent.propDecorators = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 const SANKEY_MODULE_COMPONENTS = [TdChartSeriesSankeyComponent];
@@ -102,21 +105,5 @@ CovalentSankeyEchartsModule.decorators = [
             },] }
 ];
 
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-export { SANKEY_MODULE_COMPONENTS, CovalentSankeyEchartsModule, TdChartSeriesSankeyComponent };
-
+export { CovalentSankeyEchartsModule, SANKEY_MODULE_COMPONENTS, TdChartSeriesSankeyComponent };
 //# sourceMappingURL=covalent-echarts-sankey.js.map

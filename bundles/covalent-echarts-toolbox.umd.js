@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/common'), require('echarts/lib/component/toolbox'), require('@angular/core'), require('@covalent/echarts/base')) :
-    typeof define === 'function' && define.amd ? define('@covalent/echarts/toolbox', ['exports', '@angular/common', 'echarts/lib/component/toolbox', '@angular/core', '@covalent/echarts/base'], factory) :
-    (factory((global.covalent = global.covalent || {}, global.covalent.echarts = global.covalent.echarts || {}, global.covalent.echarts.toolbox = {}),global.ng.common,null,global.ng.core,global.covalent.echarts.base));
-}(this, (function (exports,common,toolbox,core,base) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/common'), require('echarts/lib/component/toolbox'), require('@covalent/echarts/base')) :
+    typeof define === 'function' && define.amd ? define('@covalent/echarts/toolbox', ['exports', '@angular/core', '@angular/common', 'echarts/lib/component/toolbox', '@covalent/echarts/base'], factory) :
+    (global = global || self, factory((global.covalent = global.covalent || {}, global.covalent.echarts = global.covalent.echarts || {}, global.covalent.echarts.toolbox = {}), global.ng.core, global.ng.common, null, global.covalent.echarts.base));
+}(this, function (exports, core, common, toolbox, base) { 'use strict';
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.
@@ -18,13 +18,12 @@
     See the Apache Version 2.0 License for specific language governing permissions
     and limitations under the License.
     ***************************************************************************** */
-    var __assign = function () {
+
+    var __assign = function() {
         __assign = Object.assign || function __assign(t) {
             for (var s, i = 1, n = arguments.length; i < n; i++) {
                 s = arguments[i];
-                for (var p in s)
-                    if (Object.prototype.hasOwnProperty.call(s, p))
-                        t[p] = s[p];
+                for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
             }
             return t;
         };
@@ -33,7 +32,7 @@
 
     /**
      * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
     var TdChartViewDataFormatterDirective = /** @class */ (function () {
         function TdChartViewDataFormatterDirective() {
@@ -68,83 +67,94 @@
         TdChartToolboxComponent.prototype.ngOnChanges = /**
          * @return {?}
          */
-            function () {
-                this._setOptions();
-            };
+        function () {
+            this._setOptions();
+        };
         /**
          * @return {?}
          */
         TdChartToolboxComponent.prototype.ngOnDestroy = /**
          * @return {?}
          */
-            function () {
-                this._removeOption();
-            };
+        function () {
+            this._removeOption();
+        };
         /**
+         * @private
          * @return {?}
          */
         TdChartToolboxComponent.prototype._setOptions = /**
+         * @private
          * @return {?}
          */
-            function () {
-                this._checkFormatterTemplate();
-                /** @type {?} */
-                var config = base.assignDefined(this._state, {
-                    show: this.show,
-                    name: this.trigger,
-                    orient: this.orient,
-                    itemSize: this.itemSize,
-                    itemGap: this.itemGap,
-                    showTitle: this.showTitle,
-                    label: this.label,
-                    feature: this.feature,
-                    iconStyle: this.iconStyle,
-                    zlevel: this.zlevel,
-                    z: this.z,
-                    transitionDuration: this.transitionDuration,
-                    left: this.left,
-                    top: this.top,
-                    right: this.right,
-                    bottom: this.bottom,
-                    width: this.width,
-                    height: this.height,
-                }, this.config ? this.config : {});
-                // set toolbox configuration in parent chart and render new configurations
-                this._optionsService.setOption('toolbox', config);
-            };
+        function () {
+            this._checkFormatterTemplate();
+            /** @type {?} */
+            var config = base.assignDefined(this._state, {
+                show: this.show,
+                name: this.trigger,
+                orient: this.orient,
+                itemSize: this.itemSize,
+                itemGap: this.itemGap,
+                showTitle: this.showTitle,
+                label: this.label,
+                feature: this.feature,
+                iconStyle: this.iconStyle,
+                zlevel: this.zlevel,
+                z: this.z,
+                transitionDuration: this.transitionDuration,
+                left: this.left,
+                top: this.top,
+                right: this.right,
+                bottom: this.bottom,
+                width: this.width,
+                height: this.height,
+            }, this.config ? this.config : {});
+            // set toolbox configuration in parent chart and render new configurations
+            this._optionsService.setOption('toolbox', config);
+        };
         /**
+         * @private
          * @return {?}
          */
         TdChartToolboxComponent.prototype._removeOption = /**
+         * @private
          * @return {?}
          */
-            function () {
-                this._optionsService.clearOption('toolbox');
-            };
+        function () {
+            this._optionsService.clearOption('toolbox');
+        };
         /**
+         * @private
          * @return {?}
          */
         TdChartToolboxComponent.prototype._checkFormatterTemplate = /**
+         * @private
          * @return {?}
          */
-            function () {
-                if (this.formatterTemplate) {
-                    this.feature = __assign({}, this.feature, { dataView: __assign({}, this.feature.dataView, { optionToContent: this._optionToContentFormatter() }) });
-                }
-            };
+        function () {
+            if (this.formatterTemplate) {
+                this.feature = __assign({}, this.feature, { dataView: __assign({}, this.feature.dataView, { optionToContent: this._optionToContentFormatter() }) });
+            }
+        };
         /**
+         * @private
          * @return {?}
          */
         TdChartToolboxComponent.prototype._optionToContentFormatter = /**
+         * @private
          * @return {?}
          */
+        function () {
+            var _this = this;
+            return (/**
+             * @return {?}
+             */
             function () {
-                var _this = this;
-                return function () {
-                    _this._changeDetectorRef.markForCheck();
-                    return (( /** @type {?} */(_this._elementRef.nativeElement))).innerHTML;
-                };
-            };
+                _this._changeDetectorRef.markForCheck();
+                return ((/** @type {?} */ (_this._elementRef.nativeElement))).innerHTML;
+            });
+        };
         TdChartToolboxComponent.decorators = [
             { type: core.Component, args: [{
                         selector: 'td-chart-toolbox',
@@ -153,13 +163,11 @@
                     }] }
         ];
         /** @nocollapse */
-        TdChartToolboxComponent.ctorParameters = function () {
-            return [
-                { type: core.ChangeDetectorRef },
-                { type: core.ElementRef },
-                { type: base.TdChartOptionsService }
-            ];
-        };
+        TdChartToolboxComponent.ctorParameters = function () { return [
+            { type: core.ChangeDetectorRef },
+            { type: core.ElementRef },
+            { type: base.TdChartOptionsService }
+        ]; };
         TdChartToolboxComponent.propDecorators = {
             config: [{ type: core.Input, args: ['config',] }],
             show: [{ type: core.Input, args: ['show',] }],
@@ -180,15 +188,15 @@
             bottom: [{ type: core.Input, args: ['bottom',] }],
             width: [{ type: core.Input, args: ['width',] }],
             height: [{ type: core.Input, args: ['height',] }],
-            formatterTemplate: [{ type: core.ContentChild, args: [TdChartViewDataFormatterDirective, { read: core.TemplateRef },] }],
-            fullTemplate: [{ type: core.ViewChild, args: ['toolboxContent',] }]
+            formatterTemplate: [{ type: core.ContentChild, args: [TdChartViewDataFormatterDirective, { read: core.TemplateRef, static: false },] }],
+            fullTemplate: [{ type: core.ViewChild, args: ['toolboxContent', { static: true },] }]
         };
         return TdChartToolboxComponent;
     }());
 
     /**
      * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
     /** @type {?} */
     var TOOLBOX_MODULE_COMPONENTS = [TdChartToolboxComponent, TdChartViewDataFormatterDirective];
@@ -205,28 +213,12 @@
         return CovalentToolboxEchartsModule;
     }());
 
-    /**
-     * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
-     */
-
-    /**
-     * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
-     */
-
-    /**
-     * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
-     */
-
-    exports.TOOLBOX_MODULE_COMPONENTS = TOOLBOX_MODULE_COMPONENTS;
     exports.CovalentToolboxEchartsModule = CovalentToolboxEchartsModule;
-    exports.TdChartViewDataFormatterDirective = TdChartViewDataFormatterDirective;
+    exports.TOOLBOX_MODULE_COMPONENTS = TOOLBOX_MODULE_COMPONENTS;
     exports.TdChartToolboxComponent = TdChartToolboxComponent;
+    exports.TdChartViewDataFormatterDirective = TdChartViewDataFormatterDirective;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 
-})));
-
+}));
 //# sourceMappingURL=covalent-echarts-toolbox.umd.js.map

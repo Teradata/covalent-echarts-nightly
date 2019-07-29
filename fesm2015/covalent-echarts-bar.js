@@ -1,11 +1,11 @@
+import { Component, ChangeDetectionStrategy, forwardRef, Input, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import 'echarts/lib/chart/bar';
-import { Component, Input, ChangeDetectionStrategy, forwardRef, NgModule } from '@angular/core';
-import { TdChartOptionsService, TdSeriesComponent } from '@covalent/echarts/base';
+import { TdSeriesComponent, TdChartOptionsService } from '@covalent/echarts/base';
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class TdChartSeriesBarComponent extends TdSeriesComponent {
     /**
@@ -58,7 +58,10 @@ TdChartSeriesBarComponent.decorators = [
                 providers: [
                     {
                         provide: TdSeriesComponent,
-                        useExisting: forwardRef(() => TdChartSeriesBarComponent),
+                        useExisting: forwardRef((/**
+                         * @return {?}
+                         */
+                        () => TdChartSeriesBarComponent)),
                     },
                 ]
             }] }
@@ -100,7 +103,7 @@ TdChartSeriesBarComponent.propDecorators = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 const BAR_MODULE_COMPONENTS = [TdChartSeriesBarComponent];
@@ -114,21 +117,5 @@ CovalentBarEchartsModule.decorators = [
             },] }
 ];
 
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
 export { BAR_MODULE_COMPONENTS, CovalentBarEchartsModule, TdChartSeriesBarComponent };
-
 //# sourceMappingURL=covalent-echarts-bar.js.map

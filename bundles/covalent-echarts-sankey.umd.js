@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/common'), require('echarts/lib/chart/sankey'), require('@angular/core'), require('@covalent/echarts/base')) :
-    typeof define === 'function' && define.amd ? define('@covalent/echarts/sankey', ['exports', '@angular/common', 'echarts/lib/chart/sankey', '@angular/core', '@covalent/echarts/base'], factory) :
-    (factory((global.covalent = global.covalent || {}, global.covalent.echarts = global.covalent.echarts || {}, global.covalent.echarts.sankey = {}),global.ng.common,null,global.ng.core,global.covalent.echarts.base));
-}(this, (function (exports,common,sankey,core,base) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/common'), require('echarts/lib/chart/sankey'), require('@covalent/echarts/base')) :
+    typeof define === 'function' && define.amd ? define('@covalent/echarts/sankey', ['exports', '@angular/core', '@angular/common', 'echarts/lib/chart/sankey', '@covalent/echarts/base'], factory) :
+    (global = global || self, factory((global.covalent = global.covalent || {}, global.covalent.echarts = global.covalent.echarts || {}, global.covalent.echarts.sankey = {}), global.ng.core, global.ng.common, null, global.covalent.echarts.base));
+}(this, function (exports, core, common, sankey, base) { 'use strict';
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.
@@ -19,14 +19,14 @@
     and limitations under the License.
     ***************************************************************************** */
     /* global Reflect, Promise */
-    var extendStatics = function (d, b) {
+
+    var extendStatics = function(d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b)
-                if (b.hasOwnProperty(p))
-                    d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
+
     function __extends(d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -35,7 +35,7 @@
 
     /**
      * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
     var TdChartSeriesSankeyComponent = /** @class */ (function (_super) {
         __extends(TdChartSeriesSankeyComponent, _super);
@@ -48,32 +48,32 @@
         TdChartSeriesSankeyComponent.prototype.getConfig = /**
          * @return {?}
          */
-            function () {
-                return {
-                    zlevel: this.zlevel,
-                    z: this.z,
-                    left: this.left,
-                    top: this.top,
-                    right: this.right,
-                    bottom: this.bottom,
-                    width: this.width,
-                    height: this.height,
-                    nodeWidth: this.nodeWidth,
-                    nodeGap: this.nodeGap,
-                    layoutIterations: this.layoutIterations,
-                    orient: this.orient,
-                    draggable: this.draggable,
-                    focusNodeAdjacency: this.focusNodeAdjacency,
-                    label: this.label,
-                    itemStyle: this.itemStyle,
-                    lineStyle: this.lineStyle,
-                    emphasis: this.emphasis,
-                    nodes: this.nodes,
-                    links: this.links,
-                    edges: this.edges,
-                    silent: this.silent,
-                };
+        function () {
+            return {
+                zlevel: this.zlevel,
+                z: this.z,
+                left: this.left,
+                top: this.top,
+                right: this.right,
+                bottom: this.bottom,
+                width: this.width,
+                height: this.height,
+                nodeWidth: this.nodeWidth,
+                nodeGap: this.nodeGap,
+                layoutIterations: this.layoutIterations,
+                orient: this.orient,
+                draggable: this.draggable,
+                focusNodeAdjacency: this.focusNodeAdjacency,
+                label: this.label,
+                itemStyle: this.itemStyle,
+                lineStyle: this.lineStyle,
+                emphasis: this.emphasis,
+                nodes: this.nodes,
+                links: this.links,
+                edges: this.edges,
+                silent: this.silent,
             };
+        };
         TdChartSeriesSankeyComponent.decorators = [
             { type: core.Component, args: [{
                         selector: 'td-chart-series[td-sankey]',
@@ -82,17 +82,18 @@
                         providers: [
                             {
                                 provide: base.TdSeriesComponent,
-                                useExisting: core.forwardRef(function () { return TdChartSeriesSankeyComponent; }),
+                                useExisting: core.forwardRef((/**
+                                 * @return {?}
+                                 */
+                                function () { return TdChartSeriesSankeyComponent; })),
                             },
                         ]
                     }] }
         ];
         /** @nocollapse */
-        TdChartSeriesSankeyComponent.ctorParameters = function () {
-            return [
-                { type: base.TdChartOptionsService }
-            ];
-        };
+        TdChartSeriesSankeyComponent.ctorParameters = function () { return [
+            { type: base.TdChartOptionsService }
+        ]; };
         TdChartSeriesSankeyComponent.propDecorators = {
             zlevel: [{ type: core.Input, args: ['zlevel',] }],
             z: [{ type: core.Input, args: ['z',] }],
@@ -122,7 +123,7 @@
 
     /**
      * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
     /** @type {?} */
     var SANKEY_MODULE_COMPONENTS = [TdChartSeriesSankeyComponent];
@@ -139,27 +140,11 @@
         return CovalentSankeyEchartsModule;
     }());
 
-    /**
-     * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
-     */
-
-    /**
-     * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
-     */
-
-    /**
-     * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
-     */
-
-    exports.SANKEY_MODULE_COMPONENTS = SANKEY_MODULE_COMPONENTS;
     exports.CovalentSankeyEchartsModule = CovalentSankeyEchartsModule;
+    exports.SANKEY_MODULE_COMPONENTS = SANKEY_MODULE_COMPONENTS;
     exports.TdChartSeriesSankeyComponent = TdChartSeriesSankeyComponent;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 
-})));
-
+}));
 //# sourceMappingURL=covalent-echarts-sankey.umd.js.map

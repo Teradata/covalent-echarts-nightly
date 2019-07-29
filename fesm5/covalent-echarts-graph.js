@@ -1,12 +1,12 @@
+import { Component, ChangeDetectionStrategy, forwardRef, Input, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import 'echarts/lib/chart/graph';
 import { __extends } from 'tslib';
-import { Component, Input, ChangeDetectionStrategy, forwardRef, NgModule } from '@angular/core';
-import { TdChartOptionsService, TdSeriesComponent } from '@covalent/echarts/base';
+import { TdSeriesComponent, TdChartOptionsService } from '@covalent/echarts/base';
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var TdChartSeriesGraphComponent = /** @class */ (function (_super) {
     __extends(TdChartSeriesGraphComponent, _super);
@@ -75,7 +75,10 @@ var TdChartSeriesGraphComponent = /** @class */ (function (_super) {
                     providers: [
                         {
                             provide: TdSeriesComponent,
-                            useExisting: forwardRef(function () { return TdChartSeriesGraphComponent; }),
+                            useExisting: forwardRef((/**
+                             * @return {?}
+                             */
+                            function () { return TdChartSeriesGraphComponent; })),
                         },
                     ]
                 }] }
@@ -136,7 +139,7 @@ var TdChartSeriesGraphComponent = /** @class */ (function (_super) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 var GRAPH_MODULE_COMPONENTS = [TdChartSeriesGraphComponent];
@@ -153,21 +156,5 @@ var CovalentGraphEchartsModule = /** @class */ (function () {
     return CovalentGraphEchartsModule;
 }());
 
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-export { GRAPH_MODULE_COMPONENTS, CovalentGraphEchartsModule, TdChartSeriesGraphComponent };
-
+export { CovalentGraphEchartsModule, GRAPH_MODULE_COMPONENTS, TdChartSeriesGraphComponent };
 //# sourceMappingURL=covalent-echarts-graph.js.map

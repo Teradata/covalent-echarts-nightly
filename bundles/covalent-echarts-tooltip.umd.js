@@ -1,12 +1,12 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/common'), require('echarts/lib/component/tooltip'), require('@angular/core'), require('@covalent/echarts/base')) :
-    typeof define === 'function' && define.amd ? define('@covalent/echarts/tooltip', ['exports', '@angular/common', 'echarts/lib/component/tooltip', '@angular/core', '@covalent/echarts/base'], factory) :
-    (factory((global.covalent = global.covalent || {}, global.covalent.echarts = global.covalent.echarts || {}, global.covalent.echarts.tooltip = {}),global.ng.common,null,global.ng.core,global.covalent.echarts.base));
-}(this, (function (exports,common,tooltip,core,base) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/common'), require('echarts/lib/component/tooltip'), require('@covalent/echarts/base')) :
+    typeof define === 'function' && define.amd ? define('@covalent/echarts/tooltip', ['exports', '@angular/core', '@angular/common', 'echarts/lib/component/tooltip', '@covalent/echarts/base'], factory) :
+    (global = global || self, factory((global.covalent = global.covalent || {}, global.covalent.echarts = global.covalent.echarts || {}, global.covalent.echarts.tooltip = {}), global.ng.core, global.ng.common, null, global.covalent.echarts.base));
+}(this, function (exports, core, common, tooltip, base) { 'use strict';
 
     /**
      * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
     var TdTooltipContext = /** @class */ (function () {
         function TdTooltipContext() {
@@ -61,81 +61,96 @@
         TdChartTooltipComponent.prototype.ngOnChanges = /**
          * @return {?}
          */
-            function () {
-                this._setOptions();
-            };
+        function () {
+            this._setOptions();
+        };
         /**
          * @return {?}
          */
         TdChartTooltipComponent.prototype.ngOnDestroy = /**
          * @return {?}
          */
-            function () {
-                this._removeOption();
-            };
+        function () {
+            this._removeOption();
+        };
         /**
+         * @private
          * @return {?}
          */
         TdChartTooltipComponent.prototype._setOptions = /**
+         * @private
          * @return {?}
          */
-            function () {
-                /** @type {?} */
-                var config = base.assignDefined(this._state, {
-                    show: this.show,
-                    trigger: this.trigger,
-                    axisPointer: this.axisPointer,
-                    showContent: this.showContent,
-                    alwaysShowContent: this.alwaysShowContent,
-                    triggerOn: this.triggerOn,
-                    showDelay: this.showDelay,
-                    hideDelay: this.hideDelay,
-                    enterable: this.enterable,
-                    confine: this.confine,
-                    transitionDuration: this.transitionDuration,
-                    position: this.position,
-                    formatter: this.formatter ? this.formatter : this.formatterTemplate ? this._formatter() : undefined,
-                    backgroundColor: this.backgroundColor,
-                    borderColor: this.borderColor,
-                    borderWidth: this.borderWidth,
-                    padding: this.padding,
-                    textStyle: this.textStyle,
-                    extraCssText: this.extraCssText,
-                }, this.config ? this.config : {});
-                // set tooltip configuration in parent chart and render new configurations
-                this._optionsService.setOption('tooltip', config);
-            };
+        function () {
+            /** @type {?} */
+            var config = base.assignDefined(this._state, {
+                show: this.show,
+                trigger: this.trigger,
+                axisPointer: this.axisPointer,
+                showContent: this.showContent,
+                alwaysShowContent: this.alwaysShowContent,
+                triggerOn: this.triggerOn,
+                showDelay: this.showDelay,
+                hideDelay: this.hideDelay,
+                enterable: this.enterable,
+                confine: this.confine,
+                transitionDuration: this.transitionDuration,
+                position: this.position,
+                formatter: this.formatter ? this.formatter : this.formatterTemplate ? this._formatter() : undefined,
+                backgroundColor: this.backgroundColor,
+                borderColor: this.borderColor,
+                borderWidth: this.borderWidth,
+                padding: this.padding,
+                textStyle: this.textStyle,
+                extraCssText: this.extraCssText,
+            }, this.config ? this.config : {});
+            // set tooltip configuration in parent chart and render new configurations
+            this._optionsService.setOption('tooltip', config);
+        };
         /**
+         * @private
          * @return {?}
          */
         TdChartTooltipComponent.prototype._removeOption = /**
+         * @private
          * @return {?}
          */
-            function () {
-                this._optionsService.clearOption('tooltip');
-            };
+        function () {
+            this._optionsService.clearOption('tooltip');
+        };
         /**
+         * @private
          * @return {?}
          */
         TdChartTooltipComponent.prototype._formatter = /**
+         * @private
          * @return {?}
          */
-            function () {
-                var _this = this;
-                return function (params, ticket, callback) {
-                    _this._context = {
-                        $implicit: params,
-                        ticket: ticket,
-                    };
-                    // timeout set since we need to set the HTML at the end of the angular lifecycle when
-                    // the tooltip delay is more than 0
-                    setTimeout(function () {
-                        callback(ticket, (( /** @type {?} */(_this._elementRef.nativeElement))).innerHTML);
-                    });
-                    _this._changeDetectorRef.markForCheck();
-                    return (( /** @type {?} */(_this._elementRef.nativeElement))).innerHTML;
+        function () {
+            var _this = this;
+            return (/**
+             * @param {?} params
+             * @param {?} ticket
+             * @param {?} callback
+             * @return {?}
+             */
+            function (params, ticket, callback) {
+                _this._context = {
+                    $implicit: params,
+                    ticket: ticket,
                 };
-            };
+                // timeout set since we need to set the HTML at the end of the angular lifecycle when
+                // the tooltip delay is more than 0
+                setTimeout((/**
+                 * @return {?}
+                 */
+                function () {
+                    callback(ticket, ((/** @type {?} */ (_this._elementRef.nativeElement))).innerHTML);
+                }));
+                _this._changeDetectorRef.markForCheck();
+                return ((/** @type {?} */ (_this._elementRef.nativeElement))).innerHTML;
+            });
+        };
         TdChartTooltipComponent.decorators = [
             { type: core.Component, args: [{
                         selector: 'td-chart-tooltip',
@@ -144,13 +159,11 @@
                     }] }
         ];
         /** @nocollapse */
-        TdChartTooltipComponent.ctorParameters = function () {
-            return [
-                { type: core.ChangeDetectorRef },
-                { type: core.ElementRef },
-                { type: base.TdChartOptionsService }
-            ];
-        };
+        TdChartTooltipComponent.ctorParameters = function () { return [
+            { type: core.ChangeDetectorRef },
+            { type: core.ElementRef },
+            { type: base.TdChartOptionsService }
+        ]; };
         TdChartTooltipComponent.propDecorators = {
             config: [{ type: core.Input, args: ['config',] }],
             show: [{ type: core.Input, args: ['show',] }],
@@ -173,15 +186,15 @@
             padding: [{ type: core.Input, args: ['padding',] }],
             textStyle: [{ type: core.Input, args: ['textStyle',] }],
             extraCssText: [{ type: core.Input, args: ['extraCssText',] }],
-            formatterTemplate: [{ type: core.ContentChild, args: [TdChartTooltipFormatterDirective, { read: core.TemplateRef },] }],
-            fullTemplate: [{ type: core.ViewChild, args: ['tooltipContent',] }]
+            formatterTemplate: [{ type: core.ContentChild, args: [TdChartTooltipFormatterDirective, { read: core.TemplateRef, static: false },] }],
+            fullTemplate: [{ type: core.ViewChild, args: ['tooltipContent', { static: true },] }]
         };
         return TdChartTooltipComponent;
     }());
 
     /**
      * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
     var TdSeriesTooltipComponent = /** @class */ (function () {
         function TdSeriesTooltipComponent(_changeDetectorRef, _elementRef, _seriesComponent) {
@@ -204,39 +217,41 @@
         TdSeriesTooltipComponent.prototype.ngOnChanges = /**
          * @return {?}
          */
-            function () {
-                this._setOptions();
-            };
+        function () {
+            this._setOptions();
+        };
         /**
          * @return {?}
          */
         TdSeriesTooltipComponent.prototype.ngOnDestroy = /**
          * @return {?}
          */
-            function () {
-                this._removeOption();
-            };
+        function () {
+            this._removeOption();
+        };
         /**
+         * @private
          * @return {?}
          */
         TdSeriesTooltipComponent.prototype._setOptions = /**
+         * @private
          * @return {?}
          */
-            function () {
-                /** @type {?} */
-                var config = base.assignDefined(this._state, {
-                    position: this.position,
-                    backgroundColor: this.backgroundColor,
-                    borderColor: this.borderColor,
-                    borderWidth: this.borderWidth,
-                    padding: this.padding,
-                    textStyle: this.textStyle,
-                    extraCssText: this.extraCssText,
-                    formatter: this.formatter ? this.formatter : this.formatterTemplate ? this._formatter() : undefined,
-                }, this.config ? this.config : {});
-                // set series tooltip configuration in parent chart and render new configurations
-                this._seriesComponent.setStateOption('tooltip', config);
-            };
+        function () {
+            /** @type {?} */
+            var config = base.assignDefined(this._state, {
+                position: this.position,
+                backgroundColor: this.backgroundColor,
+                borderColor: this.borderColor,
+                borderWidth: this.borderWidth,
+                padding: this.padding,
+                textStyle: this.textStyle,
+                extraCssText: this.extraCssText,
+                formatter: this.formatter ? this.formatter : this.formatterTemplate ? this._formatter() : undefined,
+            }, this.config ? this.config : {});
+            // set series tooltip configuration in parent chart and render new configurations
+            this._seriesComponent.setStateOption('tooltip', config);
+        };
         /**
          * Formatter for tooltip
          *
@@ -244,38 +259,51 @@
         /**
          * Formatter for tooltip
          *
+         * @private
          * @return {?}
          */
         TdSeriesTooltipComponent.prototype._formatter = /**
          * Formatter for tooltip
          *
+         * @private
          * @return {?}
          */
-            function () {
-                var _this = this;
-                return function (params, ticket, callback) {
-                    _this._context = {
-                        $implicit: params,
-                        ticket: ticket,
-                    };
-                    // timeout set since we need to set the HTML at the end of the angular lifecycle when
-                    // the tooltip delay is more than 0
-                    setTimeout(function () {
-                        callback(ticket, (( /** @type {?} */(_this._elementRef.nativeElement))).innerHTML);
-                    });
-                    _this._changeDetectorRef.markForCheck();
-                    return (( /** @type {?} */(_this._elementRef.nativeElement))).innerHTML;
+        function () {
+            var _this = this;
+            return (/**
+             * @param {?} params
+             * @param {?} ticket
+             * @param {?} callback
+             * @return {?}
+             */
+            function (params, ticket, callback) {
+                _this._context = {
+                    $implicit: params,
+                    ticket: ticket,
                 };
-            };
+                // timeout set since we need to set the HTML at the end of the angular lifecycle when
+                // the tooltip delay is more than 0
+                setTimeout((/**
+                 * @return {?}
+                 */
+                function () {
+                    callback(ticket, ((/** @type {?} */ (_this._elementRef.nativeElement))).innerHTML);
+                }));
+                _this._changeDetectorRef.markForCheck();
+                return ((/** @type {?} */ (_this._elementRef.nativeElement))).innerHTML;
+            });
+        };
         /**
+         * @private
          * @return {?}
          */
         TdSeriesTooltipComponent.prototype._removeOption = /**
+         * @private
          * @return {?}
          */
-            function () {
-                this._seriesComponent.removeStateOption('tooltip');
-            };
+        function () {
+            this._seriesComponent.removeStateOption('tooltip');
+        };
         TdSeriesTooltipComponent.decorators = [
             { type: core.Component, args: [{
                         selector: 'td-chart-series-tooltip',
@@ -284,13 +312,11 @@
                     }] }
         ];
         /** @nocollapse */
-        TdSeriesTooltipComponent.ctorParameters = function () {
-            return [
-                { type: core.ChangeDetectorRef },
-                { type: core.ElementRef },
-                { type: base.TdSeriesComponent }
-            ];
-        };
+        TdSeriesTooltipComponent.ctorParameters = function () { return [
+            { type: core.ChangeDetectorRef },
+            { type: core.ElementRef },
+            { type: base.TdSeriesComponent }
+        ]; };
         TdSeriesTooltipComponent.propDecorators = {
             config: [{ type: core.Input, args: ['config',] }],
             formatter: [{ type: core.Input, args: ['formatter',] }],
@@ -301,15 +327,15 @@
             padding: [{ type: core.Input, args: ['padding',] }],
             textStyle: [{ type: core.Input, args: ['textStyle',] }],
             extraCssText: [{ type: core.Input, args: ['extraCssText',] }],
-            formatterTemplate: [{ type: core.ContentChild, args: [TdChartTooltipFormatterDirective, { read: core.TemplateRef },] }],
-            fullTemplate: [{ type: core.ViewChild, args: ['tooltipContent',] }]
+            formatterTemplate: [{ type: core.ContentChild, args: [TdChartTooltipFormatterDirective, { read: core.TemplateRef, static: false },] }],
+            fullTemplate: [{ type: core.ViewChild, args: ['tooltipContent', { static: true },] }]
         };
         return TdSeriesTooltipComponent;
     }());
 
     /**
      * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
     /** @type {?} */
     var TOOLTIP_MODULE_COMPONENTS = [
@@ -330,30 +356,14 @@
         return CovalentTooltipEchartsModule;
     }());
 
-    /**
-     * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
-     */
-
-    /**
-     * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
-     */
-
-    /**
-     * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
-     */
-
-    exports.TOOLTIP_MODULE_COMPONENTS = TOOLTIP_MODULE_COMPONENTS;
     exports.CovalentTooltipEchartsModule = CovalentTooltipEchartsModule;
-    exports.TdTooltipContext = TdTooltipContext;
-    exports.TdChartTooltipFormatterDirective = TdChartTooltipFormatterDirective;
+    exports.TOOLTIP_MODULE_COMPONENTS = TOOLTIP_MODULE_COMPONENTS;
     exports.TdChartTooltipComponent = TdChartTooltipComponent;
+    exports.TdChartTooltipFormatterDirective = TdChartTooltipFormatterDirective;
     exports.TdSeriesTooltipComponent = TdSeriesTooltipComponent;
+    exports.TdTooltipContext = TdTooltipContext;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 
-})));
-
+}));
 //# sourceMappingURL=covalent-echarts-tooltip.umd.js.map

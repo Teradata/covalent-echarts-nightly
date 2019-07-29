@@ -1,14 +1,14 @@
+import { Injectable, Optional, SkipSelf, Component, ChangeDetectionStrategy, ChangeDetectorRef, ElementRef, Input, Output, EventEmitter, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { debounceTime, distinctUntilChanged, takeUntil, tap } from 'rxjs/operators';
-import { BehaviorSubject, Subject, fromEvent, merge, timer } from 'rxjs';
-import { init, connect, dispose, registerTheme } from 'echarts/lib/echarts';
-import { __extends, __values } from 'tslib';
+import { BehaviorSubject, fromEvent, merge, timer, Subject } from 'rxjs';
+import { takeUntil, debounceTime, distinctUntilChanged, tap } from 'rxjs/operators';
+import { registerTheme as registerTheme$1, init, connect, dispose } from 'echarts/lib/echarts';
+import { __values, __extends } from 'tslib';
 import 'zrender/lib/svg/svg';
-import { Injectable, Optional, SkipSelf, Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ElementRef, ChangeDetectorRef, NgModule } from '@angular/core';
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var TdChartOptionsService = /** @class */ (function () {
     function TdChartOptionsService() {
@@ -135,7 +135,7 @@ var CHART_PROVIDER = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * @param {?} target
@@ -143,11 +143,11 @@ var CHART_PROVIDER = {
  * @return {?}
  */
 function assignDefined(target) {
+    var e_1, _a, e_2, _b, e_3, _c;
     var sources = [];
     for (var _i = 1; _i < arguments.length; _i++) {
         sources[_i - 1] = arguments[_i];
     }
-    var e_1, _a, e_2, _b, e_3, _c;
     /** @type {?} */
     var keys = new Set();
     try {
@@ -206,7 +206,7 @@ function assignDefined(target) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /* tslint:disable */
 var aquaSplash = {
@@ -670,7 +670,7 @@ var aquaSplash = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /* tslint:disable */
 var californiaCoast = {
@@ -1134,7 +1134,7 @@ var californiaCoast = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /* tslint:disable */
 var hawaiianSunrise = {
@@ -1598,7 +1598,7 @@ var hawaiianSunrise = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /* tslint:disable */
 var passionFlower = {
@@ -2062,7 +2062,7 @@ var passionFlower = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /* tslint:disable */
 var razzleberryPie = {
@@ -2526,7 +2526,7 @@ var razzleberryPie = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /* tslint:disable */
 var teradataClassic = {
@@ -2990,7 +2990,7 @@ var teradataClassic = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /* tslint:disable */
 var teradataDefault = {
@@ -3454,7 +3454,7 @@ var teradataDefault = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /* tslint:disable */
 var urbanSunrise = {
@@ -3918,7 +3918,7 @@ var urbanSunrise = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /* tslint:disable */
 var volcanicEruption = {
@@ -4382,7 +4382,7 @@ var volcanicEruption = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * Function used to register a theme into echarts
@@ -4392,8 +4392,8 @@ var volcanicEruption = {
  * @param {?} theme
  * @return {?}
  */
-function registerTheme$1(themeName, theme) {
-    registerTheme(themeName, theme);
+function registerTheme(themeName, theme) {
+    registerTheme$1(themeName, theme);
 }
 /**
  * Function to register all default themes
@@ -4401,15 +4401,15 @@ function registerTheme$1(themeName, theme) {
  * @return {?}
  */
 function registerDefaultThemes() {
-    registerTheme$1('aqua-splash', aquaSplash);
-    registerTheme$1('california-coast', californiaCoast);
-    registerTheme$1('hawaiian-sunrise', hawaiianSunrise);
-    registerTheme$1('passion-flower', passionFlower);
-    registerTheme$1('razzleberry-pie', razzleberryPie);
-    registerTheme$1('teradata-classic', teradataClassic);
-    registerTheme$1('teradata-default', teradataDefault);
-    registerTheme$1('urban-sunrise', urbanSunrise);
-    registerTheme$1('volcanic-eruption', volcanicEruption);
+    registerTheme('aqua-splash', aquaSplash);
+    registerTheme('california-coast', californiaCoast);
+    registerTheme('hawaiian-sunrise', hawaiianSunrise);
+    registerTheme('passion-flower', passionFlower);
+    registerTheme('razzleberry-pie', razzleberryPie);
+    registerTheme('teradata-classic', teradataClassic);
+    registerTheme('teradata-default', teradataDefault);
+    registerTheme('urban-sunrise', urbanSunrise);
+    registerTheme('volcanic-eruption', volcanicEruption);
 }
 /**
  * Returns all the theme names bundled with covalent echarts.
@@ -4431,12 +4431,7 @@ function getThemes() {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var TdChartComponent = /** @class */ (function () {
     function TdChartComponent(_changeDetectorRef, _elementRef, _optionsService) {
@@ -4551,9 +4546,11 @@ var TdChartComponent = /** @class */ (function () {
         }
     };
     /**
+     * @private
      * @return {?}
      */
     TdChartComponent.prototype._initializeChart = /**
+     * @private
      * @return {?}
      */
     function () {
@@ -4563,39 +4560,67 @@ var TdChartComponent = /** @class */ (function () {
         });
         fromEvent(this._instance, 'click')
             .pipe(takeUntil(this._destroy))
-            .subscribe(function (params) {
+            .subscribe((/**
+         * @param {?} params
+         * @return {?}
+         */
+        function (params) {
             _this.chartClick.next(params);
-        });
+        }));
         fromEvent(this._instance, 'dblclick')
             .pipe(takeUntil(this._destroy))
-            .subscribe(function (params) {
+            .subscribe((/**
+         * @param {?} params
+         * @return {?}
+         */
+        function (params) {
             _this.chartDblclick.next(params);
-        });
+        }));
         fromEvent(this._instance, 'contextmenu')
             .pipe(takeUntil(this._destroy))
-            .subscribe(function (params) {
+            .subscribe((/**
+         * @param {?} params
+         * @return {?}
+         */
+        function (params) {
             _this.chartContextmenu.next(params);
-        });
+        }));
         fromEvent(this._instance, 'magictypechanged')
             .pipe(takeUntil(this._destroy))
-            .subscribe(function (params) {
+            .subscribe((/**
+         * @param {?} params
+         * @return {?}
+         */
+        function (params) {
             _this.magicTypeChanged.next(params);
-        });
+        }));
         fromEvent(this._instance, 'dataviewchanged')
             .pipe(takeUntil(this._destroy))
-            .subscribe(function (params) {
+            .subscribe((/**
+         * @param {?} params
+         * @return {?}
+         */
+        function (params) {
             _this.dataViewChanged.next(params);
-        });
+        }));
         fromEvent(this._instance, 'datazoom')
             .pipe(takeUntil(this._destroy))
-            .subscribe(function (params) {
+            .subscribe((/**
+         * @param {?} params
+         * @return {?}
+         */
+        function (params) {
             _this.datazoom.next(params);
-        });
+        }));
         fromEvent(this._instance, 'restore')
             .pipe(takeUntil(this._destroy))
-            .subscribe(function (params) {
+            .subscribe((/**
+         * @param {?} params
+         * @return {?}
+         */
+        function (params) {
             _this.restore.next(params);
-        });
+        }));
         if (this.group) {
             this._instance.group = this.group;
             connect(this.group);
@@ -4603,33 +4628,48 @@ var TdChartComponent = /** @class */ (function () {
         }
         merge(fromEvent(window, 'resize').pipe(debounceTime(100)), this._widthSubject.asObservable().pipe(distinctUntilChanged()), this._heightSubject.asObservable().pipe(distinctUntilChanged()))
             .pipe(takeUntil(this._destroy), debounceTime(100))
-            .subscribe(function () {
+            .subscribe((/**
+         * @return {?}
+         */
+        function () {
             if (_this._instance) {
                 _this._instance.resize();
                 _this._changeDetectorRef.markForCheck();
             }
-        });
+        }));
         this._optionsService
             .listen()
-            .pipe(tap(function (options) {
+            .pipe(tap((/**
+         * @param {?} options
+         * @return {?}
+         */
+        function (options) {
             assignDefined(_this._options, options);
-        }), debounceTime(0), takeUntil(this._destroy))
-            .subscribe(function () {
+        })), debounceTime(0), takeUntil(this._destroy))
+            .subscribe((/**
+         * @return {?}
+         */
+        function () {
             _this.render();
-        });
+        }));
         timer(500, 250)
             .pipe(takeUntil(this._destroy))
-            .subscribe(function () {
+            .subscribe((/**
+         * @return {?}
+         */
+        function () {
             if (_this._elementRef && _this._elementRef.nativeElement) {
                 _this._widthSubject.next(((/** @type {?} */ (_this._elementRef.nativeElement))).getBoundingClientRect().width);
                 _this._heightSubject.next(((/** @type {?} */ (_this._elementRef.nativeElement))).getBoundingClientRect().height);
             }
-        });
+        }));
     };
     /**
+     * @private
      * @return {?}
      */
     TdChartComponent.prototype._disposeChart = /**
+     * @private
      * @return {?}
      */
     function () {
@@ -4672,7 +4712,7 @@ var TdChartComponent = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * @abstract
@@ -4713,9 +4753,11 @@ var TdChartAxisComponent = /** @class */ (function () {
         this._removeOption();
     };
     /**
+     * @private
      * @return {?}
      */
     TdChartAxisComponent.prototype._setOptions = /**
+     * @private
      * @return {?}
      */
     function () {
@@ -4755,9 +4797,11 @@ var TdChartAxisComponent = /** @class */ (function () {
         this._optionsService.setArrayOption(this._axisOption, config);
     };
     /**
+     * @private
      * @return {?}
      */
     TdChartAxisComponent.prototype._removeOption = /**
+     * @private
      * @return {?}
      */
     function () {
@@ -4800,7 +4844,7 @@ var TdChartAxisComponent = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var TdChartXAxisComponent = /** @class */ (function (_super) {
     __extends(TdChartXAxisComponent, _super);
@@ -4826,7 +4870,7 @@ var TdChartXAxisComponent = /** @class */ (function (_super) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var TdChartYAxisComponent = /** @class */ (function (_super) {
     __extends(TdChartYAxisComponent, _super);
@@ -4852,7 +4896,7 @@ var TdChartYAxisComponent = /** @class */ (function (_super) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var TdDatasetComponent = /** @class */ (function () {
     function TdDatasetComponent(_optionsService) {
@@ -4879,9 +4923,11 @@ var TdDatasetComponent = /** @class */ (function () {
         this._removeOption();
     };
     /**
+     * @private
      * @return {?}
      */
     TdDatasetComponent.prototype._setOptions = /**
+     * @private
      * @return {?}
      */
     function () {
@@ -4896,9 +4942,11 @@ var TdDatasetComponent = /** @class */ (function () {
         this._optionsService.setOption('dataset', config);
     };
     /**
+     * @private
      * @return {?}
      */
     TdDatasetComponent.prototype._removeOption = /**
+     * @private
      * @return {?}
      */
     function () {
@@ -4927,7 +4975,7 @@ var TdDatasetComponent = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 var BASE_MODULE_COMPONENTS = [
@@ -4952,7 +5000,7 @@ var CovalentBaseEchartsModule = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * @abstract
@@ -5031,9 +5079,11 @@ var TdSeriesComponent = /** @class */ (function () {
         this._setOptions();
     };
     /**
+     * @private
      * @return {?}
      */
     TdSeriesComponent.prototype._setOptions = /**
+     * @private
      * @return {?}
      */
     function () {
@@ -5057,9 +5107,11 @@ var TdSeriesComponent = /** @class */ (function () {
         this.optionsService.setArrayOption('series', config);
     };
     /**
+     * @private
      * @return {?}
      */
     TdSeriesComponent.prototype._removeOption = /**
+     * @private
      * @return {?}
      */
     function () {
@@ -5084,21 +5136,5 @@ var TdSeriesComponent = /** @class */ (function () {
     return TdSeriesComponent;
 }());
 
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-export { TdChartComponent, TdChartAxisComponent, TdChartYAxisComponent, TdChartXAxisComponent, TdDatasetComponent, TdChartOptionsService, CHART_PROVIDER, BASE_MODULE_COMPONENTS, CovalentBaseEchartsModule, assignDefined, registerTheme$1 as registerTheme, registerDefaultThemes, getThemes, TdSeriesComponent, CHART_PROVIDER_FACTORY as ɵa };
-
+export { BASE_MODULE_COMPONENTS, CHART_PROVIDER, CovalentBaseEchartsModule, TdChartAxisComponent, TdChartComponent, TdChartOptionsService, TdChartXAxisComponent, TdChartYAxisComponent, TdDatasetComponent, TdSeriesComponent, assignDefined, getThemes, registerDefaultThemes, registerTheme, CHART_PROVIDER_FACTORY as ɵa };
 //# sourceMappingURL=covalent-echarts-base.js.map

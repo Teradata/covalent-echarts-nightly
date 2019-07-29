@@ -1,24 +1,24 @@
-import { debounceTime, distinctUntilChanged, takeUntil, tap } from 'rxjs/operators';
-import { BehaviorSubject, Subject, fromEvent, merge, timer } from 'rxjs';
-import { init, connect, dispose, registerTheme } from 'echarts/lib/echarts';
+import { Injectable, Optional, SkipSelf, Component, ChangeDetectionStrategy, ChangeDetectorRef, ElementRef, Input, Output, EventEmitter, NgModule, forwardRef, ContentChild, TemplateRef, ViewChild, Directive } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { BehaviorSubject, fromEvent, merge, timer, Subject } from 'rxjs';
+import { takeUntil, debounceTime, distinctUntilChanged, tap } from 'rxjs/operators';
+import { registerTheme as registerTheme$1, init, connect, dispose } from 'echarts/lib/echarts';
+import { __values, __extends, __assign } from 'tslib';
 import 'zrender/lib/svg/svg';
 import 'echarts/lib/chart/bar';
+import { TdSeriesComponent as TdSeriesComponent$1, TdChartOptionsService as TdChartOptionsService$1, assignDefined as assignDefined$1 } from '@covalent/echarts/base';
 import 'echarts/lib/chart/line';
 import 'echarts/lib/chart/scatter';
 import 'echarts/lib/chart/tree';
 import 'echarts/lib/component/tooltip';
-import { CommonModule } from '@angular/common';
 import 'echarts/lib/component/toolbox';
-import { __extends, __values, __assign } from 'tslib';
-import { Injectable, Optional, SkipSelf, Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ElementRef, ChangeDetectorRef, NgModule, forwardRef, Directive, TemplateRef, ContentChild, ViewChild } from '@angular/core';
-import { TdChartOptionsService, TdSeriesComponent, assignDefined } from '@covalent/echarts/base';
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
-var TdChartOptionsService$1 = /** @class */ (function () {
-    function TdChartOptionsService$$1() {
+var TdChartOptionsService = /** @class */ (function () {
+    function TdChartOptionsService() {
         this._options = {};
         this._optionsSubject = new BehaviorSubject(this._options);
     }
@@ -27,7 +27,7 @@ var TdChartOptionsService$1 = /** @class */ (function () {
      * @param {?} value
      * @return {?}
      */
-    TdChartOptionsService$$1.prototype.setOption = /**
+    TdChartOptionsService.prototype.setOption = /**
      * @param {?} option
      * @param {?} value
      * @return {?}
@@ -44,7 +44,7 @@ var TdChartOptionsService$1 = /** @class */ (function () {
      * @param {?} value
      * @return {?}
      */
-    TdChartOptionsService$$1.prototype.setArrayOption = /**
+    TdChartOptionsService.prototype.setArrayOption = /**
      * @param {?} option
      * @param {?} value
      * @return {?}
@@ -67,7 +67,7 @@ var TdChartOptionsService$1 = /** @class */ (function () {
      * @param {?} value
      * @return {?}
      */
-    TdChartOptionsService$$1.prototype.removeArrayOption = /**
+    TdChartOptionsService.prototype.removeArrayOption = /**
      * @param {?} option
      * @param {?} value
      * @return {?}
@@ -92,7 +92,7 @@ var TdChartOptionsService$1 = /** @class */ (function () {
      * @param {?} option
      * @return {?}
      */
-    TdChartOptionsService$$1.prototype.getOption = /**
+    TdChartOptionsService.prototype.getOption = /**
      * @param {?} option
      * @return {?}
      */
@@ -103,7 +103,7 @@ var TdChartOptionsService$1 = /** @class */ (function () {
      * @param {?} option
      * @return {?}
      */
-    TdChartOptionsService$$1.prototype.clearOption = /**
+    TdChartOptionsService.prototype.clearOption = /**
      * @param {?} option
      * @return {?}
      */
@@ -114,47 +114,47 @@ var TdChartOptionsService$1 = /** @class */ (function () {
     /**
      * @return {?}
      */
-    TdChartOptionsService$$1.prototype.listen = /**
+    TdChartOptionsService.prototype.listen = /**
      * @return {?}
      */
     function () {
         return this._optionsSubject.asObservable();
     };
-    TdChartOptionsService$$1.decorators = [
+    TdChartOptionsService.decorators = [
         { type: Injectable }
     ];
-    return TdChartOptionsService$$1;
+    return TdChartOptionsService;
 }());
 /**
  * @param {?} parent
  * @return {?}
  */
 function CHART_PROVIDER_FACTORY(parent) {
-    return parent || new TdChartOptionsService$1();
+    return parent || new TdChartOptionsService();
 }
 /** @type {?} */
 var CHART_PROVIDER = {
     // If there is already a service available, use that. Otherwise, provide a new one.
-    provide: TdChartOptionsService$1,
-    deps: [[new Optional(), new SkipSelf(), TdChartOptionsService$1]],
+    provide: TdChartOptionsService,
+    deps: [[new Optional(), new SkipSelf(), TdChartOptionsService]],
     useFactory: CHART_PROVIDER_FACTORY,
 };
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * @param {?} target
  * @param {...?} sources
  * @return {?}
  */
-function assignDefined$1(target) {
+function assignDefined(target) {
+    var e_1, _a, e_2, _b, e_3, _c;
     var sources = [];
     for (var _i = 1; _i < arguments.length; _i++) {
         sources[_i - 1] = arguments[_i];
     }
-    var e_1, _a, e_2, _b, e_3, _c;
     /** @type {?} */
     var keys = new Set();
     try {
@@ -213,7 +213,7 @@ function assignDefined$1(target) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /* tslint:disable */
 var aquaSplash = {
@@ -677,7 +677,7 @@ var aquaSplash = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /* tslint:disable */
 var californiaCoast = {
@@ -1141,7 +1141,7 @@ var californiaCoast = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /* tslint:disable */
 var hawaiianSunrise = {
@@ -1605,7 +1605,7 @@ var hawaiianSunrise = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /* tslint:disable */
 var passionFlower = {
@@ -2069,7 +2069,7 @@ var passionFlower = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /* tslint:disable */
 var razzleberryPie = {
@@ -2533,7 +2533,7 @@ var razzleberryPie = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /* tslint:disable */
 var teradataClassic = {
@@ -2997,7 +2997,7 @@ var teradataClassic = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /* tslint:disable */
 var teradataDefault = {
@@ -3461,7 +3461,7 @@ var teradataDefault = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /* tslint:disable */
 var urbanSunrise = {
@@ -3925,7 +3925,7 @@ var urbanSunrise = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /* tslint:disable */
 var volcanicEruption = {
@@ -4389,7 +4389,7 @@ var volcanicEruption = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * Function used to register a theme into echarts
@@ -4399,8 +4399,8 @@ var volcanicEruption = {
  * @param {?} theme
  * @return {?}
  */
-function registerTheme$1(themeName, theme) {
-    registerTheme(themeName, theme);
+function registerTheme(themeName, theme) {
+    registerTheme$1(themeName, theme);
 }
 /**
  * Function to register all default themes
@@ -4408,15 +4408,15 @@ function registerTheme$1(themeName, theme) {
  * @return {?}
  */
 function registerDefaultThemes() {
-    registerTheme$1('aqua-splash', aquaSplash);
-    registerTheme$1('california-coast', californiaCoast);
-    registerTheme$1('hawaiian-sunrise', hawaiianSunrise);
-    registerTheme$1('passion-flower', passionFlower);
-    registerTheme$1('razzleberry-pie', razzleberryPie);
-    registerTheme$1('teradata-classic', teradataClassic);
-    registerTheme$1('teradata-default', teradataDefault);
-    registerTheme$1('urban-sunrise', urbanSunrise);
-    registerTheme$1('volcanic-eruption', volcanicEruption);
+    registerTheme('aqua-splash', aquaSplash);
+    registerTheme('california-coast', californiaCoast);
+    registerTheme('hawaiian-sunrise', hawaiianSunrise);
+    registerTheme('passion-flower', passionFlower);
+    registerTheme('razzleberry-pie', razzleberryPie);
+    registerTheme('teradata-classic', teradataClassic);
+    registerTheme('teradata-default', teradataDefault);
+    registerTheme('urban-sunrise', urbanSunrise);
+    registerTheme('volcanic-eruption', volcanicEruption);
 }
 /**
  * Returns all the theme names bundled with covalent echarts.
@@ -4438,12 +4438,7 @@ function getThemes() {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var TdChartComponent = /** @class */ (function () {
     function TdChartComponent(_changeDetectorRef, _elementRef, _optionsService) {
@@ -4538,7 +4533,7 @@ var TdChartComponent = /** @class */ (function () {
      */
     function () {
         if (this._instance) {
-            this._instance.setOption(assignDefined$1(this._state, {
+            this._instance.setOption(assignDefined(this._state, {
                 grid: {
                     show: true,
                     left: '20',
@@ -4558,9 +4553,11 @@ var TdChartComponent = /** @class */ (function () {
         }
     };
     /**
+     * @private
      * @return {?}
      */
     TdChartComponent.prototype._initializeChart = /**
+     * @private
      * @return {?}
      */
     function () {
@@ -4570,39 +4567,67 @@ var TdChartComponent = /** @class */ (function () {
         });
         fromEvent(this._instance, 'click')
             .pipe(takeUntil(this._destroy))
-            .subscribe(function (params) {
+            .subscribe((/**
+         * @param {?} params
+         * @return {?}
+         */
+        function (params) {
             _this.chartClick.next(params);
-        });
+        }));
         fromEvent(this._instance, 'dblclick')
             .pipe(takeUntil(this._destroy))
-            .subscribe(function (params) {
+            .subscribe((/**
+         * @param {?} params
+         * @return {?}
+         */
+        function (params) {
             _this.chartDblclick.next(params);
-        });
+        }));
         fromEvent(this._instance, 'contextmenu')
             .pipe(takeUntil(this._destroy))
-            .subscribe(function (params) {
+            .subscribe((/**
+         * @param {?} params
+         * @return {?}
+         */
+        function (params) {
             _this.chartContextmenu.next(params);
-        });
+        }));
         fromEvent(this._instance, 'magictypechanged')
             .pipe(takeUntil(this._destroy))
-            .subscribe(function (params) {
+            .subscribe((/**
+         * @param {?} params
+         * @return {?}
+         */
+        function (params) {
             _this.magicTypeChanged.next(params);
-        });
+        }));
         fromEvent(this._instance, 'dataviewchanged')
             .pipe(takeUntil(this._destroy))
-            .subscribe(function (params) {
+            .subscribe((/**
+         * @param {?} params
+         * @return {?}
+         */
+        function (params) {
             _this.dataViewChanged.next(params);
-        });
+        }));
         fromEvent(this._instance, 'datazoom')
             .pipe(takeUntil(this._destroy))
-            .subscribe(function (params) {
+            .subscribe((/**
+         * @param {?} params
+         * @return {?}
+         */
+        function (params) {
             _this.datazoom.next(params);
-        });
+        }));
         fromEvent(this._instance, 'restore')
             .pipe(takeUntil(this._destroy))
-            .subscribe(function (params) {
+            .subscribe((/**
+         * @param {?} params
+         * @return {?}
+         */
+        function (params) {
             _this.restore.next(params);
-        });
+        }));
         if (this.group) {
             this._instance.group = this.group;
             connect(this.group);
@@ -4610,33 +4635,48 @@ var TdChartComponent = /** @class */ (function () {
         }
         merge(fromEvent(window, 'resize').pipe(debounceTime(100)), this._widthSubject.asObservable().pipe(distinctUntilChanged()), this._heightSubject.asObservable().pipe(distinctUntilChanged()))
             .pipe(takeUntil(this._destroy), debounceTime(100))
-            .subscribe(function () {
+            .subscribe((/**
+         * @return {?}
+         */
+        function () {
             if (_this._instance) {
                 _this._instance.resize();
                 _this._changeDetectorRef.markForCheck();
             }
-        });
+        }));
         this._optionsService
             .listen()
-            .pipe(tap(function (options) {
-            assignDefined$1(_this._options, options);
-        }), debounceTime(0), takeUntil(this._destroy))
-            .subscribe(function () {
+            .pipe(tap((/**
+         * @param {?} options
+         * @return {?}
+         */
+        function (options) {
+            assignDefined(_this._options, options);
+        })), debounceTime(0), takeUntil(this._destroy))
+            .subscribe((/**
+         * @return {?}
+         */
+        function () {
             _this.render();
-        });
+        }));
         timer(500, 250)
             .pipe(takeUntil(this._destroy))
-            .subscribe(function () {
+            .subscribe((/**
+         * @return {?}
+         */
+        function () {
             if (_this._elementRef && _this._elementRef.nativeElement) {
                 _this._widthSubject.next(((/** @type {?} */ (_this._elementRef.nativeElement))).getBoundingClientRect().width);
                 _this._heightSubject.next(((/** @type {?} */ (_this._elementRef.nativeElement))).getBoundingClientRect().height);
             }
-        });
+        }));
     };
     /**
+     * @private
      * @return {?}
      */
     TdChartComponent.prototype._disposeChart = /**
+     * @private
      * @return {?}
      */
     function () {
@@ -4659,7 +4699,7 @@ var TdChartComponent = /** @class */ (function () {
     TdChartComponent.ctorParameters = function () { return [
         { type: ChangeDetectorRef },
         { type: ElementRef },
-        { type: TdChartOptionsService$1 }
+        { type: TdChartOptionsService }
     ]; };
     TdChartComponent.propDecorators = {
         config: [{ type: Input, args: ['config',] }],
@@ -4679,7 +4719,7 @@ var TdChartComponent = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * @abstract
@@ -4720,14 +4760,16 @@ var TdChartAxisComponent = /** @class */ (function () {
         this._removeOption();
     };
     /**
+     * @private
      * @return {?}
      */
     TdChartAxisComponent.prototype._setOptions = /**
+     * @private
      * @return {?}
      */
     function () {
         /** @type {?} */
-        var config = assignDefined$1(this._state, {
+        var config = assignDefined(this._state, {
             id: this.id,
             show: this.show,
             gridIndex: this.gridIndex,
@@ -4762,9 +4804,11 @@ var TdChartAxisComponent = /** @class */ (function () {
         this._optionsService.setArrayOption(this._axisOption, config);
     };
     /**
+     * @private
      * @return {?}
      */
     TdChartAxisComponent.prototype._removeOption = /**
+     * @private
      * @return {?}
      */
     function () {
@@ -4807,7 +4851,7 @@ var TdChartAxisComponent = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var TdChartXAxisComponent = /** @class */ (function (_super) {
     __extends(TdChartXAxisComponent, _super);
@@ -4823,7 +4867,7 @@ var TdChartXAxisComponent = /** @class */ (function (_super) {
     ];
     /** @nocollapse */
     TdChartXAxisComponent.ctorParameters = function () { return [
-        { type: TdChartOptionsService$1 }
+        { type: TdChartOptionsService }
     ]; };
     TdChartXAxisComponent.propDecorators = {
         position: [{ type: Input, args: ['position',] }]
@@ -4833,7 +4877,7 @@ var TdChartXAxisComponent = /** @class */ (function (_super) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var TdChartYAxisComponent = /** @class */ (function (_super) {
     __extends(TdChartYAxisComponent, _super);
@@ -4849,7 +4893,7 @@ var TdChartYAxisComponent = /** @class */ (function (_super) {
     ];
     /** @nocollapse */
     TdChartYAxisComponent.ctorParameters = function () { return [
-        { type: TdChartOptionsService$1 }
+        { type: TdChartOptionsService }
     ]; };
     TdChartYAxisComponent.propDecorators = {
         position: [{ type: Input, args: ['position',] }]
@@ -4859,7 +4903,7 @@ var TdChartYAxisComponent = /** @class */ (function (_super) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var TdDatasetComponent = /** @class */ (function () {
     function TdDatasetComponent(_optionsService) {
@@ -4886,14 +4930,16 @@ var TdDatasetComponent = /** @class */ (function () {
         this._removeOption();
     };
     /**
+     * @private
      * @return {?}
      */
     TdDatasetComponent.prototype._setOptions = /**
+     * @private
      * @return {?}
      */
     function () {
         /** @type {?} */
-        var config = assignDefined$1(this._state, {
+        var config = assignDefined(this._state, {
             id: this.id,
             source: this.source,
             dimensions: this.dimensions,
@@ -4903,9 +4949,11 @@ var TdDatasetComponent = /** @class */ (function () {
         this._optionsService.setOption('dataset', config);
     };
     /**
+     * @private
      * @return {?}
      */
     TdDatasetComponent.prototype._removeOption = /**
+     * @private
      * @return {?}
      */
     function () {
@@ -4920,7 +4968,7 @@ var TdDatasetComponent = /** @class */ (function () {
     ];
     /** @nocollapse */
     TdDatasetComponent.ctorParameters = function () { return [
-        { type: TdChartOptionsService$1 }
+        { type: TdChartOptionsService }
     ]; };
     TdDatasetComponent.propDecorators = {
         id: [{ type: Input, args: ['id',] }],
@@ -4934,7 +4982,7 @@ var TdDatasetComponent = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 var BASE_MODULE_COMPONENTS = [
@@ -4959,21 +5007,21 @@ var CovalentBaseEchartsModule = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * @abstract
  * @template T
  */
-var TdSeriesComponent$1 = /** @class */ (function () {
-    function TdSeriesComponent$$1(type, optionsService) {
+var TdSeriesComponent = /** @class */ (function () {
+    function TdSeriesComponent(type, optionsService) {
         this.optionsService = optionsService;
         this._state = {};
         this._options = {};
         this.config = {};
         this._type = type;
     }
-    Object.defineProperty(TdSeriesComponent$$1.prototype, "type", {
+    Object.defineProperty(TdSeriesComponent.prototype, "type", {
         get: /**
          * @return {?}
          */
@@ -4986,7 +5034,7 @@ var TdSeriesComponent$1 = /** @class */ (function () {
     /**
      * @return {?}
      */
-    TdSeriesComponent$$1.prototype.ngOnInit = /**
+    TdSeriesComponent.prototype.ngOnInit = /**
      * @return {?}
      */
     function () {
@@ -4995,7 +5043,7 @@ var TdSeriesComponent$1 = /** @class */ (function () {
     /**
      * @return {?}
      */
-    TdSeriesComponent$$1.prototype.ngOnChanges = /**
+    TdSeriesComponent.prototype.ngOnChanges = /**
      * @return {?}
      */
     function () {
@@ -5004,7 +5052,7 @@ var TdSeriesComponent$1 = /** @class */ (function () {
     /**
      * @return {?}
      */
-    TdSeriesComponent$$1.prototype.ngOnDestroy = /**
+    TdSeriesComponent.prototype.ngOnDestroy = /**
      * @return {?}
      */
     function () {
@@ -5015,7 +5063,7 @@ var TdSeriesComponent$1 = /** @class */ (function () {
      * @param {?} value
      * @return {?}
      */
-    TdSeriesComponent$$1.prototype.setStateOption = /**
+    TdSeriesComponent.prototype.setStateOption = /**
      * @param {?} option
      * @param {?} value
      * @return {?}
@@ -5028,7 +5076,7 @@ var TdSeriesComponent$1 = /** @class */ (function () {
      * @param {?} option
      * @return {?}
      */
-    TdSeriesComponent$$1.prototype.removeStateOption = /**
+    TdSeriesComponent.prototype.removeStateOption = /**
      * @param {?} option
      * @return {?}
      */
@@ -5038,14 +5086,16 @@ var TdSeriesComponent$1 = /** @class */ (function () {
         this._setOptions();
     };
     /**
+     * @private
      * @return {?}
      */
-    TdSeriesComponent$$1.prototype._setOptions = /**
+    TdSeriesComponent.prototype._setOptions = /**
+     * @private
      * @return {?}
      */
     function () {
         /** @type {?} */
-        var config = assignDefined$1(this._state, {
+        var config = assignDefined(this._state, {
             id: this.id,
             type: this.type,
             name: this.name,
@@ -5064,15 +5114,17 @@ var TdSeriesComponent$1 = /** @class */ (function () {
         this.optionsService.setArrayOption('series', config);
     };
     /**
+     * @private
      * @return {?}
      */
-    TdSeriesComponent$$1.prototype._removeOption = /**
+    TdSeriesComponent.prototype._removeOption = /**
+     * @private
      * @return {?}
      */
     function () {
         this.optionsService.removeArrayOption('series', this._state);
     };
-    TdSeriesComponent$$1.propDecorators = {
+    TdSeriesComponent.propDecorators = {
         config: [{ type: Input, args: ['config',] }],
         id: [{ type: Input, args: ['id',] }],
         name: [{ type: Input, args: ['name',] }],
@@ -5088,22 +5140,12 @@ var TdSeriesComponent$1 = /** @class */ (function () {
         animationDelayUpdate: [{ type: Input, args: ['animationDelayUpdate',] }],
         tooltip: [{ type: Input, args: ['tooltip',] }]
     };
-    return TdSeriesComponent$$1;
+    return TdSeriesComponent;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var TdChartSeriesBarComponent = /** @class */ (function (_super) {
     __extends(TdChartSeriesBarComponent, _super);
@@ -5155,15 +5197,18 @@ var TdChartSeriesBarComponent = /** @class */ (function (_super) {
                     changeDetection: ChangeDetectionStrategy.OnPush,
                     providers: [
                         {
-                            provide: TdSeriesComponent,
-                            useExisting: forwardRef(function () { return TdChartSeriesBarComponent; }),
+                            provide: TdSeriesComponent$1,
+                            useExisting: forwardRef((/**
+                             * @return {?}
+                             */
+                            function () { return TdChartSeriesBarComponent; })),
                         },
                     ]
                 }] }
     ];
     /** @nocollapse */
     TdChartSeriesBarComponent.ctorParameters = function () { return [
-        { type: TdChartOptionsService }
+        { type: TdChartOptionsService$1 }
     ]; };
     TdChartSeriesBarComponent.propDecorators = {
         coordinateSystem: [{ type: Input, args: ['coordinateSystem',] }],
@@ -5196,11 +5241,11 @@ var TdChartSeriesBarComponent = /** @class */ (function (_super) {
         z: [{ type: Input, args: ['z',] }]
     };
     return TdChartSeriesBarComponent;
-}(TdSeriesComponent));
+}(TdSeriesComponent$1));
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 var BAR_MODULE_COMPONENTS = [TdChartSeriesBarComponent];
@@ -5219,17 +5264,7 @@ var CovalentBarEchartsModule = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var TdChartSeriesLineComponent = /** @class */ (function (_super) {
     __extends(TdChartSeriesLineComponent, _super);
@@ -5289,15 +5324,18 @@ var TdChartSeriesLineComponent = /** @class */ (function (_super) {
                     changeDetection: ChangeDetectionStrategy.OnPush,
                     providers: [
                         {
-                            provide: TdSeriesComponent,
-                            useExisting: forwardRef(function () { return TdChartSeriesLineComponent; }),
+                            provide: TdSeriesComponent$1,
+                            useExisting: forwardRef((/**
+                             * @return {?}
+                             */
+                            function () { return TdChartSeriesLineComponent; })),
                         },
                     ]
                 }] }
     ];
     /** @nocollapse */
     TdChartSeriesLineComponent.ctorParameters = function () { return [
-        { type: TdChartOptionsService }
+        { type: TdChartOptionsService$1 }
     ]; };
     TdChartSeriesLineComponent.propDecorators = {
         coordinateSystem: [{ type: Input, args: ['coordinateSystem',] }],
@@ -5338,11 +5376,11 @@ var TdChartSeriesLineComponent = /** @class */ (function (_super) {
         silent: [{ type: Input, args: ['silent',] }]
     };
     return TdChartSeriesLineComponent;
-}(TdSeriesComponent));
+}(TdSeriesComponent$1));
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 var LINE_MODULE_COMPONENTS = [TdChartSeriesLineComponent];
@@ -5361,17 +5399,7 @@ var CovalentLineEchartsModule = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var TdChartSeriesScatterComponent = /** @class */ (function (_super) {
     __extends(TdChartSeriesScatterComponent, _super);
@@ -5426,15 +5454,18 @@ var TdChartSeriesScatterComponent = /** @class */ (function (_super) {
                     changeDetection: ChangeDetectionStrategy.OnPush,
                     providers: [
                         {
-                            provide: TdSeriesComponent,
-                            useExisting: forwardRef(function () { return TdChartSeriesScatterComponent; }),
+                            provide: TdSeriesComponent$1,
+                            useExisting: forwardRef((/**
+                             * @return {?}
+                             */
+                            function () { return TdChartSeriesScatterComponent; })),
                         },
                     ]
                 }] }
     ];
     /** @nocollapse */
     TdChartSeriesScatterComponent.ctorParameters = function () { return [
-        { type: TdChartOptionsService }
+        { type: TdChartOptionsService$1 }
     ]; };
     TdChartSeriesScatterComponent.propDecorators = {
         coordinateSystem: [{ type: Input, args: ['coordinateSystem',] }],
@@ -5470,11 +5501,11 @@ var TdChartSeriesScatterComponent = /** @class */ (function (_super) {
         silent: [{ type: Input, args: ['silent',] }]
     };
     return TdChartSeriesScatterComponent;
-}(TdSeriesComponent));
+}(TdSeriesComponent$1));
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 var SCATTER_MODULE_COMPONENTS = [TdChartSeriesScatterComponent];
@@ -5493,17 +5524,7 @@ var CovalentScatterEchartsModule = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var TdChartSeriesTreeComponent = /** @class */ (function (_super) {
     __extends(TdChartSeriesTreeComponent, _super);
@@ -5549,15 +5570,18 @@ var TdChartSeriesTreeComponent = /** @class */ (function (_super) {
                     changeDetection: ChangeDetectionStrategy.OnPush,
                     providers: [
                         {
-                            provide: TdSeriesComponent,
-                            useExisting: forwardRef(function () { return TdChartSeriesTreeComponent; }),
+                            provide: TdSeriesComponent$1,
+                            useExisting: forwardRef((/**
+                             * @return {?}
+                             */
+                            function () { return TdChartSeriesTreeComponent; })),
                         },
                     ]
                 }] }
     ];
     /** @nocollapse */
     TdChartSeriesTreeComponent.ctorParameters = function () { return [
-        { type: TdChartOptionsService }
+        { type: TdChartOptionsService$1 }
     ]; };
     TdChartSeriesTreeComponent.propDecorators = {
         zlevel: [{ type: Input, args: ['zlevel',] }],
@@ -5584,11 +5608,11 @@ var TdChartSeriesTreeComponent = /** @class */ (function (_super) {
         emphasis: [{ type: Input, args: ['emphasis',] }]
     };
     return TdChartSeriesTreeComponent;
-}(TdSeriesComponent));
+}(TdSeriesComponent$1));
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 var TREE_MODULE_COMPONENTS = [TdChartSeriesTreeComponent];
@@ -5607,17 +5631,7 @@ var CovalentTreeEchartsModule = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var TdTooltipContext = /** @class */ (function () {
     function TdTooltipContext() {
@@ -5685,14 +5699,16 @@ var TdChartTooltipComponent = /** @class */ (function () {
         this._removeOption();
     };
     /**
+     * @private
      * @return {?}
      */
     TdChartTooltipComponent.prototype._setOptions = /**
+     * @private
      * @return {?}
      */
     function () {
         /** @type {?} */
-        var config = assignDefined(this._state, {
+        var config = assignDefined$1(this._state, {
             show: this.show,
             trigger: this.trigger,
             axisPointer: this.axisPointer,
@@ -5717,35 +5733,48 @@ var TdChartTooltipComponent = /** @class */ (function () {
         this._optionsService.setOption('tooltip', config);
     };
     /**
+     * @private
      * @return {?}
      */
     TdChartTooltipComponent.prototype._removeOption = /**
+     * @private
      * @return {?}
      */
     function () {
         this._optionsService.clearOption('tooltip');
     };
     /**
+     * @private
      * @return {?}
      */
     TdChartTooltipComponent.prototype._formatter = /**
+     * @private
      * @return {?}
      */
     function () {
         var _this = this;
-        return function (params, ticket, callback) {
+        return (/**
+         * @param {?} params
+         * @param {?} ticket
+         * @param {?} callback
+         * @return {?}
+         */
+        function (params, ticket, callback) {
             _this._context = {
                 $implicit: params,
                 ticket: ticket,
             };
             // timeout set since we need to set the HTML at the end of the angular lifecycle when
             // the tooltip delay is more than 0
-            setTimeout(function () {
+            setTimeout((/**
+             * @return {?}
+             */
+            function () {
                 callback(ticket, ((/** @type {?} */ (_this._elementRef.nativeElement))).innerHTML);
-            });
+            }));
             _this._changeDetectorRef.markForCheck();
             return ((/** @type {?} */ (_this._elementRef.nativeElement))).innerHTML;
-        };
+        });
     };
     TdChartTooltipComponent.decorators = [
         { type: Component, args: [{
@@ -5758,7 +5787,7 @@ var TdChartTooltipComponent = /** @class */ (function () {
     TdChartTooltipComponent.ctorParameters = function () { return [
         { type: ChangeDetectorRef },
         { type: ElementRef },
-        { type: TdChartOptionsService }
+        { type: TdChartOptionsService$1 }
     ]; };
     TdChartTooltipComponent.propDecorators = {
         config: [{ type: Input, args: ['config',] }],
@@ -5782,15 +5811,15 @@ var TdChartTooltipComponent = /** @class */ (function () {
         padding: [{ type: Input, args: ['padding',] }],
         textStyle: [{ type: Input, args: ['textStyle',] }],
         extraCssText: [{ type: Input, args: ['extraCssText',] }],
-        formatterTemplate: [{ type: ContentChild, args: [TdChartTooltipFormatterDirective, { read: TemplateRef },] }],
-        fullTemplate: [{ type: ViewChild, args: ['tooltipContent',] }]
+        formatterTemplate: [{ type: ContentChild, args: [TdChartTooltipFormatterDirective, { read: TemplateRef, static: false },] }],
+        fullTemplate: [{ type: ViewChild, args: ['tooltipContent', { static: true },] }]
     };
     return TdChartTooltipComponent;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var TdSeriesTooltipComponent = /** @class */ (function () {
     function TdSeriesTooltipComponent(_changeDetectorRef, _elementRef, _seriesComponent) {
@@ -5826,14 +5855,16 @@ var TdSeriesTooltipComponent = /** @class */ (function () {
         this._removeOption();
     };
     /**
+     * @private
      * @return {?}
      */
     TdSeriesTooltipComponent.prototype._setOptions = /**
+     * @private
      * @return {?}
      */
     function () {
         /** @type {?} */
-        var config = assignDefined(this._state, {
+        var config = assignDefined$1(this._state, {
             position: this.position,
             backgroundColor: this.backgroundColor,
             borderColor: this.borderColor,
@@ -5853,33 +5884,46 @@ var TdSeriesTooltipComponent = /** @class */ (function () {
     /**
      * Formatter for tooltip
      *
+     * @private
      * @return {?}
      */
     TdSeriesTooltipComponent.prototype._formatter = /**
      * Formatter for tooltip
      *
+     * @private
      * @return {?}
      */
     function () {
         var _this = this;
-        return function (params, ticket, callback) {
+        return (/**
+         * @param {?} params
+         * @param {?} ticket
+         * @param {?} callback
+         * @return {?}
+         */
+        function (params, ticket, callback) {
             _this._context = {
                 $implicit: params,
                 ticket: ticket,
             };
             // timeout set since we need to set the HTML at the end of the angular lifecycle when
             // the tooltip delay is more than 0
-            setTimeout(function () {
+            setTimeout((/**
+             * @return {?}
+             */
+            function () {
                 callback(ticket, ((/** @type {?} */ (_this._elementRef.nativeElement))).innerHTML);
-            });
+            }));
             _this._changeDetectorRef.markForCheck();
             return ((/** @type {?} */ (_this._elementRef.nativeElement))).innerHTML;
-        };
+        });
     };
     /**
+     * @private
      * @return {?}
      */
     TdSeriesTooltipComponent.prototype._removeOption = /**
+     * @private
      * @return {?}
      */
     function () {
@@ -5896,7 +5940,7 @@ var TdSeriesTooltipComponent = /** @class */ (function () {
     TdSeriesTooltipComponent.ctorParameters = function () { return [
         { type: ChangeDetectorRef },
         { type: ElementRef },
-        { type: TdSeriesComponent }
+        { type: TdSeriesComponent$1 }
     ]; };
     TdSeriesTooltipComponent.propDecorators = {
         config: [{ type: Input, args: ['config',] }],
@@ -5908,15 +5952,15 @@ var TdSeriesTooltipComponent = /** @class */ (function () {
         padding: [{ type: Input, args: ['padding',] }],
         textStyle: [{ type: Input, args: ['textStyle',] }],
         extraCssText: [{ type: Input, args: ['extraCssText',] }],
-        formatterTemplate: [{ type: ContentChild, args: [TdChartTooltipFormatterDirective, { read: TemplateRef },] }],
-        fullTemplate: [{ type: ViewChild, args: ['tooltipContent',] }]
+        formatterTemplate: [{ type: ContentChild, args: [TdChartTooltipFormatterDirective, { read: TemplateRef, static: false },] }],
+        fullTemplate: [{ type: ViewChild, args: ['tooltipContent', { static: true },] }]
     };
     return TdSeriesTooltipComponent;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 var TOOLTIP_MODULE_COMPONENTS = [
@@ -5939,17 +5983,7 @@ var CovalentTooltipEchartsModule = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var TdChartViewDataFormatterDirective = /** @class */ (function () {
     function TdChartViewDataFormatterDirective() {
@@ -5997,15 +6031,17 @@ var TdChartToolboxComponent = /** @class */ (function () {
         this._removeOption();
     };
     /**
+     * @private
      * @return {?}
      */
     TdChartToolboxComponent.prototype._setOptions = /**
+     * @private
      * @return {?}
      */
     function () {
         this._checkFormatterTemplate();
         /** @type {?} */
-        var config = assignDefined(this._state, {
+        var config = assignDefined$1(this._state, {
             show: this.show,
             name: this.trigger,
             orient: this.orient,
@@ -6029,18 +6065,22 @@ var TdChartToolboxComponent = /** @class */ (function () {
         this._optionsService.setOption('toolbox', config);
     };
     /**
+     * @private
      * @return {?}
      */
     TdChartToolboxComponent.prototype._removeOption = /**
+     * @private
      * @return {?}
      */
     function () {
         this._optionsService.clearOption('toolbox');
     };
     /**
+     * @private
      * @return {?}
      */
     TdChartToolboxComponent.prototype._checkFormatterTemplate = /**
+     * @private
      * @return {?}
      */
     function () {
@@ -6049,17 +6089,22 @@ var TdChartToolboxComponent = /** @class */ (function () {
         }
     };
     /**
+     * @private
      * @return {?}
      */
     TdChartToolboxComponent.prototype._optionToContentFormatter = /**
+     * @private
      * @return {?}
      */
     function () {
         var _this = this;
-        return function () {
+        return (/**
+         * @return {?}
+         */
+        function () {
             _this._changeDetectorRef.markForCheck();
             return ((/** @type {?} */ (_this._elementRef.nativeElement))).innerHTML;
-        };
+        });
     };
     TdChartToolboxComponent.decorators = [
         { type: Component, args: [{
@@ -6072,7 +6117,7 @@ var TdChartToolboxComponent = /** @class */ (function () {
     TdChartToolboxComponent.ctorParameters = function () { return [
         { type: ChangeDetectorRef },
         { type: ElementRef },
-        { type: TdChartOptionsService }
+        { type: TdChartOptionsService$1 }
     ]; };
     TdChartToolboxComponent.propDecorators = {
         config: [{ type: Input, args: ['config',] }],
@@ -6094,15 +6139,15 @@ var TdChartToolboxComponent = /** @class */ (function () {
         bottom: [{ type: Input, args: ['bottom',] }],
         width: [{ type: Input, args: ['width',] }],
         height: [{ type: Input, args: ['height',] }],
-        formatterTemplate: [{ type: ContentChild, args: [TdChartViewDataFormatterDirective, { read: TemplateRef },] }],
-        fullTemplate: [{ type: ViewChild, args: ['toolboxContent',] }]
+        formatterTemplate: [{ type: ContentChild, args: [TdChartViewDataFormatterDirective, { read: TemplateRef, static: false },] }],
+        fullTemplate: [{ type: ViewChild, args: ['toolboxContent', { static: true },] }]
     };
     return TdChartToolboxComponent;
 }());
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 var TOOLBOX_MODULE_COMPONENTS = [TdChartToolboxComponent, TdChartViewDataFormatterDirective];
@@ -6119,31 +6164,5 @@ var CovalentToolboxEchartsModule = /** @class */ (function () {
     return CovalentToolboxEchartsModule;
 }());
 
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
- */
-
-export { TdChartComponent, TdChartAxisComponent, TdChartYAxisComponent, TdChartXAxisComponent, TdDatasetComponent, TdChartOptionsService$1 as TdChartOptionsService, CHART_PROVIDER, BASE_MODULE_COMPONENTS, CovalentBaseEchartsModule, assignDefined$1 as assignDefined, registerTheme$1 as registerTheme, registerDefaultThemes, getThemes, TdSeriesComponent$1 as TdSeriesComponent, BAR_MODULE_COMPONENTS, CovalentBarEchartsModule, TdChartSeriesBarComponent, LINE_MODULE_COMPONENTS, CovalentLineEchartsModule, TdChartSeriesLineComponent, SCATTER_MODULE_COMPONENTS, CovalentScatterEchartsModule, TdChartSeriesScatterComponent, TREE_MODULE_COMPONENTS, CovalentTreeEchartsModule, TdChartSeriesTreeComponent, TOOLTIP_MODULE_COMPONENTS, CovalentTooltipEchartsModule, TdTooltipContext, TdChartTooltipFormatterDirective, TdChartTooltipComponent, TdSeriesTooltipComponent, TOOLBOX_MODULE_COMPONENTS, CovalentToolboxEchartsModule, TdChartViewDataFormatterDirective, TdChartToolboxComponent, CHART_PROVIDER_FACTORY as ɵa };
-
+export { BAR_MODULE_COMPONENTS, BASE_MODULE_COMPONENTS, CHART_PROVIDER, CovalentBarEchartsModule, CovalentBaseEchartsModule, CovalentLineEchartsModule, CovalentScatterEchartsModule, CovalentToolboxEchartsModule, CovalentTooltipEchartsModule, CovalentTreeEchartsModule, LINE_MODULE_COMPONENTS, SCATTER_MODULE_COMPONENTS, TOOLBOX_MODULE_COMPONENTS, TOOLTIP_MODULE_COMPONENTS, TREE_MODULE_COMPONENTS, TdChartAxisComponent, TdChartComponent, TdChartOptionsService, TdChartSeriesBarComponent, TdChartSeriesLineComponent, TdChartSeriesScatterComponent, TdChartSeriesTreeComponent, TdChartToolboxComponent, TdChartTooltipComponent, TdChartTooltipFormatterDirective, TdChartViewDataFormatterDirective, TdChartXAxisComponent, TdChartYAxisComponent, TdDatasetComponent, TdSeriesComponent, TdSeriesTooltipComponent, TdTooltipContext, assignDefined, getThemes, registerDefaultThemes, registerTheme, CHART_PROVIDER_FACTORY as ɵa };
 //# sourceMappingURL=covalent-echarts.js.map

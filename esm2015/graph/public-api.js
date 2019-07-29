@@ -1,6 +1,6 @@
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 export { GRAPH_MODULE_COMPONENTS, CovalentGraphEchartsModule } from './graph.module';
 export { TdChartSeriesGraphComponent } from './graph.component';

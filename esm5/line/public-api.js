@@ -1,6 +1,6 @@
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 export { LINE_MODULE_COMPONENTS, CovalentLineEchartsModule } from './line.module';
 export { TdChartSeriesLineComponent } from './line.component';

@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/common'), require('echarts/lib/chart/scatter'), require('@angular/core'), require('@covalent/echarts/base')) :
-    typeof define === 'function' && define.amd ? define('@covalent/echarts/scatter', ['exports', '@angular/common', 'echarts/lib/chart/scatter', '@angular/core', '@covalent/echarts/base'], factory) :
-    (factory((global.covalent = global.covalent || {}, global.covalent.echarts = global.covalent.echarts || {}, global.covalent.echarts.scatter = {}),global.ng.common,null,global.ng.core,global.covalent.echarts.base));
-}(this, (function (exports,common,scatter,core,base) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/common'), require('echarts/lib/chart/scatter'), require('@covalent/echarts/base')) :
+    typeof define === 'function' && define.amd ? define('@covalent/echarts/scatter', ['exports', '@angular/core', '@angular/common', 'echarts/lib/chart/scatter', '@covalent/echarts/base'], factory) :
+    (global = global || self, factory((global.covalent = global.covalent || {}, global.covalent.echarts = global.covalent.echarts || {}, global.covalent.echarts.scatter = {}), global.ng.core, global.ng.common, null, global.covalent.echarts.base));
+}(this, function (exports, core, common, scatter, base) { 'use strict';
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.
@@ -19,14 +19,14 @@
     and limitations under the License.
     ***************************************************************************** */
     /* global Reflect, Promise */
-    var extendStatics = function (d, b) {
+
+    var extendStatics = function(d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b)
-                if (b.hasOwnProperty(p))
-                    d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
+
     function __extends(d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -35,7 +35,7 @@
 
     /**
      * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
     var TdChartSeriesScatterComponent = /** @class */ (function (_super) {
         __extends(TdChartSeriesScatterComponent, _super);
@@ -48,41 +48,41 @@
         TdChartSeriesScatterComponent.prototype.getConfig = /**
          * @return {?}
          */
-            function () {
-                return {
-                    coordinateSystem: this.coordinateSystem,
-                    xAxisIndex: this.xAxisIndex,
-                    yAxisIndex: this.yAxisIndex,
-                    polarIndex: this.polarIndex,
-                    geoIndex: this.geoIndex,
-                    calendarIndex: this.calendarIndex,
-                    hoverAnimation: this.hoverAnimation,
-                    legendHoverLink: this.legendHoverLink,
-                    symbol: this.symbol,
-                    symbolSize: this.symbolSize,
-                    symbolRotate: this.symbolRotate,
-                    symbolKeepAspect: this.symbolKeepAspect,
-                    symbolOffset: this.symbolOffset,
-                    large: this.large,
-                    largeThreshold: this.largeThreshold,
-                    cursor: this.cursor,
-                    label: this.label,
-                    itemStyle: this.itemStyle,
-                    emphasis: this.emphasis,
-                    progressive: this.progressive,
-                    progressiveThreshold: this.progressiveThreshold,
-                    dimensions: this.dimensions,
-                    encode: this.encode,
-                    seriesLayoutBy: this.seriesLayoutBy,
-                    datasetIndex: this.datasetIndex,
-                    markPoint: this.markPoint,
-                    markLine: this.markLine,
-                    markArea: this.markArea,
-                    zlevel: this.zlevel,
-                    z: this.z,
-                    silent: this.silent,
-                };
+        function () {
+            return {
+                coordinateSystem: this.coordinateSystem,
+                xAxisIndex: this.xAxisIndex,
+                yAxisIndex: this.yAxisIndex,
+                polarIndex: this.polarIndex,
+                geoIndex: this.geoIndex,
+                calendarIndex: this.calendarIndex,
+                hoverAnimation: this.hoverAnimation,
+                legendHoverLink: this.legendHoverLink,
+                symbol: this.symbol,
+                symbolSize: this.symbolSize,
+                symbolRotate: this.symbolRotate,
+                symbolKeepAspect: this.symbolKeepAspect,
+                symbolOffset: this.symbolOffset,
+                large: this.large,
+                largeThreshold: this.largeThreshold,
+                cursor: this.cursor,
+                label: this.label,
+                itemStyle: this.itemStyle,
+                emphasis: this.emphasis,
+                progressive: this.progressive,
+                progressiveThreshold: this.progressiveThreshold,
+                dimensions: this.dimensions,
+                encode: this.encode,
+                seriesLayoutBy: this.seriesLayoutBy,
+                datasetIndex: this.datasetIndex,
+                markPoint: this.markPoint,
+                markLine: this.markLine,
+                markArea: this.markArea,
+                zlevel: this.zlevel,
+                z: this.z,
+                silent: this.silent,
             };
+        };
         TdChartSeriesScatterComponent.decorators = [
             { type: core.Component, args: [{
                         selector: 'td-chart-series[td-scatter]',
@@ -91,17 +91,18 @@
                         providers: [
                             {
                                 provide: base.TdSeriesComponent,
-                                useExisting: core.forwardRef(function () { return TdChartSeriesScatterComponent; }),
+                                useExisting: core.forwardRef((/**
+                                 * @return {?}
+                                 */
+                                function () { return TdChartSeriesScatterComponent; })),
                             },
                         ]
                     }] }
         ];
         /** @nocollapse */
-        TdChartSeriesScatterComponent.ctorParameters = function () {
-            return [
-                { type: base.TdChartOptionsService }
-            ];
-        };
+        TdChartSeriesScatterComponent.ctorParameters = function () { return [
+            { type: base.TdChartOptionsService }
+        ]; };
         TdChartSeriesScatterComponent.propDecorators = {
             coordinateSystem: [{ type: core.Input, args: ['coordinateSystem',] }],
             xAxisIndex: [{ type: core.Input, args: ['xAxisIndex',] }],
@@ -140,7 +141,7 @@
 
     /**
      * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
     /** @type {?} */
     var SCATTER_MODULE_COMPONENTS = [TdChartSeriesScatterComponent];
@@ -157,27 +158,11 @@
         return CovalentScatterEchartsModule;
     }());
 
-    /**
-     * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
-     */
-
-    /**
-     * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
-     */
-
-    /**
-     * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingReturn,uselessCode} checked by tsc
-     */
-
-    exports.SCATTER_MODULE_COMPONENTS = SCATTER_MODULE_COMPONENTS;
     exports.CovalentScatterEchartsModule = CovalentScatterEchartsModule;
+    exports.SCATTER_MODULE_COMPONENTS = SCATTER_MODULE_COMPONENTS;
     exports.TdChartSeriesScatterComponent = TdChartSeriesScatterComponent;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 
-})));
-
+}));
 //# sourceMappingURL=covalent-echarts-scatter.umd.js.map
