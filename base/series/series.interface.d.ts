@@ -6,6 +6,13 @@ export interface ITdItemStyle extends ITdShadow {
     borderType?: string;
     opacity?: number;
 }
+export interface ITdLabelLine {
+    show?: boolean;
+    length?: number;
+    length2?: number;
+    smooth?: boolean | number;
+    lineStyle?: ITdLineStyle;
+}
 export interface ITdAreaStyle extends ITdShadow {
     color?: any;
     origin?: TdAreaOrigin;

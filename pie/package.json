@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/covalent-echarts-pie.umd.js",
+  "module": "../fesm5/covalent-echarts-pie.js",
+  "es2015": "../fesm2015/covalent-echarts-pie.js",
+  "esm5": "../esm5/pie/covalent-echarts-pie.js",
+  "esm2015": "../esm2015/pie/covalent-echarts-pie.js",
+  "fesm5": "../fesm5/covalent-echarts-pie.js",
+  "fesm2015": "../fesm2015/covalent-echarts-pie.js",
+  "typings": "covalent-echarts-pie.d.ts",
+  "metadata": "covalent-echarts-pie.metadata.json",
+  "sideEffects": false,
+  "name": "@covalent/echarts/pie"
+}

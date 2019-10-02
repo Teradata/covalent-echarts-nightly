@@ -1,6 +1,6 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/common'), require('rxjs'), require('rxjs/operators'), require('echarts/lib/echarts'), require('zrender/lib/svg/svg'), require('echarts/lib/chart/bar'), require('@covalent/echarts/base'), require('echarts/lib/chart/line'), require('echarts/lib/chart/scatter'), require('echarts/lib/chart/tree'), require('echarts/lib/component/tooltip'), require('echarts/lib/component/toolbox')) :
-    typeof define === 'function' && define.amd ? define('@covalent/echarts', ['exports', '@angular/core', '@angular/common', 'rxjs', 'rxjs/operators', 'echarts/lib/echarts', 'zrender/lib/svg/svg', 'echarts/lib/chart/bar', '@covalent/echarts/base', 'echarts/lib/chart/line', 'echarts/lib/chart/scatter', 'echarts/lib/chart/tree', 'echarts/lib/component/tooltip', 'echarts/lib/component/toolbox'], factory) :
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/common'), require('rxjs'), require('rxjs/operators'), require('echarts/lib/echarts'), require('zrender/lib/svg/svg'), require('echarts/lib/chart/bar'), require('@covalent/echarts/base'), require('echarts/lib/chart/pie'), require('echarts/lib/chart/line'), require('echarts/lib/chart/scatter'), require('echarts/lib/chart/tree'), require('echarts/lib/component/tooltip'), require('echarts/lib/component/toolbox')) :
+    typeof define === 'function' && define.amd ? define('@covalent/echarts', ['exports', '@angular/core', '@angular/common', 'rxjs', 'rxjs/operators', 'echarts/lib/echarts', 'zrender/lib/svg/svg', 'echarts/lib/chart/bar', '@covalent/echarts/base', 'echarts/lib/chart/pie', 'echarts/lib/chart/line', 'echarts/lib/chart/scatter', 'echarts/lib/chart/tree', 'echarts/lib/component/tooltip', 'echarts/lib/component/toolbox'], factory) :
     (global = global || self, factory((global.covalent = global.covalent || {}, global.covalent.echarts = {}), global.ng.core, global.ng.common, global.rxjs, global.rxjs.operators, global.echarts, null, null, global.covalent.echarts.base));
 }(this, function (exports, core, common, rxjs, operators, echarts, svg, bar, base) { 'use strict';
 
@@ -5308,6 +5308,119 @@
      * @fileoverview added by tsickle
      * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
+    var TdChartSeriesPieComponent = /** @class */ (function (_super) {
+        __extends(TdChartSeriesPieComponent, _super);
+        function TdChartSeriesPieComponent(_optionsService) {
+            return _super.call(this, 'pie', _optionsService) || this;
+        }
+        /**
+         * @return {?}
+         */
+        TdChartSeriesPieComponent.prototype.getConfig = /**
+         * @return {?}
+         */
+        function () {
+            return {
+                legendHoverLink: this.legendHoverLink,
+                label: this.label,
+                itemStyle: this.itemStyle,
+                emphasis: this.emphasis,
+                selectedMode: this.selectedMode,
+                selectedOffset: this.selectedOffset,
+                clockwise: this.clockwise,
+                startAngle: this.startAngle,
+                minAngle: this.minAngle,
+                minShowLabelAngle: this.minShowLabelAngle,
+                roseType: this.roseType,
+                avoidLabelOverlap: this.avoidLabelOverlap,
+                stillShowZeroSum: this.stillShowZeroSum,
+                cursor: this.cursor,
+                labelLine: this.labelLine,
+                seriesLayoutBy: this.seriesLayoutBy,
+                datasetIndex: this.datasetIndex,
+                markPoint: this.markPoint,
+                markLine: this.markLine,
+                markArea: this.markArea,
+                zlevel: this.zlevel,
+                z: this.z,
+                center: this.center,
+                radius: this.radius,
+            };
+        };
+        TdChartSeriesPieComponent.decorators = [
+            { type: core.Component, args: [{
+                        selector: 'td-chart-series[td-pie]',
+                        template: '',
+                        changeDetection: core.ChangeDetectionStrategy.OnPush,
+                        providers: [
+                            {
+                                provide: base.TdSeriesComponent,
+                                useExisting: core.forwardRef((/**
+                                 * @return {?}
+                                 */
+                                function () { return TdChartSeriesPieComponent; })),
+                            },
+                        ]
+                    }] }
+        ];
+        /** @nocollapse */
+        TdChartSeriesPieComponent.ctorParameters = function () { return [
+            { type: base.TdChartOptionsService }
+        ]; };
+        TdChartSeriesPieComponent.propDecorators = {
+            legendHoverLink: [{ type: core.Input, args: ['legendHoverLink',] }],
+            hoverAnimation: [{ type: core.Input, args: ['hoverAnimation',] }],
+            hoverOffset: [{ type: core.Input, args: ['hoverOffset',] }],
+            selectedMode: [{ type: core.Input, args: ['selectedMode',] }],
+            selectedOffset: [{ type: core.Input, args: ['selectedOffset',] }],
+            clockwise: [{ type: core.Input, args: ['clockwise',] }],
+            startAngle: [{ type: core.Input, args: ['startAngle',] }],
+            minAngle: [{ type: core.Input, args: ['minAngle',] }],
+            minShowLabelAngle: [{ type: core.Input, args: ['minShowLabelAngle',] }],
+            roseType: [{ type: core.Input, args: ['roseType',] }],
+            avoidLabelOverlap: [{ type: core.Input, args: ['avoidLabelOverlap',] }],
+            stillShowZeroSum: [{ type: core.Input, args: ['stillShowZeroSum',] }],
+            cursor: [{ type: core.Input, args: ['cursor',] }],
+            labelLine: [{ type: core.Input, args: ['labelLine',] }],
+            label: [{ type: core.Input, args: ['label',] }],
+            itemStyle: [{ type: core.Input, args: ['itemStyle',] }],
+            emphasis: [{ type: core.Input, args: ['emphasis',] }],
+            seriesLayoutBy: [{ type: core.Input, args: ['seriesLayoutBy',] }],
+            datasetIndex: [{ type: core.Input, args: ['datasetIndex',] }],
+            markPoint: [{ type: core.Input, args: ['markPoint',] }],
+            markLine: [{ type: core.Input, args: ['markLine',] }],
+            markArea: [{ type: core.Input, args: ['markArea',] }],
+            zlevel: [{ type: core.Input, args: ['zlevel',] }],
+            z: [{ type: core.Input, args: ['z',] }],
+            center: [{ type: core.Input, args: ['center',] }],
+            radius: [{ type: core.Input, args: ['radius',] }]
+        };
+        return TdChartSeriesPieComponent;
+    }(base.TdSeriesComponent));
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+    /** @type {?} */
+    var PIE_MODULE_COMPONENTS = [TdChartSeriesPieComponent];
+    var CovalentPieEchartsModule = /** @class */ (function () {
+        function CovalentPieEchartsModule() {
+        }
+        CovalentPieEchartsModule.decorators = [
+            { type: core.NgModule, args: [{
+                        imports: [common.CommonModule],
+                        declarations: [PIE_MODULE_COMPONENTS],
+                        exports: [PIE_MODULE_COMPONENTS],
+                    },] }
+        ];
+        return CovalentPieEchartsModule;
+    }());
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
     var TdChartSeriesLineComponent = /** @class */ (function (_super) {
         __extends(TdChartSeriesLineComponent, _super);
         function TdChartSeriesLineComponent(_optionsService) {
@@ -6212,11 +6325,13 @@
     exports.CovalentBarEchartsModule = CovalentBarEchartsModule;
     exports.CovalentBaseEchartsModule = CovalentBaseEchartsModule;
     exports.CovalentLineEchartsModule = CovalentLineEchartsModule;
+    exports.CovalentPieEchartsModule = CovalentPieEchartsModule;
     exports.CovalentScatterEchartsModule = CovalentScatterEchartsModule;
     exports.CovalentToolboxEchartsModule = CovalentToolboxEchartsModule;
     exports.CovalentTooltipEchartsModule = CovalentTooltipEchartsModule;
     exports.CovalentTreeEchartsModule = CovalentTreeEchartsModule;
     exports.LINE_MODULE_COMPONENTS = LINE_MODULE_COMPONENTS;
+    exports.PIE_MODULE_COMPONENTS = PIE_MODULE_COMPONENTS;
     exports.SCATTER_MODULE_COMPONENTS = SCATTER_MODULE_COMPONENTS;
     exports.TOOLBOX_MODULE_COMPONENTS = TOOLBOX_MODULE_COMPONENTS;
     exports.TOOLTIP_MODULE_COMPONENTS = TOOLTIP_MODULE_COMPONENTS;
@@ -6226,6 +6341,7 @@
     exports.TdChartOptionsService = TdChartOptionsService;
     exports.TdChartSeriesBarComponent = TdChartSeriesBarComponent;
     exports.TdChartSeriesLineComponent = TdChartSeriesLineComponent;
+    exports.TdChartSeriesPieComponent = TdChartSeriesPieComponent;
     exports.TdChartSeriesScatterComponent = TdChartSeriesScatterComponent;
     exports.TdChartSeriesTreeComponent = TdChartSeriesTreeComponent;
     exports.TdChartToolboxComponent = TdChartToolboxComponent;
