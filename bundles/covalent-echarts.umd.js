@@ -6321,7 +6321,6 @@
 
     exports.BAR_MODULE_COMPONENTS = BAR_MODULE_COMPONENTS;
     exports.BASE_MODULE_COMPONENTS = BASE_MODULE_COMPONENTS;
-    exports.CHART_PROVIDER = CHART_PROVIDER;
     exports.CovalentBarEchartsModule = CovalentBarEchartsModule;
     exports.CovalentBaseEchartsModule = CovalentBaseEchartsModule;
     exports.CovalentLineEchartsModule = CovalentLineEchartsModule;
@@ -6359,6 +6358,7 @@
     exports.registerDefaultThemes = registerDefaultThemes;
     exports.registerTheme = registerTheme;
     exports.ɵa = CHART_PROVIDER_FACTORY;
+    exports.ɵb = CHART_PROVIDER;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 

@@ -5175,7 +5175,6 @@
     }());
 
     exports.BASE_MODULE_COMPONENTS = BASE_MODULE_COMPONENTS;
-    exports.CHART_PROVIDER = CHART_PROVIDER;
     exports.CovalentBaseEchartsModule = CovalentBaseEchartsModule;
     exports.TdChartAxisComponent = TdChartAxisComponent;
     exports.TdChartComponent = TdChartComponent;
@@ -5189,6 +5188,7 @@
     exports.registerDefaultThemes = registerDefaultThemes;
     exports.registerTheme = registerTheme;
     exports.ɵa = CHART_PROVIDER_FACTORY;
+    exports.ɵb = CHART_PROVIDER;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 

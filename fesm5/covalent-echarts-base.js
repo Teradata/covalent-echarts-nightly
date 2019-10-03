@@ -5136,5 +5136,5 @@ var TdSeriesComponent = /** @class */ (function () {
     return TdSeriesComponent;
 }());
 
-export { BASE_MODULE_COMPONENTS, CHART_PROVIDER, CovalentBaseEchartsModule, TdChartAxisComponent, TdChartComponent, TdChartOptionsService, TdChartXAxisComponent, TdChartYAxisComponent, TdDatasetComponent, TdSeriesComponent, assignDefined, getThemes, registerDefaultThemes, registerTheme, CHART_PROVIDER_FACTORY as ɵa };
+export { BASE_MODULE_COMPONENTS, CovalentBaseEchartsModule, TdChartAxisComponent, TdChartComponent, TdChartOptionsService, TdChartXAxisComponent, TdChartYAxisComponent, TdDatasetComponent, TdSeriesComponent, assignDefined, getThemes, registerDefaultThemes, registerTheme, CHART_PROVIDER_FACTORY as ɵa, CHART_PROVIDER as ɵb };
 //# sourceMappingURL=covalent-echarts-base.js.map
