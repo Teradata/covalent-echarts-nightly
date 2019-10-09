@@ -158,7 +158,7 @@
         TdChartToolboxComponent.decorators = [
             { type: core.Component, args: [{
                         selector: 'td-chart-toolbox',
-                        template: "<ng-template #toolboxContent [ngTemplateOutlet]=\"formatterTemplate\"> </ng-template>\n",
+                        template: "<ng-template #toolboxContent [ngTemplateOutlet]=\"formatterTemplate\"></ng-template>\n",
                         changeDetection: core.ChangeDetectionStrategy.OnPush
                     }] }
         ];

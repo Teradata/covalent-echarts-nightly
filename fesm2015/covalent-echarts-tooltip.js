@@ -134,7 +134,7 @@ class TdChartTooltipComponent {
 TdChartTooltipComponent.decorators = [
     { type: Component, args: [{
                 selector: 'td-chart-tooltip',
-                template: "<ng-template #tooltipContent [ngTemplateOutlet]=\"formatterTemplate\" [ngTemplateOutletContext]=\"_context\"> </ng-template>\n",
+                template: "<ng-template #tooltipContent [ngTemplateOutlet]=\"formatterTemplate\" [ngTemplateOutletContext]=\"_context\"></ng-template>\n",
                 changeDetection: ChangeDetectionStrategy.OnPush
             }] }
 ];
@@ -266,7 +266,7 @@ class TdSeriesTooltipComponent {
 TdSeriesTooltipComponent.decorators = [
     { type: Component, args: [{
                 selector: 'td-chart-series-tooltip',
-                template: "<ng-template #tooltipContent [ngTemplateOutlet]=\"formatterTemplate\" [ngTemplateOutletContext]=\"_context\"> </ng-template>\n",
+                template: "<ng-template #tooltipContent [ngTemplateOutlet]=\"formatterTemplate\" [ngTemplateOutletContext]=\"_context\"></ng-template>\n",
                 changeDetection: ChangeDetectionStrategy.OnPush
             }] }
 ];

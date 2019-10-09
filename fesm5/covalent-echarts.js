@@ -5893,7 +5893,7 @@ var TdChartTooltipComponent = /** @class */ (function () {
     TdChartTooltipComponent.decorators = [
         { type: Component, args: [{
                     selector: 'td-chart-tooltip',
-                    template: "<ng-template #tooltipContent [ngTemplateOutlet]=\"formatterTemplate\" [ngTemplateOutletContext]=\"_context\"> </ng-template>\n",
+                    template: "<ng-template #tooltipContent [ngTemplateOutlet]=\"formatterTemplate\" [ngTemplateOutletContext]=\"_context\"></ng-template>\n",
                     changeDetection: ChangeDetectionStrategy.OnPush
                 }] }
     ];
@@ -6046,7 +6046,7 @@ var TdSeriesTooltipComponent = /** @class */ (function () {
     TdSeriesTooltipComponent.decorators = [
         { type: Component, args: [{
                     selector: 'td-chart-series-tooltip',
-                    template: "<ng-template #tooltipContent [ngTemplateOutlet]=\"formatterTemplate\" [ngTemplateOutletContext]=\"_context\"> </ng-template>\n",
+                    template: "<ng-template #tooltipContent [ngTemplateOutlet]=\"formatterTemplate\" [ngTemplateOutletContext]=\"_context\"></ng-template>\n",
                     changeDetection: ChangeDetectionStrategy.OnPush
                 }] }
     ];
@@ -6223,7 +6223,7 @@ var TdChartToolboxComponent = /** @class */ (function () {
     TdChartToolboxComponent.decorators = [
         { type: Component, args: [{
                     selector: 'td-chart-toolbox',
-                    template: "<ng-template #toolboxContent [ngTemplateOutlet]=\"formatterTemplate\"> </ng-template>\n",
+                    template: "<ng-template #toolboxContent [ngTemplateOutlet]=\"formatterTemplate\"></ng-template>\n",
                     changeDetection: ChangeDetectionStrategy.OnPush
                 }] }
     ];
