@@ -29,8 +29,8 @@
   ],
   "peerDependencies": {
     "echarts": "^4.2.1",
-    "@angular/common": "^8.0.0",
-    "@angular/core": "^8.0.0"
+    "@angular/common": "^7.0.0 || ^8.0.0",
+    "@angular/core": "^7.0.0 || ^8.0.0"
   },
   "main": "bundles/covalent-echarts.umd.js",
   "module": "fesm5/covalent-echarts.js",
