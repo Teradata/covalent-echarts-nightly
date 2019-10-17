@@ -51,6 +51,22 @@ TdChartSeriesPieComponent.decorators = [
                 selector: 'td-chart-series[td-pie]',
                 template: '',
                 changeDetection: ChangeDetectionStrategy.OnPush,
+                inputs: [
+                    'config',
+                    'id',
+                    'name',
+                    'color',
+                    'data',
+                    'animation',
+                    'animationThreshold',
+                    'animationDuration',
+                    'animationEasing',
+                    'animationDelay',
+                    'animationDurationUpdate',
+                    'animationEasingUpdate',
+                    'animationDelayUpdate',
+                    'tooltip',
+                ],
                 providers: [
                     {
                         provide: TdSeriesComponent,

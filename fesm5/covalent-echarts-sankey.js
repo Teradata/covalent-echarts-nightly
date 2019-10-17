@@ -50,6 +50,22 @@ var TdChartSeriesSankeyComponent = /** @class */ (function (_super) {
                     selector: 'td-chart-series[td-sankey]',
                     template: '',
                     changeDetection: ChangeDetectionStrategy.OnPush,
+                    inputs: [
+                        'config',
+                        'id',
+                        'name',
+                        'color',
+                        'data',
+                        'animation',
+                        'animationThreshold',
+                        'animationDuration',
+                        'animationEasing',
+                        'animationDelay',
+                        'animationDurationUpdate',
+                        'animationEasingUpdate',
+                        'animationDelayUpdate',
+                        'tooltip',
+                    ],
                     providers: [
                         {
                             provide: TdSeriesComponent,

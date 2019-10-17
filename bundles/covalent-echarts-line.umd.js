@@ -93,6 +93,22 @@
                         selector: 'td-chart-series[td-line]',
                         template: '',
                         changeDetection: core.ChangeDetectionStrategy.OnPush,
+                        inputs: [
+                            'config',
+                            'id',
+                            'name',
+                            'color',
+                            'data',
+                            'animation',
+                            'animationThreshold',
+                            'animationDuration',
+                            'animationEasing',
+                            'animationDelay',
+                            'animationDurationUpdate',
+                            'animationEasingUpdate',
+                            'animationDelayUpdate',
+                            'tooltip',
+                        ],
                         providers: [
                             {
                                 provide: base.TdSeriesComponent,
