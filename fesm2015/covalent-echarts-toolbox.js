@@ -55,7 +55,7 @@ class TdChartToolboxComponent {
     _setOptions() {
         this._checkFormatterTemplate();
         /** @type {?} */
-        let config = assignDefined(this._state, {
+        const config = assignDefined(this._state, {
             show: this.show,
             name: this.trigger,
             orient: this.orient,
@@ -122,25 +122,25 @@ TdChartToolboxComponent.ctorParameters = () => [
     { type: TdChartOptionsService }
 ];
 TdChartToolboxComponent.propDecorators = {
-    config: [{ type: Input, args: ['config',] }],
-    show: [{ type: Input, args: ['show',] }],
-    trigger: [{ type: Input, args: ['name',] }],
-    orient: [{ type: Input, args: ['orient',] }],
-    itemSize: [{ type: Input, args: ['itemSize',] }],
-    itemGap: [{ type: Input, args: ['itemGap',] }],
-    showTitle: [{ type: Input, args: ['showTitle',] }],
-    label: [{ type: Input, args: ['label',] }],
-    feature: [{ type: Input, args: ['feature',] }],
-    iconStyle: [{ type: Input, args: ['iconStyle',] }],
-    zlevel: [{ type: Input, args: ['zlevel',] }],
-    z: [{ type: Input, args: ['z',] }],
-    transitionDuration: [{ type: Input, args: ['transitionDuration',] }],
-    left: [{ type: Input, args: ['left',] }],
-    top: [{ type: Input, args: ['top',] }],
-    right: [{ type: Input, args: ['right',] }],
-    bottom: [{ type: Input, args: ['bottom',] }],
-    width: [{ type: Input, args: ['width',] }],
-    height: [{ type: Input, args: ['height',] }],
+    config: [{ type: Input }],
+    show: [{ type: Input }],
+    trigger: [{ type: Input }],
+    orient: [{ type: Input }],
+    itemSize: [{ type: Input }],
+    itemGap: [{ type: Input }],
+    showTitle: [{ type: Input }],
+    label: [{ type: Input }],
+    feature: [{ type: Input }],
+    iconStyle: [{ type: Input }],
+    zlevel: [{ type: Input }],
+    z: [{ type: Input }],
+    transitionDuration: [{ type: Input }],
+    left: [{ type: Input }],
+    top: [{ type: Input }],
+    right: [{ type: Input }],
+    bottom: [{ type: Input }],
+    width: [{ type: Input }],
+    height: [{ type: Input }],
     formatterTemplate: [{ type: ContentChild, args: [TdChartViewDataFormatterDirective, { read: TemplateRef, static: false },] }],
     fullTemplate: [{ type: ViewChild, args: ['toolboxContent', { static: true },] }]
 };

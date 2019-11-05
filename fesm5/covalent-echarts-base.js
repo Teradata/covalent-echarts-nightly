@@ -4695,17 +4695,17 @@ var TdChartComponent = /** @class */ (function () {
         { type: TdChartOptionsService }
     ]; };
     TdChartComponent.propDecorators = {
-        config: [{ type: Input, args: ['config',] }],
-        group: [{ type: Input, args: ['group',] }],
-        themeName: [{ type: Input, args: ['themeName',] }],
-        renderer: [{ type: Input, args: ['renderer',] }],
-        chartClick: [{ type: Output, args: ['chartClick',] }],
-        chartDblclick: [{ type: Output, args: ['chartDblclick',] }],
-        chartContextmenu: [{ type: Output, args: ['chartContextmenu',] }],
-        magicTypeChanged: [{ type: Output, args: ['magicTypeChanged',] }],
-        dataViewChanged: [{ type: Output, args: ['dataViewChanged',] }],
-        datazoom: [{ type: Output, args: ['datazoom',] }],
-        restore: [{ type: Output, args: ['restore',] }]
+        config: [{ type: Input }],
+        group: [{ type: Input }],
+        themeName: [{ type: Input }],
+        renderer: [{ type: Input }],
+        chartClick: [{ type: Output }],
+        chartDblclick: [{ type: Output }],
+        chartContextmenu: [{ type: Output }],
+        magicTypeChanged: [{ type: Output }],
+        dataViewChanged: [{ type: Output }],
+        datazoom: [{ type: Output }],
+        restore: [{ type: Output }]
     };
     return TdChartComponent;
 }());
@@ -4808,36 +4808,36 @@ var TdChartAxisComponent = /** @class */ (function () {
         this._optionsService.clearOption(this._axisOption);
     };
     TdChartAxisComponent.propDecorators = {
-        config: [{ type: Input, args: ['config',] }],
-        id: [{ type: Input, args: ['id',] }],
-        show: [{ type: Input, args: ['show',] }],
-        gridIndex: [{ type: Input, args: ['gridIndex',] }],
-        offset: [{ type: Input, args: ['offset',] }],
-        type: [{ type: Input, args: ['type',] }],
-        name: [{ type: Input, args: ['name',] }],
-        nameLocation: [{ type: Input, args: ['nameLocation',] }],
-        nameTextStyle: [{ type: Input, args: ['nameTextStyle',] }],
-        nameGap: [{ type: Input, args: ['nameGap',] }],
-        nameRotate: [{ type: Input, args: ['nameRotate',] }],
-        inverse: [{ type: Input, args: ['inverse',] }],
-        boundaryGap: [{ type: Input, args: ['boundaryGap',] }],
-        min: [{ type: Input, args: ['min',] }],
-        max: [{ type: Input, args: ['max',] }],
-        scale: [{ type: Input, args: ['scale',] }],
-        minInterval: [{ type: Input, args: ['minInterval',] }],
-        interval: [{ type: Input, args: ['interval',] }],
-        logBase: [{ type: Input, args: ['logBase',] }],
-        silent: [{ type: Input, args: ['silent',] }],
-        triggerEvent: [{ type: Input, args: ['triggerEvent',] }],
-        axisLine: [{ type: Input, args: ['axisLine',] }],
-        axisTick: [{ type: Input, args: ['axisTick',] }],
-        axisLabel: [{ type: Input, args: ['axisLabel',] }],
-        splitLine: [{ type: Input, args: ['splitLine',] }],
-        splitArea: [{ type: Input, args: ['splitArea',] }],
-        data: [{ type: Input, args: ['data',] }],
-        axisPointer: [{ type: Input, args: ['axisPointer',] }],
-        zlevel: [{ type: Input, args: ['zlevel',] }],
-        z: [{ type: Input, args: ['z',] }]
+        config: [{ type: Input }],
+        id: [{ type: Input }],
+        show: [{ type: Input }],
+        gridIndex: [{ type: Input }],
+        offset: [{ type: Input }],
+        type: [{ type: Input }],
+        name: [{ type: Input }],
+        nameLocation: [{ type: Input }],
+        nameTextStyle: [{ type: Input }],
+        nameGap: [{ type: Input }],
+        nameRotate: [{ type: Input }],
+        inverse: [{ type: Input }],
+        boundaryGap: [{ type: Input }],
+        min: [{ type: Input }],
+        max: [{ type: Input }],
+        scale: [{ type: Input }],
+        minInterval: [{ type: Input }],
+        interval: [{ type: Input }],
+        logBase: [{ type: Input }],
+        silent: [{ type: Input }],
+        triggerEvent: [{ type: Input }],
+        axisLine: [{ type: Input }],
+        axisTick: [{ type: Input }],
+        axisLabel: [{ type: Input }],
+        splitLine: [{ type: Input }],
+        splitArea: [{ type: Input }],
+        data: [{ type: Input }],
+        axisPointer: [{ type: Input }],
+        zlevel: [{ type: Input }],
+        z: [{ type: Input }]
     };
     return TdChartAxisComponent;
 }());
@@ -4895,7 +4895,7 @@ var TdChartXAxisComponent = /** @class */ (function (_super) {
         { type: TdChartOptionsService }
     ]; };
     TdChartXAxisComponent.propDecorators = {
-        position: [{ type: Input, args: ['position',] }]
+        position: [{ type: Input }]
     };
     return TdChartXAxisComponent;
 }(TdChartAxisComponent));
@@ -4953,7 +4953,7 @@ var TdChartYAxisComponent = /** @class */ (function (_super) {
         { type: TdChartOptionsService }
     ]; };
     TdChartYAxisComponent.propDecorators = {
-        position: [{ type: Input, args: ['position',] }]
+        position: [{ type: Input }]
     };
     return TdChartYAxisComponent;
 }(TdChartAxisComponent));
@@ -5028,11 +5028,11 @@ var TdDatasetComponent = /** @class */ (function () {
         { type: TdChartOptionsService }
     ]; };
     TdDatasetComponent.propDecorators = {
-        id: [{ type: Input, args: ['id',] }],
-        config: [{ type: Input, args: ['config',] }],
-        source: [{ type: Input, args: ['source',] }],
-        dimensions: [{ type: Input, args: ['dimensions',] }],
-        sourceHeader: [{ type: Input, args: ['sourceHeader',] }]
+        id: [{ type: Input }],
+        config: [{ type: Input }],
+        source: [{ type: Input }],
+        dimensions: [{ type: Input }],
+        sourceHeader: [{ type: Input }]
     };
     return TdDatasetComponent;
 }());
@@ -5182,20 +5182,20 @@ var TdSeriesComponent = /** @class */ (function () {
         this.optionsService.removeArrayOption('series', this._state);
     };
     TdSeriesComponent.propDecorators = {
-        config: [{ type: Input, args: ['config',] }],
-        id: [{ type: Input, args: ['id',] }],
-        name: [{ type: Input, args: ['name',] }],
-        color: [{ type: Input, args: ['color',] }],
-        data: [{ type: Input, args: ['data',] }],
-        animation: [{ type: Input, args: ['animation',] }],
-        animationThreshold: [{ type: Input, args: ['animationThreshold',] }],
-        animationDuration: [{ type: Input, args: ['animationDuration',] }],
-        animationEasing: [{ type: Input, args: ['animationEasing',] }],
-        animationDelay: [{ type: Input, args: ['animationDelay',] }],
-        animationDurationUpdate: [{ type: Input, args: ['animationDurationUpdate',] }],
-        animationEasingUpdate: [{ type: Input, args: ['animationEasingUpdate',] }],
-        animationDelayUpdate: [{ type: Input, args: ['animationDelayUpdate',] }],
-        tooltip: [{ type: Input, args: ['tooltip',] }]
+        config: [{ type: Input }],
+        id: [{ type: Input }],
+        name: [{ type: Input }],
+        color: [{ type: Input }],
+        data: [{ type: Input }],
+        animation: [{ type: Input }],
+        animationThreshold: [{ type: Input }],
+        animationDuration: [{ type: Input }],
+        animationEasing: [{ type: Input }],
+        animationDelay: [{ type: Input }],
+        animationDurationUpdate: [{ type: Input }],
+        animationEasingUpdate: [{ type: Input }],
+        animationDelayUpdate: [{ type: Input }],
+        tooltip: [{ type: Input }]
     };
     return TdSeriesComponent;
 }());

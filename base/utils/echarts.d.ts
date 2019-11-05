@@ -3,7 +3,7 @@
  * Theme name and theme object needed as stated in
  * https://ecomfe.github.io/echarts-doc/public/en/api.html#echarts.registerTheme
  */
-export declare function registerTheme(themeName: string, theme: Object): void;
+export declare function registerTheme(themeName: string, theme: object): void;
 /**
  * Function to register all default themes
  * @internal

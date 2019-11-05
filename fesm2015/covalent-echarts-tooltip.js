@@ -71,7 +71,7 @@ class TdChartTooltipComponent {
      */
     _setOptions() {
         /** @type {?} */
-        let config = assignDefined(this._state, {
+        const config = assignDefined(this._state, {
             show: this.show,
             trigger: this.trigger,
             axisPointer: this.axisPointer,
@@ -116,7 +116,7 @@ class TdChartTooltipComponent {
         (params, ticket, callback) => {
             this._context = {
                 $implicit: params,
-                ticket: ticket,
+                ticket,
             };
             // timeout set since we need to set the HTML at the end of the angular lifecycle when
             // the tooltip delay is more than 0
@@ -145,27 +145,27 @@ TdChartTooltipComponent.ctorParameters = () => [
     { type: TdChartOptionsService }
 ];
 TdChartTooltipComponent.propDecorators = {
-    config: [{ type: Input, args: ['config',] }],
-    show: [{ type: Input, args: ['show',] }],
-    trigger: [{ type: Input, args: ['trigger',] }],
-    axisPointer: [{ type: Input, args: ['axisPointer',] }],
-    showContent: [{ type: Input, args: ['showContent',] }],
-    alwaysShowContent: [{ type: Input, args: ['alwaysShowContent',] }],
-    triggerOn: [{ type: Input, args: ['triggerOn',] }],
-    showDelay: [{ type: Input, args: ['showDelay',] }],
-    hideDelay: [{ type: Input, args: ['hideDelay',] }],
-    enterable: [{ type: Input, args: ['enterable',] }],
-    renderMode: [{ type: Input, args: ['renderMode',] }],
-    confine: [{ type: Input, args: ['confine',] }],
-    transitionDuration: [{ type: Input, args: ['transitionDuration',] }],
-    position: [{ type: Input, args: ['position',] }],
-    formatter: [{ type: Input, args: ['formatter',] }],
-    backgroundColor: [{ type: Input, args: ['backgroundColor',] }],
-    borderColor: [{ type: Input, args: ['borderColor',] }],
-    borderWidth: [{ type: Input, args: ['borderWidth',] }],
-    padding: [{ type: Input, args: ['padding',] }],
-    textStyle: [{ type: Input, args: ['textStyle',] }],
-    extraCssText: [{ type: Input, args: ['extraCssText',] }],
+    config: [{ type: Input }],
+    show: [{ type: Input }],
+    trigger: [{ type: Input }],
+    axisPointer: [{ type: Input }],
+    showContent: [{ type: Input }],
+    alwaysShowContent: [{ type: Input }],
+    triggerOn: [{ type: Input }],
+    showDelay: [{ type: Input }],
+    hideDelay: [{ type: Input }],
+    enterable: [{ type: Input }],
+    renderMode: [{ type: Input }],
+    confine: [{ type: Input }],
+    transitionDuration: [{ type: Input }],
+    position: [{ type: Input }],
+    formatter: [{ type: Input }],
+    backgroundColor: [{ type: Input }],
+    borderColor: [{ type: Input }],
+    borderWidth: [{ type: Input }],
+    padding: [{ type: Input }],
+    textStyle: [{ type: Input }],
+    extraCssText: [{ type: Input }],
     formatterTemplate: [{ type: ContentChild, args: [TdChartTooltipFormatterDirective, { read: TemplateRef, static: false },] }],
     fullTemplate: [{ type: ViewChild, args: ['tooltipContent', { static: true },] }]
 };
@@ -212,7 +212,7 @@ class TdSeriesTooltipComponent {
      */
     _setOptions() {
         /** @type {?} */
-        let config = assignDefined(this._state, {
+        const config = assignDefined(this._state, {
             position: this.position,
             backgroundColor: this.backgroundColor,
             borderColor: this.borderColor,
@@ -241,7 +241,7 @@ class TdSeriesTooltipComponent {
         (params, ticket, callback) => {
             this._context = {
                 $implicit: params,
-                ticket: ticket,
+                ticket,
             };
             // timeout set since we need to set the HTML at the end of the angular lifecycle when
             // the tooltip delay is more than 0
@@ -277,15 +277,15 @@ TdSeriesTooltipComponent.ctorParameters = () => [
     { type: TdSeriesComponent }
 ];
 TdSeriesTooltipComponent.propDecorators = {
-    config: [{ type: Input, args: ['config',] }],
-    formatter: [{ type: Input, args: ['formatter',] }],
-    position: [{ type: Input, args: ['position',] }],
-    backgroundColor: [{ type: Input, args: ['backgroundColor',] }],
-    borderColor: [{ type: Input, args: ['borderColor',] }],
-    borderWidth: [{ type: Input, args: ['borderWidth',] }],
-    padding: [{ type: Input, args: ['padding',] }],
-    textStyle: [{ type: Input, args: ['textStyle',] }],
-    extraCssText: [{ type: Input, args: ['extraCssText',] }],
+    config: [{ type: Input }],
+    formatter: [{ type: Input }],
+    position: [{ type: Input }],
+    backgroundColor: [{ type: Input }],
+    borderColor: [{ type: Input }],
+    borderWidth: [{ type: Input }],
+    padding: [{ type: Input }],
+    textStyle: [{ type: Input }],
+    extraCssText: [{ type: Input }],
     formatterTemplate: [{ type: ContentChild, args: [TdChartTooltipFormatterDirective, { read: TemplateRef, static: false },] }],
     fullTemplate: [{ type: ViewChild, args: ['tooltipContent', { static: true },] }]
 };
