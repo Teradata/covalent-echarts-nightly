@@ -7,6 +7,92 @@ import { TdSeriesComponent, TdChartOptionsService } from '@covalent/echarts/base
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+/**
+ * @record
+ */
+function ITdTreeEmphasisLineStyle() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdTreeEmphasisLineStyle.prototype.color;
+    /** @type {?|undefined} */
+    ITdTreeEmphasisLineStyle.prototype.width;
+    /** @type {?|undefined} */
+    ITdTreeEmphasisLineStyle.prototype.curveness;
+}
+/**
+ * @record
+ */
+function ITdTreeEmphasis() { }
+if (false) {
+    /** @type {?} */
+    ITdTreeEmphasis.prototype.lineStyle;
+}
+/**
+ * @record
+ */
+function ITdTreeLeaves() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdTreeLeaves.prototype.label;
+    /** @type {?|undefined} */
+    ITdTreeLeaves.prototype.itemStyle;
+    /** @type {?} */
+    ITdTreeLeaves.prototype.emphasis;
+}
+/**
+ * @record
+ */
+function ITdTreeSeries() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.zlevel;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.z;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.left;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.top;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.right;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.bottom;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.width;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.height;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.layout;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.orient;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.symbol;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.symbolSize;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.symbolRotate;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.symbolKeepAspect;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.symbolOffset;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.roam;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.expandAndCollapse;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.initialTreeDepth;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.itemStyle;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.label;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.lineStyle;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.leaves;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.emphasis;
+    /** @type {?} */
+    ITdTreeSeries.prototype.data;
+}
 class TdChartSeriesTreeComponent extends TdSeriesComponent {
     /**
      * @param {?} _optionsService
@@ -104,6 +190,52 @@ TdChartSeriesTreeComponent.propDecorators = {
     leaves: [{ type: Input }],
     emphasis: [{ type: Input }]
 };
+if (false) {
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.zlevel;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.z;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.left;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.top;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.right;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.bottom;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.width;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.height;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.layout;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.orient;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.symbol;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.symbolSize;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.symbolRotate;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.symbolKeepAspect;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.roam;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.expandAndCollapse;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.initialTreeDepth;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.itemStyle;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.label;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.lineStyle;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.leaves;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.emphasis;
+}
 
 /**
  * @fileoverview added by tsickle
@@ -120,6 +252,21 @@ CovalentTreeEchartsModule.decorators = [
                 exports: [TREE_MODULE_COMPONENTS],
             },] }
 ];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 
 export { CovalentTreeEchartsModule, TREE_MODULE_COMPONENTS, TdChartSeriesTreeComponent };
 //# sourceMappingURL=covalent-echarts-tree.js.map

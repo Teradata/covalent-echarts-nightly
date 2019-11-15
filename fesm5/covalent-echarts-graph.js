@@ -8,6 +8,162 @@ import { TdSeriesComponent, TdChartOptionsService } from '@covalent/echarts/base
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+/**
+ * @record
+ */
+function ITdCategories() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdCategories.prototype.name;
+    /** @type {?|undefined} */
+    ITdCategories.prototype.symbol;
+    /** @type {?|undefined} */
+    ITdCategories.prototype.symbolSize;
+    /** @type {?|undefined} */
+    ITdCategories.prototype.symbolRotate;
+    /** @type {?|undefined} */
+    ITdCategories.prototype.symbolKeepAspect;
+    /** @type {?} */
+    ITdCategories.prototype.symbolOffset;
+    /** @type {?} */
+    ITdCategories.prototype.itemStyle;
+    /** @type {?} */
+    ITdCategories.prototype.label;
+    /** @type {?} */
+    ITdCategories.prototype.emphasis;
+}
+/**
+ * @record
+ */
+function ITdGraphForce() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdGraphForce.prototype.initLayout;
+    /** @type {?|undefined} */
+    ITdGraphForce.prototype.repulsion;
+    /** @type {?|undefined} */
+    ITdGraphForce.prototype.gravity;
+    /** @type {?|undefined} */
+    ITdGraphForce.prototype.edgeLength;
+    /** @type {?|undefined} */
+    ITdGraphForce.prototype.layoutAnimation;
+}
+/**
+ * @record
+ */
+function ITdGraphSeries() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.legendHoverLink;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.coordinateSystem;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.xAxisIndex;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.yAxisIndex;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.polarIndex;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.calendarIndex;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.geoIndex;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.hoverAnimation;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.circular;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.force;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.layout;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.nodeScaleRatio;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.draggable;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.symbol;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.symbolSize;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.symbolRotate;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.symbolKeepAspect;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.symbolOffset;
+    /** @type {?} */
+    ITdGraphSeries.prototype.focusNodeAdjacency;
+    /** @type {?} */
+    ITdGraphSeries.prototype.edgeSymbol;
+    /** @type {?} */
+    ITdGraphSeries.prototype.edgeSymbolSize;
+    /** @type {?} */
+    ITdGraphSeries.prototype.cursor;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.roam;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.expandAndCollapse;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.initialTreeDepth;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.itemStyle;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.lineStyle;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.label;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.edgeLabel;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.emphasis;
+    /** @type {?} */
+    ITdGraphSeries.prototype.categories;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.data;
+    /** @type {?} */
+    ITdGraphSeries.prototype.nodes;
+    /** @type {?} */
+    ITdGraphSeries.prototype.links;
+    /** @type {?} */
+    ITdGraphSeries.prototype.edges;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.markPoint;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.markLine;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.markArea;
+    /** @type {?} */
+    ITdGraphSeries.prototype.zlevel;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.z;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.silent;
+    /** @type {?} */
+    ITdGraphSeries.prototype.left;
+    /** @type {?} */
+    ITdGraphSeries.prototype.top;
+    /** @type {?} */
+    ITdGraphSeries.prototype.right;
+    /** @type {?} */
+    ITdGraphSeries.prototype.bottom;
+    /** @type {?} */
+    ITdGraphSeries.prototype.width;
+    /** @type {?} */
+    ITdGraphSeries.prototype.height;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.animation;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.animationThreshold;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.animationDuration;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.animationEasing;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.animationDelay;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.animationDurationUpdate;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.animationEasingUpdate;
+    /** @type {?|undefined} */
+    ITdGraphSeries.prototype.animationDelayUpdate;
+}
 var TdChartSeriesGraphComponent = /** @class */ (function (_super) {
     __extends(TdChartSeriesGraphComponent, _super);
     function TdChartSeriesGraphComponent(_optionsService) {
@@ -152,6 +308,98 @@ var TdChartSeriesGraphComponent = /** @class */ (function (_super) {
     };
     return TdChartSeriesGraphComponent;
 }(TdSeriesComponent));
+if (false) {
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.legendHoverLink;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.coordinateSystem;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.xAxisIndex;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.yAxisIndex;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.polarIndex;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.calendarIndex;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.geoIndex;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.hoverAnimation;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.circular;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.force;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.layout;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.nodeScaleRatio;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.draggable;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.symbol;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.symbolSize;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.symbolRotate;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.symbolKeepAspect;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.symbolOffset;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.focusNodeAdjacency;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.edgeSymbol;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.edgeSymbolSize;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.cursor;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.roam;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.initialTreeDepth;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.itemStyle;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.lineStyle;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.label;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.edgeLabel;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.emphasis;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.categories;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.nodes;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.links;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.edges;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.markPoint;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.markLine;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.markArea;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.zlevel;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.z;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.silent;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.left;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.top;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.right;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.bottom;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.width;
+    /** @type {?} */
+    TdChartSeriesGraphComponent.prototype.height;
+}
 
 /**
  * @fileoverview added by tsickle
@@ -171,6 +419,21 @@ var CovalentGraphEchartsModule = /** @class */ (function () {
     ];
     return CovalentGraphEchartsModule;
 }());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 
 export { CovalentGraphEchartsModule, GRAPH_MODULE_COMPONENTS, TdChartSeriesGraphComponent };
 //# sourceMappingURL=covalent-echarts-graph.js.map

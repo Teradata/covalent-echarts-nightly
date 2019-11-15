@@ -1,6 +1,6 @@
-import { Injectable, Optional, SkipSelf, Component, ChangeDetectionStrategy, ChangeDetectorRef, ElementRef, Input, Output, EventEmitter, NgModule, forwardRef, ContentChild, TemplateRef, ViewChild, Directive } from '@angular/core';
+import { Injectable, Optional, SkipSelf, EventEmitter, Component, ChangeDetectionStrategy, ChangeDetectorRef, ElementRef, Input, Output, NgModule, forwardRef, Directive, ContentChild, TemplateRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BehaviorSubject, fromEvent, merge, timer, Subject } from 'rxjs';
+import { BehaviorSubject, Subject, fromEvent, merge, timer } from 'rxjs';
 import { takeUntil, debounceTime, distinctUntilChanged, tap } from 'rxjs/operators';
 import { registerTheme as registerTheme$1, init, connect, dispose } from 'echarts/lib/echarts';
 import { __values, __extends, __assign } from 'tslib';
@@ -126,6 +126,18 @@ var TdChartOptionsService = /** @class */ (function () {
     ];
     return TdChartOptionsService;
 }());
+if (false) {
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartOptionsService.prototype._options;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartOptionsService.prototype._optionsSubject;
+}
 /**
  * @param {?} parent
  * @return {?}
@@ -162,7 +174,7 @@ function assignDefined(target) {
         for (var sources_1 = __values(sources), sources_1_1 = sources_1.next(); !sources_1_1.done; sources_1_1 = sources_1.next()) {
             var source = sources_1_1.value;
             try {
-                for (var _d = __values(Object.keys(source)), _e = _d.next(); !_e.done; _e = _d.next()) {
+                for (var _d = (e_2 = void 0, __values(Object.keys(source))), _e = _d.next(); !_e.done; _e = _d.next()) {
                     var key = _e.value;
                     keys.add(key);
                     /** @type {?} */
@@ -4441,6 +4453,11 @@ function getThemes() {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 var TdChartComponent = /** @class */ (function () {
     function TdChartComponent(_changeDetectorRef, _elementRef, _optionsService) {
         this._changeDetectorRef = _changeDetectorRef;
@@ -4717,6 +4734,97 @@ var TdChartComponent = /** @class */ (function () {
     };
     return TdChartComponent;
 }());
+if (false) {
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartComponent.prototype._destroy;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartComponent.prototype._widthSubject;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartComponent.prototype._heightSubject;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartComponent.prototype._instance;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartComponent.prototype._state;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartComponent.prototype._options;
+    /**
+     * config?: any;
+     * Sets the JS config object if you choose to not use the property inputs.
+     * Note: [config] input properties will override input values
+     * https://ecomfe.github.io/echarts-doc/public/en/option.html
+     * @type {?}
+     */
+    TdChartComponent.prototype.config;
+    /**
+     * group?: string
+     * group name in which the chart instance will be connected to
+     * https://ecomfe.github.io/echarts-doc/public/en/api.html#echarts.connect
+     * @type {?}
+     */
+    TdChartComponent.prototype.group;
+    /**
+     * themeName?: string
+     * theme to be applied into chart instance
+     * https://ecomfe.github.io/echarts-doc/public/en/tutorial.html#Overview%20of%20Style%20Customization
+     * @type {?}
+     */
+    TdChartComponent.prototype.themeName;
+    /**
+     * renderer: 'svg' | 'canvas'
+     * sets the rendering mode for the chart.
+     * defaults to 'canvas'
+     * https://ecomfe.github.io/echarts-doc/public/en/tutorial.html#Render%20by%20Canvas%20or%20SVG
+     * @type {?}
+     */
+    TdChartComponent.prototype.renderer;
+    /** @type {?} */
+    TdChartComponent.prototype.chartClick;
+    /** @type {?} */
+    TdChartComponent.prototype.chartDblclick;
+    /** @type {?} */
+    TdChartComponent.prototype.chartContextmenu;
+    /** @type {?} */
+    TdChartComponent.prototype.magicTypeChanged;
+    /** @type {?} */
+    TdChartComponent.prototype.dataViewChanged;
+    /** @type {?} */
+    TdChartComponent.prototype.datazoom;
+    /** @type {?} */
+    TdChartComponent.prototype.restore;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartComponent.prototype._changeDetectorRef;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartComponent.prototype._elementRef;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartComponent.prototype._optionsService;
+}
 
 /**
  * @fileoverview added by tsickle
@@ -4849,6 +4957,85 @@ var TdChartAxisComponent = /** @class */ (function () {
     };
     return TdChartAxisComponent;
 }());
+if (false) {
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartAxisComponent.prototype._state;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.config;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.id;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.show;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.gridIndex;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.offset;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.position;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.type;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.name;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.nameLocation;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.nameTextStyle;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.nameGap;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.nameRotate;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.inverse;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.boundaryGap;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.min;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.max;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.scale;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.minInterval;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.interval;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.logBase;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.silent;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.triggerEvent;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.axisLine;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.axisTick;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.axisLabel;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.splitLine;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.splitArea;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.data;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.axisPointer;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.zlevel;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.z;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartAxisComponent.prototype._axisOption;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartAxisComponent.prototype._optionsService;
+}
 
 /**
  * @fileoverview added by tsickle
@@ -4907,6 +5094,10 @@ var TdChartXAxisComponent = /** @class */ (function (_super) {
     };
     return TdChartXAxisComponent;
 }(TdChartAxisComponent));
+if (false) {
+    /** @type {?} */
+    TdChartXAxisComponent.prototype.position;
+}
 
 /**
  * @fileoverview added by tsickle
@@ -4965,6 +5156,10 @@ var TdChartYAxisComponent = /** @class */ (function (_super) {
     };
     return TdChartYAxisComponent;
 }(TdChartAxisComponent));
+if (false) {
+    /** @type {?} */
+    TdChartYAxisComponent.prototype.position;
+}
 
 /**
  * @fileoverview added by tsickle
@@ -5044,6 +5239,28 @@ var TdDatasetComponent = /** @class */ (function () {
     };
     return TdDatasetComponent;
 }());
+if (false) {
+    /**
+     * @type {?}
+     * @private
+     */
+    TdDatasetComponent.prototype._state;
+    /** @type {?} */
+    TdDatasetComponent.prototype.id;
+    /** @type {?} */
+    TdDatasetComponent.prototype.config;
+    /** @type {?} */
+    TdDatasetComponent.prototype.source;
+    /** @type {?} */
+    TdDatasetComponent.prototype.dimensions;
+    /** @type {?} */
+    TdDatasetComponent.prototype.sourceHeader;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdDatasetComponent.prototype._optionsService;
+}
 
 /**
  * @fileoverview added by tsickle
@@ -5074,6 +5291,23 @@ var CovalentBaseEchartsModule = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+/**
+ * @record
+ * @template T
+ */
+function ITdSeries() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdSeries.prototype.id;
+    /** @type {?|undefined} */
+    ITdSeries.prototype.name;
+    /** @type {?|undefined} */
+    ITdSeries.prototype.color;
+    /** @type {?|undefined} */
+    ITdSeries.prototype.type;
+    /** @type {?|undefined} */
+    ITdSeries.prototype.tooltip;
+}
 /**
  * @abstract
  * @template T
@@ -5207,11 +5441,136 @@ var TdSeriesComponent = /** @class */ (function () {
     };
     return TdSeriesComponent;
 }());
+if (false) {
+    /**
+     * @type {?}
+     * @private
+     */
+    TdSeriesComponent.prototype._type;
+    /** @type {?} */
+    TdSeriesComponent.prototype._state;
+    /** @type {?} */
+    TdSeriesComponent.prototype._options;
+    /** @type {?} */
+    TdSeriesComponent.prototype.config;
+    /** @type {?} */
+    TdSeriesComponent.prototype.id;
+    /** @type {?} */
+    TdSeriesComponent.prototype.name;
+    /** @type {?} */
+    TdSeriesComponent.prototype.color;
+    /** @type {?} */
+    TdSeriesComponent.prototype.data;
+    /** @type {?} */
+    TdSeriesComponent.prototype.animation;
+    /** @type {?} */
+    TdSeriesComponent.prototype.animationThreshold;
+    /** @type {?} */
+    TdSeriesComponent.prototype.animationDuration;
+    /** @type {?} */
+    TdSeriesComponent.prototype.animationEasing;
+    /** @type {?} */
+    TdSeriesComponent.prototype.animationDelay;
+    /** @type {?} */
+    TdSeriesComponent.prototype.animationDurationUpdate;
+    /** @type {?} */
+    TdSeriesComponent.prototype.animationEasingUpdate;
+    /** @type {?} */
+    TdSeriesComponent.prototype.animationDelayUpdate;
+    /** @type {?} */
+    TdSeriesComponent.prototype.tooltip;
+    /**
+     * @type {?}
+     * @protected
+     */
+    TdSeriesComponent.prototype.optionsService;
+    /**
+     * @abstract
+     * @return {?}
+     */
+    TdSeriesComponent.prototype.getConfig = function () { };
+}
 
 /**
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
+function ITdBarSeries() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.legendHoverLink;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.coordinateSystem;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.xAxisIndex;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.yAxisIndex;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.Label;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.itemStyle;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.emphasis;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.stack;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.cursor;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.barWidth;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.barMaxWidth;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.barMinHeight;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.barGap;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.barCategoryGap;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.large;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.largeThreshold;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.progressive;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.progressiveThreshold;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.progressiveChunkMode;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.dimensions;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.encode;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.seriesLayoutBy;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.datasetIndex;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.data;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.markPoint;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.markLine;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.markArea;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.Zlevel;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.z;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.silent;
+}
 var TdChartSeriesBarComponent = /** @class */ (function (_super) {
     __extends(TdChartSeriesBarComponent, _super);
     function TdChartSeriesBarComponent(_optionsService) {
@@ -5323,6 +5682,64 @@ var TdChartSeriesBarComponent = /** @class */ (function (_super) {
     };
     return TdChartSeriesBarComponent;
 }(TdSeriesComponent$1));
+if (false) {
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.coordinateSystem;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.xAxisIndex;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.yAxisIndex;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.legendHoverLink;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.stack;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.cursor;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.label;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.itemStyle;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.emphasis;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.barWidth;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.barMaxWidth;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.barMinHeight;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.barGap;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.barCategoryGap;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.large;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.largeThreshold;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.progressive;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.progressiveThreshold;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.progressiveChunkMode;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.dimensions;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.encode;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.seriesLayoutBy;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.datasetIndex;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.markPoint;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.markLine;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.markArea;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.zlevel;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.z;
+}
 
 /**
  * @fileoverview added by tsickle
@@ -5347,6 +5764,78 @@ var CovalentBarEchartsModule = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
+function ITdPieSeries() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.legendHoverLink;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.hoverAnimation;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.hoverOffset;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.selectedMode;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.selectedOffset;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.clockwise;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.startAngle;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.minAngle;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.minShowLabelAngle;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.roseType;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.avoidLabelOverlap;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.stillShowZeroSum;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.cursor;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.labelLine;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.Label;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.itemStyle;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.emphasis;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.seriesLayoutBy;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.datasetIndex;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.data;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.markPoint;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.markLine;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.markArea;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.Zlevel;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.z;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.center;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.radius;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.silent;
+}
 var TdChartSeriesPieComponent = /** @class */ (function (_super) {
     __extends(TdChartSeriesPieComponent, _super);
     function TdChartSeriesPieComponent(_optionsService) {
@@ -5452,6 +5941,60 @@ var TdChartSeriesPieComponent = /** @class */ (function (_super) {
     };
     return TdChartSeriesPieComponent;
 }(TdSeriesComponent$1));
+if (false) {
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.legendHoverLink;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.hoverAnimation;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.hoverOffset;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.selectedMode;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.selectedOffset;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.clockwise;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.startAngle;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.minAngle;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.minShowLabelAngle;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.roseType;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.avoidLabelOverlap;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.stillShowZeroSum;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.cursor;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.labelLine;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.label;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.itemStyle;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.emphasis;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.seriesLayoutBy;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.datasetIndex;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.markPoint;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.markLine;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.markArea;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.zlevel;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.z;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.center;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.radius;
+}
 
 /**
  * @fileoverview added by tsickle
@@ -5476,6 +6019,100 @@ var CovalentPieEchartsModule = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
+function ITdLineSeries() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.coordinateSystem;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.xAxisIndex;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.yAxisIndex;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.polarIndex;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.symbol;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.symbolSize;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.symbolRotate;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.symbolKeepAspect;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.symbolOffset;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.showSymbol;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.showAllSymbol;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.hoverAnimation;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.legendHoverLink;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.stack;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.cursor;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.connectNulls;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.clipOverflow;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.step;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.label;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.itemStyle;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.lineStyle;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.width;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.opacity;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.areaStyle;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.emphasis;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.smooth;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.smoothMonotone;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.sampling;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.dimensions;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.encode;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.seriesLayoutBy;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.datasetIndex;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.data;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.markPoint;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.markLine;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.markArea;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.zlevel;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.z;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.silent;
+}
 var TdChartSeriesLineComponent = /** @class */ (function (_super) {
     __extends(TdChartSeriesLineComponent, _super);
     function TdChartSeriesLineComponent(_optionsService) {
@@ -5603,6 +6240,80 @@ var TdChartSeriesLineComponent = /** @class */ (function (_super) {
     };
     return TdChartSeriesLineComponent;
 }(TdSeriesComponent$1));
+if (false) {
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.coordinateSystem;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.xAxisIndex;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.yAxisIndex;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.polarIndex;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.symbol;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.symbolSize;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.symbolRotate;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.symbolKeepAspect;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.symbolOffset;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.showSymbol;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.showAllSymbol;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.hoverAnimation;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.legendHoverLink;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.stack;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.cursor;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.connectNulls;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.clipOverflow;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.step;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.label;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.itemStyle;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.lineStyle;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.areaStyle;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.emphasis;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.smooth;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.smoothMonotone;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.sampling;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.dimensions;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.encode;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.seriesLayoutBy;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.datasetIndex;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.markPoint;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.markLine;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.markArea;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.zlevel;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.z;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.silent;
+}
 
 /**
  * @fileoverview added by tsickle
@@ -5627,6 +6338,92 @@ var CovalentLineEchartsModule = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
+function ITdScatterSeries() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.coordinateSystem;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.xAxisIndex;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.yAxisIndex;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.polarIndex;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.geoIndex;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.calendarIndex;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.hoverAnimation;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.legendHoverLink;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.symbol;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.symbolSize;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.symbolRotate;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.symbolKeepAspect;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.symbolOffset;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.large;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.largeThreshold;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.cursor;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.connectNulls;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.clipOverflow;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.step;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.label;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.itemStyle;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.emphasis;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.progressive;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.progressiveThreshold;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.dimensions;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.encode;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.seriesLayoutBy;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.datasetIndex;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.data;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.markPoint;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.markLine;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.markArea;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.zlevel;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.z;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.silent;
+}
 var TdChartSeriesScatterComponent = /** @class */ (function (_super) {
     __extends(TdChartSeriesScatterComponent, _super);
     function TdChartSeriesScatterComponent(_optionsService) {
@@ -5744,6 +6541,70 @@ var TdChartSeriesScatterComponent = /** @class */ (function (_super) {
     };
     return TdChartSeriesScatterComponent;
 }(TdSeriesComponent$1));
+if (false) {
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.coordinateSystem;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.xAxisIndex;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.yAxisIndex;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.polarIndex;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.geoIndex;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.calendarIndex;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.hoverAnimation;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.legendHoverLink;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.symbol;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.symbolSize;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.symbolRotate;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.symbolKeepAspect;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.symbolOffset;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.large;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.largeThreshold;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.cursor;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.label;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.itemStyle;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.emphasis;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.progressive;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.progressiveThreshold;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.dimensions;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.encode;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.seriesLayoutBy;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.datasetIndex;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.markPoint;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.markLine;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.markArea;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.zlevel;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.z;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.silent;
+}
 
 /**
  * @fileoverview added by tsickle
@@ -5768,6 +6629,102 @@ var CovalentScatterEchartsModule = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
+function ITdTreeEmphasisLineStyle() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdTreeEmphasisLineStyle.prototype.color;
+    /** @type {?|undefined} */
+    ITdTreeEmphasisLineStyle.prototype.width;
+    /** @type {?|undefined} */
+    ITdTreeEmphasisLineStyle.prototype.curveness;
+}
+/**
+ * @record
+ */
+function ITdTreeEmphasis() { }
+if (false) {
+    /** @type {?} */
+    ITdTreeEmphasis.prototype.lineStyle;
+}
+/**
+ * @record
+ */
+function ITdTreeLeaves() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdTreeLeaves.prototype.label;
+    /** @type {?|undefined} */
+    ITdTreeLeaves.prototype.itemStyle;
+    /** @type {?} */
+    ITdTreeLeaves.prototype.emphasis;
+}
+/**
+ * @record
+ */
+function ITdTreeSeries() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.zlevel;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.z;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.left;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.top;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.right;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.bottom;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.width;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.height;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.layout;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.orient;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.symbol;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.symbolSize;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.symbolRotate;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.symbolKeepAspect;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.symbolOffset;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.roam;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.expandAndCollapse;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.initialTreeDepth;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.itemStyle;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.label;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.lineStyle;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.leaves;
+    /** @type {?|undefined} */
+    ITdTreeSeries.prototype.emphasis;
+    /** @type {?} */
+    ITdTreeSeries.prototype.data;
+}
 var TdChartSeriesTreeComponent = /** @class */ (function (_super) {
     __extends(TdChartSeriesTreeComponent, _super);
     function TdChartSeriesTreeComponent(_optionsService) {
@@ -5867,6 +6824,52 @@ var TdChartSeriesTreeComponent = /** @class */ (function (_super) {
     };
     return TdChartSeriesTreeComponent;
 }(TdSeriesComponent$1));
+if (false) {
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.zlevel;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.z;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.left;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.top;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.right;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.bottom;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.width;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.height;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.layout;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.orient;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.symbol;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.symbolSize;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.symbolRotate;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.symbolKeepAspect;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.roam;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.expandAndCollapse;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.initialTreeDepth;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.itemStyle;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.label;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.lineStyle;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.leaves;
+    /** @type {?} */
+    TdChartSeriesTreeComponent.prototype.emphasis;
+}
 
 /**
  * @fileoverview added by tsickle
@@ -5891,11 +6894,27 @@ var CovalentTreeEchartsModule = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 var TdTooltipContext = /** @class */ (function () {
     function TdTooltipContext() {
     }
     return TdTooltipContext;
 }());
+if (false) {
+    /** @type {?} */
+    TdTooltipContext.prototype.$implicit;
+    /** @type {?} */
+    TdTooltipContext.prototype.ticket;
+}
 var TdChartTooltipFormatterDirective = /** @class */ (function () {
     function TdChartTooltipFormatterDirective() {
     }
@@ -6074,6 +7093,76 @@ var TdChartTooltipComponent = /** @class */ (function () {
     };
     return TdChartTooltipComponent;
 }());
+if (false) {
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartTooltipComponent.prototype._state;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype._context;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.config;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.show;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.trigger;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.axisPointer;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.showContent;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.alwaysShowContent;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.triggerOn;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.showDelay;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.hideDelay;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.enterable;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.renderMode;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.confine;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.transitionDuration;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.position;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.formatter;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.backgroundColor;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.borderColor;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.borderWidth;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.padding;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.textStyle;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.extraCssText;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.formatterTemplate;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.fullTemplate;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartTooltipComponent.prototype._changeDetectorRef;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartTooltipComponent.prototype._elementRef;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartTooltipComponent.prototype._optionsService;
+}
 
 /**
  * @fileoverview added by tsickle
@@ -6215,6 +7304,52 @@ var TdSeriesTooltipComponent = /** @class */ (function () {
     };
     return TdSeriesTooltipComponent;
 }());
+if (false) {
+    /**
+     * @type {?}
+     * @private
+     */
+    TdSeriesTooltipComponent.prototype._state;
+    /** @type {?} */
+    TdSeriesTooltipComponent.prototype._context;
+    /** @type {?} */
+    TdSeriesTooltipComponent.prototype.config;
+    /** @type {?} */
+    TdSeriesTooltipComponent.prototype.formatter;
+    /** @type {?} */
+    TdSeriesTooltipComponent.prototype.position;
+    /** @type {?} */
+    TdSeriesTooltipComponent.prototype.backgroundColor;
+    /** @type {?} */
+    TdSeriesTooltipComponent.prototype.borderColor;
+    /** @type {?} */
+    TdSeriesTooltipComponent.prototype.borderWidth;
+    /** @type {?} */
+    TdSeriesTooltipComponent.prototype.padding;
+    /** @type {?} */
+    TdSeriesTooltipComponent.prototype.textStyle;
+    /** @type {?} */
+    TdSeriesTooltipComponent.prototype.extraCssText;
+    /** @type {?} */
+    TdSeriesTooltipComponent.prototype.formatterTemplate;
+    /** @type {?} */
+    TdSeriesTooltipComponent.prototype.fullTemplate;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdSeriesTooltipComponent.prototype._changeDetectorRef;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdSeriesTooltipComponent.prototype._elementRef;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdSeriesTooltipComponent.prototype._seriesComponent;
+}
 
 /**
  * @fileoverview added by tsickle
@@ -6243,6 +7378,212 @@ var CovalentTooltipEchartsModule = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @record
+ */
+function ITdAcceptedBrushTypes() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdAcceptedBrushTypes.prototype.rect;
+    /** @type {?|undefined} */
+    ITdAcceptedBrushTypes.prototype.polygon;
+    /** @type {?|undefined} */
+    ITdAcceptedBrushTypes.prototype.lineX;
+    /** @type {?|undefined} */
+    ITdAcceptedBrushTypes.prototype.lineY;
+    /** @type {?|undefined} */
+    ITdAcceptedBrushTypes.prototype.keep;
+    /** @type {?|undefined} */
+    ITdAcceptedBrushTypes.prototype.clear;
+}
+/**
+ * @record
+ */
+function ITdAcceptedMagicTypes() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdAcceptedMagicTypes.prototype.line;
+    /** @type {?|undefined} */
+    ITdAcceptedMagicTypes.prototype.bar;
+    /** @type {?|undefined} */
+    ITdAcceptedMagicTypes.prototype.stack;
+    /** @type {?|undefined} */
+    ITdAcceptedMagicTypes.prototype.tiled;
+}
+/**
+ * @record
+ */
+function ITdToolboxIconEmphasis() { }
+/**
+ * @record
+ */
+function ITdFeatureIconStyle() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdFeatureIconStyle.prototype.textPosition;
+    /** @type {?|undefined} */
+    ITdFeatureIconStyle.prototype.textAlign;
+    /** @type {?|undefined} */
+    ITdFeatureIconStyle.prototype.emphasis;
+}
+/**
+ * @record
+ */
+function ITdZoomTitles() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdZoomTitles.prototype.zoom;
+    /** @type {?|undefined} */
+    ITdZoomTitles.prototype.back;
+}
+/**
+ * @record
+ */
+function ITdSaveAsImage() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdSaveAsImage.prototype.type;
+    /** @type {?|undefined} */
+    ITdSaveAsImage.prototype.name;
+    /** @type {?|undefined} */
+    ITdSaveAsImage.prototype.backgroundColor;
+    /** @type {?|undefined} */
+    ITdSaveAsImage.prototype.excludeComponents;
+    /** @type {?|undefined} */
+    ITdSaveAsImage.prototype.show;
+    /** @type {?|undefined} */
+    ITdSaveAsImage.prototype.title;
+    /** @type {?|undefined} */
+    ITdSaveAsImage.prototype.icon;
+    /** @type {?|undefined} */
+    ITdSaveAsImage.prototype.iconStyle;
+    /** @type {?|undefined} */
+    ITdSaveAsImage.prototype.pixelRatio;
+}
+/**
+ * @record
+ */
+function ITdRestore() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdRestore.prototype.show;
+    /** @type {?|undefined} */
+    ITdRestore.prototype.title;
+    /** @type {?|undefined} */
+    ITdRestore.prototype.icon;
+    /** @type {?|undefined} */
+    ITdRestore.prototype.iconStyle;
+}
+/**
+ * @record
+ */
+function ITdDataView() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdDataView.prototype.show;
+    /** @type {?|undefined} */
+    ITdDataView.prototype.title;
+    /** @type {?|undefined} */
+    ITdDataView.prototype.icon;
+    /** @type {?|undefined} */
+    ITdDataView.prototype.iconStyle;
+    /** @type {?|undefined} */
+    ITdDataView.prototype.readOnly;
+    /** @type {?|undefined} */
+    ITdDataView.prototype.optionToContent;
+    /** @type {?|undefined} */
+    ITdDataView.prototype.contentToOption;
+    /** @type {?|undefined} */
+    ITdDataView.prototype.lang;
+    /** @type {?|undefined} */
+    ITdDataView.prototype.textareaColor;
+    /** @type {?|undefined} */
+    ITdDataView.prototype.textareaBorderColor;
+    /** @type {?|undefined} */
+    ITdDataView.prototype.textColor;
+    /** @type {?|undefined} */
+    ITdDataView.prototype.buttonColor;
+    /** @type {?|undefined} */
+    ITdDataView.prototype.buttonTextColor;
+}
+/**
+ * @record
+ */
+function ITdDataZoom() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdDataZoom.prototype.show;
+    /** @type {?|undefined} */
+    ITdDataZoom.prototype.title;
+    /** @type {?|undefined} */
+    ITdDataZoom.prototype.icon;
+    /** @type {?|undefined} */
+    ITdDataZoom.prototype.iconStyle;
+    /** @type {?|undefined} */
+    ITdDataZoom.prototype.xAxisIndex;
+    /** @type {?|undefined} */
+    ITdDataZoom.prototype.yAxisIndex;
+}
+/**
+ * @record
+ */
+function ITdMagicType() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdMagicType.prototype.show;
+    /** @type {?|undefined} */
+    ITdMagicType.prototype.type;
+    /** @type {?|undefined} */
+    ITdMagicType.prototype.title;
+    /** @type {?|undefined} */
+    ITdMagicType.prototype.icon;
+    /** @type {?|undefined} */
+    ITdMagicType.prototype.iconStyle;
+    /** @type {?|undefined} */
+    ITdMagicType.prototype.option;
+    /** @type {?|undefined} */
+    ITdMagicType.prototype.seriesIndex;
+}
+/**
+ * @record
+ */
+function ITdBrush() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdBrush.prototype.type;
+    /** @type {?|undefined} */
+    ITdBrush.prototype.icon;
+    /** @type {?|undefined} */
+    ITdBrush.prototype.title;
+}
+/**
+ * @record
+ */
+function ITdToolboxFeature() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdToolboxFeature.prototype.saveAsImage;
+    /** @type {?|undefined} */
+    ITdToolboxFeature.prototype.restore;
+    /** @type {?|undefined} */
+    ITdToolboxFeature.prototype.dataView;
+    /** @type {?|undefined} */
+    ITdToolboxFeature.prototype.dataZoom;
+    /** @type {?|undefined} */
+    ITdToolboxFeature.prototype.magicType;
+    /** @type {?|undefined} */
+    ITdToolboxFeature.prototype.brush;
+}
 var TdChartViewDataFormatterDirective = /** @class */ (function () {
     function TdChartViewDataFormatterDirective() {
     }
@@ -6343,7 +7684,7 @@ var TdChartToolboxComponent = /** @class */ (function () {
      */
     function () {
         if (this.formatterTemplate) {
-            this.feature = __assign({}, this.feature, { dataView: __assign({}, this.feature.dataView, { optionToContent: this._optionToContentFormatter() }) });
+            this.feature = __assign(__assign({}, this.feature), { dataView: __assign(__assign({}, this.feature.dataView), { optionToContent: this._optionToContentFormatter() }) });
         }
     };
     /**
@@ -6402,6 +7743,70 @@ var TdChartToolboxComponent = /** @class */ (function () {
     };
     return TdChartToolboxComponent;
 }());
+if (false) {
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartToolboxComponent.prototype._state;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.config;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.show;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.trigger;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.orient;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.itemSize;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.itemGap;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.showTitle;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.label;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.feature;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.iconStyle;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.zlevel;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.z;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.transitionDuration;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.left;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.top;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.right;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.bottom;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.width;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.height;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.formatterTemplate;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.fullTemplate;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartToolboxComponent.prototype._changeDetectorRef;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartToolboxComponent.prototype._elementRef;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartToolboxComponent.prototype._optionsService;
+}
 
 /**
  * @fileoverview added by tsickle
@@ -6421,6 +7826,31 @@ var CovalentToolboxEchartsModule = /** @class */ (function () {
     ];
     return CovalentToolboxEchartsModule;
 }());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 
 export { BAR_MODULE_COMPONENTS, BASE_MODULE_COMPONENTS, CovalentBarEchartsModule, CovalentBaseEchartsModule, CovalentLineEchartsModule, CovalentPieEchartsModule, CovalentScatterEchartsModule, CovalentToolboxEchartsModule, CovalentTooltipEchartsModule, CovalentTreeEchartsModule, LINE_MODULE_COMPONENTS, PIE_MODULE_COMPONENTS, SCATTER_MODULE_COMPONENTS, TOOLBOX_MODULE_COMPONENTS, TOOLTIP_MODULE_COMPONENTS, TREE_MODULE_COMPONENTS, TdChartAxisComponent, TdChartComponent, TdChartOptionsService, TdChartSeriesBarComponent, TdChartSeriesLineComponent, TdChartSeriesPieComponent, TdChartSeriesScatterComponent, TdChartSeriesTreeComponent, TdChartToolboxComponent, TdChartTooltipComponent, TdChartTooltipFormatterDirective, TdChartViewDataFormatterDirective, TdChartXAxisComponent, TdChartYAxisComponent, TdDatasetComponent, TdSeriesComponent, TdSeriesTooltipComponent, TdTooltipContext, assignDefined, getThemes, registerDefaultThemes, registerTheme, CHART_PROVIDER_FACTORY as ɵa, CHART_PROVIDER as ɵb };
 //# sourceMappingURL=covalent-echarts.js.map

@@ -7,6 +7,202 @@ import { assignDefined, TdChartOptionsService } from '@covalent/echarts/base';
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+/**
+ * @record
+ */
+function ITdAcceptedBrushTypes() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdAcceptedBrushTypes.prototype.rect;
+    /** @type {?|undefined} */
+    ITdAcceptedBrushTypes.prototype.polygon;
+    /** @type {?|undefined} */
+    ITdAcceptedBrushTypes.prototype.lineX;
+    /** @type {?|undefined} */
+    ITdAcceptedBrushTypes.prototype.lineY;
+    /** @type {?|undefined} */
+    ITdAcceptedBrushTypes.prototype.keep;
+    /** @type {?|undefined} */
+    ITdAcceptedBrushTypes.prototype.clear;
+}
+/**
+ * @record
+ */
+function ITdAcceptedMagicTypes() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdAcceptedMagicTypes.prototype.line;
+    /** @type {?|undefined} */
+    ITdAcceptedMagicTypes.prototype.bar;
+    /** @type {?|undefined} */
+    ITdAcceptedMagicTypes.prototype.stack;
+    /** @type {?|undefined} */
+    ITdAcceptedMagicTypes.prototype.tiled;
+}
+/**
+ * @record
+ */
+function ITdToolboxIconEmphasis() { }
+/**
+ * @record
+ */
+function ITdFeatureIconStyle() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdFeatureIconStyle.prototype.textPosition;
+    /** @type {?|undefined} */
+    ITdFeatureIconStyle.prototype.textAlign;
+    /** @type {?|undefined} */
+    ITdFeatureIconStyle.prototype.emphasis;
+}
+/**
+ * @record
+ */
+function ITdZoomTitles() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdZoomTitles.prototype.zoom;
+    /** @type {?|undefined} */
+    ITdZoomTitles.prototype.back;
+}
+/**
+ * @record
+ */
+function ITdSaveAsImage() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdSaveAsImage.prototype.type;
+    /** @type {?|undefined} */
+    ITdSaveAsImage.prototype.name;
+    /** @type {?|undefined} */
+    ITdSaveAsImage.prototype.backgroundColor;
+    /** @type {?|undefined} */
+    ITdSaveAsImage.prototype.excludeComponents;
+    /** @type {?|undefined} */
+    ITdSaveAsImage.prototype.show;
+    /** @type {?|undefined} */
+    ITdSaveAsImage.prototype.title;
+    /** @type {?|undefined} */
+    ITdSaveAsImage.prototype.icon;
+    /** @type {?|undefined} */
+    ITdSaveAsImage.prototype.iconStyle;
+    /** @type {?|undefined} */
+    ITdSaveAsImage.prototype.pixelRatio;
+}
+/**
+ * @record
+ */
+function ITdRestore() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdRestore.prototype.show;
+    /** @type {?|undefined} */
+    ITdRestore.prototype.title;
+    /** @type {?|undefined} */
+    ITdRestore.prototype.icon;
+    /** @type {?|undefined} */
+    ITdRestore.prototype.iconStyle;
+}
+/**
+ * @record
+ */
+function ITdDataView() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdDataView.prototype.show;
+    /** @type {?|undefined} */
+    ITdDataView.prototype.title;
+    /** @type {?|undefined} */
+    ITdDataView.prototype.icon;
+    /** @type {?|undefined} */
+    ITdDataView.prototype.iconStyle;
+    /** @type {?|undefined} */
+    ITdDataView.prototype.readOnly;
+    /** @type {?|undefined} */
+    ITdDataView.prototype.optionToContent;
+    /** @type {?|undefined} */
+    ITdDataView.prototype.contentToOption;
+    /** @type {?|undefined} */
+    ITdDataView.prototype.lang;
+    /** @type {?|undefined} */
+    ITdDataView.prototype.textareaColor;
+    /** @type {?|undefined} */
+    ITdDataView.prototype.textareaBorderColor;
+    /** @type {?|undefined} */
+    ITdDataView.prototype.textColor;
+    /** @type {?|undefined} */
+    ITdDataView.prototype.buttonColor;
+    /** @type {?|undefined} */
+    ITdDataView.prototype.buttonTextColor;
+}
+/**
+ * @record
+ */
+function ITdDataZoom() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdDataZoom.prototype.show;
+    /** @type {?|undefined} */
+    ITdDataZoom.prototype.title;
+    /** @type {?|undefined} */
+    ITdDataZoom.prototype.icon;
+    /** @type {?|undefined} */
+    ITdDataZoom.prototype.iconStyle;
+    /** @type {?|undefined} */
+    ITdDataZoom.prototype.xAxisIndex;
+    /** @type {?|undefined} */
+    ITdDataZoom.prototype.yAxisIndex;
+}
+/**
+ * @record
+ */
+function ITdMagicType() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdMagicType.prototype.show;
+    /** @type {?|undefined} */
+    ITdMagicType.prototype.type;
+    /** @type {?|undefined} */
+    ITdMagicType.prototype.title;
+    /** @type {?|undefined} */
+    ITdMagicType.prototype.icon;
+    /** @type {?|undefined} */
+    ITdMagicType.prototype.iconStyle;
+    /** @type {?|undefined} */
+    ITdMagicType.prototype.option;
+    /** @type {?|undefined} */
+    ITdMagicType.prototype.seriesIndex;
+}
+/**
+ * @record
+ */
+function ITdBrush() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdBrush.prototype.type;
+    /** @type {?|undefined} */
+    ITdBrush.prototype.icon;
+    /** @type {?|undefined} */
+    ITdBrush.prototype.title;
+}
+/**
+ * @record
+ */
+function ITdToolboxFeature() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdToolboxFeature.prototype.saveAsImage;
+    /** @type {?|undefined} */
+    ITdToolboxFeature.prototype.restore;
+    /** @type {?|undefined} */
+    ITdToolboxFeature.prototype.dataView;
+    /** @type {?|undefined} */
+    ITdToolboxFeature.prototype.dataZoom;
+    /** @type {?|undefined} */
+    ITdToolboxFeature.prototype.magicType;
+    /** @type {?|undefined} */
+    ITdToolboxFeature.prototype.brush;
+}
 class TdChartViewDataFormatterDirective {
 }
 TdChartViewDataFormatterDirective.decorators = [
@@ -91,7 +287,7 @@ class TdChartToolboxComponent {
      */
     _checkFormatterTemplate() {
         if (this.formatterTemplate) {
-            this.feature = Object.assign({}, this.feature, { dataView: Object.assign({}, this.feature.dataView, { optionToContent: this._optionToContentFormatter() }) });
+            this.feature = Object.assign(Object.assign({}, this.feature), { dataView: Object.assign(Object.assign({}, this.feature.dataView), { optionToContent: this._optionToContentFormatter() }) });
         }
     }
     /**
@@ -144,6 +340,70 @@ TdChartToolboxComponent.propDecorators = {
     formatterTemplate: [{ type: ContentChild, args: [TdChartViewDataFormatterDirective, { read: TemplateRef, static: false },] }],
     fullTemplate: [{ type: ViewChild, args: ['toolboxContent', { static: true },] }]
 };
+if (false) {
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartToolboxComponent.prototype._state;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.config;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.show;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.trigger;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.orient;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.itemSize;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.itemGap;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.showTitle;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.label;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.feature;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.iconStyle;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.zlevel;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.z;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.transitionDuration;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.left;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.top;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.right;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.bottom;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.width;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.height;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.formatterTemplate;
+    /** @type {?} */
+    TdChartToolboxComponent.prototype.fullTemplate;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartToolboxComponent.prototype._changeDetectorRef;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartToolboxComponent.prototype._elementRef;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartToolboxComponent.prototype._optionsService;
+}
 
 /**
  * @fileoverview added by tsickle
@@ -160,6 +420,21 @@ CovalentToolboxEchartsModule.decorators = [
                 exports: [TOOLBOX_MODULE_COMPONENTS],
             },] }
 ];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 
 export { CovalentToolboxEchartsModule, TOOLBOX_MODULE_COMPONENTS, TdChartToolboxComponent, TdChartViewDataFormatterDirective };
 //# sourceMappingURL=covalent-echarts-toolbox.js.map

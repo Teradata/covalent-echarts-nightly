@@ -8,6 +8,72 @@ import { TdSeriesComponent, TdChartOptionsService } from '@covalent/echarts/base
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+/**
+ * @record
+ */
+function ITdBarSeries() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.legendHoverLink;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.coordinateSystem;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.xAxisIndex;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.yAxisIndex;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.Label;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.itemStyle;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.emphasis;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.stack;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.cursor;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.barWidth;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.barMaxWidth;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.barMinHeight;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.barGap;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.barCategoryGap;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.large;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.largeThreshold;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.progressive;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.progressiveThreshold;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.progressiveChunkMode;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.dimensions;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.encode;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.seriesLayoutBy;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.datasetIndex;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.data;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.markPoint;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.markLine;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.markArea;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.Zlevel;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.z;
+    /** @type {?|undefined} */
+    ITdBarSeries.prototype.silent;
+}
 var TdChartSeriesBarComponent = /** @class */ (function (_super) {
     __extends(TdChartSeriesBarComponent, _super);
     function TdChartSeriesBarComponent(_optionsService) {
@@ -119,6 +185,64 @@ var TdChartSeriesBarComponent = /** @class */ (function (_super) {
     };
     return TdChartSeriesBarComponent;
 }(TdSeriesComponent));
+if (false) {
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.coordinateSystem;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.xAxisIndex;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.yAxisIndex;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.legendHoverLink;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.stack;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.cursor;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.label;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.itemStyle;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.emphasis;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.barWidth;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.barMaxWidth;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.barMinHeight;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.barGap;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.barCategoryGap;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.large;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.largeThreshold;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.progressive;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.progressiveThreshold;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.progressiveChunkMode;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.dimensions;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.encode;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.seriesLayoutBy;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.datasetIndex;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.markPoint;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.markLine;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.markArea;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.zlevel;
+    /** @type {?} */
+    TdChartSeriesBarComponent.prototype.z;
+}
 
 /**
  * @fileoverview added by tsickle
@@ -138,6 +262,21 @@ var CovalentBarEchartsModule = /** @class */ (function () {
     ];
     return CovalentBarEchartsModule;
 }());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 
 export { BAR_MODULE_COMPONENTS, CovalentBarEchartsModule, TdChartSeriesBarComponent };
 //# sourceMappingURL=covalent-echarts-bar.js.map

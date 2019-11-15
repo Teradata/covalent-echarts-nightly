@@ -9,6 +9,12 @@ import { assignDefined, TdChartOptionsService, TdSeriesComponent } from '@covale
  */
 class TdTooltipContext {
 }
+if (false) {
+    /** @type {?} */
+    TdTooltipContext.prototype.$implicit;
+    /** @type {?} */
+    TdTooltipContext.prototype.ticket;
+}
 class TdChartTooltipFormatterDirective {
 }
 TdChartTooltipFormatterDirective.decorators = [
@@ -169,6 +175,76 @@ TdChartTooltipComponent.propDecorators = {
     formatterTemplate: [{ type: ContentChild, args: [TdChartTooltipFormatterDirective, { read: TemplateRef, static: false },] }],
     fullTemplate: [{ type: ViewChild, args: ['tooltipContent', { static: true },] }]
 };
+if (false) {
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartTooltipComponent.prototype._state;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype._context;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.config;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.show;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.trigger;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.axisPointer;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.showContent;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.alwaysShowContent;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.triggerOn;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.showDelay;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.hideDelay;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.enterable;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.renderMode;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.confine;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.transitionDuration;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.position;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.formatter;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.backgroundColor;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.borderColor;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.borderWidth;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.padding;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.textStyle;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.extraCssText;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.formatterTemplate;
+    /** @type {?} */
+    TdChartTooltipComponent.prototype.fullTemplate;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartTooltipComponent.prototype._changeDetectorRef;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartTooltipComponent.prototype._elementRef;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartTooltipComponent.prototype._optionsService;
+}
 
 /**
  * @fileoverview added by tsickle
@@ -289,6 +365,52 @@ TdSeriesTooltipComponent.propDecorators = {
     formatterTemplate: [{ type: ContentChild, args: [TdChartTooltipFormatterDirective, { read: TemplateRef, static: false },] }],
     fullTemplate: [{ type: ViewChild, args: ['tooltipContent', { static: true },] }]
 };
+if (false) {
+    /**
+     * @type {?}
+     * @private
+     */
+    TdSeriesTooltipComponent.prototype._state;
+    /** @type {?} */
+    TdSeriesTooltipComponent.prototype._context;
+    /** @type {?} */
+    TdSeriesTooltipComponent.prototype.config;
+    /** @type {?} */
+    TdSeriesTooltipComponent.prototype.formatter;
+    /** @type {?} */
+    TdSeriesTooltipComponent.prototype.position;
+    /** @type {?} */
+    TdSeriesTooltipComponent.prototype.backgroundColor;
+    /** @type {?} */
+    TdSeriesTooltipComponent.prototype.borderColor;
+    /** @type {?} */
+    TdSeriesTooltipComponent.prototype.borderWidth;
+    /** @type {?} */
+    TdSeriesTooltipComponent.prototype.padding;
+    /** @type {?} */
+    TdSeriesTooltipComponent.prototype.textStyle;
+    /** @type {?} */
+    TdSeriesTooltipComponent.prototype.extraCssText;
+    /** @type {?} */
+    TdSeriesTooltipComponent.prototype.formatterTemplate;
+    /** @type {?} */
+    TdSeriesTooltipComponent.prototype.fullTemplate;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdSeriesTooltipComponent.prototype._changeDetectorRef;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdSeriesTooltipComponent.prototype._elementRef;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdSeriesTooltipComponent.prototype._seriesComponent;
+}
 
 /**
  * @fileoverview added by tsickle
@@ -309,6 +431,21 @@ CovalentTooltipEchartsModule.decorators = [
                 exports: [TOOLTIP_MODULE_COMPONENTS],
             },] }
 ];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 
 export { CovalentTooltipEchartsModule, TOOLTIP_MODULE_COMPONENTS, TdChartTooltipComponent, TdChartTooltipFormatterDirective, TdSeriesTooltipComponent, TdTooltipContext };
 //# sourceMappingURL=covalent-echarts-tooltip.js.map

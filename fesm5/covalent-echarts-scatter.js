@@ -8,6 +8,82 @@ import { TdSeriesComponent, TdChartOptionsService } from '@covalent/echarts/base
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+/**
+ * @record
+ */
+function ITdScatterSeries() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.coordinateSystem;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.xAxisIndex;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.yAxisIndex;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.polarIndex;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.geoIndex;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.calendarIndex;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.hoverAnimation;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.legendHoverLink;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.symbol;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.symbolSize;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.symbolRotate;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.symbolKeepAspect;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.symbolOffset;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.large;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.largeThreshold;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.cursor;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.connectNulls;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.clipOverflow;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.step;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.label;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.itemStyle;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.emphasis;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.progressive;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.progressiveThreshold;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.dimensions;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.encode;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.seriesLayoutBy;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.datasetIndex;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.data;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.markPoint;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.markLine;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.markArea;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.zlevel;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.z;
+    /** @type {?|undefined} */
+    ITdScatterSeries.prototype.silent;
+}
 var TdChartSeriesScatterComponent = /** @class */ (function (_super) {
     __extends(TdChartSeriesScatterComponent, _super);
     function TdChartSeriesScatterComponent(_optionsService) {
@@ -125,6 +201,70 @@ var TdChartSeriesScatterComponent = /** @class */ (function (_super) {
     };
     return TdChartSeriesScatterComponent;
 }(TdSeriesComponent));
+if (false) {
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.coordinateSystem;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.xAxisIndex;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.yAxisIndex;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.polarIndex;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.geoIndex;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.calendarIndex;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.hoverAnimation;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.legendHoverLink;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.symbol;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.symbolSize;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.symbolRotate;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.symbolKeepAspect;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.symbolOffset;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.large;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.largeThreshold;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.cursor;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.label;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.itemStyle;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.emphasis;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.progressive;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.progressiveThreshold;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.dimensions;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.encode;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.seriesLayoutBy;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.datasetIndex;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.markPoint;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.markLine;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.markArea;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.zlevel;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.z;
+    /** @type {?} */
+    TdChartSeriesScatterComponent.prototype.silent;
+}
 
 /**
  * @fileoverview added by tsickle
@@ -144,6 +284,21 @@ var CovalentScatterEchartsModule = /** @class */ (function () {
     ];
     return CovalentScatterEchartsModule;
 }());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 
 export { CovalentScatterEchartsModule, SCATTER_MODULE_COMPONENTS, TdChartSeriesScatterComponent };
 //# sourceMappingURL=covalent-echarts-scatter.js.map

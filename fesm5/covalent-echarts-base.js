@@ -1,6 +1,6 @@
-import { Injectable, Optional, SkipSelf, Component, ChangeDetectionStrategy, ChangeDetectorRef, ElementRef, Input, Output, EventEmitter, NgModule } from '@angular/core';
+import { Injectable, Optional, SkipSelf, EventEmitter, Component, ChangeDetectionStrategy, ChangeDetectorRef, ElementRef, Input, Output, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BehaviorSubject, fromEvent, merge, timer, Subject } from 'rxjs';
+import { BehaviorSubject, Subject, fromEvent, merge, timer } from 'rxjs';
 import { takeUntil, debounceTime, distinctUntilChanged, tap } from 'rxjs/operators';
 import { registerTheme as registerTheme$1, init, connect, dispose } from 'echarts/lib/echarts';
 import { __values, __extends } from 'tslib';
@@ -118,6 +118,18 @@ var TdChartOptionsService = /** @class */ (function () {
     ];
     return TdChartOptionsService;
 }());
+if (false) {
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartOptionsService.prototype._options;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartOptionsService.prototype._optionsSubject;
+}
 /**
  * @param {?} parent
  * @return {?}
@@ -154,7 +166,7 @@ function assignDefined(target) {
         for (var sources_1 = __values(sources), sources_1_1 = sources_1.next(); !sources_1_1.done; sources_1_1 = sources_1.next()) {
             var source = sources_1_1.value;
             try {
-                for (var _d = __values(Object.keys(source)), _e = _d.next(); !_e.done; _e = _d.next()) {
+                for (var _d = (e_2 = void 0, __values(Object.keys(source))), _e = _d.next(); !_e.done; _e = _d.next()) {
                     var key = _e.value;
                     keys.add(key);
                     /** @type {?} */
@@ -4433,6 +4445,11 @@ function getThemes() {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 var TdChartComponent = /** @class */ (function () {
     function TdChartComponent(_changeDetectorRef, _elementRef, _optionsService) {
         this._changeDetectorRef = _changeDetectorRef;
@@ -4709,6 +4726,97 @@ var TdChartComponent = /** @class */ (function () {
     };
     return TdChartComponent;
 }());
+if (false) {
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartComponent.prototype._destroy;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartComponent.prototype._widthSubject;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartComponent.prototype._heightSubject;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartComponent.prototype._instance;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartComponent.prototype._state;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartComponent.prototype._options;
+    /**
+     * config?: any;
+     * Sets the JS config object if you choose to not use the property inputs.
+     * Note: [config] input properties will override input values
+     * https://ecomfe.github.io/echarts-doc/public/en/option.html
+     * @type {?}
+     */
+    TdChartComponent.prototype.config;
+    /**
+     * group?: string
+     * group name in which the chart instance will be connected to
+     * https://ecomfe.github.io/echarts-doc/public/en/api.html#echarts.connect
+     * @type {?}
+     */
+    TdChartComponent.prototype.group;
+    /**
+     * themeName?: string
+     * theme to be applied into chart instance
+     * https://ecomfe.github.io/echarts-doc/public/en/tutorial.html#Overview%20of%20Style%20Customization
+     * @type {?}
+     */
+    TdChartComponent.prototype.themeName;
+    /**
+     * renderer: 'svg' | 'canvas'
+     * sets the rendering mode for the chart.
+     * defaults to 'canvas'
+     * https://ecomfe.github.io/echarts-doc/public/en/tutorial.html#Render%20by%20Canvas%20or%20SVG
+     * @type {?}
+     */
+    TdChartComponent.prototype.renderer;
+    /** @type {?} */
+    TdChartComponent.prototype.chartClick;
+    /** @type {?} */
+    TdChartComponent.prototype.chartDblclick;
+    /** @type {?} */
+    TdChartComponent.prototype.chartContextmenu;
+    /** @type {?} */
+    TdChartComponent.prototype.magicTypeChanged;
+    /** @type {?} */
+    TdChartComponent.prototype.dataViewChanged;
+    /** @type {?} */
+    TdChartComponent.prototype.datazoom;
+    /** @type {?} */
+    TdChartComponent.prototype.restore;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartComponent.prototype._changeDetectorRef;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartComponent.prototype._elementRef;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartComponent.prototype._optionsService;
+}
 
 /**
  * @fileoverview added by tsickle
@@ -4841,6 +4949,85 @@ var TdChartAxisComponent = /** @class */ (function () {
     };
     return TdChartAxisComponent;
 }());
+if (false) {
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartAxisComponent.prototype._state;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.config;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.id;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.show;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.gridIndex;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.offset;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.position;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.type;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.name;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.nameLocation;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.nameTextStyle;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.nameGap;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.nameRotate;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.inverse;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.boundaryGap;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.min;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.max;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.scale;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.minInterval;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.interval;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.logBase;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.silent;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.triggerEvent;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.axisLine;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.axisTick;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.axisLabel;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.splitLine;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.splitArea;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.data;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.axisPointer;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.zlevel;
+    /** @type {?} */
+    TdChartAxisComponent.prototype.z;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartAxisComponent.prototype._axisOption;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdChartAxisComponent.prototype._optionsService;
+}
 
 /**
  * @fileoverview added by tsickle
@@ -4899,6 +5086,10 @@ var TdChartXAxisComponent = /** @class */ (function (_super) {
     };
     return TdChartXAxisComponent;
 }(TdChartAxisComponent));
+if (false) {
+    /** @type {?} */
+    TdChartXAxisComponent.prototype.position;
+}
 
 /**
  * @fileoverview added by tsickle
@@ -4957,6 +5148,10 @@ var TdChartYAxisComponent = /** @class */ (function (_super) {
     };
     return TdChartYAxisComponent;
 }(TdChartAxisComponent));
+if (false) {
+    /** @type {?} */
+    TdChartYAxisComponent.prototype.position;
+}
 
 /**
  * @fileoverview added by tsickle
@@ -5036,6 +5231,28 @@ var TdDatasetComponent = /** @class */ (function () {
     };
     return TdDatasetComponent;
 }());
+if (false) {
+    /**
+     * @type {?}
+     * @private
+     */
+    TdDatasetComponent.prototype._state;
+    /** @type {?} */
+    TdDatasetComponent.prototype.id;
+    /** @type {?} */
+    TdDatasetComponent.prototype.config;
+    /** @type {?} */
+    TdDatasetComponent.prototype.source;
+    /** @type {?} */
+    TdDatasetComponent.prototype.dimensions;
+    /** @type {?} */
+    TdDatasetComponent.prototype.sourceHeader;
+    /**
+     * @type {?}
+     * @private
+     */
+    TdDatasetComponent.prototype._optionsService;
+}
 
 /**
  * @fileoverview added by tsickle
@@ -5066,6 +5283,23 @@ var CovalentBaseEchartsModule = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+/**
+ * @record
+ * @template T
+ */
+function ITdSeries() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdSeries.prototype.id;
+    /** @type {?|undefined} */
+    ITdSeries.prototype.name;
+    /** @type {?|undefined} */
+    ITdSeries.prototype.color;
+    /** @type {?|undefined} */
+    ITdSeries.prototype.type;
+    /** @type {?|undefined} */
+    ITdSeries.prototype.tooltip;
+}
 /**
  * @abstract
  * @template T
@@ -5199,6 +5433,70 @@ var TdSeriesComponent = /** @class */ (function () {
     };
     return TdSeriesComponent;
 }());
+if (false) {
+    /**
+     * @type {?}
+     * @private
+     */
+    TdSeriesComponent.prototype._type;
+    /** @type {?} */
+    TdSeriesComponent.prototype._state;
+    /** @type {?} */
+    TdSeriesComponent.prototype._options;
+    /** @type {?} */
+    TdSeriesComponent.prototype.config;
+    /** @type {?} */
+    TdSeriesComponent.prototype.id;
+    /** @type {?} */
+    TdSeriesComponent.prototype.name;
+    /** @type {?} */
+    TdSeriesComponent.prototype.color;
+    /** @type {?} */
+    TdSeriesComponent.prototype.data;
+    /** @type {?} */
+    TdSeriesComponent.prototype.animation;
+    /** @type {?} */
+    TdSeriesComponent.prototype.animationThreshold;
+    /** @type {?} */
+    TdSeriesComponent.prototype.animationDuration;
+    /** @type {?} */
+    TdSeriesComponent.prototype.animationEasing;
+    /** @type {?} */
+    TdSeriesComponent.prototype.animationDelay;
+    /** @type {?} */
+    TdSeriesComponent.prototype.animationDurationUpdate;
+    /** @type {?} */
+    TdSeriesComponent.prototype.animationEasingUpdate;
+    /** @type {?} */
+    TdSeriesComponent.prototype.animationDelayUpdate;
+    /** @type {?} */
+    TdSeriesComponent.prototype.tooltip;
+    /**
+     * @type {?}
+     * @protected
+     */
+    TdSeriesComponent.prototype.optionsService;
+    /**
+     * @abstract
+     * @return {?}
+     */
+    TdSeriesComponent.prototype.getConfig = function () { };
+}
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 
 export { BASE_MODULE_COMPONENTS, CovalentBaseEchartsModule, TdChartAxisComponent, TdChartComponent, TdChartOptionsService, TdChartXAxisComponent, TdChartYAxisComponent, TdDatasetComponent, TdSeriesComponent, assignDefined, getThemes, registerDefaultThemes, registerTheme, CHART_PROVIDER_FACTORY as ɵa, CHART_PROVIDER as ɵb };
 //# sourceMappingURL=covalent-echarts-base.js.map

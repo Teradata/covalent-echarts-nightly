@@ -8,6 +8,191 @@ import { TdSeriesComponent, TdChartOptionsService } from '@covalent/echarts/base
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+/**
+ * ECHART OPTION DOCS
+ * https://ecomfe.github.io/echarts-examples/public/index.html#chart-type-treemap
+ *
+ * @record
+ */
+function ITdTreemapEmphasisLineStyle() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdTreemapEmphasisLineStyle.prototype.color;
+    /** @type {?|undefined} */
+    ITdTreemapEmphasisLineStyle.prototype.width;
+    /** @type {?|undefined} */
+    ITdTreemapEmphasisLineStyle.prototype.curveness;
+}
+/**
+ * @record
+ */
+function ITdTreemapEmphasis() { }
+if (false) {
+    /** @type {?} */
+    ITdTreemapEmphasis.prototype.lineStyle;
+}
+/**
+ * @record
+ */
+function ITdTreemapUpperLabel() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdTreemapUpperLabel.prototype.show;
+    /** @type {?|undefined} */
+    ITdTreemapUpperLabel.prototype.position;
+    /** @type {?|undefined} */
+    ITdTreemapUpperLabel.prototype.distance;
+    /** @type {?|undefined} */
+    ITdTreemapUpperLabel.prototype.rotate;
+    /** @type {?|undefined} */
+    ITdTreemapUpperLabel.prototype.offset;
+    /** @type {?|undefined} */
+    ITdTreemapUpperLabel.prototype.formatter;
+    /** @type {?|undefined} */
+    ITdTreemapUpperLabel.prototype.color;
+    /** @type {?|undefined} */
+    ITdTreemapUpperLabel.prototype.fontStyle;
+    /** @type {?|undefined} */
+    ITdTreemapUpperLabel.prototype.fontWeight;
+    /** @type {?|undefined} */
+    ITdTreemapUpperLabel.prototype.fontFamily;
+    /** @type {?|undefined} */
+    ITdTreemapUpperLabel.prototype.fontSize;
+    /** @type {?|undefined} */
+    ITdTreemapUpperLabel.prototype.align;
+    /** @type {?|undefined} */
+    ITdTreemapUpperLabel.prototype.verticalAlign;
+    /** @type {?|undefined} */
+    ITdTreemapUpperLabel.prototype.lineHeight;
+    /** @type {?|undefined} */
+    ITdTreemapUpperLabel.prototype.backgroundColor;
+    /** @type {?|undefined} */
+    ITdTreemapUpperLabel.prototype.borderColor;
+    /** @type {?|undefined} */
+    ITdTreemapUpperLabel.prototype.borderWidth;
+    /** @type {?|undefined} */
+    ITdTreemapUpperLabel.prototype.borderRadius;
+    /** @type {?|undefined} */
+    ITdTreemapUpperLabel.prototype.padding;
+    /** @type {?|undefined} */
+    ITdTreemapUpperLabel.prototype.shadowColor;
+    /** @type {?|undefined} */
+    ITdTreemapUpperLabel.prototype.shadowBlur;
+    /** @type {?|undefined} */
+    ITdTreemapUpperLabel.prototype.shadowOffsetX;
+    /** @type {?|undefined} */
+    ITdTreemapUpperLabel.prototype.shadowOffsetY;
+    /** @type {?|undefined} */
+    ITdTreemapUpperLabel.prototype.width;
+    /** @type {?|undefined} */
+    ITdTreemapUpperLabel.prototype.height;
+    /** @type {?|undefined} */
+    ITdTreemapUpperLabel.prototype.textBorderColor;
+    /** @type {?|undefined} */
+    ITdTreemapUpperLabel.prototype.textBorderWidth;
+    /** @type {?|undefined} */
+    ITdTreemapUpperLabel.prototype.textShadowColor;
+    /** @type {?|undefined} */
+    ITdTreemapUpperLabel.prototype.textShadowBlur;
+    /** @type {?|undefined} */
+    ITdTreemapUpperLabel.prototype.textShadowOffsetX;
+    /** @type {?|undefined} */
+    ITdTreemapUpperLabel.prototype.textShadowOffsetY;
+    /** @type {?} */
+    ITdTreemapUpperLabel.prototype.rich;
+    /** @type {?} */
+    ITdTreemapUpperLabel.prototype.ellipsis;
+}
+/**
+ * @record
+ */
+function ITdTreemapBreadcrumb() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdTreemapBreadcrumb.prototype.show;
+    /** @type {?|undefined} */
+    ITdTreemapBreadcrumb.prototype.left;
+    /** @type {?|undefined} */
+    ITdTreemapBreadcrumb.prototype.top;
+    /** @type {?|undefined} */
+    ITdTreemapBreadcrumb.prototype.right;
+    /** @type {?|undefined} */
+    ITdTreemapBreadcrumb.prototype.bottom;
+    /** @type {?|undefined} */
+    ITdTreemapBreadcrumb.prototype.height;
+    /** @type {?|undefined} */
+    ITdTreemapBreadcrumb.prototype.emptyItemWidth;
+    /** @type {?|undefined} */
+    ITdTreemapBreadcrumb.prototype.itemStyle;
+    /** @type {?|undefined} */
+    ITdTreemapBreadcrumb.prototype.emphasis;
+}
+/**
+ * @record
+ */
+function ITdTreemapSeries() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdTreemapSeries.prototype.zlevel;
+    /** @type {?|undefined} */
+    ITdTreemapSeries.prototype.z;
+    /** @type {?|undefined} */
+    ITdTreemapSeries.prototype.left;
+    /** @type {?|undefined} */
+    ITdTreemapSeries.prototype.top;
+    /** @type {?|undefined} */
+    ITdTreemapSeries.prototype.right;
+    /** @type {?|undefined} */
+    ITdTreemapSeries.prototype.bottom;
+    /** @type {?|undefined} */
+    ITdTreemapSeries.prototype.width;
+    /** @type {?|undefined} */
+    ITdTreemapSeries.prototype.height;
+    /** @type {?|undefined} */
+    ITdTreemapSeries.prototype.squareRatio;
+    /** @type {?|undefined} */
+    ITdTreemapSeries.prototype.leafDepth;
+    /** @type {?|undefined} */
+    ITdTreemapSeries.prototype.drillDownIcon;
+    /** @type {?|undefined} */
+    ITdTreemapSeries.prototype.roam;
+    /** @type {?|undefined} */
+    ITdTreemapSeries.prototype.nodeClick;
+    /** @type {?|undefined} */
+    ITdTreemapSeries.prototype.zoomToNodeRatio;
+    /** @type {?|undefined} */
+    ITdTreemapSeries.prototype.levels;
+    /** @type {?|undefined} */
+    ITdTreemapSeries.prototype.silent;
+    /** @type {?|undefined} */
+    ITdTreemapSeries.prototype.visualDimension;
+    /** @type {?|undefined} */
+    ITdTreemapSeries.prototype.visualMin;
+    /** @type {?|undefined} */
+    ITdTreemapSeries.prototype.visualMax;
+    /** @type {?|undefined} */
+    ITdTreemapSeries.prototype.colorAlpha;
+    /** @type {?|undefined} */
+    ITdTreemapSeries.prototype.colorSaturation;
+    /** @type {?|undefined} */
+    ITdTreemapSeries.prototype.colorMappingBy;
+    /** @type {?|undefined} */
+    ITdTreemapSeries.prototype.visibleMin;
+    /** @type {?|undefined} */
+    ITdTreemapSeries.prototype.childrenVisibleMin;
+    /** @type {?|undefined} */
+    ITdTreemapSeries.prototype.itemStyle;
+    /** @type {?|undefined} */
+    ITdTreemapSeries.prototype.label;
+    /** @type {?|undefined} */
+    ITdTreemapSeries.prototype.upperLabel;
+    /** @type {?|undefined} */
+    ITdTreemapSeries.prototype.breadcrumb;
+    /** @type {?|undefined} */
+    ITdTreemapSeries.prototype.emphasis;
+    /** @type {?} */
+    ITdTreemapSeries.prototype.data;
+}
 var TdChartSeriesTreemapComponent = /** @class */ (function (_super) {
     __extends(TdChartSeriesTreemapComponent, _super);
     function TdChartSeriesTreemapComponent(_optionsService) {
@@ -128,6 +313,76 @@ var TdChartSeriesTreemapComponent = /** @class */ (function (_super) {
     };
     return TdChartSeriesTreemapComponent;
 }(TdSeriesComponent));
+if (false) {
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.config;
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.id;
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.name;
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.data;
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.zlevel;
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.z;
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.left;
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.top;
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.right;
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.bottom;
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.width;
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.height;
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.squareRatio;
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.leafDepth;
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.drillDownIcon;
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.roam;
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.nodeClick;
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.zoomToNodeRatio;
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.levels;
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.silent;
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.visualDimension;
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.visualMin;
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.visualMax;
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.colorAlpha;
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.colorSaturation;
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.colorMappingBy;
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.visibleMin;
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.childrenVisibleMin;
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.itemStyle;
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.label;
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.upperLabel;
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.breadcrumb;
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.emphasis;
+    /** @type {?} */
+    TdChartSeriesTreemapComponent.prototype.tooltip;
+}
 
 /**
  * @fileoverview added by tsickle
@@ -147,6 +402,21 @@ var CovalentTreemapEchartsModule = /** @class */ (function () {
     ];
     return CovalentTreemapEchartsModule;
 }());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 
 export { CovalentTreemapEchartsModule, TREEMAP_MODULE_COMPONENTS, TdChartSeriesTreemapComponent };
 //# sourceMappingURL=covalent-echarts-treemap.js.map

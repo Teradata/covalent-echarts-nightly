@@ -7,6 +7,68 @@ import { TdSeriesComponent, TdChartOptionsService } from '@covalent/echarts/base
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+/**
+ * @record
+ */
+function ITdPieSeries() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.legendHoverLink;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.hoverAnimation;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.hoverOffset;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.selectedMode;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.selectedOffset;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.clockwise;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.startAngle;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.minAngle;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.minShowLabelAngle;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.roseType;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.avoidLabelOverlap;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.stillShowZeroSum;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.cursor;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.labelLine;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.Label;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.itemStyle;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.emphasis;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.seriesLayoutBy;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.datasetIndex;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.data;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.markPoint;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.markLine;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.markArea;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.Zlevel;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.z;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.center;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.radius;
+    /** @type {?|undefined} */
+    ITdPieSeries.prototype.silent;
+}
 class TdChartSeriesPieComponent extends TdSeriesComponent {
     /**
      * @param {?} _optionsService
@@ -110,6 +172,60 @@ TdChartSeriesPieComponent.propDecorators = {
     center: [{ type: Input }],
     radius: [{ type: Input }]
 };
+if (false) {
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.legendHoverLink;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.hoverAnimation;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.hoverOffset;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.selectedMode;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.selectedOffset;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.clockwise;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.startAngle;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.minAngle;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.minShowLabelAngle;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.roseType;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.avoidLabelOverlap;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.stillShowZeroSum;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.cursor;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.labelLine;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.label;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.itemStyle;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.emphasis;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.seriesLayoutBy;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.datasetIndex;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.markPoint;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.markLine;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.markArea;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.zlevel;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.z;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.center;
+    /** @type {?} */
+    TdChartSeriesPieComponent.prototype.radius;
+}
 
 /**
  * @fileoverview added by tsickle
@@ -126,6 +242,21 @@ CovalentPieEchartsModule.decorators = [
                 exports: [PIE_MODULE_COMPONENTS],
             },] }
 ];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 
 export { CovalentPieEchartsModule, PIE_MODULE_COMPONENTS, TdChartSeriesPieComponent };
 //# sourceMappingURL=covalent-echarts-pie.js.map

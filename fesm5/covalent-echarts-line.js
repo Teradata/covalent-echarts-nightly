@@ -8,6 +8,90 @@ import { TdSeriesComponent, TdChartOptionsService } from '@covalent/echarts/base
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+/**
+ * @record
+ */
+function ITdLineSeries() { }
+if (false) {
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.coordinateSystem;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.xAxisIndex;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.yAxisIndex;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.polarIndex;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.symbol;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.symbolSize;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.symbolRotate;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.symbolKeepAspect;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.symbolOffset;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.showSymbol;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.showAllSymbol;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.hoverAnimation;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.legendHoverLink;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.stack;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.cursor;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.connectNulls;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.clipOverflow;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.step;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.label;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.itemStyle;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.lineStyle;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.width;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.opacity;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.areaStyle;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.emphasis;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.smooth;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.smoothMonotone;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.sampling;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.dimensions;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.encode;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.seriesLayoutBy;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.datasetIndex;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.data;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.markPoint;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.markLine;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.markArea;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.zlevel;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.z;
+    /** @type {?|undefined} */
+    ITdLineSeries.prototype.silent;
+}
 var TdChartSeriesLineComponent = /** @class */ (function (_super) {
     __extends(TdChartSeriesLineComponent, _super);
     function TdChartSeriesLineComponent(_optionsService) {
@@ -135,6 +219,80 @@ var TdChartSeriesLineComponent = /** @class */ (function (_super) {
     };
     return TdChartSeriesLineComponent;
 }(TdSeriesComponent));
+if (false) {
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.coordinateSystem;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.xAxisIndex;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.yAxisIndex;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.polarIndex;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.symbol;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.symbolSize;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.symbolRotate;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.symbolKeepAspect;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.symbolOffset;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.showSymbol;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.showAllSymbol;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.hoverAnimation;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.legendHoverLink;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.stack;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.cursor;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.connectNulls;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.clipOverflow;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.step;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.label;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.itemStyle;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.lineStyle;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.areaStyle;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.emphasis;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.smooth;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.smoothMonotone;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.sampling;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.dimensions;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.encode;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.seriesLayoutBy;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.datasetIndex;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.markPoint;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.markLine;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.markArea;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.zlevel;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.z;
+    /** @type {?} */
+    TdChartSeriesLineComponent.prototype.silent;
+}
 
 /**
  * @fileoverview added by tsickle
@@ -154,6 +312,21 @@ var CovalentLineEchartsModule = /** @class */ (function () {
     ];
     return CovalentLineEchartsModule;
 }());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 
 export { CovalentLineEchartsModule, LINE_MODULE_COMPONENTS, TdChartSeriesLineComponent };
 //# sourceMappingURL=covalent-echarts-line.js.map

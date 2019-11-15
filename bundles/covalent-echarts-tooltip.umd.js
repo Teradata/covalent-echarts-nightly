@@ -2,7 +2,7 @@
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/common'), require('echarts/lib/component/tooltip'), require('@covalent/echarts/base')) :
     typeof define === 'function' && define.amd ? define('@covalent/echarts/tooltip', ['exports', '@angular/core', '@angular/common', 'echarts/lib/component/tooltip', '@covalent/echarts/base'], factory) :
     (global = global || self, factory((global.covalent = global.covalent || {}, global.covalent.echarts = global.covalent.echarts || {}, global.covalent.echarts.tooltip = {}), global.ng.core, global.ng.common, null, global.covalent.echarts.base));
-}(this, function (exports, core, common, tooltip, base) { 'use strict';
+}(this, (function (exports, core, common, tooltip, base) { 'use strict';
 
     /**
      * @fileoverview added by tsickle
@@ -13,6 +13,12 @@
         }
         return TdTooltipContext;
     }());
+    if (false) {
+        /** @type {?} */
+        TdTooltipContext.prototype.$implicit;
+        /** @type {?} */
+        TdTooltipContext.prototype.ticket;
+    }
     var TdChartTooltipFormatterDirective = /** @class */ (function () {
         function TdChartTooltipFormatterDirective() {
         }
@@ -191,6 +197,76 @@
         };
         return TdChartTooltipComponent;
     }());
+    if (false) {
+        /**
+         * @type {?}
+         * @private
+         */
+        TdChartTooltipComponent.prototype._state;
+        /** @type {?} */
+        TdChartTooltipComponent.prototype._context;
+        /** @type {?} */
+        TdChartTooltipComponent.prototype.config;
+        /** @type {?} */
+        TdChartTooltipComponent.prototype.show;
+        /** @type {?} */
+        TdChartTooltipComponent.prototype.trigger;
+        /** @type {?} */
+        TdChartTooltipComponent.prototype.axisPointer;
+        /** @type {?} */
+        TdChartTooltipComponent.prototype.showContent;
+        /** @type {?} */
+        TdChartTooltipComponent.prototype.alwaysShowContent;
+        /** @type {?} */
+        TdChartTooltipComponent.prototype.triggerOn;
+        /** @type {?} */
+        TdChartTooltipComponent.prototype.showDelay;
+        /** @type {?} */
+        TdChartTooltipComponent.prototype.hideDelay;
+        /** @type {?} */
+        TdChartTooltipComponent.prototype.enterable;
+        /** @type {?} */
+        TdChartTooltipComponent.prototype.renderMode;
+        /** @type {?} */
+        TdChartTooltipComponent.prototype.confine;
+        /** @type {?} */
+        TdChartTooltipComponent.prototype.transitionDuration;
+        /** @type {?} */
+        TdChartTooltipComponent.prototype.position;
+        /** @type {?} */
+        TdChartTooltipComponent.prototype.formatter;
+        /** @type {?} */
+        TdChartTooltipComponent.prototype.backgroundColor;
+        /** @type {?} */
+        TdChartTooltipComponent.prototype.borderColor;
+        /** @type {?} */
+        TdChartTooltipComponent.prototype.borderWidth;
+        /** @type {?} */
+        TdChartTooltipComponent.prototype.padding;
+        /** @type {?} */
+        TdChartTooltipComponent.prototype.textStyle;
+        /** @type {?} */
+        TdChartTooltipComponent.prototype.extraCssText;
+        /** @type {?} */
+        TdChartTooltipComponent.prototype.formatterTemplate;
+        /** @type {?} */
+        TdChartTooltipComponent.prototype.fullTemplate;
+        /**
+         * @type {?}
+         * @private
+         */
+        TdChartTooltipComponent.prototype._changeDetectorRef;
+        /**
+         * @type {?}
+         * @private
+         */
+        TdChartTooltipComponent.prototype._elementRef;
+        /**
+         * @type {?}
+         * @private
+         */
+        TdChartTooltipComponent.prototype._optionsService;
+    }
 
     /**
      * @fileoverview added by tsickle
@@ -332,6 +408,52 @@
         };
         return TdSeriesTooltipComponent;
     }());
+    if (false) {
+        /**
+         * @type {?}
+         * @private
+         */
+        TdSeriesTooltipComponent.prototype._state;
+        /** @type {?} */
+        TdSeriesTooltipComponent.prototype._context;
+        /** @type {?} */
+        TdSeriesTooltipComponent.prototype.config;
+        /** @type {?} */
+        TdSeriesTooltipComponent.prototype.formatter;
+        /** @type {?} */
+        TdSeriesTooltipComponent.prototype.position;
+        /** @type {?} */
+        TdSeriesTooltipComponent.prototype.backgroundColor;
+        /** @type {?} */
+        TdSeriesTooltipComponent.prototype.borderColor;
+        /** @type {?} */
+        TdSeriesTooltipComponent.prototype.borderWidth;
+        /** @type {?} */
+        TdSeriesTooltipComponent.prototype.padding;
+        /** @type {?} */
+        TdSeriesTooltipComponent.prototype.textStyle;
+        /** @type {?} */
+        TdSeriesTooltipComponent.prototype.extraCssText;
+        /** @type {?} */
+        TdSeriesTooltipComponent.prototype.formatterTemplate;
+        /** @type {?} */
+        TdSeriesTooltipComponent.prototype.fullTemplate;
+        /**
+         * @type {?}
+         * @private
+         */
+        TdSeriesTooltipComponent.prototype._changeDetectorRef;
+        /**
+         * @type {?}
+         * @private
+         */
+        TdSeriesTooltipComponent.prototype._elementRef;
+        /**
+         * @type {?}
+         * @private
+         */
+        TdSeriesTooltipComponent.prototype._seriesComponent;
+    }
 
     /**
      * @fileoverview added by tsickle
@@ -365,5 +487,5 @@
 
     Object.defineProperty(exports, '__esModule', { value: true });
 
-}));
+})));
 //# sourceMappingURL=covalent-echarts-tooltip.umd.js.map
