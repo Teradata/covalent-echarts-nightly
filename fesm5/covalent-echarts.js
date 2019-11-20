@@ -7088,7 +7088,7 @@ var TdChartTooltipComponent = /** @class */ (function () {
         padding: [{ type: Input }],
         textStyle: [{ type: Input }],
         extraCssText: [{ type: Input }],
-        formatterTemplate: [{ type: ContentChild, args: [TdChartTooltipFormatterDirective, { read: TemplateRef, static: false },] }],
+        formatterTemplate: [{ type: ContentChild, args: [TdChartTooltipFormatterDirective, { read: TemplateRef, static: true },] }],
         fullTemplate: [{ type: ViewChild, args: ['tooltipContent', { static: true },] }]
     };
     return TdChartTooltipComponent;
@@ -7299,7 +7299,7 @@ var TdSeriesTooltipComponent = /** @class */ (function () {
         padding: [{ type: Input }],
         textStyle: [{ type: Input }],
         extraCssText: [{ type: Input }],
-        formatterTemplate: [{ type: ContentChild, args: [TdChartTooltipFormatterDirective, { read: TemplateRef, static: false },] }],
+        formatterTemplate: [{ type: ContentChild, args: [TdChartTooltipFormatterDirective, { read: TemplateRef, static: true },] }],
         fullTemplate: [{ type: ViewChild, args: ['tooltipContent', { static: true },] }]
     };
     return TdSeriesTooltipComponent;

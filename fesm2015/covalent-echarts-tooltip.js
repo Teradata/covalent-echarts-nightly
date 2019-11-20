@@ -172,7 +172,7 @@ TdChartTooltipComponent.propDecorators = {
     padding: [{ type: Input }],
     textStyle: [{ type: Input }],
     extraCssText: [{ type: Input }],
-    formatterTemplate: [{ type: ContentChild, args: [TdChartTooltipFormatterDirective, { read: TemplateRef, static: false },] }],
+    formatterTemplate: [{ type: ContentChild, args: [TdChartTooltipFormatterDirective, { read: TemplateRef, static: true },] }],
     fullTemplate: [{ type: ViewChild, args: ['tooltipContent', { static: true },] }]
 };
 if (false) {
@@ -362,7 +362,7 @@ TdSeriesTooltipComponent.propDecorators = {
     padding: [{ type: Input }],
     textStyle: [{ type: Input }],
     extraCssText: [{ type: Input }],
-    formatterTemplate: [{ type: ContentChild, args: [TdChartTooltipFormatterDirective, { read: TemplateRef, static: false },] }],
+    formatterTemplate: [{ type: ContentChild, args: [TdChartTooltipFormatterDirective, { read: TemplateRef, static: true },] }],
     fullTemplate: [{ type: ViewChild, args: ['tooltipContent', { static: true },] }]
 };
 if (false) {

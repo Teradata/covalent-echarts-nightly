@@ -192,7 +192,7 @@
             padding: [{ type: core.Input }],
             textStyle: [{ type: core.Input }],
             extraCssText: [{ type: core.Input }],
-            formatterTemplate: [{ type: core.ContentChild, args: [TdChartTooltipFormatterDirective, { read: core.TemplateRef, static: false },] }],
+            formatterTemplate: [{ type: core.ContentChild, args: [TdChartTooltipFormatterDirective, { read: core.TemplateRef, static: true },] }],
             fullTemplate: [{ type: core.ViewChild, args: ['tooltipContent', { static: true },] }]
         };
         return TdChartTooltipComponent;
@@ -403,7 +403,7 @@
             padding: [{ type: core.Input }],
             textStyle: [{ type: core.Input }],
             extraCssText: [{ type: core.Input }],
-            formatterTemplate: [{ type: core.ContentChild, args: [TdChartTooltipFormatterDirective, { read: core.TemplateRef, static: false },] }],
+            formatterTemplate: [{ type: core.ContentChild, args: [TdChartTooltipFormatterDirective, { read: core.TemplateRef, static: true },] }],
             fullTemplate: [{ type: core.ViewChild, args: ['tooltipContent', { static: true },] }]
         };
         return TdSeriesTooltipComponent;
