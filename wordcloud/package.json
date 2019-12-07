@@ -1,0 +1,13 @@
+{
+  "main": "../bundles/covalent-echarts-wordcloud.umd.js",
+  "module": "../fesm5/covalent-echarts-wordcloud.js",
+  "es2015": "../fesm2015/covalent-echarts-wordcloud.js",
+  "esm5": "../esm5/wordcloud/covalent-echarts-wordcloud.js",
+  "esm2015": "../esm2015/wordcloud/covalent-echarts-wordcloud.js",
+  "fesm5": "../fesm5/covalent-echarts-wordcloud.js",
+  "fesm2015": "../fesm2015/covalent-echarts-wordcloud.js",
+  "typings": "covalent-echarts-wordcloud.d.ts",
+  "metadata": "covalent-echarts-wordcloud.metadata.json",
+  "sideEffects": false,
+  "name": "@covalent/echarts/wordcloud"
+}
