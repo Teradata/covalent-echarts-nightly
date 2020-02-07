@@ -358,7 +358,7 @@ var TdChartToolboxComponent = /** @class */ (function () {
         bottom: [{ type: Input }],
         width: [{ type: Input }],
         height: [{ type: Input }],
-        formatterTemplate: [{ type: ContentChild, args: [TdChartViewDataFormatterDirective, { read: TemplateRef, static: false },] }],
+        formatterTemplate: [{ type: ContentChild, args: [TdChartViewDataFormatterDirective, { read: TemplateRef },] }],
         fullTemplate: [{ type: ViewChild, args: ['toolboxContent', { static: true },] }]
     };
     return TdChartToolboxComponent;

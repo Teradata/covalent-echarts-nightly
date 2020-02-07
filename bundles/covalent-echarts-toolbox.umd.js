@@ -555,7 +555,7 @@
             bottom: [{ type: core.Input }],
             width: [{ type: core.Input }],
             height: [{ type: core.Input }],
-            formatterTemplate: [{ type: core.ContentChild, args: [TdChartViewDataFormatterDirective, { read: core.TemplateRef, static: false },] }],
+            formatterTemplate: [{ type: core.ContentChild, args: [TdChartViewDataFormatterDirective, { read: core.TemplateRef },] }],
             fullTemplate: [{ type: core.ViewChild, args: ['toolboxContent', { static: true },] }]
         };
         return TdChartToolboxComponent;

@@ -12,7 +12,7 @@ export interface ITdSeries<T> extends ITdAnimation {
 export declare abstract class TdSeriesComponent<T = any> implements ITdSeries<T>, OnChanges, OnInit, OnDestroy {
     protected optionsService: TdChartOptionsService;
     private _type;
-    readonly type: T;
+    get type(): T;
     _state: any;
     _options: any;
     config: any;

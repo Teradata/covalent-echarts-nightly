@@ -11,7 +11,7 @@ export declare class TdChartComponent implements AfterViewInit, OnChanges, OnDes
     /**
      * returns the echarts instance
      */
-    readonly instance: any;
+    get instance(): any;
     private _state;
     private _options;
     /**
