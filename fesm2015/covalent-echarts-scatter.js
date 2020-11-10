@@ -1,11 +1,12 @@
 import { Component, ChangeDetectionStrategy, forwardRef, Input, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import 'echarts/lib/chart/scatter';
-import { TdSeriesComponent, TdChartOptionsService } from '@covalent/echarts/base';
+import { TdSeriesDirective, TdChartOptionsService } from '@covalent/echarts/base';
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: scatter.component.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * @record
@@ -83,7 +84,7 @@ if (false) {
     /** @type {?|undefined} */
     ITdScatterSeries.prototype.silent;
 }
-class TdChartSeriesScatterComponent extends TdSeriesComponent {
+class TdChartSeriesScatterComponent extends TdSeriesDirective {
     /**
      * @param {?} _optionsService
      */
@@ -152,7 +153,7 @@ TdChartSeriesScatterComponent.decorators = [
                 ],
                 providers: [
                     {
-                        provide: TdSeriesComponent,
+                        provide: TdSeriesDirective,
                         useExisting: forwardRef((/**
                          * @return {?}
                          */
@@ -265,7 +266,8 @@ if (false) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: scatter.module.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 const SCATTER_MODULE_COMPONENTS = [TdChartSeriesScatterComponent];
@@ -281,17 +283,20 @@ CovalentScatterEchartsModule.decorators = [
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: public-api.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: index.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: covalent-echarts-scatter.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 export { CovalentScatterEchartsModule, SCATTER_MODULE_COMPONENTS, TdChartSeriesScatterComponent };

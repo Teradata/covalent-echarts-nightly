@@ -1,4 +1,4 @@
-import { TdChartOptionsService, ITdLabel, ITdItemStyle, ITdEmphasis, ITdSeries, TdSeriesComponent, ITdShadow, ITdLineCurveStyle } from '@covalent/echarts/base';
+import { TdChartOptionsService, ITdLabel, ITdItemStyle, ITdEmphasis, ITdSeries, TdSeriesDirective, ITdShadow, ITdLineCurveStyle } from '@covalent/echarts/base';
 export declare type TdSankeyOrient = 'horizontal' | 'vertical';
 export declare type TdSankeyFocusNodeAdjacency = boolean | 'allEdges' | 'outEdges' | 'inEdges';
 export interface ITdSankeyEmphasisLineStyle extends ITdShadow {
@@ -9,7 +9,7 @@ export interface ITdSankeyEmphasisLineStyle extends ITdShadow {
 export interface ITdSankeyEmphasis extends ITdEmphasis {
     lineStyle: ITdSankeyEmphasisLineStyle;
 }
-export interface ITdSankeySeries extends ITdSeries<'sankey'> {
+export interface ITdSankeySeries extends ITdSeries {
     zlevel?: number;
     z?: number;
     left?: string | number;
@@ -34,7 +34,7 @@ export interface ITdSankeySeries extends ITdSeries<'sankey'> {
     edges?: any[];
     silent?: boolean;
 }
-export declare class TdChartSeriesSankeyComponent extends TdSeriesComponent<'sankey'> implements ITdSankeySeries {
+export declare class TdChartSeriesSankeyComponent extends TdSeriesDirective implements ITdSankeySeries {
     zlevel: number;
     z: number;
     left: string | number;

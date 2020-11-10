@@ -1,11 +1,12 @@
 import { Component, ChangeDetectionStrategy, forwardRef, Input, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import 'echarts/lib/chart/map';
-import { TdSeriesComponent, TdChartOptionsService } from '@covalent/echarts/base';
+import { TdSeriesDirective, TdChartOptionsService } from '@covalent/echarts/base';
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: map.component.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * @record
@@ -89,7 +90,7 @@ if (false) {
     /** @type {?|undefined} */
     ITdMapSeries.prototype.silent;
 }
-class TdChartSeriesMapComponent extends TdSeriesComponent {
+class TdChartSeriesMapComponent extends TdSeriesDirective {
     /**
      * @param {?} _optionsService
      */
@@ -154,7 +155,7 @@ TdChartSeriesMapComponent.decorators = [
                 ],
                 providers: [
                     {
-                        provide: TdSeriesComponent,
+                        provide: TdSeriesDirective,
                         useExisting: forwardRef((/**
                          * @return {?}
                          */
@@ -255,7 +256,8 @@ if (false) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: map.module.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 const MAP_MODULE_COMPONENTS = [TdChartSeriesMapComponent];
@@ -271,17 +273,20 @@ CovalentMapEchartsModule.decorators = [
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: public-api.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: index.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: covalent-echarts-map.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 export { CovalentMapEchartsModule, MAP_MODULE_COMPONENTS, TdChartSeriesMapComponent };

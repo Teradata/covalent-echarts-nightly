@@ -1,5 +1,5 @@
-import { TdChartOptionsService, ITdItemStyle, ITdEmphasis, TdSeriesLayoutBy, ITdMarkPoint, ITdMarkLine, ITdMarkArea, ITdSeries, ITdLabel, ITdLabelLine, TdSeriesComponent } from '@covalent/echarts/base';
-export interface ITdPieSeries extends ITdSeries<'pie'> {
+import { TdChartOptionsService, ITdItemStyle, ITdEmphasis, TdSeriesLayoutBy, ITdMarkPoint, ITdMarkLine, ITdMarkArea, ITdSeries, ITdLabel, ITdLabelLine, TdSeriesDirective } from '@covalent/echarts/base';
+export interface ITdPieSeries extends ITdSeries {
     legendHoverLink?: boolean;
     hoverAnimation?: boolean;
     hoverOffset?: number;
@@ -29,7 +29,7 @@ export interface ITdPieSeries extends ITdSeries<'pie'> {
     radius?: number | string | any[];
     silent?: boolean;
 }
-export declare class TdChartSeriesPieComponent extends TdSeriesComponent<'pie'> implements ITdPieSeries {
+export declare class TdChartSeriesPieComponent extends TdSeriesDirective implements ITdPieSeries {
     legendHoverLink: boolean;
     hoverAnimation: boolean;
     hoverOffset: number;

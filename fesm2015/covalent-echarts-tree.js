@@ -1,11 +1,12 @@
 import { Component, ChangeDetectionStrategy, forwardRef, Input, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import 'echarts/lib/chart/tree';
-import { TdSeriesComponent, TdChartOptionsService } from '@covalent/echarts/base';
+import { TdSeriesDirective, TdChartOptionsService } from '@covalent/echarts/base';
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: tree.component.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * @record
@@ -93,7 +94,7 @@ if (false) {
     /** @type {?} */
     ITdTreeSeries.prototype.data;
 }
-class TdChartSeriesTreeComponent extends TdSeriesComponent {
+class TdChartSeriesTreeComponent extends TdSeriesDirective {
     /**
      * @param {?} _optionsService
      */
@@ -153,7 +154,7 @@ TdChartSeriesTreeComponent.decorators = [
                 ],
                 providers: [
                     {
-                        provide: TdSeriesComponent,
+                        provide: TdSeriesDirective,
                         useExisting: forwardRef((/**
                          * @return {?}
                          */
@@ -239,7 +240,8 @@ if (false) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: tree.module.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 const TREE_MODULE_COMPONENTS = [TdChartSeriesTreeComponent];
@@ -255,17 +257,20 @@ CovalentTreeEchartsModule.decorators = [
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: public-api.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: index.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: covalent-echarts-tree.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 export { CovalentTreeEchartsModule, TREE_MODULE_COMPONENTS, TdChartSeriesTreeComponent };

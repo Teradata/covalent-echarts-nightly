@@ -1,11 +1,12 @@
 import { Directive, Component, ChangeDetectionStrategy, ChangeDetectorRef, ElementRef, Input, ContentChild, TemplateRef, ViewChild, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import 'echarts/lib/component/tooltip';
-import { assignDefined, TdChartOptionsService, TdSeriesComponent } from '@covalent/echarts/base';
+import { assignDefined, TdChartOptionsService, TdSeriesDirective } from '@covalent/echarts/base';
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: tooltip.component.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class TdTooltipContext {
 }
@@ -248,7 +249,8 @@ if (false) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: series-tooltip.component.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class TdSeriesTooltipComponent {
     /**
@@ -350,7 +352,7 @@ TdSeriesTooltipComponent.decorators = [
 TdSeriesTooltipComponent.ctorParameters = () => [
     { type: ChangeDetectorRef },
     { type: ElementRef },
-    { type: TdSeriesComponent }
+    { type: TdSeriesDirective }
 ];
 TdSeriesTooltipComponent.propDecorators = {
     config: [{ type: Input }],
@@ -414,7 +416,8 @@ if (false) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: tooltip.module.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 const TOOLTIP_MODULE_COMPONENTS = [
@@ -434,17 +437,20 @@ CovalentTooltipEchartsModule.decorators = [
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: public-api.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: index.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: covalent-echarts-tooltip.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 export { CovalentTooltipEchartsModule, TOOLTIP_MODULE_COMPONENTS, TdChartTooltipComponent, TdChartTooltipFormatterDirective, TdSeriesTooltipComponent, TdTooltipContext };

@@ -1,11 +1,12 @@
 import { Component, ChangeDetectionStrategy, forwardRef, Input, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import 'echarts-wordcloud';
-import { TdSeriesComponent, TdChartOptionsService } from '@covalent/echarts/base';
+import { TdSeriesDirective, TdChartOptionsService } from '@covalent/echarts/base';
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: wordcloud.component.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * @record
@@ -63,7 +64,7 @@ if (false) {
     /** @type {?|undefined} */
     ITdWordcloudSeries.prototype.textStyle;
 }
-class TdChartSeriesWordcloudComponent extends TdSeriesComponent {
+class TdChartSeriesWordcloudComponent extends TdSeriesDirective {
     /**
      * @param {?} _optionsService
      */
@@ -114,7 +115,7 @@ TdChartSeriesWordcloudComponent.decorators = [
                 ],
                 providers: [
                     {
-                        provide: TdSeriesComponent,
+                        provide: TdSeriesDirective,
                         useExisting: forwardRef((/**
                          * @return {?}
                          */
@@ -176,7 +177,8 @@ if (false) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: wordcloud.module.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 const WORDCLOUD_MODULE_COMPONENTS = [TdChartSeriesWordcloudComponent];
@@ -192,17 +194,20 @@ CovalentWordcloudEchartsModule.decorators = [
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: public-api.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: index.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: covalent-echarts-wordcloud.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 export { CovalentWordcloudEchartsModule, TdChartSeriesWordcloudComponent, WORDCLOUD_MODULE_COMPONENTS };

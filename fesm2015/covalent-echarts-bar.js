@@ -1,11 +1,12 @@
 import { Component, ChangeDetectionStrategy, forwardRef, Input, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import 'echarts/lib/chart/bar';
-import { TdSeriesComponent, TdChartOptionsService } from '@covalent/echarts/base';
+import { TdSeriesDirective, TdChartOptionsService } from '@covalent/echarts/base';
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: bar.component.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * @record
@@ -73,7 +74,7 @@ if (false) {
     /** @type {?|undefined} */
     ITdBarSeries.prototype.silent;
 }
-class TdChartSeriesBarComponent extends TdSeriesComponent {
+class TdChartSeriesBarComponent extends TdSeriesDirective {
     /**
      * @param {?} _optionsService
      */
@@ -139,7 +140,7 @@ TdChartSeriesBarComponent.decorators = [
                 ],
                 providers: [
                     {
-                        provide: TdSeriesComponent,
+                        provide: TdSeriesDirective,
                         useExisting: forwardRef((/**
                          * @return {?}
                          */
@@ -243,7 +244,8 @@ if (false) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: bar.module.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 const BAR_MODULE_COMPONENTS = [TdChartSeriesBarComponent];
@@ -259,17 +261,20 @@ CovalentBarEchartsModule.decorators = [
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: public-api.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: index.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: covalent-echarts-bar.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 export { BAR_MODULE_COMPONENTS, CovalentBarEchartsModule, TdChartSeriesBarComponent };

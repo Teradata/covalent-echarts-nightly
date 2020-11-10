@@ -1,5 +1,5 @@
-import { TdChartOptionsService, TdCoordinateSystem, TdMarkPointSymbol, ITdMarkPoint, ITdItemStyle, ITdLabel, ITdEmphasis, TdSeriesLayoutBy, ITdMarkLine, ITdMarkArea, TdSeriesComponent, ITdSeries } from '@covalent/echarts/base';
-export interface ITdScatterSeries extends ITdSeries<'scatter'> {
+import { TdChartOptionsService, TdCoordinateSystem, TdMarkPointSymbol, ITdMarkPoint, ITdItemStyle, ITdLabel, ITdEmphasis, TdSeriesLayoutBy, ITdMarkLine, ITdMarkArea, TdSeriesDirective, ITdSeries } from '@covalent/echarts/base';
+export interface ITdScatterSeries extends ITdSeries {
     coordinateSystem?: TdCoordinateSystem;
     xAxisIndex?: number;
     yAxisIndex?: number;
@@ -36,7 +36,7 @@ export interface ITdScatterSeries extends ITdSeries<'scatter'> {
     z?: number;
     silent?: boolean;
 }
-export declare class TdChartSeriesScatterComponent extends TdSeriesComponent<'scatter'> implements ITdScatterSeries {
+export declare class TdChartSeriesScatterComponent extends TdSeriesDirective implements ITdScatterSeries {
     coordinateSystem: TdCoordinateSystem;
     xAxisIndex: number;
     yAxisIndex: number;

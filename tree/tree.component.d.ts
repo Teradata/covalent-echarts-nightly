@@ -1,4 +1,4 @@
-import { TdChartOptionsService, ITdItemStyle, TdMarkPointSymbol, ITdLabel, ITdLineStyle, ITdSeries, TdSeriesComponent, ITdEmphasis, ITdShadow } from '@covalent/echarts/base';
+import { TdChartOptionsService, ITdItemStyle, TdMarkPointSymbol, ITdLabel, ITdLineStyle, ITdSeries, TdSeriesDirective, ITdEmphasis, ITdShadow } from '@covalent/echarts/base';
 /**
  * ECHART OPTION DOCS
  * https://ecomfe.github.io/echarts-doc/public/en/option.html#series-tree
@@ -25,7 +25,7 @@ export interface ITdTreeLeaves {
     itemStyle?: ITdItemStyle;
     emphasis: ITdEmphasis;
 }
-interface ITdTreeSeries extends ITdSeries<'tree'> {
+interface ITdTreeSeries extends ITdSeries {
     zlevel?: number;
     z?: number;
     left?: string | number;
@@ -51,7 +51,7 @@ interface ITdTreeSeries extends ITdSeries<'tree'> {
     emphasis?: ITdTreeEmphasis;
     data: any[];
 }
-export declare class TdChartSeriesTreeComponent extends TdSeriesComponent<'tree'> implements ITdTreeSeries {
+export declare class TdChartSeriesTreeComponent extends TdSeriesDirective implements ITdTreeSeries {
     zlevel: number;
     z: number;
     left: string | number;

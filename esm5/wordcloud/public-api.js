@@ -1,7 +1,0 @@
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-export { WORDCLOUD_MODULE_COMPONENTS, CovalentWordcloudEchartsModule } from './wordcloud.module';
-export { TdChartSeriesWordcloudComponent } from './wordcloud.component';
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL0Bjb3ZhbGVudC9lY2hhcnRzL3dvcmRjbG91ZC8iLCJzb3VyY2VzIjpbInB1YmxpYy1hcGkudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7OztBQUFBLDRFQUFjLG9CQUFvQixDQUFDO0FBQ25DLGdEQUFjLHVCQUF1QixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0ICogZnJvbSAnLi93b3JkY2xvdWQubW9kdWxlJztcbmV4cG9ydCAqIGZyb20gJy4vd29yZGNsb3VkLmNvbXBvbmVudCc7XG4iXX0=

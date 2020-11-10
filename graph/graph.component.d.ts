@@ -1,4 +1,4 @@
-import { TdChartOptionsService, TdCoordinateSystem, ITdItemStyle, ITdEmphasis, ITdMarkPoint, ITdMarkLine, ITdMarkArea, ITdSeries, ITdLabel, TdSeriesComponent, TdMarkPointSymbol, ITdLineStyle, ITdEdgeLabel } from '@covalent/echarts/base';
+import { TdChartOptionsService, TdCoordinateSystem, ITdItemStyle, ITdEmphasis, ITdMarkPoint, ITdMarkLine, ITdMarkArea, ITdSeries, ITdLabel, TdSeriesDirective, TdMarkPointSymbol, ITdLineStyle, ITdEdgeLabel } from '@covalent/echarts/base';
 export interface ITdCategories {
     name?: string;
     symbol?: TdMarkPointSymbol | string;
@@ -18,7 +18,7 @@ export interface ITdGraphForce {
     layoutAnimation?: boolean;
 }
 export declare type TdGraphLayout = 'none' | 'circular' | 'force';
-export interface ITdGraphSeries extends ITdSeries<'graph'> {
+export interface ITdGraphSeries extends ITdSeries {
     legendHoverLink?: boolean;
     coordinateSystem?: TdCoordinateSystem;
     xAxisIndex?: number;
@@ -75,7 +75,7 @@ export interface ITdGraphSeries extends ITdSeries<'graph'> {
     animationEasingUpdate?: string;
     animationDelayUpdate?: number | Function;
 }
-export declare class TdChartSeriesGraphComponent extends TdSeriesComponent<'graph'> implements ITdGraphSeries {
+export declare class TdChartSeriesGraphComponent extends TdSeriesDirective implements ITdGraphSeries {
     legendHoverLink: boolean;
     coordinateSystem: TdCoordinateSystem;
     xAxisIndex: number;

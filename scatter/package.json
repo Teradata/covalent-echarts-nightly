@@ -1,10 +1,8 @@
 {
   "main": "../bundles/covalent-echarts-scatter.umd.js",
-  "module": "../fesm5/covalent-echarts-scatter.js",
+  "module": "../fesm2015/covalent-echarts-scatter.js",
   "es2015": "../fesm2015/covalent-echarts-scatter.js",
-  "esm5": "../esm5/scatter/covalent-echarts-scatter.js",
   "esm2015": "../esm2015/scatter/covalent-echarts-scatter.js",
-  "fesm5": "../fesm5/covalent-echarts-scatter.js",
   "fesm2015": "../fesm2015/covalent-echarts-scatter.js",
   "typings": "covalent-echarts-scatter.d.ts",
   "metadata": "covalent-echarts-scatter.metadata.json",

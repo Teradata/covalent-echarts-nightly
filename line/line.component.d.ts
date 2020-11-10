@@ -1,6 +1,6 @@
-import { TdChartOptionsService, TdCoordinateSystem, TdMarkPointSymbol, ITdLabel, ITdItemStyle, ITdLineStyle, ITdAreaStyle, TdSeriesLayoutBy, ITdMarkPoint, ITdMarkLine, ITdMarkArea, ITdEmphasis, ITdSeries, ITdShadow, TdSeriesComponent } from '@covalent/echarts/base';
+import { TdChartOptionsService, TdCoordinateSystem, TdMarkPointSymbol, ITdLabel, ITdItemStyle, ITdLineStyle, ITdAreaStyle, TdSeriesLayoutBy, ITdMarkPoint, ITdMarkLine, ITdMarkArea, ITdEmphasis, ITdSeries, ITdShadow, TdSeriesDirective } from '@covalent/echarts/base';
 export declare type TdSampling = 'average' | 'max' | 'min' | 'sum';
-export interface ITdLineSeries extends ITdSeries<'line'>, ITdShadow {
+export interface ITdLineSeries extends ITdSeries, ITdShadow {
     coordinateSystem?: TdCoordinateSystem;
     xAxisIndex?: number;
     yAxisIndex?: number;
@@ -41,7 +41,7 @@ export interface ITdLineSeries extends ITdSeries<'line'>, ITdShadow {
     z?: number;
     silent?: boolean;
 }
-export declare class TdChartSeriesLineComponent extends TdSeriesComponent<'line'> implements ITdLineSeries {
+export declare class TdChartSeriesLineComponent extends TdSeriesDirective implements ITdLineSeries {
     coordinateSystem: TdCoordinateSystem;
     xAxisIndex: number;
     yAxisIndex: number;

@@ -1,5 +1,5 @@
 import { TemplateRef, ChangeDetectorRef, ElementRef, OnChanges, OnDestroy } from '@angular/core';
-import { TdSeriesComponent } from '@covalent/echarts/base';
+import { TdSeriesDirective } from '@covalent/echarts/base';
 import { TdTooltipContext } from './tooltip.component';
 export declare class TdSeriesTooltipComponent implements OnChanges, OnDestroy {
     private _changeDetectorRef;
@@ -18,7 +18,7 @@ export declare class TdSeriesTooltipComponent implements OnChanges, OnDestroy {
     extraCssText: string;
     formatterTemplate: TemplateRef<any>;
     fullTemplate: TemplateRef<any>;
-    constructor(_changeDetectorRef: ChangeDetectorRef, _elementRef: ElementRef, _seriesComponent: TdSeriesComponent);
+    constructor(_changeDetectorRef: ChangeDetectorRef, _elementRef: ElementRef, _seriesComponent: TdSeriesDirective);
     ngOnChanges(): void;
     ngOnDestroy(): void;
     private _setOptions;

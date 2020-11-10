@@ -1,4 +1,4 @@
-import { TdChartOptionsService, ITdSeries, TdSeriesComponent } from '@covalent/echarts/base';
+import { TdChartOptionsService, ITdSeries, TdSeriesDirective } from '@covalent/echarts/base';
 export declare type TdWordcloudShape = 'circle' | 'cardioid' | 'diamond' | 'triangle-forward' | 'triangle' | 'pentagon' | 'star';
 export interface ITdWordcloudTextStyle {
     normal?: {
@@ -16,7 +16,7 @@ export interface ITdWordCloudData {
     value: number;
     textStyle?: ITdWordcloudTextStyle;
 }
-export interface ITdWordcloudSeries extends ITdSeries<'wordCloud'> {
+export interface ITdWordcloudSeries extends ITdSeries {
     data?: ITdWordCloudData[];
     shape?: TdWordcloudShape;
     left?: string | number;
@@ -32,7 +32,7 @@ export interface ITdWordcloudSeries extends ITdSeries<'wordCloud'> {
     drawOutOfBound?: boolean;
     textStyle?: ITdWordcloudTextStyle;
 }
-export declare class TdChartSeriesWordcloudComponent extends TdSeriesComponent<'wordCloud'> implements ITdWordcloudSeries {
+export declare class TdChartSeriesWordcloudComponent extends TdSeriesDirective implements ITdWordcloudSeries {
     data: ITdWordCloudData[];
     shape: TdWordcloudShape;
     left: string | number;

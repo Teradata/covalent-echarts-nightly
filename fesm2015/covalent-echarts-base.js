@@ -1,4 +1,4 @@
-import { Injectable, Optional, SkipSelf, EventEmitter, Component, ChangeDetectionStrategy, ChangeDetectorRef, ElementRef, Input, Output, NgModule } from '@angular/core';
+import { Injectable, Optional, SkipSelf, EventEmitter, Component, ChangeDetectionStrategy, ChangeDetectorRef, ElementRef, Input, Output, Directive, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BehaviorSubject, Subject, fromEvent, merge, timer } from 'rxjs';
 import { takeUntil, debounceTime, distinctUntilChanged, tap } from 'rxjs/operators';
@@ -7,7 +7,8 @@ import 'zrender/lib/svg/svg';
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: chart-options.service.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class TdChartOptionsService {
     constructor() {
@@ -119,7 +120,8 @@ const CHART_PROVIDER = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: utils/assign-defined.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * @param {?} target
@@ -155,7 +157,8 @@ function assignDefined(target, ...sources) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: themes/aqua-splash.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /* tslint:disable */
 var aquaSplash = {
@@ -619,7 +622,8 @@ var aquaSplash = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: themes/california-coast.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /* tslint:disable */
 var californiaCoast = {
@@ -1083,7 +1087,8 @@ var californiaCoast = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: themes/hawaiian-sunrise.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /* tslint:disable */
 var hawaiianSunrise = {
@@ -1547,7 +1552,8 @@ var hawaiianSunrise = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: themes/passion-flower.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /* tslint:disable */
 var passionFlower = {
@@ -2011,7 +2017,8 @@ var passionFlower = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: themes/razzleberry-pie.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /* tslint:disable */
 var razzleberryPie = {
@@ -2475,7 +2482,8 @@ var razzleberryPie = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: themes/teradata-classic.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /* tslint:disable */
 var teradataClassic = {
@@ -2939,7 +2947,8 @@ var teradataClassic = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: themes/teradata-default.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /* tslint:disable */
 var teradataDefault = {
@@ -3403,7 +3412,8 @@ var teradataDefault = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: themes/urban-sunrise.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /* tslint:disable */
 var urbanSunrise = {
@@ -3867,7 +3877,8 @@ var urbanSunrise = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: themes/volcanic-eruption.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /* tslint:disable */
 var volcanicEruption = {
@@ -4331,7 +4342,8 @@ var volcanicEruption = {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: utils/echarts.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * Function used to register a theme into echarts
@@ -4380,12 +4392,14 @@ function getThemes() {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: utils/index.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: chart.component.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class TdChartComponent {
     /**
@@ -4732,12 +4746,13 @@ if (false) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: axis/axis.component.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * @abstract
  */
-class TdChartAxisComponent {
+class TdChartAxisDirective {
     /**
      * @param {?} _axisOption
      * @param {?} _optionsService
@@ -4815,7 +4830,15 @@ class TdChartAxisComponent {
         this._optionsService.clearOption(this._axisOption);
     }
 }
-TdChartAxisComponent.propDecorators = {
+TdChartAxisDirective.decorators = [
+    { type: Directive }
+];
+/** @nocollapse */
+TdChartAxisDirective.ctorParameters = () => [
+    { type: String },
+    { type: TdChartOptionsService }
+];
+TdChartAxisDirective.propDecorators = {
     config: [{ type: Input }],
     id: [{ type: Input }],
     show: [{ type: Input }],
@@ -4852,86 +4875,87 @@ if (false) {
      * @type {?}
      * @private
      */
-    TdChartAxisComponent.prototype._state;
+    TdChartAxisDirective.prototype._state;
     /** @type {?} */
-    TdChartAxisComponent.prototype.config;
+    TdChartAxisDirective.prototype.config;
     /** @type {?} */
-    TdChartAxisComponent.prototype.id;
+    TdChartAxisDirective.prototype.id;
     /** @type {?} */
-    TdChartAxisComponent.prototype.show;
+    TdChartAxisDirective.prototype.show;
     /** @type {?} */
-    TdChartAxisComponent.prototype.gridIndex;
+    TdChartAxisDirective.prototype.gridIndex;
     /** @type {?} */
-    TdChartAxisComponent.prototype.offset;
+    TdChartAxisDirective.prototype.offset;
     /** @type {?} */
-    TdChartAxisComponent.prototype.position;
+    TdChartAxisDirective.prototype.position;
     /** @type {?} */
-    TdChartAxisComponent.prototype.type;
+    TdChartAxisDirective.prototype.type;
     /** @type {?} */
-    TdChartAxisComponent.prototype.name;
+    TdChartAxisDirective.prototype.name;
     /** @type {?} */
-    TdChartAxisComponent.prototype.nameLocation;
+    TdChartAxisDirective.prototype.nameLocation;
     /** @type {?} */
-    TdChartAxisComponent.prototype.nameTextStyle;
+    TdChartAxisDirective.prototype.nameTextStyle;
     /** @type {?} */
-    TdChartAxisComponent.prototype.nameGap;
+    TdChartAxisDirective.prototype.nameGap;
     /** @type {?} */
-    TdChartAxisComponent.prototype.nameRotate;
+    TdChartAxisDirective.prototype.nameRotate;
     /** @type {?} */
-    TdChartAxisComponent.prototype.inverse;
+    TdChartAxisDirective.prototype.inverse;
     /** @type {?} */
-    TdChartAxisComponent.prototype.boundaryGap;
+    TdChartAxisDirective.prototype.boundaryGap;
     /** @type {?} */
-    TdChartAxisComponent.prototype.min;
+    TdChartAxisDirective.prototype.min;
     /** @type {?} */
-    TdChartAxisComponent.prototype.max;
+    TdChartAxisDirective.prototype.max;
     /** @type {?} */
-    TdChartAxisComponent.prototype.scale;
+    TdChartAxisDirective.prototype.scale;
     /** @type {?} */
-    TdChartAxisComponent.prototype.minInterval;
+    TdChartAxisDirective.prototype.minInterval;
     /** @type {?} */
-    TdChartAxisComponent.prototype.interval;
+    TdChartAxisDirective.prototype.interval;
     /** @type {?} */
-    TdChartAxisComponent.prototype.logBase;
+    TdChartAxisDirective.prototype.logBase;
     /** @type {?} */
-    TdChartAxisComponent.prototype.silent;
+    TdChartAxisDirective.prototype.silent;
     /** @type {?} */
-    TdChartAxisComponent.prototype.triggerEvent;
+    TdChartAxisDirective.prototype.triggerEvent;
     /** @type {?} */
-    TdChartAxisComponent.prototype.axisLine;
+    TdChartAxisDirective.prototype.axisLine;
     /** @type {?} */
-    TdChartAxisComponent.prototype.axisTick;
+    TdChartAxisDirective.prototype.axisTick;
     /** @type {?} */
-    TdChartAxisComponent.prototype.axisLabel;
+    TdChartAxisDirective.prototype.axisLabel;
     /** @type {?} */
-    TdChartAxisComponent.prototype.splitLine;
+    TdChartAxisDirective.prototype.splitLine;
     /** @type {?} */
-    TdChartAxisComponent.prototype.splitArea;
+    TdChartAxisDirective.prototype.splitArea;
     /** @type {?} */
-    TdChartAxisComponent.prototype.data;
+    TdChartAxisDirective.prototype.data;
     /** @type {?} */
-    TdChartAxisComponent.prototype.axisPointer;
+    TdChartAxisDirective.prototype.axisPointer;
     /** @type {?} */
-    TdChartAxisComponent.prototype.zlevel;
+    TdChartAxisDirective.prototype.zlevel;
     /** @type {?} */
-    TdChartAxisComponent.prototype.z;
+    TdChartAxisDirective.prototype.z;
     /**
      * @type {?}
      * @private
      */
-    TdChartAxisComponent.prototype._axisOption;
+    TdChartAxisDirective.prototype._axisOption;
     /**
      * @type {?}
      * @private
      */
-    TdChartAxisComponent.prototype._optionsService;
+    TdChartAxisDirective.prototype._optionsService;
 }
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: axis/x-axis.component.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
-class TdChartXAxisComponent extends TdChartAxisComponent {
+class TdChartXAxisComponent extends TdChartAxisDirective {
     /**
      * @param {?} _optionsService
      */
@@ -4992,9 +5016,10 @@ if (false) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: axis/y-axis.component.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
-class TdChartYAxisComponent extends TdChartAxisComponent {
+class TdChartYAxisComponent extends TdChartAxisDirective {
     /**
      * @param {?} _optionsService
      */
@@ -5055,7 +5080,8 @@ if (false) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: dataset/dataset.component.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class TdDatasetComponent {
     /**
@@ -5144,7 +5170,8 @@ if (false) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: base.module.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /** @type {?} */
 const BASE_MODULE_COMPONENTS = [
@@ -5166,11 +5193,11 @@ CovalentBaseEchartsModule.decorators = [
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: series/series.component.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * @record
- * @template T
  */
 function ITdSeries() { }
 if (false) {
@@ -5187,9 +5214,8 @@ if (false) {
 }
 /**
  * @abstract
- * @template T
  */
-class TdSeriesComponent {
+class TdSeriesDirective {
     /**
      * @param {?} type
      * @param {?} optionsService
@@ -5275,7 +5301,15 @@ class TdSeriesComponent {
         this.optionsService.removeArrayOption('series', this._state);
     }
 }
-TdSeriesComponent.propDecorators = {
+TdSeriesDirective.decorators = [
+    { type: Directive }
+];
+/** @nocollapse */
+TdSeriesDirective.ctorParameters = () => [
+    { type: String },
+    { type: TdChartOptionsService }
+];
+TdSeriesDirective.propDecorators = {
     config: [{ type: Input }],
     id: [{ type: Input }],
     name: [{ type: Input }],
@@ -5296,65 +5330,68 @@ if (false) {
      * @type {?}
      * @private
      */
-    TdSeriesComponent.prototype._type;
+    TdSeriesDirective.prototype._type;
     /** @type {?} */
-    TdSeriesComponent.prototype._state;
+    TdSeriesDirective.prototype._state;
     /** @type {?} */
-    TdSeriesComponent.prototype._options;
+    TdSeriesDirective.prototype._options;
     /** @type {?} */
-    TdSeriesComponent.prototype.config;
+    TdSeriesDirective.prototype.config;
     /** @type {?} */
-    TdSeriesComponent.prototype.id;
+    TdSeriesDirective.prototype.id;
     /** @type {?} */
-    TdSeriesComponent.prototype.name;
+    TdSeriesDirective.prototype.name;
     /** @type {?} */
-    TdSeriesComponent.prototype.color;
+    TdSeriesDirective.prototype.color;
     /** @type {?} */
-    TdSeriesComponent.prototype.data;
+    TdSeriesDirective.prototype.data;
     /** @type {?} */
-    TdSeriesComponent.prototype.animation;
+    TdSeriesDirective.prototype.animation;
     /** @type {?} */
-    TdSeriesComponent.prototype.animationThreshold;
+    TdSeriesDirective.prototype.animationThreshold;
     /** @type {?} */
-    TdSeriesComponent.prototype.animationDuration;
+    TdSeriesDirective.prototype.animationDuration;
     /** @type {?} */
-    TdSeriesComponent.prototype.animationEasing;
+    TdSeriesDirective.prototype.animationEasing;
     /** @type {?} */
-    TdSeriesComponent.prototype.animationDelay;
+    TdSeriesDirective.prototype.animationDelay;
     /** @type {?} */
-    TdSeriesComponent.prototype.animationDurationUpdate;
+    TdSeriesDirective.prototype.animationDurationUpdate;
     /** @type {?} */
-    TdSeriesComponent.prototype.animationEasingUpdate;
+    TdSeriesDirective.prototype.animationEasingUpdate;
     /** @type {?} */
-    TdSeriesComponent.prototype.animationDelayUpdate;
+    TdSeriesDirective.prototype.animationDelayUpdate;
     /** @type {?} */
-    TdSeriesComponent.prototype.tooltip;
+    TdSeriesDirective.prototype.tooltip;
     /**
      * @type {?}
      * @protected
      */
-    TdSeriesComponent.prototype.optionsService;
+    TdSeriesDirective.prototype.optionsService;
     /**
      * @abstract
      * @return {?}
      */
-    TdSeriesComponent.prototype.getConfig = function () { };
+    TdSeriesDirective.prototype.getConfig = function () { };
 }
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: public-api.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: index.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: covalent-echarts-base.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
-export { BASE_MODULE_COMPONENTS, CovalentBaseEchartsModule, TdChartAxisComponent, TdChartComponent, TdChartOptionsService, TdChartXAxisComponent, TdChartYAxisComponent, TdDatasetComponent, TdSeriesComponent, assignDefined, getThemes, registerDefaultThemes, registerTheme, CHART_PROVIDER_FACTORY as ɵa, CHART_PROVIDER as ɵb };
+export { BASE_MODULE_COMPONENTS, CovalentBaseEchartsModule, TdChartAxisDirective, TdChartComponent, TdChartOptionsService, TdChartXAxisComponent, TdChartYAxisComponent, TdDatasetComponent, TdSeriesDirective, assignDefined, getThemes, registerDefaultThemes, registerTheme, CHART_PROVIDER_FACTORY as ɵa, CHART_PROVIDER as ɵb };
 //# sourceMappingURL=covalent-echarts-base.js.map

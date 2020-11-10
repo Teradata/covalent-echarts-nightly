@@ -1,4 +1,4 @@
-import { TdChartOptionsService, ITdItemStyle, ITdSeriesTooltip, ITdLabel, ITdSeries, TdSeriesComponent, ITdEmphasis, ITdShadow } from '@covalent/echarts/base';
+import { TdChartOptionsService, ITdItemStyle, ITdSeriesTooltip, ITdLabel, ITdSeries, TdSeriesDirective, ITdEmphasis, ITdShadow } from '@covalent/echarts/base';
 /**
  * ECHART OPTION DOCS
  * https://ecomfe.github.io/echarts-examples/public/index.html#chart-type-treemap
@@ -58,7 +58,7 @@ export interface ITdTreemapBreadcrumb {
     itemStyle?: ITdItemStyle;
     emphasis?: ITdTreemapEmphasis;
 }
-interface ITdTreemapSeries extends ITdSeries<'treemap'> {
+interface ITdTreemapSeries extends ITdSeries {
     zlevel?: number;
     z?: number;
     left?: string | number;
@@ -90,7 +90,7 @@ interface ITdTreemapSeries extends ITdSeries<'treemap'> {
     emphasis?: ITdTreemapEmphasis;
     data: any[];
 }
-export declare class TdChartSeriesTreemapComponent extends TdSeriesComponent<'treemap'> implements ITdTreemapSeries {
+export declare class TdChartSeriesTreemapComponent extends TdSeriesDirective implements ITdTreemapSeries {
     config: any;
     id: string;
     name: string;

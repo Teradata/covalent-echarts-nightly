@@ -1,4 +1,4 @@
-import { TdChartOptionsService, ITdItemStyle, ITdMarkPoint, ITdMarkLine, ITdMarkArea, ITdSeries, ITdLabel, TdSeriesComponent } from '@covalent/echarts/base';
+import { TdChartOptionsService, ITdItemStyle, ITdMarkPoint, ITdMarkLine, ITdMarkArea, ITdSeries, ITdLabel, TdSeriesDirective } from '@covalent/echarts/base';
 export declare type TdMapValueCalculation = 'sum' | 'average' | 'max' | 'min';
 export declare type TdMapSeriesLayoutBy = 'column' | 'row';
 export interface ITdMapScaleLimit {
@@ -9,7 +9,7 @@ export interface ITdMapItemStyle {
     areaColor?: ITdItemStyle;
     emphasis?: ITdItemStyle;
 }
-export interface ITdMapSeries extends ITdSeries<'map'> {
+export interface ITdMapSeries extends ITdSeries {
     map?: string;
     roam?: boolean;
     center?: number[];
@@ -39,7 +39,7 @@ export interface ITdMapSeries extends ITdSeries<'map'> {
     markArea?: ITdMarkArea;
     silent?: boolean;
 }
-export declare class TdChartSeriesMapComponent extends TdSeriesComponent<'map'> implements ITdMapSeries {
+export declare class TdChartSeriesMapComponent extends TdSeriesDirective implements ITdMapSeries {
     map: string;
     roam: boolean;
     center: number[];

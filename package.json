@@ -28,20 +28,18 @@
     "Steven Ov <steven.ov@teradata.com>"
   ],
   "dependencies": {
-    "echarts-wordcloud": "^1.1.3"
+    "echarts-wordcloud": "^1.1.3",
+    "tslib": "^2.0.0"
   },
   "peerDependencies": {
     "echarts": "^4.2.1",
-    "@angular/common": "^8.0.0 || ^9.0.0 || ^10.0.0-0",
-    "@angular/core": "^8.0.0 || ^9.0.0 || ^10.0.0-0",
-    "tslib": "^1.10.0"
+    "@angular/common": "^9.0.0 || ^10.0.0-0",
+    "@angular/core": "^9.0.0 || ^10.0.0-0"
   },
   "main": "bundles/covalent-echarts.umd.js",
-  "module": "fesm5/covalent-echarts.js",
+  "module": "fesm2015/covalent-echarts.js",
   "es2015": "fesm2015/covalent-echarts.js",
-  "esm5": "esm5/covalent-echarts.js",
   "esm2015": "esm2015/covalent-echarts.js",
-  "fesm5": "fesm5/covalent-echarts.js",
   "fesm2015": "fesm2015/covalent-echarts.js",
   "typings": "covalent-echarts.d.ts",
   "metadata": "covalent-echarts.metadata.json",

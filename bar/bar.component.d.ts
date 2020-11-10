@@ -1,5 +1,5 @@
-import { TdChartOptionsService, TdCoordinateSystem, ITdItemStyle, ITdEmphasis, TdSeriesLayoutBy, ITdMarkPoint, ITdMarkLine, ITdMarkArea, ITdSeries, ITdLabel, TdProgressiveChunkMode, TdSeriesComponent } from '@covalent/echarts/base';
-export interface ITdBarSeries extends ITdSeries<'bar'> {
+import { TdChartOptionsService, TdCoordinateSystem, ITdItemStyle, ITdEmphasis, TdSeriesLayoutBy, ITdMarkPoint, ITdMarkLine, ITdMarkArea, ITdSeries, ITdLabel, TdProgressiveChunkMode, TdSeriesDirective } from '@covalent/echarts/base';
+export interface ITdBarSeries extends ITdSeries {
     legendHoverLink?: boolean;
     coordinateSystem?: TdCoordinateSystem;
     xAxisIndex?: number;
@@ -31,7 +31,7 @@ export interface ITdBarSeries extends ITdSeries<'bar'> {
     z?: number;
     silent?: boolean;
 }
-export declare class TdChartSeriesBarComponent extends TdSeriesComponent<'bar'> implements ITdBarSeries {
+export declare class TdChartSeriesBarComponent extends TdSeriesDirective implements ITdBarSeries {
     coordinateSystem: TdCoordinateSystem;
     xAxisIndex: number;
     yAxisIndex: number;
